@@ -1,0 +1,72 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :product_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :product_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :product_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.number_field :size, id: :product_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, id: :product_start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date, id: :product_end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bathrooms %>
+    <%= form.text_field :bathrooms, id: :product_bathrooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_rooms %>
+    <%= form.number_field :total_rooms, id: :product_total_rooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rooms_available %>
+    <%= form.text_field :rooms_available, id: :product_rooms_available %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_furnished %>
+    <%= form.check_box :is_furnished, id: :product_is_furnished %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
