@@ -2,46 +2,57 @@
 
 <h1>Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Address</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Size</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Bathrooms</th>
-      <th>Total rooms</th>
-      <th>Rooms available</th>
-      <th>Is furnished</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.user_id %></td>
-        <td><%= product.address %></td>
-        <td><%= product.price %></td>
-        <td><%= product.description %></td>
-        <td><%= product.size %></td>
-        <td><%= product.start_date %></td>
-        <td><%= product.end_date %></td>
-        <td><%= product.bathrooms %></td>
-        <td><%= product.total_rooms %></td>
-        <td><%= product.rooms_available %></td>
-        <td><%= product.is_furnished %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+  <div>
+    Price:
+    <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
+      Min<%= with_price_fields.text_field :min_price %>
+      Max<%= with_price_fields.text_field :max_price %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  <div>
+    Availability:
+    <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
+      Start<%= with_availability_fields.date_field(:start_date, include_blank: true, start_year: Date.today.year) %>
+      End<%= with_availability_fields.date_field(:end_date, include_blank: true, start_year: Date.today.year) %>
+    <% end %>
+  </div>
+  <div>
+    Total rooms
+    <%= f.text_field(:with_total_rooms) %>
+  </div>
+  <div>
+    Rooms available
+    <%= f.text_field(:with_rooms_available) %>
+  </div>
+  <div>
+    Total bathrooms
+    <%= f.text_field(:with_bathrooms) %>
+  </div>
+  <div>
+    Furnished
+    <%= f.select(
+      :with_is_furnished,
+      @filterrific.select_options[:with_is_furnished],
+      { include_blank: '- Any -' }
+    ) %>
+  </div>
+  <div>
+    Sorted by
+    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+  </div>
+  <div>
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <%= f.submit 'Filter' %>
+<% end %>
 
-<br>
+<%= render(
+  partial: 'products/list',
+  locals: { products: @products }
+) %>
 
 <%= link_to 'New Product', new_product_path %>

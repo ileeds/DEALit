@@ -4,10 +4,10 @@ one:
   user_id: 1
   address: MyString
   price: 1.5
-  description: MyText
+  description: MyTextLonger
   size: 1
-  start_date: 2017-09-27
-  end_date: 2017-09-27
+  start_date: 2018-09-27
+  end_date: 2018-09-27
   bathrooms: 1.5
   total_rooms: 1
   rooms_available: 1.5
@@ -17,10 +17,10 @@ two:
   user_id: 1
   address: MyString
   price: 1.5
-  description: MyText
+  description: MyTextLonger
   size: 1
-  start_date: 2017-09-27
-  end_date: 2017-09-27
+  start_date: 2018-09-27
+  end_date: 2018-09-27
   bathrooms: 1.5
   total_rooms: 1
   rooms_available: 1.5

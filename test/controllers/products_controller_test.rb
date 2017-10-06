@@ -1,7 +1,10 @@
 require 'test_helper'
+require 'byebug'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    # user must exist for product to exist
+    @user = users(:one)
     @product = products(:one)
   end
 

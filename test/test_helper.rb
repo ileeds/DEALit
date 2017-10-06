@@ -1,3 +1,7 @@
+# these two lines must be at start of this file to support simplecov
+require 'simplecov'
+SimpleCov.start 'rails'
+
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
