@@ -1,3 +1,7 @@
+
+<% provide(:title, "Creating product") %>
+
+
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -8,65 +12,93 @@
         <li><%= message %></li>
       <% end %>
       </ul>
-    </div>
+</div>
   <% end %>
 
+
+
+
+
+
+<body>
+<div class="row">
+    <div class = "col-sm-4">
+      <div class="field">
+       <%= form.label :user_id %><br>
+       <%= form.number_field :user_id, id: :product_user_id, :placeholder => 'Enter user id'%>
+     </div>
+     </div>
+
+
+<div class = "col-sm-4">
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :product_user_id %>
+    <%= form.label :address %><br>
+    <%= form.text_field :address, id: :product_address, :placeholder => 'Enter address'%>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class = "col-sm-4">
+  <div class="field">
+    <%= form.label :price %><br>
+    <%= form.text_field :price, id: :product_price, :placeholder => 'Enter price'%>
+  </div>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :product_address %>
-  </div>
+<div class = "col-sm-4">
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :product_price %>
+    <%= form.label :size %><br>
+    <%= form.number_field :size, id: :product_size, class: "form_control", :placeholder => 'Enter size'  %>
   </div>
-
+</div>
+</div>
+<div class="row">
+  <div class = "col-sm-4">
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :product_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.number_field :size, id: :product_size %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_date %>
+    <%= form.label :start_date %><br>
     <%= form.date_select :start_date, id: :product_start_date %>
   </div>
-
+</div>
+<div class = "col-sm-4">
   <div class="field">
-    <%= form.label :end_date %>
+    <%= form.label :end_date %><br>
     <%= form.date_select :end_date, id: :product_end_date %>
   </div>
+</div>
+</div>
+<div class="row">
 
+<div class = "col-sm-4">
   <div class="field">
-    <%= form.label :bathrooms %>
-    <%= form.text_field :bathrooms, id: :product_bathrooms %>
+    <%= form.label :bathrooms %><br>
+    <%= form.text_field :bathrooms, id: :product_bathrooms  %>
   </div>
 
+</div>
+<div class = "col-sm-4">
   <div class="field">
-    <%= form.label :total_rooms %>
+    <%= form.label :total_rooms %><br>
     <%= form.number_field :total_rooms, id: :product_total_rooms %>
   </div>
+</div>
+</div>
+<div class="row">
 
-  <div class="field">
-    <%= form.label :rooms_available %>
-    <%= form.text_field :rooms_available, id: :product_rooms_available %>
-  </div>
+<div class = "col-sm-4">
 
   <div class="field">
     <%= form.label :is_furnished %>
     <%= form.check_box :is_furnished, id: :product_is_furnished %>
   </div>
-
+</div>
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>
+
+
+
 <% end %>
+</body>

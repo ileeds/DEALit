@@ -1,3 +1,66 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#index{
+  color:blue;
+  text-align:center;
+}
+#hello{
+
+  text-align:center;
+}
+#cheap{
+  background-image: url("http://static5.businessinsider.com/image/4f2023216bb3f7f96600000a/worldhaus-idealab-invents-super-cheap-house-that-could-shelter-15-billion-of-the-worlds-poor.jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+}
+#nice{
+  background-image: url("http://www.castles.org/images/sd4_small.jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    align-self: center
+}
+#family{
+  background-image: url("https://i.pinimg.com/736x/45/76/fd/4576fdb1563633a7d10f07e78a1e4037--for-the-home-beautiful-homes.jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    align-self: center
+}
+#cheap-head{
+  text-align:center;
+}
+#dev{
+
+  text-align:center;
+}
+#ian{
+
+  border-radius: 50%;
+  height:50%;
+
+  align: center;
+
+
+}
+#jonathan{
+  border-radius: 50%;
+  height:50%;
+
+  align: center;
+}
+
+.col-sm-4{
+  min-height: 100vh;
+}
+@media (max-width: 767px) {
+    .col-sm-4 {
+        min-height: 33.3333333%;
+        height: 33.3333333%;
+    }
+}
