@@ -1,10 +1,27 @@
+require 'byebug'
+
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    # support filtering
+    @filterrific = initialize_filterrific(
+      Product,
+      params[:filterrific],
+      # options for different filters go here
+      select_options: {
+        sorted_by: Product.options_for_sorted_by,
+        with_is_furnished: Product.options_for_furnished
+      }
+    ) or return
+    @products = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /products/1
