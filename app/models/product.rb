@@ -1,10 +1,8 @@
 class Product < ApplicationRecord
   belongs_to :user
-  validates_associated :user
   validates :address, presence: true
   validates :price, presence: true, numericality: true
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
-  validates :size, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :bathrooms, numericality: true, allow_nil: true
