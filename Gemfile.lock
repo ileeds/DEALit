@@ -195,9 +195,9 @@ DEPENDENCIES
   filterrific!
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
-  json (= 2.1.0)
+  json
   listen (= 3.0.8)
-  pg (= 0.20.0)
+  pg
   pry-rails
   puma (= 3.9.1)
   rails (= 5.1.2)
@@ -209,7 +209,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (= 3.2.0)
   web-console (= 3.5.1)
-  will_paginate (= 3.1.6)
+  will_paginate
 
 BUNDLED WITH
    1.16.0.pre.2
