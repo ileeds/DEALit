@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'byebug'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do

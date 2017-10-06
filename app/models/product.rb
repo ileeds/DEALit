@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Product < ApplicationRecord
   belongs_to :user
   validates :address, presence: true
