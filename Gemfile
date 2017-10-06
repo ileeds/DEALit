@@ -8,11 +8,6 @@ gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
-gem 'filterrific', git: 'https://github.com/ayaman/filterrific.git'
-gem 'will_paginate', '3.1.6'
-gem 'pg', '0.20.0'
-gem 'json', '2.1.0'
-gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
@@ -27,3 +22,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'filterrific', git: 'https://github.com/ayaman/filterrific.git'
+gem 'will_paginate', '3.1.6'
+gem 'pg', '0.20.0'
+gem 'json', '2.1.0'
+gem 'simplecov', :require => false, :group => :test
+gem 'pry-rails'
+gem 'better_errors'
+gem 'awesome_print'
+gem 'faker'
