@@ -12,10 +12,11 @@ class Product < ApplicationRecord
   validate :dates_cannot_be_in_the_past, :start_date_before_end_date
 
   def dates_cannot_be_in_the_past
-    if(start_date < Date.today)
+    today = Date.today
+    if(start_date < today)
       errors.add(:start_date, "can't be in the past")
     end
-    if(end_date < Date.today)
+    if(end_date < today)
       errors.add(:end_date, "can't be in the past")
     end
   end
