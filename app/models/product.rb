@@ -49,9 +49,9 @@ class Product < ApplicationRecord
       :sorted_by,
       :with_price_range,
       :with_availability_range,
-      :with_total_rooms,
-      :with_rooms_available,
-      :with_bathrooms,
+      :with_total_rooms_range,
+      :with_rooms_available_range,
+      :with_bathrooms_range,
       :with_is_furnished
     ]
   )
@@ -94,16 +94,37 @@ class Product < ApplicationRecord
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
 
-  scope :with_total_rooms, lambda { |total_rooms|
-    where("total_rooms >= ?", total_rooms)
+  scope :with_total_rooms_range, lambda { |total_rooms_attrs|
+    if total_rooms_attrs.min_rooms.blank? && total_rooms_attrs.max_rooms.blank?
+      return all
+    elsif total_rooms_attrs.min_rooms.blank?
+      return where("total_rooms <= ?", total_rooms_attrs.max_rooms)
+    elsif total_rooms_attrs.max_rooms.blank?
+      return where("total_rooms >= ?", total_rooms_attrs.min_rooms)
+    end
+    where(total_rooms: total_rooms_attrs.min_rooms..total_rooms_attrs.max_rooms)
   }
 
-  scope :with_rooms_available, lambda { |rooms_available|
-    where("rooms_available >= ?", rooms_available)
+  scope :with_rooms_available_range, lambda { |rooms_available_attrs|
+    if rooms_available_attrs.min_rooms.blank? && rooms_available_attrs.max_rooms.blank?
+      return all
+    elsif rooms_available_attrs.min_rooms.blank?
+      return where("rooms_available <= ?", rooms_available_attrs.max_rooms)
+    elsif rooms_available_attrs.max_rooms.blank?
+      return where("rooms_available >= ?", rooms_available_attrs.min_rooms)
+    end
+    where(rooms_available: rooms_available_attrs.min_rooms..rooms_available_attrs.max_rooms)
   }
 
-  scope :with_bathrooms, lambda { |bathrooms|
-    where("bathrooms >= ?", bathrooms)
+  scope :with_bathrooms_range, lambda { |bathrooms_attrs|
+    if bathrooms_attrs.min_rooms.blank? && bathrooms_attrs.max_rooms.blank?
+      return all
+    elsif bathrooms_attrs.min_rooms.blank?
+      return where("bathrooms <= ?", bathrooms_attrs.max_rooms)
+    elsif bathrooms_attrs.max_rooms.blank?
+      return where("bathrooms >= ?", bathrooms_attrs.min_rooms)
+    end
+    where(bathrooms: bathrooms_attrs.min_rooms..bathrooms_attrs.max_rooms)
   }
 
   scope :with_is_furnished, lambda { |furnished|

@@ -18,16 +18,25 @@
     <% end %>
   </div>
   <div>
-    Total rooms
-    <%= f.text_field(:with_total_rooms) %>
+    Total rooms:
+    <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
+      Min<%= with_total_rooms_fields.text_field :min_rooms %>
+      Max<%= with_total_rooms_fields.text_field :max_rooms %>
+    <% end %>
   </div>
   <div>
-    Rooms available
-    <%= f.text_field(:with_rooms_available) %>
+    Rooms available:
+    <%= f.fields_for :with_rooms_available_range, OpenStruct.new(@filterrific.with_rooms_available_range) do |with_rooms_available_fields| %>
+      Min<%= with_rooms_available_fields.text_field :min_rooms %>
+      Max<%= with_rooms_available_fields.text_field :max_rooms %>
+    <% end %>
   </div>
   <div>
-    Total bathrooms
-    <%= f.text_field(:with_bathrooms) %>
+    Total bathrooms:
+    <%= f.fields_for :with_bathrooms_range, OpenStruct.new(@filterrific.with_bathrooms_range) do |with_bathrooms_fields| %>
+      Min<%= with_bathrooms_fields.text_field :min_rooms %>
+      Max<%= with_bathrooms_fields.text_field :max_rooms %>
+    <% end %>
   </div>
   <div>
     Furnished
