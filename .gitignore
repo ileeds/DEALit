@@ -23,3 +23,6 @@
 .byebug_history
 
 coverage
+
+# Ignore Spring files.
+/spring/*.pid
