@@ -4,9 +4,7 @@ one:
   id: 1
   name: MyString
   email: MyString
-  password: MyString
 
 two:
   name: MyString
   email: MyString
-  password: MyString

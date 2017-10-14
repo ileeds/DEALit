@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
+    @user.password = "password"
   end
 
   test "should get index" do
@@ -34,7 +35,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { email: @user.email, name: @user.name, password: @user.password } }
+    patch user_url(@user), params: { user: { email: @user.email, name: @user.name, password: @user.password+"a" } }
     assert_redirected_to user_url(@user)
   end
 
