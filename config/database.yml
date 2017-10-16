@@ -54,7 +54,7 @@ development:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
+# Do not set this db to the same as development or homeion.
 test:
   <<: *default
   database: delete_test
@@ -66,7 +66,7 @@ test:
 # Instead, provide the password as a unix environment variable when you boot
 # the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full rundown on how to provide these environment variables in a
-# production deployment.
+# homeion deployment.
 #
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
@@ -75,11 +75,11 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
+#   homeion:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
+homeion:
   <<: *default
-  database: delete_production
+  database: delete_homeion
   username: delete
   password: <%= ENV['DELETE_DATABASE_PASSWORD'] %>

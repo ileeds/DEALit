@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  address: MyString
+  price: 1.5
+  description: MyTextLonger
+  size: 1
+  start_date: 2018-09-27
+  end_date: 2018-09-27
+  total_bathrooms: 1.5
+  private_bathrooms: 1.5
+  total_rooms: 1
+  available_rooms: 1.5
+  is_furnished: false
+
+two:
+  user_id: 1
+  address: MyString
+  price: 1.5
+  description: MyTextLonger
+  size: 1
+  start_date: 2018-09-27
+  end_date: 2018-09-27
+  total_bathrooms: 1.5
+  private_bathrooms: 1.5
+  total_rooms: 1
+  available_rooms: 1.5
+  is_furnished: false

@@ -2,13 +2,13 @@ Database schema:
 
 Tables:
 Name: Users
-Columns: (primary) integer id, string name, string email, string password, boolean not_deis, string notification_type
+Columns: (primary) integer id, string name, string email, string password_digest, boolean not_deis, string notification_type
 
 Name: Homes
-Columns: (primary) integer id, (foreign) integer user_id, (foreign) integer gallery_id, (foreign) notification_id, (foreign) option_id, string description, string address, float price, float size, date start_date, date end_date, integer total_rooms, integer available_rooms, float total_bathrooms, float private_bathrooms, boolean is_furnished
+Columns: (primary) integer id, (foreign) integer user_id, (foreign) integer gallery_id, (foreign) integer notification_id, (foreign) integer option_id, string description, string address, float price, float size, date start_date, date end_date, integer total_rooms, integer available_rooms, float total_bathrooms, float private_bathrooms, boolean is_furnished
 
 Name: Options
-Columns: (primary) integer id, float size_of_house, integer capacity, boolean free_parking, boolean street_parking, float deposit, float broker, boolean pets, integer beds, boolean heated, boolean ac, boolean tv, boolean dryer, boolean dish_washer, boolean fireplace, boolean kitchen, boolean garbage_disposal, boolean wireless, boolean lock, boolean elevator, boolean pool, boolean gym, boolean wheelchair, boolean hot_tub, boolean smoking, boolean events, boolean subletting, boolean utilities_included, float water_price, float heat_price, boolean closet, boolean porch, boolean lawn, boolean patio, boolean storage, integer floors, boolean refrigerator, boolean stove, boolean microwave, boolean refrigerator, boolean laundry, boolean laundry_free, boolean bike, boolean soundproof, boolean intercom, boolean gated, boolean doorman, boolean house, boolean apartment, boolean laundry
+Columns: (primary) integer id, float size_of_house, integer capacity, boolean free_parking, boolean street_parking, float deposit, float broker, boolean pets, integer beds, boolean heated, boolean ac, boolean tv, boolean dryer, boolean dish_washer, boolean fireplace, boolean kitchen, boolean garbage_disposal, boolean wireless, boolean lock, boolean elevator, boolean pool, boolean gym, boolean wheelchair, boolean hot_tub, boolean smoking, boolean events, boolean subletting, boolean utilities_included, float water_price, float heat_price, boolean closet, boolean porch, boolean lawn, boolean patio, boolean storage, integer floors, boolean refrigerator, boolean stove, boolean microwave, boolean laundry, boolean laundry_free, boolean bike, boolean soundproof, boolean intercom, boolean gated, boolean doorman, boolean house, boolean apartment
 
 Name: Offers
 Columns: (primary) integer id, (foreign) integer user_id, (foreign) integer home_id
@@ -29,7 +29,10 @@ Name: Notifications
 Columns: (primary) integer id, (foreign) integer user_id, string details, boolean read
 
 Name: Reviews
-Columns: (primary) integer id, (foreign) integer home_id, (foreign) user_id, string description
+Columns: (primary) integer id, (foreign) integer home_id, (foreign) integer user_id, string description
+
+Name: Searches
+Columns: (primary) integer id, (foreign) integer user_id, string details
 
 Associations:
 User -> Home (is One to Many)
@@ -42,3 +45,4 @@ User -> Notification (is One to Many)
 Home <- Notification (is Many to One)
 Review <- Home (is Many to One)
 Review <- User (is Many to One)
+User -> Search (is One to Many)

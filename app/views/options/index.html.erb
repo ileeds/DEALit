@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Size of house</th>
+      <th>Capacity</th>
+      <th>Free parking</th>
+      <th>Street parking</th>
+      <th>Deposit</th>
+      <th>Broker</th>
+      <th>Pets</th>
+      <th>Beds integer</th>
+      <th>Heated</th>
+      <th>Ac</th>
+      <th>Tv</th>
+      <th>Dryer</th>
+      <th>Dish washer</th>
+      <th>Fireplace</th>
+      <th>Kitchen</th>
+      <th>Garbage disposal</th>
+      <th>Wireless</th>
+      <th>Lock</th>
+      <th>Elevator</th>
+      <th>Pool</th>
+      <th>Gym</th>
+      <th>Wheelchair</th>
+      <th>Hot tub</th>
+      <th>Smoking</th>
+      <th>Events</th>
+      <th>Subletting</th>
+      <th>Utilities included</th>
+      <th>Water price</th>
+      <th>Heat price</th>
+      <th>Closet</th>
+      <th>Porch</th>
+      <th>Lawn</th>
+      <th>Patio</th>
+      <th>Storage</th>
+      <th>Floors</th>
+      <th>Refrigerator</th>
+      <th>Stove</th>
+      <th>Microwave</th>
+      <th>Laundry</th>
+      <th>Laundry free</th>
+      <th>Bike</th>
+      <th>Soundproof</th>
+      <th>Intercom</th>
+      <th>Gated</th>
+      <th>Doorman</th>
+      <th>House</th>
+      <th>Apartment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @options.each do |option| %>
+      <tr>
+        <td><%= option.size_of_house %></td>
+        <td><%= option.capacity %></td>
+        <td><%= option.free_parking %></td>
+        <td><%= option.street_parking %></td>
+        <td><%= option.deposit %></td>
+        <td><%= option.broker %></td>
+        <td><%= option.pets %></td>
+        <td><%= option.beds_integer %></td>
+        <td><%= option.heated %></td>
+        <td><%= option.ac %></td>
+        <td><%= option.tv %></td>
+        <td><%= option.dryer %></td>
+        <td><%= option.dish_washer %></td>
+        <td><%= option.fireplace %></td>
+        <td><%= option.kitchen %></td>
+        <td><%= option.garbage_disposal %></td>
+        <td><%= option.wireless %></td>
+        <td><%= option.lock %></td>
+        <td><%= option.elevator %></td>
+        <td><%= option.pool %></td>
+        <td><%= option.gym %></td>
+        <td><%= option.wheelchair %></td>
+        <td><%= option.hot_tub %></td>
+        <td><%= option.smoking %></td>
+        <td><%= option.events %></td>
+        <td><%= option.subletting %></td>
+        <td><%= option.utilities_included %></td>
+        <td><%= option.water_price %></td>
+        <td><%= option.heat_price %></td>
+        <td><%= option.closet %></td>
+        <td><%= option.porch %></td>
+        <td><%= option.lawn %></td>
+        <td><%= option.patio %></td>
+        <td><%= option.storage %></td>
+        <td><%= option.floors %></td>
+        <td><%= option.refrigerator %></td>
+        <td><%= option.stove %></td>
+        <td><%= option.microwave %></td>
+        <td><%= option.laundry %></td>
+        <td><%= option.laundry_free %></td>
+        <td><%= option.bike %></td>
+        <td><%= option.soundproof %></td>
+        <td><%= option.intercom %></td>
+        <td><%= option.gated %></td>
+        <td><%= option.doorman %></td>
+        <td><%= option.house %></td>
+        <td><%= option.apartment %></td>
+        <td><%= link_to 'Show', option %></td>
+        <td><%= link_to 'Edit', edit_option_path(option) %></td>
+        <td><%= link_to 'Destroy', option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Option', new_option_path %>

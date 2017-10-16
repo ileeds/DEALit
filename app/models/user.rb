@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :products
+  has_many :homes
   validates :name, presence: true
   validates :email, presence: true
   before_save   :downcase_email

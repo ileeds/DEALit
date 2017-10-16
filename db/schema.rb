@@ -10,23 +10,135 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927173521) do
+ActiveRecord::Schema.define(version: 20171016024646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "products", force: :cascade do |t|
+  create_table "chats", force: :cascade do |t|
+    t.string "filename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "homes", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "gallery_id"
+    t.integer "notification_id"
+    t.integer "option_id"
+    t.text "description"
     t.string "address"
     t.float "price"
-    t.text "description"
     t.integer "size"
     t.date "start_date"
     t.date "end_date"
-    t.float "bathrooms"
     t.integer "total_rooms"
-    t.float "rooms_available"
+    t.integer "available_rooms"
+    t.float "total_bathrooms"
+    t.float "private_bathrooms"
     t.boolean "is_furnished"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "details"
+    t.boolean "read"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "home_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.float "size_of_house"
+    t.integer "capacity"
+    t.boolean "free_parking"
+    t.boolean "street_parking"
+    t.float "deposit"
+    t.float "broker"
+    t.boolean "pets"
+    t.string "beds_integer"
+    t.boolean "heated"
+    t.boolean "ac"
+    t.boolean "tv"
+    t.boolean "dryer"
+    t.boolean "dish_washer"
+    t.boolean "fireplace"
+    t.boolean "kitchen"
+    t.boolean "garbage_disposal"
+    t.boolean "wireless"
+    t.boolean "lock"
+    t.boolean "elevator"
+    t.boolean "pool"
+    t.boolean "gym"
+    t.boolean "wheelchair"
+    t.boolean "hot_tub"
+    t.boolean "smoking"
+    t.boolean "events"
+    t.boolean "subletting"
+    t.boolean "utilities_included"
+    t.float "water_price"
+    t.float "heat_price"
+    t.boolean "closet"
+    t.boolean "porch"
+    t.boolean "lawn"
+    t.boolean "patio"
+    t.boolean "storage"
+    t.integer "floors"
+    t.boolean "refrigerator"
+    t.boolean "stove"
+    t.boolean "microwave"
+    t.boolean "laundry"
+    t.boolean "laundry_free"
+    t.boolean "bike"
+    t.boolean "soundproof"
+    t.boolean "intercom"
+    t.boolean "gated"
+    t.boolean "doorman"
+    t.boolean "house"
+    t.boolean "apartment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "gallery_id"
+    t.string "filename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "home_id"
+    t.integer "user_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_chats", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "chat_id"
+    t.boolean "read"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +147,8 @@ ActiveRecord::Schema.define(version: 20170927173521) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.boolean "not_deis"
+    t.string "notification_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

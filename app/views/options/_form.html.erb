@@ -1,0 +1,252 @@
+<%= form_with(model: option, local: true) do |form| %>
+  <% if option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(option.errors.count, "error") %> prohibited this option from being saved:</h2>
+
+      <ul>
+      <% option.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :size_of_house %>
+    <%= form.text_field :size_of_house, id: :option_size_of_house %>
+  </div>
+
+  <div class="field">
+    <%= form.label :capacity %>
+    <%= form.number_field :capacity, id: :option_capacity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :free_parking %>
+    <%= form.check_box :free_parking, id: :option_free_parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street_parking %>
+    <%= form.check_box :street_parking, id: :option_street_parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deposit %>
+    <%= form.text_field :deposit, id: :option_deposit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :broker %>
+    <%= form.text_field :broker, id: :option_broker %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pets %>
+    <%= form.check_box :pets, id: :option_pets %>
+  </div>
+
+  <div class="field">
+    <%= form.label :beds_integer %>
+    <%= form.text_field :beds_integer, id: :option_beds_integer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :heated %>
+    <%= form.check_box :heated, id: :option_heated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ac %>
+    <%= form.check_box :ac, id: :option_ac %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tv %>
+    <%= form.check_box :tv, id: :option_tv %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dryer %>
+    <%= form.check_box :dryer, id: :option_dryer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dish_washer %>
+    <%= form.check_box :dish_washer, id: :option_dish_washer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fireplace %>
+    <%= form.check_box :fireplace, id: :option_fireplace %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kitchen %>
+    <%= form.check_box :kitchen, id: :option_kitchen %>
+  </div>
+
+  <div class="field">
+    <%= form.label :garbage_disposal %>
+    <%= form.check_box :garbage_disposal, id: :option_garbage_disposal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wireless %>
+    <%= form.check_box :wireless, id: :option_wireless %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lock %>
+    <%= form.check_box :lock, id: :option_lock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :elevator %>
+    <%= form.check_box :elevator, id: :option_elevator %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pool %>
+    <%= form.check_box :pool, id: :option_pool %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gym %>
+    <%= form.check_box :gym, id: :option_gym %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wheelchair %>
+    <%= form.check_box :wheelchair, id: :option_wheelchair %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hot_tub %>
+    <%= form.check_box :hot_tub, id: :option_hot_tub %>
+  </div>
+
+  <div class="field">
+    <%= form.label :smoking %>
+    <%= form.check_box :smoking, id: :option_smoking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :events %>
+    <%= form.check_box :events, id: :option_events %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subletting %>
+    <%= form.check_box :subletting, id: :option_subletting %>
+  </div>
+
+  <div class="field">
+    <%= form.label :utilities_included %>
+    <%= form.check_box :utilities_included, id: :option_utilities_included %>
+  </div>
+
+  <div class="field">
+    <%= form.label :water_price %>
+    <%= form.text_field :water_price, id: :option_water_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :heat_price %>
+    <%= form.text_field :heat_price, id: :option_heat_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :closet %>
+    <%= form.check_box :closet, id: :option_closet %>
+  </div>
+
+  <div class="field">
+    <%= form.label :porch %>
+    <%= form.check_box :porch, id: :option_porch %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lawn %>
+    <%= form.check_box :lawn, id: :option_lawn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patio %>
+    <%= form.check_box :patio, id: :option_patio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :storage %>
+    <%= form.check_box :storage, id: :option_storage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :floors %>
+    <%= form.number_field :floors, id: :option_floors %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refrigerator %>
+    <%= form.check_box :refrigerator, id: :option_refrigerator %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stove %>
+    <%= form.check_box :stove, id: :option_stove %>
+  </div>
+
+  <div class="field">
+    <%= form.label :microwave %>
+    <%= form.check_box :microwave, id: :option_microwave %>
+  </div>
+
+  <div class="field">
+    <%= form.label :laundry %>
+    <%= form.check_box :laundry, id: :option_laundry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :laundry_free %>
+    <%= form.check_box :laundry_free, id: :option_laundry_free %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bike %>
+    <%= form.check_box :bike, id: :option_bike %>
+  </div>
+
+  <div class="field">
+    <%= form.label :soundproof %>
+    <%= form.check_box :soundproof, id: :option_soundproof %>
+  </div>
+
+  <div class="field">
+    <%= form.label :intercom %>
+    <%= form.check_box :intercom, id: :option_intercom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gated %>
+    <%= form.check_box :gated, id: :option_gated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doorman %>
+    <%= form.check_box :doorman, id: :option_doorman %>
+  </div>
+
+  <div class="field">
+    <%= form.label :house %>
+    <%= form.check_box :house, id: :option_house %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apartment %>
+    <%= form.check_box :apartment, id: :option_apartment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

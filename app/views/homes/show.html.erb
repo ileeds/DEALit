@@ -1,0 +1,65 @@
+<% provide(:title, "Show Home") %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @home.user_id %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @home.address %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @home.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @home.description %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @home.size %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @home.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @home.end_date %>
+</p>
+
+<p>
+  <strong>Total bathrooms:</strong>
+  <%= @home.total_bathrooms %>
+</p>
+
+<p>
+  <strong>Private bathrooms:</strong>
+  <%= @home.private_bathrooms %>
+</p>
+
+<p>
+  <strong>Total rooms:</strong>
+  <%= @home.total_rooms %>
+</p>
+
+<p>
+  <strong>Available rooms:</strong>
+  <%= @home.available_rooms %>
+</p>
+
+<p>
+  <strong>Is furnished:</strong>
+  <%= @home.is_furnished %>
+</p>
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>

@@ -4,6 +4,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :email
       t.string :password_digest
+      t.boolean :not_deis
+      t.string :notification_type
 
       t.timestamps
     end

@@ -1,0 +1,32 @@
+<%= form_with(model: user_chat, local: true) do |form| %>
+  <% if user_chat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_chat.errors.count, "error") %> prohibited this user_chat from being saved:</h2>
+
+      <ul>
+      <% user_chat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :user_chat_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chat_id %>
+    <%= form.number_field :chat_id, id: :user_chat_chat_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :read %>
+    <%= form.check_box :read, id: :user_chat_read %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
