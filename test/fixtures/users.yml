@@ -3,8 +3,9 @@
 one:
   id: 1
   name: MyString
-  email: MyString
+  email: MyString@aol.com
 
 two:
+  id: 2
   name: MyString
-  email: MyString
+  email: MyString@yahoo.com
