@@ -35,7 +35,8 @@ class Home < ApplicationRecord
   def self.options_for_sorted_by
     [
       ['Start date', 'start_date'],
-      ['Price', 'price']
+      ['Price', 'price'],
+      ['Size', 'size']
     ]
   end
 
@@ -68,6 +69,8 @@ class Home < ApplicationRecord
       order("homes.start_date asc")
     when 'price'
       order("homes.price asc")
+    when 'size'
+      order("homes.size asc")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_key.inspect }")
     end
