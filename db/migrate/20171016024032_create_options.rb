@@ -8,7 +8,7 @@ class CreateOptions < ActiveRecord::Migration[5.1]
       t.float :deposit
       t.float :broker
       t.boolean :pets
-      t.string :beds_integer
+      t.integer :beds
       t.boolean :heated
       t.boolean :ac
       t.boolean :tv

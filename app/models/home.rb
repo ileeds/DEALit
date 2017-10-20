@@ -70,7 +70,7 @@ class Home < ApplicationRecord
     when 'price'
       order("homes.price asc")
     when 'size'
-      order("homes.size asc")
+      order("homes.size desc")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_key.inspect }")
     end
