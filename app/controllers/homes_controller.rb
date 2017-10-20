@@ -1,6 +1,5 @@
 class HomesController < ApplicationController
   before_action :set_home, except: [:index, :new, :create]
-
   # GET /homes
   # GET /homes.json
   def index
@@ -29,9 +28,13 @@ class HomesController < ApplicationController
 
   # GET /homes/new
   def new
-    @home = Home.new
-  end
 
+    @home = Home.new
+    @home.option=@home.build_option
+
+  else
+
+end
   # GET /homes/1/edit
   def edit
   end
@@ -40,9 +43,16 @@ class HomesController < ApplicationController
   # POST /homes.json
   def create
     @home = Home.new(home_params)
+    byebug
+    @home.user_id = current_user.id
 
+    if !check
+        @home.option=nil
+
+    end
     respond_to do |format|
       if @home.save
+
         format.html { redirect_to @home, notice: 'Home was successfully created.' }
         format.json { render :show, status: :created, location: @home }
       else
@@ -50,6 +60,7 @@ class HomesController < ApplicationController
         format.json { render json: @home.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /homes/1
@@ -84,6 +95,17 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :option_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished)
+      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, option_attributes: [:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds_integer, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
     end
+
+    def check
+      @home.option.attributes.each do |p|
+
+      if p[1].nil? == false && p[1] != false && p[1].empty? ==false
+          return true
+      end
+
+    end
+    return false
+  end
 end

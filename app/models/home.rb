@@ -1,5 +1,7 @@
 class Home < ApplicationRecord
   belongs_to :user
+  has_one :option
+  accepts_nested_attributes_for :option, allow_destroy: true
   validates :address, presence: true
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
   validates :address, presence: true
@@ -30,6 +32,7 @@ class Home < ApplicationRecord
       errors.add(:end_date, "cannot be before Start date")
     end
   end
+
 
   # provide select options for filters
   def self.options_for_sorted_by

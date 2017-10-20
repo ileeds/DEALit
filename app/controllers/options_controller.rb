@@ -25,8 +25,9 @@ class OptionsController < ApplicationController
   # POST /options.json
   def create
     @option = Option.new(option_params)
-
+    #if check
     respond_to do |format|
+      byebug
       if @option.save
         format.html { redirect_to @option, notice: 'Option was successfully created.' }
         format.json { render :show, status: :created, location: @option }
@@ -34,7 +35,8 @@ class OptionsController < ApplicationController
         format.html { render :new }
         format.json { render json: @option.errors, status: :unprocessable_entity }
       end
-    end
+    #end
+  end
   end
 
   # PATCH/PUT /options/1
@@ -60,7 +62,15 @@ class OptionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def check
+    option_params.each do |p|
+    if p.isEmpty? == false || p.isFalse? == false
+        return true
+    end
 
+  end
+  return false
+end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_option
@@ -71,4 +81,5 @@ class OptionsController < ApplicationController
     def option_params
       params.require(:option).permit(:size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds_integer, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment)
     end
+
 end
