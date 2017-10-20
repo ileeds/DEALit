@@ -12,13 +12,13 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_user_url
+    get signup_path
     assert_response :success
   end
 
   test "should create user" do
     assert_difference('User.count') do
-      post users_url, params: { user: { email: @user.email, name: @user.name, password: @user.password } }
+      post users_url, params: { user: { email: "test@test.com", name: "Test Tester", password: "test password" } }
     end
 
     assert_redirected_to user_url(User.last)

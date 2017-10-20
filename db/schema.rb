@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171016165902) do
+=======
+ActiveRecord::Schema.define(version: 20171018212715) do
+>>>>>>> 67ffa0598e93c7fb3a1b0020e12547ee70316503
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,7 +73,7 @@ ActiveRecord::Schema.define(version: 20171016165902) do
     t.float "deposit"
     t.float "broker"
     t.boolean "pets"
-    t.string "beds_integer"
+    t.string "beds"
     t.boolean "heated"
     t.boolean "ac"
     t.boolean "tv"
@@ -152,6 +156,7 @@ ActiveRecord::Schema.define(version: 20171016165902) do
     t.string "notification_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

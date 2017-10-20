@@ -1,6 +1,17 @@
-<% if logged_in? %>
-  <%= link_to "Users",  users_path %>
-  <%= link_to "Log out", logout_path, method: :delete %>
-<% else %>
-  <%= link_to "Log in", login_path %>
-<% end %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Off Campus Catch", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home",  root_path, id: "logo" %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Users",  users_path, class: "btn btn-lg btn-primary" %></li>
+          <li><%= link_to "Log out", logout_path, method: :delete, class: "btn btn-lg btn-primary" %></li>
+        <% else %>
+          <li><%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %></li>
+          <li><%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

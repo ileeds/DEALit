@@ -1,3 +1,7 @@
 ---
 IrresponsibleModule:
   enabled: false
+FeatureEnvy:
+  enabled: false
+UncommunicativeVariableName:
+  enabled: false

@@ -2,28 +2,45 @@
 
 one:
   user_id: 1
-  address: MyString
-  price: 1.5
+  gallery_id: nil
+  notification_id: nil
+  option_id: nil
   description: MyTextLonger
-  size: 1
-  start_date: 2018-09-27
-  end_date: 2018-09-27
-  total_bathrooms: 1.5
+  address: MyString
+  price: 600.80
+  size: 700.80
+  total_rooms: 4
+  available_rooms: 3
+  total_bathrooms: 4
   private_bathrooms: 1.5
-  total_rooms: 1
-  available_rooms: 1.5
-  is_furnished: false
+  is_furnished: true
 
 two:
   user_id: 1
-  address: MyString
-  price: 1.5
+  gallery_id: nil
+  notification_id: nil
+  option_id: nil
   description: MyTextLonger
-  size: 1
-  start_date: 2018-09-27
-  end_date: 2018-09-27
-  total_bathrooms: 1.5
+  address: MyString
+  price: 500.80
+  size: 700.80
+  total_rooms: 4
+  available_rooms: 3
+  total_bathrooms: 4
   private_bathrooms: 1.5
-  total_rooms: 1
-  available_rooms: 1.5
-  is_furnished: false
+  is_furnished: true
+
+three:
+  user_id: 1
+  gallery_id: nil
+  notification_id: nil
+  option_id: nil
+  description: MyTextLonger
+  address: MyString
+  price: 700.80
+  size: 800.80
+  total_rooms: 4
+  available_rooms: 3
+  total_bathrooms: 4
+  private_bathrooms: 1.5
+  is_furnished: true
