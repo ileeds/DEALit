@@ -26,6 +26,11 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to home_url(Home.last)
   end
 
+  test "should not create invalid home" do
+    post homes_url, params: { home: { address: @home.address, total_bathrooms: "a", private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date, total_rooms: @home.total_rooms, user_id: @home.user_id } }
+    assert_template :new
+  end
+
   test "should show home" do
     get home_url(@home)
     assert_response :success
@@ -39,6 +44,12 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
   test "should update home" do
     patch home_url(@home), params: { home: { address: @home.address, total_bathrooms: @home.total_bathrooms, private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date, total_rooms: @home.total_rooms, user_id: @home.user_id } }
     assert_redirected_to home_url(@home)
+  end
+
+  test "should not update home with invalid attributes" do
+    patch home_url(@home), params: { home: { address: @home.address, total_bathrooms: "a", private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date, total_rooms: @home.total_rooms, user_id: @home.user_id } }
+    assert @home.total_bathrooms == 5.5
+    assert_template :edit
   end
 
   test "should destroy home" do

@@ -95,9 +95,9 @@ class Home < ApplicationRecord
     if !start_date && !end_date
       return all
     elsif !start_date
-      return where("end_date <= ?", end_date)
+      return where("end_date >= ?", end_date)
     elsif !end_date
-      return where("start_date >= ?", start_date)
+      return where("start_date <= ?", start_date)
     end
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
