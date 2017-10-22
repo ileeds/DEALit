@@ -17,7 +17,7 @@ class HomeTest < ActiveSupport::TestCase
     assert !@home.valid?
     @home.end_date = 3.days.from_now
     assert !@home.valid?
-    @home.start_date = 1.day.ago
+    @home.start_date = 2.days.ago
     assert !@home.valid?
   end
 

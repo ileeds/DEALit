@@ -8,7 +8,7 @@ one:
   deposit: 1.5
   broker: 1.5
   pets: false
-  beds_integer: MyString
+  beds: 1
   heated: false
   ac: false
   tv: false
@@ -57,7 +57,7 @@ two:
   deposit: 1.5
   broker: 1.5
   pets: false
-  beds_integer: MyString
+  beds: 1
   heated: false
   ac: false
   tv: false

@@ -20,6 +20,13 @@ class HomesController < ApplicationController
       format.html
       format.js
     end
+
+    @hash = Gmaps4rails.build_markers(@homes) do |home, marker|
+      marker.lat home.latitude
+      marker.lng home.longitude
+      marker.infowindow home.price
+      marker.json({ address: home.address })
+    end
   end
 
   # GET /homes/1
