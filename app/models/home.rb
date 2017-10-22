@@ -55,8 +55,8 @@ class Home < ApplicationRecord
     # filters go here
     available_filters: [
       :sorted_by,
-      :with_price_range,
       :with_availability_range,
+      :with_price_range,
       :with_total_rooms_range,
       :with_available_rooms_range,
       :with_total_bathrooms_range,
@@ -79,18 +79,6 @@ class Home < ApplicationRecord
     end
   }
 
-  # price range, support min and max
-  scope :with_price_range, lambda { |price_range_attrs|
-    if price_range_attrs.min_price.blank? && price_range_attrs.max_price.blank?
-      return all
-    elsif price_range_attrs.min_price.blank?
-      return where("price <= ?", price_range_attrs.max_price)
-    elsif price_range_attrs.max_price.blank?
-      return where("price >= ?", price_range_attrs.min_price)
-    end
-    where(price: price_range_attrs.min_price..price_range_attrs.max_price)
-  }
-
   # date range of availability, can choose both start and end
   scope :with_availability_range, lambda { |date_range_attrs|
     start_date = Date.parse(date_range_attrs.start_date) rescue nil
@@ -103,6 +91,18 @@ class Home < ApplicationRecord
       return where("start_date <= ?", start_date)
     end
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
+  }
+
+  # price range, support min and max
+  scope :with_price_range, lambda { |price_range_attrs|
+    if price_range_attrs.min_price.blank? && price_range_attrs.max_price.blank?
+      return all
+    elsif price_range_attrs.min_price.blank?
+      return where("price <= ?", price_range_attrs.max_price)
+    elsif price_range_attrs.max_price.blank?
+      return where("price >= ?", price_range_attrs.min_price)
+    end
+    where(price: price_range_attrs.min_price..price_range_attrs.max_price)
   }
 
   scope :with_total_rooms_range, lambda { |total_rooms_attrs|

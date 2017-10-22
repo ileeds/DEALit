@@ -4,18 +4,7 @@ class HomesController < ApplicationController
   # GET /homes
   # GET /homes.json
   def index
-    # support filtering
-    @filterrific = initialize_filterrific(
-      Home,
-      params[:filterrific],
-      # options for different filters go here
-      select_options: {
-        sorted_by: Home.options_for_sorted_by,
-        with_is_furnished: Home.options_for_furnished
-      }
-    ) or return
     @homes = @filterrific.find.page(params[:page])
-
     respond_to do |format|
       format.html
       format.js
@@ -30,6 +19,8 @@ class HomesController < ApplicationController
 
     @min = @homes.minimum(:price)
     @max = @homes.maximum(:price)
+    @total_min = Home.minimum(:price)
+    @total_max = Home.maximum(:price)
   end
 
   # GET /homes/1

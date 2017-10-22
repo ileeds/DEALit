@@ -23,13 +23,6 @@
     <% end %>
   </div>
   <div>
-    Availability:
-    <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
-      Start<%= with_availability_fields.date_field(:start_date, include_blank: true, start_year: Date.today.year) %>
-      End<%= with_availability_fields.date_field(:end_date, include_blank: true, start_year: Date.today.year) %>
-    <% end %>
-  </div>
-  <div>
     Total rooms:
     <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
       Min<%= with_total_rooms_fields.text_field :min_rooms %>
@@ -75,7 +68,7 @@
       reset_filterrific_url,
     ) %>
   </div>
-  <%= f.submit 'Filter' %>
+  <%= f.submit 'Filter', id:'filterrific_button' %>
 <% end %>
 
 <%= render(
@@ -89,7 +82,7 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 
-<p hidden id="hidden" data-min="<%= @min %>" data-max="<%= @max %>" />
+<p hidden id="hidden" data-min="<%= @min %>" data-max="<%= @max %>" total-min="<%= @total_min %>" total-max="<%= @total_max %>" />
 
 <script type="text/javascript">
   buildMap(<%=raw @hash.to_json %>);

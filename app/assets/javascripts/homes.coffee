@@ -3,10 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
+  $('#filterrific_button').on "click", (e) ->
+    e.preventDefault()
+    $("#filterrific-no-ajax-auto-submit").trigger "submit"
+    $("#filterrific-no-ajax-auto-submit-header").trigger "submit"
+
   slider = $('#price_slider').slider(
     range: true
-    min: parseFloat $('#hidden').attr 'data-min'
-    max: parseFloat $('#hidden').attr 'data-max'
+    min: parseFloat $('#hidden').attr 'total-min'
+    max: parseFloat $('#hidden').attr 'total-max'
     values: [
       $('#hidden').attr 'data-min'
       $('#hidden').attr 'data-max'
