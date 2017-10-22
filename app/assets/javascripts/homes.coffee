@@ -2,6 +2,26 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+$(document).ready ->
+  slider = $('#price_slider').slider(
+    range: true
+    min: parseFloat $('#hidden').attr 'data-min'
+    max: parseFloat $('#hidden').attr 'data-max'
+    values: [
+      $('#hidden').attr 'data-min'
+      $('#hidden').attr 'data-max'
+    ]
+    slide: (event, ui) ->
+      $('#min_price').val ui.values[0]
+      $('#max_price').val ui.values[1]
+      $('#min_price_label').text ui.values[0]
+      $('#max_price_label').text ui.values[1]
+      return
+  )
+  $('#min_price').val slider.slider('values')[0]
+  $('#max_price').val slider.slider('values')[1]
+  return
+
 class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from builtin builder
   #override create_marker method
   create_marker: ->

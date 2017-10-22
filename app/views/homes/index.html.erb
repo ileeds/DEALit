@@ -11,11 +11,15 @@
 </div>
 
 <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+  Price:
+  <div id="price_slider">
+  </div>
+  <span id="min_price_label"><%= @min %></span>
+  <span id="max_price_label"><%= @max %></span>
   <div>
-    Price:
     <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
-      Min<%= with_price_fields.text_field :min_price %>
-      Max<%= with_price_fields.text_field :max_price %>
+      <%= with_price_fields.hidden_field :min_price, id: "min_price" %>
+      <%= with_price_fields.hidden_field :max_price, id: "max_price" %>
     <% end %>
   </div>
   <div>
@@ -84,6 +88,8 @@
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
+
+<p hidden id="hidden" data-min="<%= @min %>" data-max="<%= @max %>" />
 
 <script type="text/javascript">
   buildMap(<%=raw @hash.to_json %>);

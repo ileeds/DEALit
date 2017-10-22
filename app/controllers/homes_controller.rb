@@ -27,6 +27,9 @@ class HomesController < ApplicationController
       marker.infowindow home.price
       marker.json({ address: home.address })
     end
+
+    @min = @homes.minimum(:price)
+    @max = @homes.maximum(:price)
   end
 
   # GET /homes/1
