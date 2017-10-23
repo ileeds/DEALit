@@ -1,11 +1,17 @@
 <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit-header' } do |f| %>
   <div>
     <font color="white">
-      Availability:
       <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
-        Start<font color="black"><%= with_availability_fields.date_field(:start_date, include_blank: true, start_year: Date.today.year) %></font>
-        End<font color="black"><%= with_availability_fields.date_field(:end_date, include_blank: true, start_year: Date.today.year) %></font>
+        From <font color="black"><%= with_availability_fields.text_field :start_date, class: "form-control", id: "datepicker_start", value: "" %></font>
+        To <font color="black"><%= with_availability_fields.text_field :end_date, class: "form-control", id: "datepicker_end", value: "" %></font>
       <% end %>
     </font></font>
   </div>
+  <%= f.submit 'Filter', id:'filterrific_button' %>
 <% end %>
+
+<script>
+ $(function() {
+   $( ".form-control" ).datepicker();
+ });
+</script>

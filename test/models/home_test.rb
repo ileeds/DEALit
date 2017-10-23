@@ -54,12 +54,12 @@ class HomeTest < ActiveSupport::TestCase
   test "with availability range" do
     date_range_attrs = OpenStruct.new
     assert Home.with_availability_range(date_range_attrs).count == 3
-    date_range_attrs.start_date = 7.days.from_now.to_s
+    date_range_attrs.start_date = 7.days.from_now.strftime("%m/%e/%Y")
     assert Home.with_availability_range(date_range_attrs).count == 2
     date_range_attrs.start_date = nil
-    date_range_attrs.end_date = (1.year.from_now + 1.day).to_s
+    date_range_attrs.end_date = (1.year.from_now + 1.day).strftime("%m/%e/%Y")
     assert Home.with_availability_range(date_range_attrs).count == 2
-    date_range_attrs.start_date = 7.days.from_now.to_s
+    date_range_attrs.start_date = 7.days.from_now.strftime("%m/%e/%Y")
     assert Home.with_availability_range(date_range_attrs).take == @home_two
   end
 

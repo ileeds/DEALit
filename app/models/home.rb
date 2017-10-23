@@ -81,8 +81,8 @@ class Home < ApplicationRecord
 
   # date range of availability, can choose both start and end
   scope :with_availability_range, lambda { |date_range_attrs|
-    start_date = Date.parse(date_range_attrs.start_date) rescue nil
-    end_date = Date.parse(date_range_attrs.end_date) rescue nil
+    start_date = Date.strptime(date_range_attrs.start_date, "%m/%d/%Y") rescue nil
+    end_date = Date.strptime(date_range_attrs.end_date, "%m/%d/%Y") rescue nil
     if !start_date && !end_date
       return all
     elsif !start_date

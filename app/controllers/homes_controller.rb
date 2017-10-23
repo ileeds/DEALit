@@ -17,10 +17,10 @@ class HomesController < ApplicationController
       marker.json({ address: home.address })
     end
 
-    @min = @homes.minimum(:price)
-    @max = @homes.maximum(:price)
-    @total_min = Home.minimum(:price)
-    @total_max = Home.maximum(:price)
+    @min = @homes.minimum(:price).floor rescue nil
+    @max = @homes.maximum(:price).ceil rescue nil
+    @total_min = Home.minimum(:price).floor rescue nil
+    @total_max = Home.maximum(:price).ceil rescue nil
   end
 
   # GET /homes/1
