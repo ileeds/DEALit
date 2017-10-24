@@ -1,11 +1,11 @@
 
-<%= form_for @home do |form| %>
-  <% if home.errors.any? %>
+<%= form_for @option do |form1| %>
+  <% if @option.home.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(home.errors.count, "error") %> prohibited this home from being saved:</h2>
 
       <ul>
-      <% home.errors.full_messages.each do |message| %>
+      <% @option.home.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,7 +13,7 @@
   <% end %>
 
 
-
+<%=  form1.fields_for :home  do |form| %>
   <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address, id: :home_address %>
@@ -68,7 +68,7 @@
     <%= form.label :is_furnished %>
     <%= form.check_box :is_furnished, id: :home_is_furnished %>
   </div>
-
+<%end%>
 
   <a href="#options" class="btn btn-info" data-toggle="collapse">More options</a>
   <div id="options" class="collapse">
@@ -76,7 +76,7 @@
 
 
 
-  <%=  form.fields_for :option  do |form1| %>
+
 
 
     <div class="field">
@@ -115,8 +115,8 @@
     </div>
 
     <div class="field">
-      <%= form1.label :beds_integer %>
-      <%= form1.text_field :beds_integer, id: :option_beds_integer %>
+      <%= form1.label :beds %>
+      <%= form1.text_field :beds, id: :option_beds %>
     </div>
 
     <div class="field">
@@ -313,12 +313,13 @@
       <%= form1.label :apartment %>
       <%= form1.check_box :apartment, id: :option_apartment %>
     </div>
+
 </div>
 
-  <% end %>
+
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form1.submit %>
   </div>
 <% end %>

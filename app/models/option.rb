@@ -1,3 +1,4 @@
 class Option < ApplicationRecord
-  belongs_to :home
+  has_one :home, :dependent => :destroy
+  accepts_nested_attributes_for :home
 end

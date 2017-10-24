@@ -1,5 +1,8 @@
+include SessionsHelper
 class HomesController < ApplicationController
+
   before_action :set_home, except: [:index, :new, :create]
+  before_action :check_logged, only: [:index, :new, :create, :show, :update]
   # GET /homes
   # GET /homes.json
   def index
@@ -29,10 +32,10 @@ class HomesController < ApplicationController
   # GET /homes/new
   def new
 
-    @home = Home.new
-    @home.option=@home.build_option
+    @option= Option.new
+    @option.home = @option.build_home
+    #@home.option=@home.build_option
 
-  else
 
 end
   # GET /homes/1/edit
@@ -43,7 +46,7 @@ end
   # POST /homes.json
   def create
     @home = Home.new(home_params)
-    byebug
+    if current_user
     @home.user_id = current_user.id
 
     if !check
@@ -60,6 +63,9 @@ end
         format.json { render json: @home.errors, status: :unprocessable_entity }
       end
     end
+  else
+    redirect_to login_path
+  end
 
   end
 
@@ -91,11 +97,13 @@ end
     # Use callbacks to share common setup or constraints between actions.
     def set_home
       @home = Home.find(params[:id])
+
+      @option = Option.find(@home.option.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, option_attributes: [:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds_integer, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, :option_id)
     end
 
     def check
@@ -107,5 +115,11 @@ end
 
     end
     return false
+  end
+  def check_logged
+
+    if !current_user
+      redirect_to login_path
+    end
   end
 end

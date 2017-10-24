@@ -1,7 +1,7 @@
 class Home < ApplicationRecord
   belongs_to :user
-  has_one :option
-  accepts_nested_attributes_for :option, allow_destroy: true
+
+  belongs_to :option
   validates :address, presence: true
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
   validates :address, presence: true

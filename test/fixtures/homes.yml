@@ -13,6 +13,8 @@ one:
   available_rooms: 3
   total_bathrooms: 4
   private_bathrooms: 1.5
+  start_date: 2018-02-11
+  end_date: 2018-02-14
   is_furnished: true
 
 two:
@@ -27,6 +29,8 @@ two:
   total_rooms: 4
   available_rooms: 3
   total_bathrooms: 4
+  start_date: 2018-02-11
+  end_date: 2018-02-14
   private_bathrooms: 1.5
   is_furnished: true
 
