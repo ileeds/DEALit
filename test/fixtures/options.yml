@@ -9,7 +9,11 @@ one:
   deposit: 1.5
   broker: 1.5
   pets: false
+<<<<<<< HEAD
   beds: 1.5
+=======
+  beds: 1
+>>>>>>> acd2f2db8f2bca9140cbbc3a327218447033193d
   heated: false
   ac: false
   tv: false
@@ -59,7 +63,11 @@ two:
   deposit: 1.5
   broker: 1.5
   pets: false
+<<<<<<< HEAD
   beds: 1.5
+=======
+  beds: 1
+>>>>>>> acd2f2db8f2bca9140cbbc3a327218447033193d
   heated: false
   ac: false
   tv: false

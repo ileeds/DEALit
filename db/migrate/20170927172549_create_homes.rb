@@ -5,6 +5,8 @@ class CreateHomes < ActiveRecord::Migration[5.1]
       t.integer :gallery_id
       t.integer :notification_id
       t.integer :option_id
+      t.float :latitude
+      t.float :longitude
       t.text :description
       t.string :address
       t.float :price

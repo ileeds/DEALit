@@ -2,14 +2,10 @@ require 'test_helper'
 
 class HomeTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(name: "Example User", email: "user@example.com",
-              password: "foobar", password_confirmation: "foobar")
+    @user = users(:one)
     @home = homes(:one)
-    @home.update_attributes(start_date: 4.days.from_now, end_date: 1.year.from_now)
     @home_two = homes(:two)
-    @home_two.update_attributes(start_date: 5.days.from_now, end_date: 1.year.from_now)
     @home_three = homes(:three)
-    @home_three.update_attributes(start_date: 4.days.from_now, end_date: 1.year.from_now)
   end
 
   test "dates must be valid" do
@@ -17,7 +13,7 @@ class HomeTest < ActiveSupport::TestCase
     assert !@home.valid?
     @home.end_date = 3.days.from_now
     assert !@home.valid?
-    @home.start_date = 1.day.ago
+    @home.start_date = 2.days.ago
     assert !@home.valid?
   end
 
@@ -41,13 +37,78 @@ class HomeTest < ActiveSupport::TestCase
 
   test "with price range" do
     price_range_attrs = OpenStruct.new
-    price_range_attrs.min_price = 500
-    price_range_attrs.max_price = 800
     assert Home.with_price_range(price_range_attrs).count == 3
     price_range_attrs.min_price = 600
     assert Home.with_price_range(price_range_attrs).count == 2
+    price_range_attrs.min_price = nil
     price_range_attrs.max_price = 700
+    assert Home.with_price_range(price_range_attrs).count == 2
+    price_range_attrs.min_price = 600
     assert Home.with_price_range(price_range_attrs).take == @home
+  end
+
+  test "with availability range" do
+    date_range_attrs = OpenStruct.new
+    assert Home.with_availability_range(date_range_attrs).count == 3
+    date_range_attrs.start_date = 7.days.from_now.strftime("%m/%e/%Y")
+    assert Home.with_availability_range(date_range_attrs).count == 2
+    date_range_attrs.start_date = nil
+    date_range_attrs.end_date = (1.year.from_now + 1.day).strftime("%m/%e/%Y")
+    assert Home.with_availability_range(date_range_attrs).count == 2
+    date_range_attrs.start_date = 7.days.from_now.strftime("%m/%e/%Y")
+    assert Home.with_availability_range(date_range_attrs).take == @home_two
+  end
+
+  test "with total rooms range" do
+    total_rooms_attrs = OpenStruct.new
+    assert Home.with_total_rooms_range(total_rooms_attrs).count == 3
+    total_rooms_attrs.min_rooms = 2
+    assert Home.with_total_rooms_range(total_rooms_attrs).count == 2
+    total_rooms_attrs.min_rooms = nil
+    total_rooms_attrs.max_rooms = 4
+    assert Home.with_total_rooms_range(total_rooms_attrs).count == 2
+    total_rooms_attrs.min_rooms = 2
+    assert Home.with_total_rooms_range(total_rooms_attrs).take == @home_three
+  end
+
+  test "with available rooms range" do
+    available_rooms_attrs = OpenStruct.new
+    assert Home.with_available_rooms_range(available_rooms_attrs).count == 3
+    available_rooms_attrs.min_rooms = 2
+    assert Home.with_available_rooms_range(available_rooms_attrs).count == 2
+    available_rooms_attrs.min_rooms = nil
+    available_rooms_attrs.max_rooms = 4
+    assert Home.with_available_rooms_range(available_rooms_attrs).count == 2
+    available_rooms_attrs.min_rooms = 2
+    assert Home.with_available_rooms_range(available_rooms_attrs).take == @home_three
+  end
+
+  test "with total bathrooms range" do
+    bathroom_attrs = OpenStruct.new
+    assert Home.with_total_bathrooms_range(bathroom_attrs).count == 3
+    bathroom_attrs.min_rooms = 4
+    assert Home.with_total_bathrooms_range(bathroom_attrs).count == 2
+    bathroom_attrs.min_rooms = nil
+    bathroom_attrs.max_rooms = 5
+    assert Home.with_total_bathrooms_range(bathroom_attrs).count == 2
+    bathroom_attrs.min_rooms = 4
+    assert Home.with_total_bathrooms_range(bathroom_attrs).take == @home_two
+  end
+
+  test "with private bathrooms range" do
+    bathroom_attrs = OpenStruct.new
+    assert Home.with_private_bathrooms_range(bathroom_attrs).count == 3
+    bathroom_attrs.min_rooms = 4
+    assert Home.with_private_bathrooms_range(bathroom_attrs).count == 2
+    bathroom_attrs.min_rooms = nil
+    bathroom_attrs.max_rooms = 5
+    assert Home.with_private_bathrooms_range(bathroom_attrs).count == 2
+    bathroom_attrs.min_rooms = 4
+    assert Home.with_private_bathrooms_range(bathroom_attrs).take == @home_two
+  end
+
+  test "with is furnished" do
+    assert Home.with_is_furnished(true).take == @home
   end
 
 end
