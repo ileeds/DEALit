@@ -2,8 +2,8 @@
   <div>
     <font color="white">
       <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
-        From <font color="black"><%= with_availability_fields.text_field :start_date, class: "form-control", id: "datepicker_start", value: "" %></font>
-        To <font color="black"><%= with_availability_fields.text_field :end_date, class: "form-control", id: "datepicker_end", value: "" %></font>
+        From <font color="black"><%= with_availability_fields.text_field :start_date, class: "form-control availability", id: "datepicker_start", value: "" %></font>
+        To <font color="black"><%= with_availability_fields.text_field :end_date, class: "form-control availability", id: "datepicker_end", value: "" %></font>
       <% end %>
     </font></font>
   </div>
@@ -12,6 +12,6 @@
 
 <script>
  $(function() {
-   $( ".form-control" ).datepicker();
+   $( ".form-control availability" ).datepicker();
  });
 </script>

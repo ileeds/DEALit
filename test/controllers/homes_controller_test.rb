@@ -5,7 +5,7 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
     # user must exist for home to exist
     @user = users(:one)
     @home = homes(:one)
-    @home.update_attributes(start_date: 5.days.from_now, end_date: 1.year.from_now)
+    @home.user_id = @user.id
   end
 
   test "should get index" do

@@ -2,14 +2,10 @@ require 'test_helper'
 
 class HomeTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(name: "Example User", email: "user@example.com",
-              password: "foobar", password_confirmation: "foobar")
+    @user = users(:one)
     @home = homes(:one)
-    @home.update_attributes(start_date: 4.days.from_now, end_date: 1.year.from_now)
     @home_two = homes(:two)
-    @home_two.update_attributes(start_date: 6.days.from_now, end_date: 1.year.from_now + 4.days)
     @home_three = homes(:three)
-    @home_three.update_attributes(start_date: 8.days.from_now, end_date: 1.year.from_now + 2.days)
   end
 
   test "dates must be valid" do
