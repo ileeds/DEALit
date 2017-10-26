@@ -11,6 +11,12 @@
 </div>
 
 <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+  <div>
+    <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
+      From <%= with_availability_fields.text_field :start_date, class: "form-control availability", id: "datepicker_start" %>
+      To <%= with_availability_fields.text_field :end_date, class: "form-control availability", id: "datepicker_end" %>
+    <% end %>
+  </div>
   Price:
   <div id="price_slider">
   </div>
@@ -86,4 +92,10 @@
 
 <script type="text/javascript">
   buildMap(<%=raw @hash.to_json %>);
+</script>
+
+<script type="text/javascript">
+ $(function() {
+   $( ".form-control.availability" ).datepicker();
+ });
 </script>

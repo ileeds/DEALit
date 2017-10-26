@@ -48,3 +48,4 @@ gem 'geo_seeder'
 gem 'gmaps4rails'
 gem 'jquery-ui-rails'
 gem 'rails-admin'
+gem "omniauth-google-oauth2"

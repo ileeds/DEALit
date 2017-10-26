@@ -31,12 +31,12 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
   rich_marker_options: ->
     marker = document.createElement("div")
     marker.setAttribute 'class', 'marker_container'
-    marker.innerHTML = @args.address
+    marker.innerHTML = @args.price
     { content: marker }
 
   # override method
   create_infowindow: ->
-    return null unless _.isNumber @args.infowindow
+    return null unless _.isString @args.infowindow
 
     boxText = document.createElement("div")
     boxText.setAttribute('class', 'marker_container') #to customize
