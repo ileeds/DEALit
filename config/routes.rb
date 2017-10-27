@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   get 'static_pages/home'
-
   get 'static_pages/help'
-
   get 'static_pages/about'
-
   get 'static_pages/contact'
 
   resources :searches
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
   resources :options
   resources :users
   resources :homes
+  
   root   'homes#index'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'

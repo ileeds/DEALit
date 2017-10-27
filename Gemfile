@@ -47,5 +47,6 @@ gem 'geocoder'
 gem 'geo_seeder'
 gem 'gmaps4rails'
 gem 'jquery-ui-rails'
-gem 'rails-admin'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'erubis'
 gem "omniauth-google-oauth2"
