@@ -4,6 +4,7 @@ class HomesController < ApplicationController
   # GET /homes
   # GET /homes.json
   def index
+    byebug
     @homes = @filterrific.find.page(params[:page])
     respond_to do |format|
       format.html
