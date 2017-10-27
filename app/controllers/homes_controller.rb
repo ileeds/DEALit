@@ -4,7 +4,7 @@ class HomesController < ApplicationController
   before_action :set_home, except: [:index, :new, :create]
   before_action :set_option, only: [:edit]
   after_action :destroy_option, only: [:create, :update]
-  before_action :check_logged, only: [:index, :new, :create, :update]
+  before_action :check_logged, only: [:new, :create, :update]
   # GET /homes
   # GET /homes.json
   def index
@@ -30,6 +30,7 @@ class HomesController < ApplicationController
       marker.lng home.longitude
       marker.infowindow home.address
       marker.json({ price: home.price })
+
     end
 
     @price_min = @homes.minimum(:price).floor rescue nil

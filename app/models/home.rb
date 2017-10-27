@@ -18,7 +18,8 @@ class Home < ApplicationRecord
   validates :is_furnished, inclusion: { in: [ true, false ] }
 
   validate :dates_cannot_be_in_the_past, :start_date_before_end_date
-
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){obj.address.present? and obj.address_changed? }
   def dates_cannot_be_in_the_past
     today = Date.today
     if(start_date < today)
