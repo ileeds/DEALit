@@ -14,6 +14,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  def create_omni
+    user = User.from_omniauth(request.env["omniauth.auth"])
+    if user.id
+      session[:user_id] = user.id
+    else
+      flash.now[:danger] = "Please log out of current email and log in with Brandeis email"
+    end
+    redirect_to root_path
+  end
+
   def destroy
     log_out
     redirect_to root_url

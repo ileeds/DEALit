@@ -5,10 +5,10 @@ User.delete_all
 Home.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 
-User.create!(name: "Tester", email: "test@test.com", password: "password", not_deis: false, notification_type: "email")
+User.create!(name: "Tester", email: "test@test.com", password: "password", notification_type: "email")
 
 5.times do
-  User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password, not_deis: Faker::Boolean, notification_type: "email")
+  User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password, notification_type: "email")
 end
 
 locations = GeoSeeder::Location.random({

@@ -8,6 +8,17 @@ class HomesController < ApplicationController
   # GET /homes
   # GET /homes.json
   def index
+    # support filtering
+    @filterrific = initialize_filterrific(
+      Home,
+      params[:filterrific],
+      # options for different filters go here
+      select_options: {
+        sorted_by: Home.options_for_sorted_by,
+        with_is_furnished: Home.options_for_furnished
+      }
+    ) or return
+
     @homes = @filterrific.find.page(params[:page])
     respond_to do |format|
       format.html
@@ -17,14 +28,34 @@ class HomesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@homes) do |home, marker|
       marker.lat home.latitude
       marker.lng home.longitude
-      marker.infowindow home.price
-      marker.json({ address: home.address })
+      marker.infowindow home.address
+      marker.json({ price: home.price })
     end
 
-    @min = @homes.minimum(:price).floor rescue nil
-    @max = @homes.maximum(:price).ceil rescue nil
-    @total_min = Home.minimum(:price).floor rescue nil
-    @total_max = Home.maximum(:price).ceil rescue nil
+    @price_min = @homes.minimum(:price).floor rescue nil
+    @price_max = @homes.maximum(:price).ceil rescue nil
+    @all_price_min = Home.minimum(:price).floor rescue nil
+    @all_price_max = Home.maximum(:price).ceil rescue nil
+
+    @total_rooms_min = @homes.minimum(:total_rooms).floor rescue nil
+    @total_rooms_max = @homes.maximum(:total_rooms).ceil rescue nil
+    @all_total_rooms_min = Home.minimum(:total_rooms).floor rescue nil
+    @all_total_rooms_max = Home.maximum(:total_rooms).ceil rescue nil
+
+    @available_rooms_min = @homes.minimum(:available_rooms).floor rescue nil
+    @available_rooms_max = @homes.maximum(:available_rooms).ceil rescue nil
+    @all_available_rooms_min = Home.minimum(:available_rooms).floor rescue nil
+    @all_available_rooms_max = Home.maximum(:available_rooms).ceil rescue nil
+
+    @total_bathrooms_min = @homes.minimum(:total_bathrooms).floor rescue nil
+    @total_bathrooms_max = @homes.maximum(:total_bathrooms).ceil rescue nil
+    @all_total_bathrooms_min = Home.minimum(:total_bathrooms).floor rescue nil
+    @all_total_bathrooms_max = Home.maximum(:total_bathrooms).ceil rescue nil
+
+    @private_bathrooms_min = @homes.minimum(:private_bathrooms).floor rescue nil
+    @private_bathrooms_max = @homes.maximum(:private_bathrooms).ceil rescue nil
+    @all_private_bathrooms_min = Home.minimum(:private_bathrooms).floor rescue nil
+    @all_private_bathrooms_max = Home.maximum(:private_bathrooms).ceil rescue nil
   end
 
   # GET /homes/1

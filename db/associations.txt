@@ -1,0 +1,11 @@
+User -> Home (is One to Many)
+User <-> Home (is Many to Many) – the distinction here is that a user may own many properties (one to many), but through the Offers table a user could offer for many houses, and houses can have many users that offered for it
+Home -> Gallery (is One to One)
+Home -> Option (is One to One)
+Gallery -> Photo (is One to Many)
+Chat <-> User (is Many to Many)
+User -> Notification (is One to Many)
+Home <- Notification (is Many to One)
+Review <- Home (is Many to One)
+Review <- User (is Many to One)
+User -> Search (is One to Many)
