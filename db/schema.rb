@@ -153,7 +153,6 @@ ActiveRecord::Schema.define(version: 20171018212715) do
     t.string "uid"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
-    t.boolean "not_deis"
     t.string "notification_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -20,42 +20,60 @@
   Price:
   <div id="price_slider">
   </div>
-  <span id="min_price_label"><%= @min %></span>
-  <span id="max_price_label"><%= @max %></span>
+  <span id="min_price_label"><%= @price_min %></span>
+  <span id="max_price_label"><%= @price_max %></span>
   <div>
     <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
       <%= with_price_fields.hidden_field :min_price, id: "min_price" %>
       <%= with_price_fields.hidden_field :max_price, id: "max_price" %>
     <% end %>
   </div>
+  Total rooms:
+  <div id="total_rooms_slider">
+  </div>
+  <span id="min_total_rooms_label"><%= @total_rooms_min %></span>
+  <span id="max_total_rooms_label"><%= @total_rooms_max %></span>
   <div>
-    Total rooms:
     <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
-      Min<%= with_total_rooms_fields.text_field :min_rooms %>
-      Max<%= with_total_rooms_fields.text_field :max_rooms %>
+      <%= with_total_rooms_fields.hidden_field :min_rooms, id: "min_total_rooms" %>
+      <%= with_total_rooms_fields.hidden_field :max_rooms, id: "max_total_rooms" %>
     <% end %>
   </div>
+  Available rooms:
+  <div id="available_rooms_slider">
+  </div>
+  <span id="min_available_rooms_label"><%= @available_rooms_min %></span>
+  <span id="max_available_rooms_label"><%= @available_rooms_max %></span>
   <div>
-    Rooms available:
     <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
-      Min<%= with_available_rooms_fields.text_field :min_rooms %>
-      Max<%= with_available_rooms_fields.text_field :max_rooms %>
+      <%= with_available_rooms_fields.hidden_field :min_rooms, id: "min_available_rooms" %>
+      <%= with_available_rooms_fields.hidden_field :max_rooms, id: "max_available_rooms" %>
     <% end %>
   </div>
+  Total bathrooms:
+  <div id="total_bathrooms_slider">
+  </div>
+  <span id="min_total_bathrooms_label"><%= @total_bathrooms_min %></span>
+  <span id="max_total_bathrooms_label"><%= @total_bathrooms_max %></span>
   <div>
-    Total bathrooms:
     <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
-      Min<%= with_total_bathrooms_fields.text_field :min_rooms %>
-      Max<%= with_total_bathrooms_fields.text_field :max_rooms %>
+      <%= with_total_bathrooms_fields.hidden_field :min_rooms, id: "min_total_bathrooms" %>
+      <%= with_total_bathrooms_fields.hidden_field :max_rooms, id: "max_total_bathrooms" %>
     <% end %>
   </div>
+  Private bathrooms:
+  <div id="private_bathrooms_slider">
+  </div>
+  <span id="min_private_bathrooms_label"><%= @private_bathrooms_min %></span>
+  <span id="max_private_bathrooms_label"><%= @private_bathrooms_max %></span>
   <div>
-    Private bathrooms:
     <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
-      Min<%= with_private_bathrooms_fields.text_field :min_rooms %>
-      Max<%= with_private_bathrooms_fields.text_field :max_rooms %>
+      <%= with_private_bathrooms_fields.hidden_field :min_rooms, id: "min_private_bathrooms" %>
+      <%= with_private_bathrooms_fields.hidden_field :max_rooms, id: "max_private_bathrooms" %>
     <% end %>
   </div>
+
+
   <div>
     Furnished
     <%= f.select(
@@ -88,7 +106,11 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 
-<p hidden id="hidden" data-min="<%= @min %>" data-max="<%= @max %>" total-min="<%= @total_min %>" total-max="<%= @total_max %>" />
+<p hidden id="price_hidden" min="<%= @price_min %>" max="<%= @price_max %>" total-min="<%= @all_price_min %>" total-max="<%= @all_price_max %>" />
+<p hidden id="total_rooms_hidden" min="<%= @total_rooms_min %>" max="<%= @total_rooms_max %>" total-min="<%= @all_total_rooms_min %>" total-max="<%= @all_total_rooms_max %>" />
+<p hidden id="available_rooms_hidden" min="<%= @available_rooms_min %>" max="<%= @available_rooms_max %>" total-min="<%= @all_available_rooms_min %>" total-max="<%= @all_available_rooms_max %>" />
+<p hidden id="total_bathrooms_hidden" min="<%= @total_bathrooms_min %>" max="<%= @total_bathrooms_max %>" total-min="<%= @all_total_bathrooms_min %>" total-max="<%= @all_total_bathrooms_max %>" />
+<p hidden id="private_bathrooms_hidden" min="<%= @private_bathrooms_min %>" max="<%= @private_bathrooms_max %>" total-min="<%= @all_private_bathrooms_min %>" total-max="<%= @all_private_bathrooms_max %>" />
 
 <script type="text/javascript">
   buildMap(<%=raw @hash.to_json %>);
