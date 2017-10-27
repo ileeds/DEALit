@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :options
   resources :users
   resources :homes
-  
+
   root   'homes#index'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create_omni'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
+  post '/searches', to: 'seaches#create'
 end

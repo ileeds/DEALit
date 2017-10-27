@@ -1,11 +1,9 @@
+<% provide(:title, "Saved Searches") %>
 <p id="notice"><%= notice %></p>
-
-<h1>Searches</h1>
-
+<h1>My Saved Searches</h1>
 <table>
   <thead>
     <tr>
-      <th>User</th>
       <th>Details</th>
       <th colspan="3"></th>
     </tr>
@@ -14,10 +12,9 @@
   <tbody>
     <% @searches.each do |search| %>
       <tr>
-        <td><%= search.user_id %></td>
-        <td><%= search.details %></td>
-        <td><%= link_to 'Show', search %></td>
-        <td><%= link_to 'Edit', edit_search_path(search) %></td>
+        <td><%= search.created_at %></td>
+
+        <td><%= link_to 'Show', ('homes?'+(JSON.parse(search.details).to_query)) %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -4,12 +4,17 @@ class SearchesController < ApplicationController
   # GET /searches
   # GET /searches.json
   def index
-    @searches = Search.all
+    @searches = current_user.searches
   end
 
   # GET /searches/1
   # GET /searches/1.json
   def show
+    if current_user.id != @search.user_id
+      redirect_to searches_path
+    #else
+      #redirect_to ('/homes?'+(JSON.parse(@search.details).to_query))
+    end
   end
 
   # GET /searches/new
@@ -24,8 +29,12 @@ class SearchesController < ApplicationController
   # POST /searches
   # POST /searches.json
   def create
-    @search = Search.new(search_params)
-
+    filters = JSON.parse(search_params[:details])
+    filters.delete('action')
+    filters.delete('controller')
+    filters.delete('commit')
+    @search = Search.new(user_id: search_params[:user_id])
+    @search.details = filters.to_json
     respond_to do |format|
       if @search.save
         format.html { redirect_to @search, notice: 'Search was successfully created.' }
@@ -69,6 +78,6 @@ class SearchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:user_id, :details)
+      params.permit(:user_id, :details)
     end
 end
