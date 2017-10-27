@@ -1,4 +1,5 @@
 <%= form_with(model: option, local: true) do |form| %>
+
   <% if option.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(option.errors.count, "error") %> prohibited this option from being saved:</h2>
@@ -10,7 +11,7 @@
       </ul>
     </div>
   <% end %>
-
+ <%byebug%>
   <div class="field">
     <%= form.label :size_of_house %>
     <%= form.text_field :size_of_house, id: :option_size_of_house %>

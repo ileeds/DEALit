@@ -2,7 +2,6 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 User.delete_all
-Home.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 
 User.create!(name: "Tester", email: "test@test.com", password: "password", notification_type: "email")
@@ -14,14 +13,14 @@ end
 locations = GeoSeeder::Location.random({
   center: "02453",
   radius: 2,
-  quantity: 10
+  quantity: 20
 })
 
 locations.each do |location|
   start_date = Faker::Date.between(Date.today, 2.years.from_now)
   end_date = Faker::Date.between(start_date, start_date + 2.years)
   Home.create!(
-    user_id: 1, gallery_id: nil, notification_id: nil, option_id: nil,
+    user_id: 1, gallery_id: nil, notification_id: nil,
     description: Faker::Company.bs, address: [location.street_number + ' ' + location.street, location.city, location.state].join(", "),
     price: Faker::Number.decimal(3, 2), size: Faker::Number.decimal(3, 2), start_date: start_date, end_date: end_date,
     total_rooms: Faker::Number.between(1, 10), available_rooms: Faker::Number.between(1, 10),

@@ -3,7 +3,7 @@
 one:
   gallery_id: nil
   notification_id: nil
-  option_id: nil
+
   description: MyTextLonger
   address: Ziv Residence Hall B, Waltham, MA 02453, USA
   latitude: 42.363007
@@ -16,18 +16,20 @@ one:
   available_rooms: 5
   total_bathrooms: 5.5
   private_bathrooms: 5.5
+
   is_furnished: true
 
 two:
   gallery_id: nil
   notification_id: nil
-  option_id: nil
+
   description: MyTextLonger
   address: Ziv Residence Hall B, Waltham, MA 02453, USA
   latitude: 42.363007
   longitude: -71.261385
   price: 500.80
   size: 700.80
+
   start_date: <%= 6.days.from_now %>
   end_date: <%= 1.year.from_now + 4.days %>
   total_rooms: 1
@@ -36,10 +38,10 @@ two:
   private_bathrooms: 4.5
   is_furnished: false
 
+
 three:
   gallery_id: nil
   notification_id: nil
-  option_id: nil
   description: MyTextLonger
   address: Ziv Residence Hall B, Waltham, MA 02453, USA
   latitude: 42.363007

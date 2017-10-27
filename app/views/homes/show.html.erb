@@ -60,6 +60,242 @@
   <strong>Is furnished:</strong>
   <%= @home.is_furnished %>
 </p>
+<p>
+<%if @home.option %>
+  <strong>Size of house:</strong>
+  <%= @home.option.size_of_house %>
 
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @home.option.capacity %>
+</p>
+
+<p>
+  <strong>Free parking:</strong>
+  <%= @home.option.free_parking %>
+</p>
+
+<p>
+  <strong>Street parking:</strong>
+  <%= @home.option.street_parking %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @home.option.deposit %>
+</p>
+
+<p>
+  <strong>Broker:</strong>
+  <%= @home.option.broker %>
+</p>
+
+<p>
+  <strong>Pets:</strong>
+  <%= @home.option.pets %>
+</p>
+
+<p>
+  <strong>Beds:</strong>
+  <%= @home.option.beds %>
+</p>
+
+<p>
+  <strong>Heated:</strong>
+  <%= @home.option.heated %>
+</p>
+
+<p>
+  <strong>Ac:</strong>
+  <%= @home.option.ac %>
+</p>
+
+<p>
+  <strong>Tv:</strong>
+  <%= @home.option.tv %>
+</p>
+
+<p>
+  <strong>Dryer:</strong>
+  <%= @home.option.dryer %>
+</p>
+
+<p>
+  <strong>Dish washer:</strong>
+  <%= @home.option.dish_washer %>
+</p>
+
+<p>
+  <strong>Fireplace:</strong>
+  <%= @home.option.fireplace %>
+</p>
+
+<p>
+  <strong>Kitchen:</strong>
+  <%= @home.option.kitchen %>
+</p>
+
+<p>
+  <strong>Garbage disposal:</strong>
+  <%= @home.option.garbage_disposal %>
+</p>
+
+<p>
+  <strong>Wireless:</strong>
+  <%= @home.option.wireless %>
+</p>
+
+<p>
+  <strong>Lock:</strong>
+  <%= @home.option.lock %>
+</p>
+
+<p>
+  <strong>Elevator:</strong>
+  <%= @home.option.elevator %>
+</p>
+
+<p>
+  <strong>Pool:</strong>
+  <%= @home.option.pool %>
+</p>
+
+<p>
+  <strong>Gym:</strong>
+  <%= @home.option.gym %>
+</p>
+
+<p>
+  <strong>Wheelchair:</strong>
+  <%= @home.option.wheelchair %>
+</p>
+
+<p>
+  <strong>Hot tub:</strong>
+  <%= @home.option.hot_tub %>
+</p>
+
+<p>
+  <strong>Smoking:</strong>
+  <%= @home.option.smoking %>
+</p>
+
+<p>
+  <strong>Events:</strong>
+  <%= @home.option.events %>
+</p>
+
+<p>
+  <strong>Subletting:</strong>
+  <%= @home.option.subletting %>
+</p>
+
+<p>
+  <strong>Utilities included:</strong>
+  <%= @home.option.utilities_included %>
+</p>
+
+<p>
+  <strong>Water price:</strong>
+  <%= @home.option.water_price %>
+</p>
+
+<p>
+  <strong>Heat price:</strong>
+  <%= @home.option.heat_price %>
+</p>
+
+<p>
+  <strong>Closet:</strong>
+  <%= @home.option.closet %>
+</p>
+
+<p>
+  <strong>Porch:</strong>
+  <%= @home.option.porch %>
+</p>
+
+<p>
+  <strong>Lawn:</strong>
+  <%= @home.option.lawn %>
+</p>
+
+<p>
+  <strong>Patio:</strong>
+  <%= @home.option.patio %>
+</p>
+
+<p>
+  <strong>Storage:</strong>
+  <%= @home.option.storage %>
+</p>
+
+<p>
+  <strong>Floors:</strong>
+  <%= @home.option.floors %>
+</p>
+
+<p>
+  <strong>Refrigerator:</strong>
+  <%= @home.option.refrigerator %>
+</p>
+
+<p>
+  <strong>Stove:</strong>
+  <%= @home.option.stove %>
+</p>
+
+<p>
+  <strong>Microwave:</strong>
+  <%= @home.option.microwave %>
+</p>
+
+<p>
+  <strong>Laundry:</strong>
+  <%= @home.option.laundry %>
+</p>
+
+<p>
+  <strong>Laundry free:</strong>
+  <%= @home.option.laundry_free %>
+</p>
+
+<p>
+  <strong>Bike:</strong>
+  <%= @home.option.bike %>
+</p>
+
+<p>
+  <strong>Soundproof:</strong>
+  <%= @home.option.soundproof %>
+</p>
+
+<p>
+  <strong>Intercom:</strong>
+  <%= @home.option.intercom %>
+</p>
+
+<p>
+  <strong>Gated:</strong>
+  <%= @home.option.gated %>
+</p>
+
+<p>
+  <strong>Doorman:</strong>
+  <%= @home.option.doorman %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @home.option.house %>
+</p>
+
+<p>
+  <strong>Apartment:</strong>
+  <%= @home.option.apartment %>
+</p>
+<%end%>
 <%= link_to 'Edit', edit_home_path(@home) %> |
 <%= link_to 'Back', homes_path %>

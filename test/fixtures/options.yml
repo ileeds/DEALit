@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   size_of_house: 1.5
   capacity: 1
   free_parking: false
@@ -9,6 +10,7 @@ one:
   broker: 1.5
   pets: false
   beds: 1
+  home_id: 1
   heated: false
   ac: false
   tv: false
@@ -50,6 +52,7 @@ one:
   apartment: false
 
 two:
+  id: 2
   size_of_house: 1.5
   capacity: 1
   free_parking: false
@@ -57,7 +60,9 @@ two:
   deposit: 1.5
   broker: 1.5
   pets: false
+  home_id: 1
   beds: 1
+
   heated: false
   ac: false
   tv: false

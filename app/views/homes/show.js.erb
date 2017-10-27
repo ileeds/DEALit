@@ -1,0 +1,8 @@
+
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+
+$modalHeading.html("<%=@home.address%>");
+$modalBody.html("<%= escape_javascript(render @home) %>");
+$modal.modal();
