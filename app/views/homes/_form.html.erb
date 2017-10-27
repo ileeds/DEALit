@@ -1,11 +1,11 @@
 
-<%= form_for @option do |form1| %>
-  <% if @option.home.errors.any? %>
+<%= form_for @home do |form| %>
+  <% if @home.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(home.errors.count, "error") %> prohibited this home from being saved:</h2>
+      <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>
 
       <ul>
-      <% @option.home.errors.full_messages.each do |message| %>
+      <% @home.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,67 +13,101 @@
   <% end %>
 
 
-<%=  form1.fields_for :home  do |form| %>
+
+<div class = "row" >
+  <div class = "col-sm-4">
   <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address, id: :home_address %>
   </div>
-
+</div>
+<div class = "col-sm-4">
+</div>
+<div class = "col-sm-4">
   <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price, id: :home_price %>
   </div>
-
+</div>
+</div>
+<div class = "row" >
+  <div class = "col-sm-4">
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :home_description %>
   </div>
-
+</div>
+<div class = "col-sm-4">
+</div>
+<div class = "col-sm-4">
   <div class="field">
     <%= form.label :size %>
     <%= form.number_field :size, id: :home_size %>
   </div>
-
+</div>
+</div>
+<div class = "row" >
+  <div class = "col-sm-4">
   <div class="field">
     <%= form.label :start_date %>
     <%= form.date_select :start_date, id: :home_start_date %>
   </div>
-
+</div>
+<div class = "col-sm-4">
+</div>
+<div class = "col-sm-4">
   <div class="field">
     <%= form.label :end_date %>
     <%= form.date_select :end_date, id: :home_end_date %>
   </div>
-
+</div>
+</div>
+<div class = "row" >
+  <div class = "col-sm-4">
   <div class="field">
     <%= form.label :total_rooms %>
     <%= form.number_field :total_rooms, id: :home_total_rooms %>
   </div>
-
+</div>
+<div class = "col-sm-4">
+</div>
+<div class = "col-sm-4">
   <div class="field">
     <%= form.label :available_rooms %>
     <%= form.text_field :available_rooms, id: :home_available_rooms %>
   </div>
-
+</div>
+</div>
+<div class = "row" >
+  <div class = "col-sm-4">
   <div class="field">
     <%= form.label :total_bathrooms %>
     <%= form.text_field :total_bathrooms, id: :home_total_bathrooms %>
   </div>
-
+</div>
+<div class = "col-sm-4">
+</div>
+<div class = "col-sm-4">
   <div class="field">
     <%= form.label :private_bathrooms %>
     <%= form.text_field :private_bathrooms, id: :home_private_bathrooms %>
   </div>
-
+</div>
+</div>
+<div class = "row">
+  <div class = "col-sm-4">
   <div class="field">
     <%= form.label :is_furnished %>
-    <%= form.check_box :is_furnished, id: :home_is_furnished %>
+    <%= form.check_box :is_furnished, id: :home_is_furnished, class: :roundedTwo%>
   </div>
-<%end%>
-
-  <a href="#options" class="btn btn-info" data-toggle="collapse">More options</a>
+</div>
+</div>
+  <div class ="row">
+  <a href="#options" class="btn btn-info" id = "collapse" data-toggle="collapse" onclick=changeName("collapse")>More options</a>
+</div>
   <div id="options" class="collapse">
-
-
+<br>
+<%=  form.fields_for :option  do |form1| %>
 
 
 
@@ -91,7 +125,7 @@
 
     <div class="field">
       <%= form1.label :free_parking %>
-      <%= form1.check_box :free_parking, id: :option_free_parking %>
+      <%= form1.check_box :free_parking, id: :option_free_parking, class: :roundedTwo%>
     </div>
 
     <div class="field">
@@ -313,13 +347,13 @@
       <%= form1.label :apartment %>
       <%= form1.check_box :apartment, id: :option_apartment %>
     </div>
-
+<%end%>
 </div>
 
 
 
-
+<br>
   <div class="actions">
-    <%= form1.submit %>
+    <%= form.submit%>
   </div>
 <% end %>

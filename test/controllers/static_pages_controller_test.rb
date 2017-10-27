@@ -1,6 +1,15 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    # user must exist for home to exist
+    @user = users(:one)
+    @user.password="password"
+    get login_path
+    post login_path, params: { session: { email:    @user.email,
+                                          password: 'password' } }
+  
+  end
   test "should get root" do
     get root_url
     assert_response :success

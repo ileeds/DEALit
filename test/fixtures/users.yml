@@ -8,8 +8,5 @@ one:
 two:
   name: MyString
   email: mystring@yahoo.com
-<<<<<<< HEAD
-  
-=======
+
   password_digest: <%= User.digest('password') %>
->>>>>>> acd2f2db8f2bca9140cbbc3a327218447033193d

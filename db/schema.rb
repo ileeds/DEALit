@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018212715) do
+ActiveRecord::Schema.define(version: 20171024172833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20171018212715) do
     t.integer "user_id"
     t.integer "gallery_id"
     t.integer "notification_id"
-    t.integer "option_id"
     t.float "latitude"
     t.float "longitude"
     t.text "description"
@@ -71,7 +70,7 @@ ActiveRecord::Schema.define(version: 20171018212715) do
     t.float "deposit"
     t.float "broker"
     t.boolean "pets"
-    t.integer "beds"
+    t.string "beds"
     t.boolean "heated"
     t.boolean "ac"
     t.boolean "tv"
@@ -113,6 +112,7 @@ ActiveRecord::Schema.define(version: 20171018212715) do
     t.boolean "apartment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "home_id"
   end
 
   create_table "photos", force: :cascade do |t|

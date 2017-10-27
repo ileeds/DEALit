@@ -2,6 +2,27 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+$modal = $('.modal')
+$modalBody = $('.modal .modal-body')
+$modalHeading = $('.modal .modal-heading')
+$modalHeading.html '<%= @book.title %>'
+$modalBody.html '<%= escape_javascript(render @book) %>'
+$modal.modal()
+window.openPopup = (link) ->
+  link.hide()
+  window.open link.href, 'exam_dialog', 'toolbar=no,location=no,menubar=no,scrollbars=yes,resizable=no'
+  false
+
+
+window.changeName = (id)->
+
+  if document.getElementById(id).innerHTML == 'More options'
+    txt = 'User cancelled the prompt.'
+    document.getElementById(id).innerHTML = 'Less options'
+  else
+    document.getElementById(id).innerHTML = 'More options'
+  return
+
 $(document).ready ->
   slider = $('#price_slider').slider(
     range: true

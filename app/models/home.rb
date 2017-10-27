@@ -1,7 +1,9 @@
+
+
 class Home < ApplicationRecord
   belongs_to :user
-
-  belongs_to :option
+  has_one :option, :dependent => :destroy
+  accepts_nested_attributes_for :option
   validates :address, presence: true
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
   validates :address, presence: true
@@ -16,9 +18,6 @@ class Home < ApplicationRecord
   validates :is_furnished, inclusion: { in: [ true, false ] }
 
   validate :dates_cannot_be_in_the_past, :start_date_before_end_date
-
-  geocoded_by :address
-  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
   def dates_cannot_be_in_the_past
     today = Date.today
@@ -58,8 +57,8 @@ class Home < ApplicationRecord
     # filters go here
     available_filters: [
       :sorted_by,
-      :with_availability_range,
       :with_price_range,
+      :with_availability_range,
       :with_total_rooms_range,
       :with_available_rooms_range,
       :with_total_bathrooms_range,
@@ -82,20 +81,6 @@ class Home < ApplicationRecord
     end
   }
 
-  # date range of availability, can choose both start and end
-  scope :with_availability_range, lambda { |date_range_attrs|
-    start_date = Date.strptime(date_range_attrs.start_date, "%m/%d/%Y") rescue nil
-    end_date = Date.strptime(date_range_attrs.end_date, "%m/%d/%Y") rescue nil
-    if !start_date && !end_date
-      return all
-    elsif !start_date
-      return where("end_date >= ?", end_date)
-    elsif !end_date
-      return where("start_date <= ?", start_date)
-    end
-    where("start_date <= ? AND end_date >= ?", start_date, end_date)
-  }
-
   # price range, support min and max
   scope :with_price_range, lambda { |price_range_attrs|
     if price_range_attrs.min_price.blank? && price_range_attrs.max_price.blank?
@@ -106,6 +91,21 @@ class Home < ApplicationRecord
       return where("price >= ?", price_range_attrs.min_price)
     end
     where(price: price_range_attrs.min_price..price_range_attrs.max_price)
+  }
+
+  # date range of availability, can choose both start and end
+  scope :with_availability_range, lambda { |date_range_attrs|
+    start_date = Date.strptime(date_range_attrs.start_date, '%m/%d/%Y') rescue nil
+    end_date = Date.strptime(date_range_attrs.end_date, '%m/%d/%Y') rescue nil
+
+    if !start_date && !end_date
+      return all
+    elsif !start_date
+      return where("end_date >= ?", end_date)
+    elsif !end_date
+      return where("start_date <= ?", start_date)
+    end
+    where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
 
   scope :with_total_rooms_range, lambda { |total_rooms_attrs|
