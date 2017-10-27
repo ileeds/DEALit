@@ -5,11 +5,28 @@
 
 
 .btn-info {
-  margin-left: 515px;
+  //margin-left: 515px;
 }
 .modal-main
 {
     background-color: white;
+
+
+}
+.modal{
+  height: 530px;
+  width: 700px;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 100px;
+  //border-style: solid;
+  //border-color: black;
+
+
+}
+.modal-footer a.btn:hover{
+  background-color: black;
+  color:white;
 }
 .roundedTwe {
   width: 28px;
