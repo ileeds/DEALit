@@ -26,9 +26,6 @@ class OptionsController < ApplicationController
     end
   end
 
-
-  end
-
   # PATCH/PUT /options/1
   # PATCH/PUT /options/1.json
   def update
@@ -37,8 +34,7 @@ class OptionsController < ApplicationController
         format.html { redirect_to @option.home, notice: 'Option was successfully updated.' }
         format.json { render :show, status: :ok, location: @option.home }
       else
-
-        format.html { render "homes/edit"    }
+        format.html { render "homes/edit" }
         format.json { render json: @option.home.errors, status: :unprocessable_entity }
       end
     end
