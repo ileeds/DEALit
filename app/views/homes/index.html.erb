@@ -95,6 +95,10 @@
   <%= f.submit 'Filter', id:'filterrific_button' %>
 <% end %>
 
+<% if logged_in? && params.include?(:filterrific)%>
+  <%= button_to 'Save search' ,{:controller => 'searches', :action => 'create', :user_id => current_user.id.to_i, :details => params.to_json.to_s}, {:method => :post} %>
+<% end %>
+
 <%= render(
   partial: 'homes/list',
   locals: { homes: @homes }
