@@ -69,8 +69,7 @@ class HomesController < ApplicationController
         format.html # show.html.erb
         format.js # show.js.erb
         format.json { render json: @home }
-
-end
+    end
   end
 
   # GET /homes/new

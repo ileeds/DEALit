@@ -70,7 +70,6 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
 
   test "should show home" do
     get home_url(@home)
-
     assert_response :success
   end
 
