@@ -10,9 +10,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if current_user != @user
-      redirect_to users_path
-    end
   end
 
   # GET /users/new

@@ -13,7 +13,6 @@
     <% @searches.each do |search| %>
       <tr>
         <td><%= search.created_at %></td>
-
         <td><%= link_to 'Show', ('homes?'+(JSON.parse(search.details).to_query)) %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

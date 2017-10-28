@@ -26,6 +26,4 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get 'auth/:provider/callback', to: 'sessions#create_omni'
   get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
-  post '/searches', to: 'seaches#create'
 end

@@ -12,8 +12,6 @@ class SearchesController < ApplicationController
   def show
     if current_user.id != @search.user_id
       redirect_to searches_path
-    #else
-      #redirect_to ('/homes?'+(JSON.parse(@search.details).to_query))
     end
   end
 
