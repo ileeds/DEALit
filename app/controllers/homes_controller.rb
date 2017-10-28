@@ -62,8 +62,9 @@ class HomesController < ApplicationController
   # GET /homes/1
   # GET /homes/1.json
   def show
-
-
+    if current_user.id != @home.user_id
+      redirect_to homes_path
+    end
     respond_to do |format|
         format.html # show.html.erb
         format.js # show.js.erb
@@ -128,9 +129,14 @@ end
   # DELETE /homes/1.json
   def destroy
     @home.destroy
-
     respond_to do |format|
-      format.html { redirect_to homes_url, notice: 'Home was successfully destroyed.' }
+      format.html {
+        if request.referrer.include?('user')
+          redirect_to current_user, notice: 'Home was successfully destroyed.'
+        else
+          redirect_to homes_url, notice: 'Home was successfully destroyed.'
+        end
+      }
       format.json { head :no_content }
     end
   end

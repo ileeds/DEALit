@@ -13,3 +13,50 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<% if @user.homes.count > 0 %>
+  <h1>My Homes</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Address</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Size</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Total rooms</th>
+        <th>Available rooms</th>
+        <th>Total bathrooms</th>
+        <th>Private bathrooms</th>
+        <th>Is furnished</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @user.homes.each do |home| %>
+        <tr>
+          <td><%= home.user_id %></td>
+          <td><%= home.address %></td>
+          <td><%= home.price %></td>
+          <td><%= home.description %></td>
+          <td><%= home.size %></td>
+          <td><%= home.start_date %></td>
+          <td><%= home.end_date %></td>
+          <td><%= home.total_rooms %></td>
+          <td><%= home.available_rooms %></td>
+          <td><%= home.total_bathrooms %></td>
+          <td><%= home.private_bathrooms %></td>
+          <td><%= home.is_furnished %></td>
+          <td><%= link_to 'Show', home, remote: true %></td>
+          <td><%= link_to 'Edit', edit_home_path(home) %></td>
+          <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+<h3>You have not posted any homes yet.</h3>
+<% end %>

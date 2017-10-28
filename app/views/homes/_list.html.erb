@@ -39,9 +39,9 @@
           <td><%= home.private_bathrooms %></td>
           <td><%= home.is_furnished %></td>
           <td><%= link_to 'Show', home, remote: true %></td>
-          <%if logged_in?&&current_user.id == home.user_id %>
-          <td><%= link_to 'Edit', edit_home_path(home) %></td>
-          <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%if logged_in? && current_user.id == home.user_id %>
+            <td><%= link_to 'Edit', edit_home_path(home) %></td>
+            <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <%end%>
         </tr>
       <% end %>
