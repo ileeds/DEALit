@@ -62,7 +62,6 @@ two:
   pets: false
   home_id: 1
   beds: 1
-
   heated: false
   ac: false
   tv: false

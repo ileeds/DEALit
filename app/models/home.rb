@@ -2,7 +2,7 @@
 
 class Home < ApplicationRecord
   belongs_to :user
-  has_one :option, :dependent => :destroy
+  has_one :option, :dependent => :delete
   accepts_nested_attributes_for :option
   validates :address, presence: true
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
@@ -18,8 +18,10 @@ class Home < ApplicationRecord
   validates :is_furnished, inclusion: { in: [ true, false ] }
 
   validate :dates_cannot_be_in_the_past, :start_date_before_end_date
+
   geocoded_by :address
-  after_validation :geocode, if: ->(obj){obj.address.present? and obj.address_changed? }
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+
   def dates_cannot_be_in_the_past
     today = Date.today
     if(start_date < today)
@@ -35,7 +37,6 @@ class Home < ApplicationRecord
       errors.add(:end_date, "cannot be before Start date")
     end
   end
-
 
   # provide select options for filters
   def self.options_for_sorted_by
