@@ -62,9 +62,6 @@ class HomesController < ApplicationController
   # GET /homes/1
   # GET /homes/1.json
   def show
-    if current_user.id != @home.user_id
-      redirect_to homes_path
-    end
     respond_to do |format|
         format.html # show.html.erb
         format.js # show.js.erb
