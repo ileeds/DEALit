@@ -27,7 +27,7 @@ group :test do
   gem 'guard',                    '2.13.0'
   gem 'guard-minitest',           '2.4.4'
 end
- 
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -50,4 +50,4 @@ gem 'gmaps4rails'
 gem 'jquery-ui-rails'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'erubis'
-gem "omniauth-google-oauth2"
+gem 'omniauth-google-oauth2'

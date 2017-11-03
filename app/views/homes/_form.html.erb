@@ -1,3 +1,6 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "new_home" %>
+<% end %>
 
 <%= form_for @home do |form| %>
   <% if @home.errors.any? %>

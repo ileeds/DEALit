@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
 $(document).ready ->
   price_slider = $('#price_slider').slider(
     range: true
@@ -124,3 +123,6 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     markers = handler.addMarkers(markers)
     handler.bounds.extendWith(markers)
     handler.fitMapToBounds()
+    map = handler.getMap()
+    if map.zoom > 12
+      map.setZoom(12)

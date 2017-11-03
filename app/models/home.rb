@@ -16,11 +16,13 @@ class Home < ApplicationRecord
   validates :total_bathrooms, numericality: true, allow_nil: true
   validates :private_bathrooms, numericality: true, allow_nil: true
   validates :is_furnished, inclusion: { in: [ true, false ] }
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   validate :dates_cannot_be_in_the_past, :start_date_before_end_date
 
   geocoded_by :address
-  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+  before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
   def dates_cannot_be_in_the_past
     today = Date.today
