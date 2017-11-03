@@ -1,5 +1,3 @@
-
-
 class Home < ApplicationRecord
   belongs_to :user
   has_one :option, :dependent => :delete
