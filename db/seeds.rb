@@ -10,11 +10,15 @@ User.create!(name: "Tester", email: "test@test.com", password: "password", notif
   User.create!(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password, notification_type: "email")
 end
 
-locations = GeoSeeder::Location.random({
-  center: "02453",
-  radius: 2,
-  quantity: 20
-})
+begin
+  locations = GeoSeeder::Location.random({
+    center: "02453",
+    radius: 2,
+    quantity: 20
+  })
+rescue Geocoder::OverQueryLimitError
+  p "limit hit"
+end
 
 locations.each do |location|
   start_date = Faker::Date.between(Date.today, 2.years.from_now)
