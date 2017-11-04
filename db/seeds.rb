@@ -28,6 +28,6 @@ begin
       total_bathrooms: Faker::Number.between(1, 10), private_bathrooms: Faker::Number.between(1, 10), is_furnished: Faker::Boolean
     )
   end
-rescue Geocoder::OverQueryLimitError
-  p "limit hit"
+rescue
+  p "api limit hit"
 end
