@@ -20,7 +20,7 @@ class Home < ApplicationRecord
   validate :dates_cannot_be_in_the_past, :start_date_before_end_date
 
   geocoded_by :address
-  before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+  before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? and !obj.latitude? and !obj.longitude? }
   before_validation :distance_matrix
 
   def dates_cannot_be_in_the_past
