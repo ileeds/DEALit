@@ -13,7 +13,7 @@ end
 locations = GeoSeeder::Location.random({
   center: "02453",
   radius: 2,
-  quantity: 20
+  quantity: 10
 })
 
 begin
