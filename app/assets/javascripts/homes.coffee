@@ -14,8 +14,8 @@ $(document).ready ->
     slide: (event, ui) ->
       $('#min_price').val ui.values[0]
       $('#max_price').val ui.values[1]
-      $('#min_price_label').text ui.values[0]
-      $('#max_price_label').text ui.values[1]
+      $('#min_price').text ui.values[0]
+      $('#max_price').text ui.values[1]
   )
   $('#min_price').val price_slider.slider('values')[0]
   $('#max_price').val price_slider.slider('values')[1]
@@ -31,8 +31,8 @@ $(document).ready ->
     slide: (event, ui) ->
       $('#min_total_rooms').val ui.values[0]
       $('#max_total_rooms').val ui.values[1]
-      $('#min_total_rooms_label').text ui.values[0]
-      $('#max_total_rooms_label').text ui.values[1]
+      $('#min_total_rooms').text ui.values[0]
+      $('#max_total_rooms').text ui.values[1]
   )
   $('#min_total_rooms').val total_rooms_slider.slider('values')[0]
   $('#max_total_rooms').val total_rooms_slider.slider('values')[1]
@@ -48,8 +48,8 @@ $(document).ready ->
     slide: (event, ui) ->
       $('#min_available_rooms').val ui.values[0]
       $('#max_available_rooms').val ui.values[1]
-      $('#min_available_rooms_label').text ui.values[0]
-      $('#max_available_rooms_label').text ui.values[1]
+      $('#min_available_rooms').text ui.values[0]
+      $('#max_available_rooms').text ui.values[1]
   )
   $('#min_available_rooms').val available_rooms_slider.slider('values')[0]
   $('#max_available_rooms').val available_rooms_slider.slider('values')[1]
@@ -65,8 +65,8 @@ $(document).ready ->
     slide: (event, ui) ->
       $('#min_total_bathrooms').val ui.values[0]
       $('#max_total_bathrooms').val ui.values[1]
-      $('#min_total_bathrooms_label').text ui.values[0]
-      $('#max_total_bathrooms_label').text ui.values[1]
+      $('#min_total_bathrooms').text ui.values[0]
+      $('#max_total_bathrooms').text ui.values[1]
   )
   $('#min_total_bathrooms').val total_bathrooms_slider.slider('values')[0]
   $('#max_total_bathrooms').val total_bathrooms_slider.slider('values')[1]
@@ -82,8 +82,8 @@ $(document).ready ->
     slide: (event, ui) ->
       $('#min_private_bathrooms').val ui.values[0]
       $('#max_private_bathrooms').val ui.values[1]
-      $('#min_private_bathrooms_label').text ui.values[0]
-      $('#max_private_bathrooms_label').text ui.values[1]
+      $('#min_private_bathrooms').text ui.values[0]
+      $('#max_private_bathrooms').text ui.values[1]
   )
   $('#min_private_bathrooms').val private_bathrooms_slider.slider('values')[0]
   $('#max_private_bathrooms').val private_bathrooms_slider.slider('values')[1]
