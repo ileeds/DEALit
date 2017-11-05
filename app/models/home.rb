@@ -61,8 +61,8 @@ class Home < ApplicationRecord
     self.driving_duration = data_set[0][0][0].duration_text.split(" ")[0].to_i
     self.bicycling_distance = data_set[1][0][0].distance_text.split(" ")[0].to_f
     self.bicycling_duration = data_set[1][0][0].duration_text.split(" ")[0].to_i
-    self.transit_distance = data_set[2][0][0].distance_text.split(" ")[0].to_f
-    self.transit_duration = data_set[2][0][0].duration_text.split(" ")[0].to_i
+    self.transit_distance = data_set[2][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.transit_duration = data_set[2][0][0].duration_text.split(" ")[0].to_i rescue nil
     self.walking_distance = data_set[3][0][0].distance_text.split(" ")[0].to_f
     self.walking_duration = data_set[3][0][0].duration_text.split(" ")[0].to_i
   end
