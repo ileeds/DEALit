@@ -11,7 +11,7 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
                                           password: 'password' } }
     @home = homes(:one)
     @home.user_id = @user.id
-    @option =options(:one)
+    @option = options(:one)
   end
 
   test "should get index" do
