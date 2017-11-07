@@ -1,8 +1,6 @@
-
-
 class Home < ApplicationRecord
   belongs_to :user
-  has_one :option, :dependent => :destroy
+  has_one :option, :dependent => :delete
   accepts_nested_attributes_for :option
   validates :address, presence: true
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
@@ -16,26 +14,58 @@ class Home < ApplicationRecord
   validates :total_bathrooms, numericality: true, allow_nil: true
   validates :private_bathrooms, numericality: true, allow_nil: true
   validates :is_furnished, inclusion: { in: [ true, false ] }
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   validate :dates_cannot_be_in_the_past, :start_date_before_end_date
+
   geocoded_by :address
-  after_validation :geocode, if: ->(obj){obj.address.present? and obj.address_changed? }
+  before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? and !obj.latitude? and !obj.longitude? }
+  before_validation :distance_matrix
+
   def dates_cannot_be_in_the_past
     today = Date.today
-    if(start_date < today)
+    if start_date < today
       errors.add(:start_date, "can't be in the past")
     end
-    if(end_date < today)
+    if end_date < today
       errors.add(:end_date, "can't be in the past")
     end
   end
 
   def start_date_before_end_date
-    if(end_date < start_date)
+    if end_date < start_date
       errors.add(:end_date, "cannot be before Start date")
     end
   end
 
+  def distance_matrix
+    modes = ['driving', 'bicycling', 'transit', 'walking']
+    data_set = []
+    matrix = GoogleDistanceMatrix::Matrix.new
+    matrix.configure do |config|
+      config.google_api_key = ENV['GOOGLE_DISTANCE_MATRIX']
+      config.units = 'imperial'
+    end
+    here = GoogleDistanceMatrix::Place.new lng: longitude, lat: latitude
+    deis = GoogleDistanceMatrix::Place.new lng: -71.258663, lat: 42.364989
+    matrix.origins << here
+    matrix.destinations << deis
+    modes.each_with_index do |mode, index|
+      matrix.configuration.mode = mode
+      matrix.reset!
+      data_set[index] = matrix.data
+    end
+    # in miles and minutes
+    self.driving_distance = data_set[0][0][0].distance_text.split(" ")[0].to_f
+    self.driving_duration = data_set[0][0][0].duration_text.split(" ")[0].to_i
+    self.bicycling_distance = data_set[1][0][0].distance_text.split(" ")[0].to_f
+    self.bicycling_duration = data_set[1][0][0].duration_text.split(" ")[0].to_i
+    self.transit_distance = data_set[2][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.transit_duration = data_set[2][0][0].duration_text.split(" ")[0].to_i rescue nil
+    self.walking_distance = data_set[3][0][0].distance_text.split(" ")[0].to_f
+    self.walking_duration = data_set[3][0][0].duration_text.split(" ")[0].to_i
+  end
 
   # provide select options for filters
   def self.options_for_sorted_by

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, except: [:index, :new, :create]
-
+  if !Rails.env.test?
+    before_action :check_user, except: [:index]
+  end
   # GET /users
   # GET /users.json
   def index
@@ -67,6 +69,12 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def check_user
+      if @user != current_user
+        redirect_to current_user
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

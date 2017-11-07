@@ -6,6 +6,7 @@
 
 
       <% @homes.each do |home| %>
+
           <div class="box" id = <%=home.id%>>
           User: <%= home.user_id %> <br>
 
@@ -44,4 +45,3 @@
 
 </div>
 <%= render "layouts/modal" %>
-<%= will_paginate homes %>

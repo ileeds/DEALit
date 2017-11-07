@@ -1,9 +1,11 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "new_home" %>
+<% end %>
 
 <%= form_for @home do |form| %>
   <% if @home.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>
-
       <ul>
       <% @home.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,8 +13,6 @@
       </ul>
     </div>
   <% end %>
-
-
 
 <div class = "row" >
   <div class = "col-sm-4">
@@ -106,12 +106,8 @@
   <a href="#options" class="btn btn-info" id = "collapse" data-toggle="collapse" onclick=changeName("collapse")>More options</a>
 
   <div id="options" class="collapse">
-<br>
+
 <%=  form.fields_for :option  do |form1| %>
-
-
-
-
 
     <div class="field">
       <%= form1.label :size_of_house %>
@@ -350,9 +346,6 @@
 <%end%>
 </div>
 
-
-
-<br>
   <div class="actions">
     <%= form.submit%>
   </div>

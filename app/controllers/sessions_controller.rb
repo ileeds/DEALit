@@ -18,10 +18,10 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(request.env["omniauth.auth"])
     if user.id
       session[:user_id] = user.id
+      redirect_to root_path
     else
-      flash.now[:danger] = "Please log out of current email and log in with Brandeis email"
+      redirect_to root_path, flash: { danger: "Please log out of current email and log in with Brandeis email" }
     end
-    redirect_to root_path
   end
 
   def destroy
