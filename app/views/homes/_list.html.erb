@@ -4,49 +4,44 @@
     <%= page_entries_info homes %>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Address</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Size</th>
-        <th>Start date</th>
-        <th>End date</th>
-        <th>Total rooms</th>
-        <th>Available rooms</th>
-        <th>Total bathrooms</th>
-        <th>Private bathrooms</th>
-        <th>Is furnished</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
 
-    <tbody>
       <% @homes.each do |home| %>
-        <tr>
-          <td><%= home.user_id %></td>
-          <td><%= home.address %></td>
-          <td><%= home.price %></td>
-          <td><%= home.description %></td>
-          <td><%= home.size %></td>
-          <td><%= home.start_date %></td>
-          <td><%= home.end_date %></td>
-          <td><%= home.total_rooms %></td>
-          <td><%= home.available_rooms %></td>
-          <td><%= home.total_bathrooms %></td>
-          <td><%= home.private_bathrooms %></td>
-          <td><%= home.is_furnished %></td>
-          <td><%= link_to 'Show', home, remote: true %></td>
+          <div class="box" id = <%=home.id%>>
+          User: <%= home.user_id %> <br>
+
+
+          Address: <%= home.address %> <br>
+
+        <div class="row">
+          <div class = "col-sm-6">
+          Price: <%= home.price %> <br>
+        </div>
+        <div class = "col-sm-6">
+
+          Size: <%= home.size %><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class = "col-sm-6">
+          Start date: <%= home.start_date %><br>
+        </div>
+        <div class = "col-sm-6">
+          End date: <%= home.end_date %><br>
+        </div>
+      </div>
+        </p>
+        <p id="options">
+          <%= link_to 'Show', home, remote: true %>
           <%if logged_in?&&current_user.id == home.user_id %>
-          <td><%= link_to 'Edit', edit_home_path(home) %></td>
-          <td><%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to 'Edit', edit_home_path(home) %>
+          <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
+
           <%end%>
-        </tr>
+        </p>
+        </div>
+
       <% end %>
-    </tbody>
-  </table>
+
 </div>
 <%= render "layouts/modal" %>
 <%= will_paginate homes %>

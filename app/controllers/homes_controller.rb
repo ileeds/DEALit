@@ -26,10 +26,12 @@ class HomesController < ApplicationController
     end
 
     @hash = Gmaps4rails.build_markers(@homes) do |home, marker|
+
       marker.lat home.latitude
       marker.lng home.longitude
-      marker.infowindow home.address
-      marker.json({ price: home.price })
+    
+      marker.infowindow "Address: #{home.address} \n \n Poster: #{User.find(home.user_id).name} \n\n Size: #{home.size.to_i}".gsub(/\n/, '<br/>')
+      marker.json({ price: home.price, id:home.id })
 
     end
 
