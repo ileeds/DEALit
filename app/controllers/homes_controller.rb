@@ -25,10 +25,15 @@ class HomesController < ApplicationController
 
       marker.lat home.latitude
       marker.lng home.longitude
+<<<<<<< HEAD
 
       marker.infowindow "Address: #{home.address} \n \n Rooms: #{home.total_rooms} \n\n Size: #{home.size.to_i}".gsub(/\n/, '<br/>')
       marker.json({ price: home.price, id:home.id })
 
+=======
+      marker.infowindow home.address
+      marker.json({ price: home.price })
+>>>>>>> 7849837b683b08629aa811c7db56c1d8964ca03d
     end
 
     @all_price_min = Home.minimum(:price).floor rescue nil
@@ -64,7 +69,7 @@ class HomesController < ApplicationController
 
   # GET /homes/new
   def new
-    @home=Home.new
+    @home = Home.new
     @home.option = Option.new
   end
 
@@ -99,7 +104,6 @@ class HomesController < ApplicationController
   # PATCH/PUT /homes/1.json
   def update
     respond_to do |format|
-
       if @home.update(home_params)
         if !check
           @home.option.destroy
@@ -117,7 +121,6 @@ class HomesController < ApplicationController
   # DELETE /homes/1.json
   def destroy
     @home.destroy
-
     respond_to do |format|
       format.html { redirect_to homes_url, notice: 'Home was successfully destroyed.' }
       format.json { head :no_content }
@@ -132,8 +135,9 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration,:walking_distance, :walking_duration, option_attributes:[:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration, :transit_distance, :transit_duration, :walking_distance, :walking_duration, option_attributes:[:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
     end
+
     def check
        @home.option.attributes.each do |p|
 
