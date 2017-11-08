@@ -25,15 +25,8 @@ class HomesController < ApplicationController
 
       marker.lat home.latitude
       marker.lng home.longitude
-<<<<<<< HEAD
-
       marker.infowindow "Address: #{home.address} \n \n Rooms: #{home.total_rooms} \n\n Size: #{home.size.to_i}".gsub(/\n/, '<br/>')
       marker.json({ price: home.price, id:home.id })
-
-=======
-      marker.infowindow home.address
-      marker.json({ price: home.price })
->>>>>>> 7849837b683b08629aa811c7db56c1d8964ca03d
     end
 
     @all_price_min = Home.minimum(:price).floor rescue nil
