@@ -70,7 +70,9 @@ class HomesController < ApplicationController
 
   # GET /homes/1/edit
   def edit
-
+  if @home.option.nil?
+    @home.option=Option.new
+  end
   end
 
   # POST /homes
@@ -78,9 +80,11 @@ class HomesController < ApplicationController
   def create
     @home = Home.new(home_params)
     @home.user_id = current_user.id
-
     respond_to do |format|
       if @home.save
+        if !check
+          @home.option.destroy
+        end
         format.html { redirect_to @home, notice: 'Home was successfully created.' }
         format.json { render :show, status: :created, location: @home }
       else
@@ -97,6 +101,9 @@ class HomesController < ApplicationController
     respond_to do |format|
 
       if @home.update(home_params)
+        if !check
+          @home.option.destroy
+        end
         format.html { redirect_to @home, notice: 'Home was successfully updated.' }
         format.json { render :show, status: :ok, location: @home }
       else
@@ -125,7 +132,20 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, option_attributes:[:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration,:walking_distance, :walking_duration, option_attributes:[:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
     end
+    def check
+       @home.option.attributes.each do |p|
+
+
+     if p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&(p[1]==true||p[1].class==Integer||p[1].class==Float||(p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&p[1].nil? == false && p[1] != false && p[1].empty? == false))
+
+           return true
+       end
+
+     end
+
+     return false
+   end
 
 end
