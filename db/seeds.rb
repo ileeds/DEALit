@@ -2,6 +2,7 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 User.delete_all
+
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 
 User.create!(name: "Tester", email: "test@test.com", password: "password", notification_type: "email")
@@ -14,6 +15,7 @@ locations = GeoSeeder::Location.random({
   center: "02453",
   radius: 2,
   quantity: 20
+
 })
 
 locations.each do |location|

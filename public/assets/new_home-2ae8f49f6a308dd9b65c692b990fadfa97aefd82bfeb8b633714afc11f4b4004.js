@@ -1,0 +1,1 @@
+var init;init=function(){var e;e=document.getElementById("home_address"),new google.maps.places.Autocomplete(e)},google.maps.event.addDomListener(window,"load",init);

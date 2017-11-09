@@ -2,11 +2,27 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
+window.changeName = (id)->
+
+  if document.getElementById(id).innerHTML == 'More options'
+    txt = 'User cancelled the prompt.'
+    document.getElementById(id).innerHTML = 'Less options'
+  else
+    document.getElementById(id).innerHTML = 'More options'
+  return
+
+
 $(document).ready ->
+
+
+
   price_slider = $('#price_slider').slider(
     range: true
     min: parseInt $('#price_hidden').attr 'total-min'
     max: parseInt $('#price_hidden').attr 'total-max'
+
+
     values: [
       $('#price_hidden').attr 'min'
       $('#price_hidden').attr 'max'
@@ -19,6 +35,7 @@ $(document).ready ->
   )
   $('#min_price').val price_slider.slider('values')[0]
   $('#max_price').val price_slider.slider('values')[1]
+
 
   total_rooms_slider = $('#total_rooms_slider').slider(
     range: true
@@ -96,24 +113,38 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
 
   rich_marker_options: ->
     marker = document.createElement("div")
-    marker.setAttribute 'class', 'marker_container'
+    marker.setAttribute 'class', 'marker_container1'
+    marker.setAttribute 'id', @args.id
     marker.innerHTML = @args.price
+    console.log(@args.id);
+
     { content: marker }
 
   # override method
   create_infowindow: ->
     return null unless _.isString @args.infowindow
+    #console.log(this.marker.serviceObject.content);
+    #if document.getElementById('clicked')
 
+      #document.getElementById('clicked').id = ''
+
+
+    #this.marker.serviceObject.content.id = 'clicked'
     boxText = document.createElement("div")
-    boxText.setAttribute('class', 'marker_container') #to customize
+    boxText.setAttribute('class', 'marker_container')
+
+     #to customize
     boxText.innerHTML = @args.infowindow
+
     @infowindow = new InfoBox(@infobox(boxText))
 
   infobox: (boxText)->
     content: boxText
-    pixelOffset: new google.maps.Size(-140, 0)
+    pixelOffset: new google.maps.Size(-140, -50)
     boxStyle:
-      width: "280px"
+      width: "120px"
+    closeBoxMargin: "-111px -53px 111px 0px"
+    infoBoxClearance: new google.maps.Size(1, 2)
 
 @buildMap = (markers)->
   handler = Gmaps.build 'Google', { builders: { Marker: RichMarkerBuilder} } #dependency injection
@@ -126,3 +157,19 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     map = handler.getMap()
     if map.zoom > 12
       map.setZoom(12)
+
+
+$(document).on 'click', '.marker_container1', ->
+
+  $('.clicked').removeClass().addClass 'marker_container1'
+  $(this).removeClass('marker_container1').addClass 'clicked'
+  $('.box').css 'background-color', 'white'
+  $('.box#' + @id ).css 'background-color', 'yellow'
+  $container = $('#index')
+  $scrollTo = $('#' + @id + '.box')
+  $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)
+  return
+
+$(document).on 'hidden.bs.modal', '.modal', ->
+  $('#index').css 'overflow-y', 'scroll'
+  return

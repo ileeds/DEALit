@@ -2,18 +2,103 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.marker_container {
-  border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;
+
+
+.marker_container  {
+
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    color: white;
+    margin-left: -100px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: -1;
+    bottom: 0%;
+    left: 95%;
+    margin-left: -70px;
 }
+.marker_container::after {
+
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;}
+
+    .marker_container1 {
+
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -60px;}
+
+.marker_container1:hover{
+  transform: scale(1.03);
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  z-index: 1000;
+}
+.clicked{
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 2;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+#map {
+  width: 380px;
+  height: 400px;
+
+}
+#map-box{
+  position:fixed;
+}
+
+.new{
+  align:center;
+}
+
+#filters{
+  position:fixed;
+}
+
+  //margin-left: 515px;
+
+
 
 .slider_input {
   width: 100px;
   display: inline-block;
+
 }
 
 .modal-main
 {
     background-color: white;
+
+
 }
 .modal{
   height: 530px;
@@ -21,9 +106,25 @@
   margin-left: 400px;
   margin-right: 400px;
   margin-top: 100px;
+
+
 }
 
 .modal-footer a.btn:hover{
   background-color: black;
   color:white;
+
+}
+.box{
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  text-align:center;
+
+}
+#index{
+  height:400px;
+  overflow-y:auto;
+  overflow-x:hidden;
+
 }
