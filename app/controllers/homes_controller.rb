@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
-  before_action :set_home, except: [:index, :new, :create]
-  before_action :logged_in_user, only: [:new, :create, :update]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   # GET /homes
   # GET /homes.json
   def index
@@ -121,10 +121,6 @@ class HomesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_home
-      @home = Home.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
@@ -132,12 +128,28 @@ class HomesController < ApplicationController
     end
 
     def check
-     @home.option.attributes.each do |p|
+      @home.option.attributes.each do |p|
        if p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&(p[1]==true||p[1].class==Integer||p[1].class==Float||(p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&p[1].nil? == false && p[1] != false && p[1].empty? == false))
          return true
        end
-     end
-     return false
+      end
+      return false
+    end
+
+    # Before filters
+
+    # Confirms a logged-in user.
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
 
 end
