@@ -68,9 +68,9 @@ class HomesController < ApplicationController
 
   # GET /homes/1/edit
   def edit
-  if @home.option.nil?
-    @home.option=Option.new
-  end
+    if @home.option.nil?
+      @home.option=Option.new
+    end
   end
 
   # POST /homes
@@ -132,17 +132,12 @@ class HomesController < ApplicationController
     end
 
     def check
-       @home.option.attributes.each do |p|
-
-
-     if p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&(p[1]==true||p[1].class==Integer||p[1].class==Float||(p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&p[1].nil? == false && p[1] != false && p[1].empty? == false))
-
-           return true
+     @home.option.attributes.each do |p|
+       if p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&(p[1]==true||p[1].class==Integer||p[1].class==Float||(p[0]!="id"&&p[0]!="created_at"&&p[0]!="updated_at"&&p[0]!="home_id"&&p[1].nil? == false && p[1] != false && p[1].empty? == false))
+         return true
        end
-
      end
-
      return false
-   end
+    end
 
 end

@@ -8,132 +8,102 @@
 
 <div class = "row">
   <div class = "col-sm-4" id="file">
-<%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
-  <div>
-    <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
-      From <%= with_availability_fields.text_field :start_date, class: "form-control availability", id: "datepicker_start" %>
-      To <%= with_availability_fields.text_field :end_date, class: "form-control availability", id: "datepicker_end" %>
-    <% end %>
-  </div>
-
-  Price:
-  <div id="price_slider">
-  </div>
-
-
-
-
-  <div>
-    <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
-      <%= with_price_fields.text_field :min_price, id: "min_price", value: @price_min, class: "slider_input" %>
-      <%= with_price_fields.text_field :max_price, id: "max_price", value: @price_max, class: "slider_input" %>
-    <% end %>
-  </div>
-
-  Total rooms:
-  <div id="total_rooms_slider">
-  </div>
-
-
-
-
-
-  <div>
-    <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
-      <%= with_total_rooms_fields.text_field :min_rooms, id: "min_total_rooms", value: @total_rooms_min, class: "slider_input" %>
-      <%= with_total_rooms_fields.text_field :max_rooms, id: "max_total_rooms", value: @total_rooms_max, class: "slider_input" %>
-    <% end %>
-  </div>
-
-  Available rooms:
-  <div id="available_rooms_slider">
-  </div>
-
-
-
-
-
-  <div>
-    <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
-      <%= with_available_rooms_fields.text_field :min_rooms, id: "min_available_rooms", value: @available_rooms_min, class: "slider_input" %>
-      <%= with_available_rooms_fields.text_field :max_rooms, id: "max_available_rooms", value: @available_rooms_max, class: "slider_input" %>
-    <% end %>
-  </div>
-
-  Total bathrooms:
-  <div id="total_bathrooms_slider">
-  </div>
-
-
-
-
-  <div>
-    <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
-      <%= with_total_bathrooms_fields.text_field :min_rooms, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
-      <%= with_total_bathrooms_fields.text_field :max_rooms, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider_input" %>
-    <% end %>
-  </div>
-
-  Private bathrooms:
-  <div id="private_bathrooms_slider">
-  </div>
-  <div>
-    <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
-      <%= with_private_bathrooms_fields.text_field :min_rooms, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
-      <%= with_private_bathrooms_fields.text_field :max_rooms, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider_input" %>
-    <% end %>
-  </div>
-  <div>
+  <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
+    <div>
+      <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
+        From <%= with_availability_fields.text_field :start_date, class: "form-control availability", id: "datepicker_start" %>
+        To <%= with_availability_fields.text_field :end_date, class: "form-control availability", id: "datepicker_end" %>
+      <% end %>
+    </div>
+    Price:
+    <div id="price_slider">
+    </div>
+    <div>
+      <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
+        <%= with_price_fields.text_field :min_price, id: "min_price", value: @price_min, class: "slider_input" %>
+        <%= with_price_fields.text_field :max_price, id: "max_price", value: @price_max, class: "slider_input" %>
+      <% end %>
+    </div>
+    Total rooms:
+    <div id="total_rooms_slider">
+    </div>
+    <div>
+      <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
+        <%= with_total_rooms_fields.text_field :min_rooms, id: "min_total_rooms", value: @total_rooms_min, class: "slider_input" %>
+        <%= with_total_rooms_fields.text_field :max_rooms, id: "max_total_rooms", value: @total_rooms_max, class: "slider_input" %>
+      <% end %>
+    </div>
+    Available rooms:
+    <div id="available_rooms_slider">
+    </div>
+    <div>
+      <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
+        <%= with_available_rooms_fields.text_field :min_rooms, id: "min_available_rooms", value: @available_rooms_min, class: "slider_input" %>
+        <%= with_available_rooms_fields.text_field :max_rooms, id: "max_available_rooms", value: @available_rooms_max, class: "slider_input" %>
+      <% end %>
+    </div>
+    Total bathrooms:
+    <div id="total_bathrooms_slider">
+    </div>
+    <div>
+      <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
+        <%= with_total_bathrooms_fields.text_field :min_rooms, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
+        <%= with_total_bathrooms_fields.text_field :max_rooms, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider_input" %>
+      <% end %>
+    </div>
+    Private bathrooms:
+    <div id="private_bathrooms_slider">
+    </div>
+    <div>
+      <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
+        <%= with_private_bathrooms_fields.text_field :min_rooms, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
+        <%= with_private_bathrooms_fields.text_field :max_rooms, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider_input" %>
+      <% end %>
+    </div>
+    <div>
     Furnished
     <%= f.select(
       :with_is_furnished,
       @filterrific.select_options[:with_is_furnished],
       { include_blank: '- Any -' }
     ) %>
-  </div>
-  <div>
-    Sorted by
-    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
-  </div>
-
-  <div>
-    <%= link_to(
-      'Reset filters',
-      reset_filterrific_url,
-    ) %>
-  </div>
-  <%= f.submit 'Filter', id:'filterrific_button' %>
-<% end %>
+    </div>
+    <div>
+      Sorted by
+      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+    </div>
+    <div>
+      <%= link_to(
+        'Reset filters',
+        reset_filterrific_url,
+      ) %>
+    </div>
+    <%= f.submit 'Filter', id:'filterrific_button' %>
+  <% end %>
 </div>
 <div class ="col-sm-4">
-<div  id="index">
-
-<% if logged_in? && params.include?(:filterrific)%>
-  <%= button_to 'Save search' ,{:controller => 'searches', :action => 'create', :user_id => current_user.id.to_i, :details => params.to_json.to_s}, {:method => :post} %>
-<% end %>
-
-<%= render(
-  partial: 'homes/list',
-  locals: { homes: @homes }
-) %>
-</div>
-<%= will_paginate @homes %>
-<br>
-<%= link_to 'New Home', new_home_path, class:"new" %>
-
-
-
+  <div id="index">
+    <% if logged_in? && params.include?(:filterrific)%>
+      <%= button_to 'Save search' ,{:controller => 'searches', :action => 'create', :user_id => current_user.id.to_i, :details => params.to_json.to_s}, {:method => :post} %>
+    <% end %>
+    <%= render(
+      partial: 'homes/list',
+      locals: { homes: @homes }
+    ) %>
+  </div>
+  <%= will_paginate @homes %>
+  <br>
+  <%= link_to 'New Home', new_home_path, class:"new" %>
 </div>
 <div class = "col-sm-4">
   <div id="map" ></div>
-
+</div>
 
 <p hidden id="price_hidden" min="<%= @price_min %>" max="<%= @price_max %>" total-min="<%= @all_price_min %>" total-max="<%= @all_price_max %>" />
 <p hidden id="total_rooms_hidden" min="<%= @total_rooms_min %>" max="<%= @total_rooms_max %>" total-min="<%= @all_total_rooms_min %>" total-max="<%= @all_total_rooms_max %>" />
 <p hidden id="available_rooms_hidden" min="<%= @available_rooms_min %>" max="<%= @available_rooms_max %>" total-min="<%= @all_available_rooms_min %>" total-max="<%= @all_available_rooms_max %>" />
 <p hidden id="total_bathrooms_hidden" min="<%= @total_bathrooms_min %>" max="<%= @total_bathrooms_max %>" total-min="<%= @all_total_bathrooms_min %>" total-max="<%= @all_total_bathrooms_max %>" />
 <p hidden id="private_bathrooms_hidden" min="<%= @private_bathrooms_min %>" max="<%= @private_bathrooms_max %>" total-min="<%= @all_private_bathrooms_min %>" total-max="<%= @all_private_bathrooms_max %>" />
-
 
 <script type="text/javascript">
   buildMap(<%=raw @hash.to_json %>);
@@ -152,6 +122,3 @@
    $( "#datepicker_end" ).datepicker();
  });
 </script>
-</div>
-
-</div>

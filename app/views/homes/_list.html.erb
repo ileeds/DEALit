@@ -1,47 +1,36 @@
 <div id="filterrific_results">
-
   <div>
     <%= page_entries_info homes %>
   </div>
-
-
-      <% @homes.each do |home| %>
-
-          <div class="box" id = <%=home.id%>>
-          User: <%= home.user_id %> <br>
-
-
-          Address: <%= home.address %> <br>
-
-        <div class="row">
-          <div class = "col-sm-6">
-          Price: <%= home.price %> <br>
-        </div>
-        <div class = "col-sm-6">
-
-          Size: <%= home.size %><br>
-        </div>
+  <% @homes.each do |home| %>
+    <div class="box" id = <%=home.id%>>
+    User: <%= home.user_id %> <br>
+    Address: <%= home.address %> <br>
+    <div class="row">
+      <div class = "col-sm-6">
+        Price: <%= home.price %> <br>
       </div>
-      <div class="row">
-        <div class = "col-sm-6">
-          Start date: <%= home.start_date %><br>
-        </div>
-        <div class = "col-sm-6">
-          End date: <%= home.end_date %><br>
-        </div>
+      <div class = "col-sm-6">
+        Size: <%= home.size %><br>
       </div>
-        </p>
-        <p id="options">
-          <%= link_to 'Show', home, remote: true %>
-          <%if logged_in?&&current_user.id == home.user_id %>
-          <%= link_to 'Edit', edit_home_path(home) %>
-          <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-          <%end%>
-        </p>
-        </div>
-
-      <% end %>
-
+    </div>
+    <div class="row">
+      <div class = "col-sm-6">
+        Start date: <%= home.start_date %><br>
+      </div>
+      <div class = "col-sm-6">
+        End date: <%= home.end_date %><br>
+      </div>
+    </div>
+    </p>
+    <p id="options">
+      <%= link_to 'Show', home, remote: true %>
+      <%if logged_in?&&current_user.id == home.user_id %>
+        <%= link_to 'Edit', edit_home_path(home) %>
+        <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%end%>
+    </p>
+    </div>
+  <% end %>
 </div>
 <%= render "layouts/modal" %>
