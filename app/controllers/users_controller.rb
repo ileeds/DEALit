@@ -33,8 +33,8 @@ class UsersController < ApplicationController
       if @user.save
         log_in @user
         flash[:success] = "Welcome to Off Campus!"
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        format.html { redirect_to root_url, notice: 'User was successfully created.' }
+        format.json { render root_url, status: :created }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -47,8 +47,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update_attributes(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.html { redirect_to root_url, notice: 'User was successfully updated.' }
+        format.json { render root_url, status: :created }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
