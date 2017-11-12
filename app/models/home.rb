@@ -9,7 +9,7 @@ class Home < ApplicationRecord
   validates :size, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :total_rooms, numericality: true, allow_nil: true
+  validates :available_rooms, numericality: true, allow_nil: true
   validates :available_rooms, numericality: true, allow_nil: true
   validates :total_bathrooms, numericality: true, allow_nil: true
   validates :private_bathrooms, numericality: true, allow_nil: true
@@ -88,13 +88,21 @@ class Home < ApplicationRecord
     # filters go here
     available_filters: [
       :sorted_by,
-      :with_price_range,
       :with_availability_range,
+      :with_price_range,
       :with_total_rooms_range,
       :with_available_rooms_range,
       :with_total_bathrooms_range,
       :with_private_bathrooms_range,
-      :with_is_furnished
+      :with_is_furnished,
+      :with_driving_distance_range,
+      :with_driving_duration_range,
+      :with_bicycling_distance_range,
+      :with_bicycling_duration_range,
+      :with_transit_distance_range,
+      :with_transit_duration_range,
+      :with_walking_distance_range,
+      :with_walking_duration_range
     ]
   )
 
@@ -112,18 +120,6 @@ class Home < ApplicationRecord
     end
   }
 
-  # price range, support min and max
-  scope :with_price_range, lambda { |price_range_attrs|
-    if price_range_attrs.min_price.blank? && price_range_attrs.max_price.blank?
-      return all
-    elsif price_range_attrs.min_price.blank?
-      return where("price <= ?", price_range_attrs.max_price)
-    elsif price_range_attrs.max_price.blank?
-      return where("price >= ?", price_range_attrs.min_price)
-    end
-    where(price: price_range_attrs.min_price..price_range_attrs.max_price)
-  }
-
   # date range of availability, can choose both start and end
   scope :with_availability_range, lambda { |date_range_attrs|
     start_date = Date.strptime(date_range_attrs.start_date, '%m/%d/%Y') rescue nil
@@ -139,48 +135,60 @@ class Home < ApplicationRecord
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
 
-  scope :with_total_rooms_range, lambda { |total_rooms_attrs|
-    if total_rooms_attrs.min_rooms.blank? && total_rooms_attrs.max_rooms.blank?
+  # price range, support min and max
+  scope :with_price_range, lambda { |attrs|
+    if attrs.min.blank? && attrs.max.blank?
       return all
-    elsif total_rooms_attrs.min_rooms.blank?
-      return where("total_rooms <= ?", total_rooms_attrs.max_rooms)
-    elsif total_rooms_attrs.max_rooms.blank?
-      return where("total_rooms >= ?", total_rooms_attrs.min_rooms)
+    elsif attrs.min.blank?
+      return where("price <= ?", attrs.max)
+    elsif attrs.max.blank?
+      return where("price >= ?", attrs.min)
     end
-    where(total_rooms: total_rooms_attrs.min_rooms..total_rooms_attrs.max_rooms)
+    where(price: attrs.min..attrs.max)
   }
 
-  scope :with_available_rooms_range, lambda { |available_rooms_attrs|
-    if available_rooms_attrs.min_rooms.blank? && available_rooms_attrs.max_rooms.blank?
+  scope :with_total_rooms_range, lambda { |attrs|
+    if attrs.min.blank? && attrs.max.blank?
       return all
-    elsif available_rooms_attrs.min_rooms.blank?
-      return where("available_rooms <= ?", available_rooms_attrs.max_rooms)
-    elsif available_rooms_attrs.max_rooms.blank?
-      return where("available_rooms >= ?", available_rooms_attrs.min_rooms)
+    elsif attrs.min.blank?
+      return where("total_rooms <= ?", attrs.max)
+    elsif attrs.max.blank?
+      return where("total_rooms >= ?", attrs.min)
     end
-    where(available_rooms: available_rooms_attrs.min_rooms..available_rooms_attrs.max_rooms)
+    where(total_rooms: attrs.min..attrs.max)
   }
 
-  scope :with_total_bathrooms_range, lambda { |bathrooms_attrs|
-    if bathrooms_attrs.min_rooms.blank? && bathrooms_attrs.max_rooms.blank?
+  scope :with_available_rooms_range, lambda { |attrs|
+    if attrs.min.blank? && attrs.max.blank?
       return all
-    elsif bathrooms_attrs.min_rooms.blank?
-      return where("total_bathrooms <= ?", bathrooms_attrs.max_rooms)
-    elsif bathrooms_attrs.max_rooms.blank?
-      return where("total_bathrooms >= ?", bathrooms_attrs.min_rooms)
+    elsif attrs.min.blank?
+      return where("available_rooms <= ?", attrs.max)
+    elsif attrs.max.blank?
+      return where("available_rooms >= ?", attrs.min)
     end
-    where(total_bathrooms: bathrooms_attrs.min_rooms..bathrooms_attrs.max_rooms)
+    where(available_rooms: attrs.min..attrs.max)
   }
 
-  scope :with_private_bathrooms_range, lambda { |bathrooms_attrs|
-    if bathrooms_attrs.min_rooms.blank? && bathrooms_attrs.max_rooms.blank?
+  scope :with_total_bathrooms_range, lambda { |attrs|
+    if attrs.min.blank? && attrs.max.blank?
       return all
-    elsif bathrooms_attrs.min_rooms.blank?
-      return where("private_bathrooms <= ?", bathrooms_attrs.max_rooms)
-    elsif bathrooms_attrs.max_rooms.blank?
-      return where("private_bathrooms >= ?", bathrooms_attrs.min_rooms)
+    elsif attrs.min.blank?
+      return where("total_bathrooms <= ?", attrs.max)
+    elsif attrs.max.blank?
+      return where("total_bathrooms >= ?", attrs.min)
     end
-    where(private_bathrooms: bathrooms_attrs.min_rooms..bathrooms_attrs.max_rooms)
+    where(total_bathrooms: attrs.min..attrs.max)
+  }
+
+  scope :with_private_bathrooms_range, lambda { |attrs|
+    if attrs.min.blank? && attrs.max.blank?
+      return all
+    elsif attrs.min.blank?
+      return where("private_bathrooms <= ?", attrs.max)
+    elsif attrs.max.blank?
+      return where("private_bathrooms >= ?", attrs.min)
+    end
+    where(private_bathrooms: attrs.min..attrs.max)
   }
 
   scope :with_is_furnished, lambda { |furnished|

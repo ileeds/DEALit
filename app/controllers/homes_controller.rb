@@ -22,7 +22,6 @@ class HomesController < ApplicationController
     end
 
     @hash = Gmaps4rails.build_markers(@homes) do |home, marker|
-
       marker.lat home.latitude
       marker.lng home.longitude
       marker.infowindow "Address: #{home.address} \n \n Rooms: #{home.total_rooms} \n\n Size: #{home.size.to_i}".gsub(/\n/, '<br/>')
@@ -31,28 +30,33 @@ class HomesController < ApplicationController
 
     @all_price_min = Home.minimum(:price).floor rescue nil
     @all_price_max = Home.maximum(:price).ceil rescue nil
-    @price_min = params[:filterrific]["with_price_range"]["min_price"] rescue @all_price_min
-    @price_max = params[:filterrific]["with_price_range"]["max_price"] rescue @all_price_max
+    @price_min = params[:filterrific]["with_price_range"]["min"] rescue @all_price_min
+    @price_max = params[:filterrific]["with_price_range"]["max"] rescue @all_price_max
 
     @all_total_rooms_min = Home.minimum(:total_rooms).floor rescue nil
     @all_total_rooms_max = Home.maximum(:total_rooms).ceil rescue nil
-    @total_rooms_min = params[:filterrific]["with_total_rooms_range"]["min_rooms"] rescue @all_total_rooms_min
-    @total_rooms_max = params[:filterrific]["with_total_rooms_range"]["max_rooms"] rescue @all_total_rooms_max
+    @total_rooms_min = params[:filterrific]["with_total_rooms_range"]["min"] rescue @all_total_rooms_min
+    @total_rooms_max = params[:filterrific]["with_total_rooms_range"]["max"] rescue @all_total_rooms_max
 
     @all_available_rooms_min = Home.minimum(:available_rooms).floor rescue nil
     @all_available_rooms_max = Home.maximum(:available_rooms).ceil rescue nil
-    @available_rooms_min = params[:filterrific]["with_available_rooms_range"]["min_rooms"] rescue @all_available_rooms_min
-    @available_rooms_max = params[:filterrific]["with_available_rooms_range"]["max_rooms"] rescue @all_available_rooms_max
+    @available_rooms_min = params[:filterrific]["with_available_rooms_range"]["min"] rescue @all_available_rooms_min
+    @available_rooms_max = params[:filterrific]["with_available_rooms_range"]["max"] rescue @all_available_rooms_max
 
     @all_total_bathrooms_min = Home.minimum(:total_bathrooms).floor rescue nil
     @all_total_bathrooms_max = Home.maximum(:total_bathrooms).ceil rescue nil
-    @total_bathrooms_min = params[:filterrific]["with_total_bathrooms_range"]["min_rooms"] rescue @all_total_bathrooms_min
-    @total_bathrooms_max = params[:filterrific]["with_total_bathrooms_range"]["max_rooms"] rescue @all_total_bathrooms_max
+    @total_bathrooms_min = params[:filterrific]["with_total_bathrooms_range"]["min"] rescue @all_total_bathrooms_min
+    @total_bathrooms_max = params[:filterrific]["with_total_bathrooms_range"]["max"] rescue @all_total_bathrooms_max
 
     @all_private_bathrooms_min = Home.minimum(:private_bathrooms).floor rescue nil
     @all_private_bathrooms_max = Home.maximum(:private_bathrooms).ceil rescue nil
-    @private_bathrooms_min = params[:filterrific]["with_private_bathrooms_range"]["min_rooms"] rescue @all_private_bathrooms_min
-    @private_bathrooms_max = params[:filterrific]["with_private_bathrooms_range"]["max_rooms"] rescue @all_private_bathrooms_max
+    @private_bathrooms_min = params[:filterrific]["with_private_bathrooms_range"]["min"] rescue @all_private_bathrooms_min
+    @private_bathrooms_max = params[:filterrific]["with_private_bathrooms_range"]["max"] rescue @all_private_bathrooms_max
+
+    # @all_driving_distance_min = Home.minimum(:driving_distance).floor rescue nil
+    # @all_driving_distance_max = Home.maximum(:driving_distance).ceil rescue nil
+    # @driving_distance_min = params[:filterrific]["with_driving_distance_range"]["min_distance"] rescue @all_driving_distance_min
+    # @driving_distance_max = params[:filterrific]["with_driving_distance_range"]["max_ditance"] rescue @all_driving_distance_max
   end
 
   # GET /homes/1
