@@ -17,8 +17,8 @@ locations = GeoSeeder::Location.random({
 })
 
 locations.each do |location|
-  start_date = Faker::Date.between(Date.today, 2.years.from_now)
-  end_date = Faker::Date.between(start_date, start_date + 2.years)
+  start_date = Date.today
+  end_date = Faker::Date.between(start_date + 1.year, start_date + 2.years)
   Home.create(
     user_id: 1, gallery_id: nil, notification_id: nil,
     description: Faker::Company.bs, address: [location.street_number + ' ' + location.street, location.city, location.state].join(", "),
