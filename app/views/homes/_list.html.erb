@@ -24,6 +24,7 @@
     </div>
     </p>
     <p id="options">
+      <%= link_to "Send Message", new_conversation_path(recipient_id: home.user_id) %>
       <%= link_to 'Show', home, remote: true %>
       <%if logged_in?&&current_user.id == home.user_id %>
         <%= link_to 'Edit', edit_home_path(home) %>
