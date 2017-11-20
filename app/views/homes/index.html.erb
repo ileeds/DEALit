@@ -23,12 +23,12 @@
         Price
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <div id="price_slider" class="span2">
+        <div id="price_slider" class="custom-slider">
+          <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
+            <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider-input" %> </div>
+            <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :max, id: "max_price", value: @price_max, class: "slider-input" %> </div>
+          <% end %>
         </div>
-        <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
-          Min <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider_input" %>
-          Max <%= with_price_fields.text_field :max, id: "max_price", value: @price_max, class: "slider_input" %>
-        <% end %>
         <button class="dropdown-item dropdown-toggle applyBtn btn btn-sm btn-success" type="button">Apply</button>
         <button class="cancelBtn btn btn-sm btn-default" type="button">Clear</button>
       </div>
@@ -40,34 +40,34 @@
         Rooms
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <div id="total_rooms_slider">
+        <div>Total Rooms</div>
+        <div id="total_rooms_slider" class="custom-slider">
+          <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
+            <div class="ui-slider-handle custom-handle"> <%= with_total_rooms_fields.text_field :min, id: "min_total_rooms", value: @total_rooms_min, class: "slider-input" %> </div>
+            <div class="ui-slider-handle custom-handle"> <%= with_total_rooms_fields.text_field :max, id: "max_total_rooms", value: @total_rooms_max, class: "slider-input" %> </div>
+          <% end %>
         </div>
-        Total Rooms
-        <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
-          Min <%= with_total_rooms_fields.text_field :min, id: "min_total_rooms", value: @total_rooms_min, class: "slider_input" %>
-          Max <%= with_total_rooms_fields.text_field :max, id: "max_total_rooms", value: @total_rooms_max, class: "slider_input" %>
-        <% end %>
-        <div id="available_rooms_slider">
+        <div class="slider-label-below">Available rooms</div>
+        <div id="available_rooms_slider" class="custom-slider">
+          <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
+            <div class="ui-slider-handle custom-handle"> <%= with_available_rooms_fields.text_field :min, id: "min_available_rooms", value: @available_rooms_min, class: "slider-input" %> </div>
+            <div class="ui-slider-handle custom-handle"> <%= with_available_rooms_fields.text_field :max, id: "max_available_rooms", value: @available_rooms_max, class: "slider-input" %> </div>
+          <% end %>
         </div>
-        Available rooms
-        <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
-          Min <%= with_available_rooms_fields.text_field :min, id: "min_available_rooms", value: @available_rooms_min, class: "slider_input" %>
-          Max <%= with_available_rooms_fields.text_field :max, id: "max_available_rooms", value: @available_rooms_max, class: "slider_input" %>
-        <% end %>
-        <div id="total_bathrooms_slider">
+        <div class="slider-label-below">Total bathrooms</div>
+        <div id="total_bathrooms_slider" class="custom-slider">
+          <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
+            <div class="ui-slider-handle custom-handle"> <%= with_total_bathrooms_fields.text_field :min, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider-input" %> </div>
+            <div class="ui-slider-handle custom-handle"> <%= with_total_bathrooms_fields.text_field :max, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider-input" %> </div>
+          <% end %>
         </div>
-        Total bathrooms
-        <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
-          Min <%= with_total_bathrooms_fields.text_field :min, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
-          Max <%= with_total_bathrooms_fields.text_field :max, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider_input" %>
-        <% end %>
-        <div id="private_bathrooms_slider">
+        <div class="slider-label-below">Private bathrooms</div>
+        <div id="private_bathrooms_slider" class="custom-slider">
+          <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
+            <div class="ui-slider-handle custom-handle"> <%= with_private_bathrooms_fields.text_field :min, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider-input" %> </div>
+            <div class="ui-slider-handle custom-handle"> <%= with_private_bathrooms_fields.text_field :max, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider-input" %> </div>
+          <% end %>
         </div>
-        Private bathrooms
-        <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
-          Min <%= with_private_bathrooms_fields.text_field :min, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
-          Max <%= with_private_bathrooms_fields.text_field :max, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider_input" %>
-        <% end %>
         <button class="dropdown-item dropdown-toggle applyBtn btn btn-sm btn-success" type="button">Apply</button>
         <button class="cancelBtn btn btn-sm btn-default" type="button">Clear</button>
       </div>
@@ -145,26 +145,31 @@
   });
 
   $('.dropdown').on({
-    "shown.bs.dropdown": function() {
-      $('.dropdown').each(function() {
-        $('.dropdown-menu').hide();
-      });
-      $(this).children(".dropdown-menu").show();
-    },
+    "shown.bs.dropdown": function() { },
     "click":             function() { },
     "hide.bs.dropdown":  function() {
-      $(this).children(".dropdown-menu").hide();
+      return false;
     }
   });
   $('.dropdown-toggle').on({
     "click": function() {
-      $(this).parent().attr('closable', true );
-      $(this).parent().parent().attr('closable', true );
+      var clicked = $(this).parent();
+      $('.dropdown').each(function( a, dropped ) {
+        if (dropped != clicked[0]) {
+          $(dropped).children('.dropdown-menu').hide();
+        }
+      });
+      $(this).siblings(".dropdown-menu").toggle();
     }
   })
   $('.applyBtn').on({
     "click": function() {
       $("#filterrific-no-ajax-auto-submit").submit();
+    }
+  })
+  $('.cancelBtn').on({
+    "click": function() {
+      $(this).parent(".dropdown-menu").hide();
     }
   })
 </script>

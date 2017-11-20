@@ -83,9 +83,10 @@
   position:fixed;
 }
 
-.slider_input {
-  width: 100px;
+.slider-input {
+  width: 300%;
   display: inline-block;
+  margin-top: 100%;
 }
 
 .modal-main {
@@ -169,4 +170,20 @@ textarea:-ms-input-placeholder {
 
 .btn.send-message:hover {
   background-color: lightblue;
+}
+
+.ui-slider-handle.custom-handle {
+  background: lightblue;
+}
+
+.ui-slider-range {
+  background: lightblue;
+}
+
+.btn-sm {
+  margin-top: 5%;
+}
+
+.slider-label-below {
+  margin-top: 10%;
 }
