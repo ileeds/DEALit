@@ -137,14 +137,15 @@ class Home < ApplicationRecord
 
   [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range].each do |sc|
     scope sc, lambda { |attrs|
+      column = "#{sc.to_s[5..-7]}".to_sym
       if attrs.min.blank? && attrs.max.blank?
         return all
       elsif attrs.min.blank?
-        return where("#{sc.to_s[5..-7]} <= ?", attrs.max)
+        return where(column => 0..attrs.max)
       elsif attrs.max.blank?
-        return where("#{sc.to_s[5..-7]} >= ?", attrs.min)
+        return where(column => attrs.min..Float::INFINITY)
       end
-      where("#{sc.to_s[5..-7]}": attrs.min..attrs.max)
+      where(column => attrs.min..attrs.max)
     }
   end
 
