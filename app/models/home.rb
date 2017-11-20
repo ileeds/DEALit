@@ -135,7 +135,7 @@ class Home < ApplicationRecord
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
 
-  [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range].each do |sc|
+  [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range, :with_driving_distance_range, :with_driving_duration_range, :with_bicycling_distance_range, :with_bicycling_duration_range, :with_transit_distance_range, :with_transit_duration_range, :with_walking_distance_range, :with_walking_duration_range].each do |sc|
     scope sc, lambda { |attrs|
       column = "#{sc.to_s[5..-7]}".to_sym
       if attrs.min.blank? && attrs.max.blank?

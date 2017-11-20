@@ -53,10 +53,45 @@ class HomesController < ApplicationController
     @private_bathrooms_min = params[:filterrific]["with_private_bathrooms_range"]["min"] rescue @all_private_bathrooms_min
     @private_bathrooms_max = params[:filterrific]["with_private_bathrooms_range"]["max"] rescue @all_private_bathrooms_max
 
-    # @all_driving_distance_min = Home.minimum(:driving_distance).floor rescue nil
-    # @all_driving_distance_max = Home.maximum(:driving_distance).ceil rescue nil
-    # @driving_distance_min = params[:filterrific]["with_driving_distance_range"]["min_distance"] rescue @all_driving_distance_min
-    # @driving_distance_max = params[:filterrific]["with_driving_distance_range"]["max_ditance"] rescue @all_driving_distance_max
+    @all_driving_distance_min = Home.minimum(:driving_distance).floor rescue nil
+    @all_driving_distance_max = Home.maximum(:driving_distance).ceil rescue nil
+    @driving_distance_min = params[:filterrific]["with_driving_distance_range"]["min"] rescue @all_driving_distance_min
+    @driving_distance_max = params[:filterrific]["with_driving_distance_range"]["max"] rescue @all_driving_distance_max
+
+    @all_driving_duration_min = Home.minimum(:driving_duration).floor rescue nil
+    @all_driving_duration_max = Home.maximum(:driving_duration).ceil rescue nil
+    @driving_duration_min = params[:filterrific]["with_driving_duration_range"]["min"] rescue @all_driving_duration_min
+    @driving_duration_max = params[:filterrific]["with_driving_duration_range"]["max"] rescue @all_driving_duration_max
+
+    @all_bicycling_distance_min = Home.minimum(:bicycling_distance).floor rescue nil
+    @all_bicycling_distance_max = Home.maximum(:bicycling_distance).ceil rescue nil
+    @bicycling_distance_min = params[:filterrific]["with_bicycling_distance_range"]["min"] rescue @all_bicycling_distance_min
+    @bicycling_distance_max = params[:filterrific]["with_bicycling_distance_range"]["max"] rescue @all_bicycling_distance_max
+
+    @all_bicycling_duration_min = Home.minimum(:bicycling_duration).floor rescue nil
+    @all_bicycling_duration_max = Home.maximum(:bicycling_duration).ceil rescue nil
+    @bicycling_duration_min = params[:filterrific]["with_bicycling_duration_range"]["min"] rescue @all_bicycling_duration_min
+    @bicycling_duration_max = params[:filterrific]["with_bicycling_duration_range"]["max"] rescue @all_bicycling_duration_max
+
+    @all_transit_distance_min = Home.minimum(:transit_distance).floor rescue nil
+    @all_transit_distance_max = Home.maximum(:transit_distance).ceil rescue nil
+    @transit_distance_min = params[:filterrific]["with_transit_distance_range"]["min"] rescue @all_transit_distance_min
+    @transit_distance_max = params[:filterrific]["with_transit_distance_range"]["max"] rescue @all_transit_distance_max
+
+    @all_transit_duration_min = Home.minimum(:transit_duration).floor rescue nil
+    @all_transit_duration_max = Home.maximum(:transit_duration).ceil rescue nil
+    @transit_duration_min = params[:filterrific]["with_transit_duration_range"]["min"] rescue @all_transit_duration_min
+    @transit_duration_max = params[:filterrific]["with_transit_duration_range"]["max"] rescue @all_transit_duration_max
+
+    @all_walking_distance_min = Home.minimum(:walking_distance).floor rescue nil
+    @all_walking_distance_max = Home.maximum(:walking_distance).ceil rescue nil
+    @walking_distance_min = params[:filterrific]["with_walking_distance_range"]["min"] rescue @all_walking_distance_min
+    @walking_distance_max = params[:filterrific]["with_walking_distance_range"]["max"] rescue @all_walking_distance_max
+
+    @all_walking_duration_min = Home.minimum(:walking_duration).floor rescue nil
+    @all_walking_duration_max = Home.maximum(:walking_duration).ceil rescue nil
+    @walking_duration_min = params[:filterrific]["with_walking_duration_range"]["min"] rescue @all_walking_duration_min
+    @walking_duration_max = params[:filterrific]["with_walking_duration_range"]["max"] rescue @all_walking_duration_max
   end
 
   # GET /homes/1

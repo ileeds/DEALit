@@ -32,6 +32,14 @@ $(document).ready ->
   generate_slider('available_rooms')
   generate_slider('total_bathrooms')
   generate_slider('private_bathrooms')
+  generate_slider('driving_distance')
+  generate_slider('driving_duration')
+  generate_slider('bicycling_distance')
+  generate_slider('bicycling_duration')
+  generate_slider('transit_distance')
+  generate_slider('transit_duration')
+  generate_slider('walking_distance')
+  generate_slider('walking_duration')
 
 class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from builtin builder
   #override create_marker method
