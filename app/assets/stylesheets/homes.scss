@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.marker_container  {
+.marker_container {
     width: 120px;
     height: 120px;
     background-color: black;
@@ -42,7 +42,7 @@
     margin-left: -60px;
 }
 
-.marker_container1:hover{
+.marker_container1:hover {
   transform: scale(1.03);
   border-width: 2px;
   border-color: black;
@@ -50,7 +50,7 @@
   z-index: 1000;
 }
 
-.clicked{
+.clicked {
   background-color: white;
   color: black;
   text-align: center;
@@ -71,15 +71,15 @@
   height: 400px;
 }
 
-#map-box{
+#map-box {
   position:fixed;
 }
 
-.new{
+.new {
   align:center;
 }
 
-#filters{
+#filters {
   position:fixed;
 }
 
@@ -92,7 +92,7 @@
     background-color: white;
 }
 
-.modal{
+.modal {
   height: 530px;
   width: 700px;
   margin-left: 400px;
@@ -100,20 +100,73 @@
   margin-top: 100px;
 }
 
-.modal-footer a.btn:hover{
+.modal-footer a.btn:hover {
   background-color: black;
   color:white;
 }
 
-.box{
+.box {
+  margin-top: 5px;
+  height: 18vh;
   border-width: 2px;
   border-color: black;
   border-style: solid;
   text-align:center;
+  border-bottom-style: none;
 }
 
-#index{
+.box:hover {
+  background-color: lightblue;
+}
+
+#index {
   height:400px;
   overflow-y:auto;
   overflow-x:hidden;
+}
+
+#map {
+  width: 100%;
+}
+
+#daterange {
+  resize: none;
+  text-align: left;
+  width: auto;
+}
+
+textarea::-webkit-input-placeholder {
+  color: black;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+  color: black;
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: black;
+}
+
+textarea:-ms-input-placeholder {
+  color: black;
+}
+
+.dropdown-menu {
+  overflow-x: visible;
+  width: 300%;
+}
+
+.send-message {
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-right-style: solid;
+  border-width: 2px;
+}
+
+.btn.send-message {
+  width: 100%;
+}
+
+.btn.send-message:hover {
+  background-color: lightblue;
 }

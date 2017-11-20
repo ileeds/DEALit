@@ -8,101 +8,115 @@
 <% provide(:title, "Homes") %>
 <p id="notice"><%= notice %></p>
 
-
 <div class = "row">
-  <div class = "col-sm-4" id="file">
   <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
-  Dates Available:
+  <div class = "col-sm-2">
     <div>
       <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
-        <%= with_availability_fields.text_field :dates, id: "daterange" %>
+        <%= with_availability_fields.text_area :dates, id: "daterange", placeholder: "Move In/Out", class: "btn btn-secondary dropdown-toggle", readonly: true %>
       <% end %>
     </div>
-    Price:
-    <div id="price_slider">
+  </div>
+  <div class = "col-sm-2">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Price
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <div id="price_slider" class="span2">
+        </div>
+        <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
+          Min <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider_input" %>
+          Max <%= with_price_fields.text_field :max, id: "max_price", value: @price_max, class: "slider_input" %>
+        <% end %>
+        <button class="dropdown-item dropdown-toggle applyBtn btn btn-sm btn-success" type="button">Apply</button>
+        <button class="cancelBtn btn btn-sm btn-default" type="button">Clear</button>
+      </div>
     </div>
-    <div>
-      <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
-        Min <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider_input" %>
-        Max <%= with_price_fields.text_field :max, id: "max_price", value: @price_max, class: "slider_input" %>
-      <% end %>
+  </div>
+  <div class = "col-sm-2">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Rooms
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <div id="total_rooms_slider">
+        </div>
+        Total Rooms
+        <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
+          Min <%= with_total_rooms_fields.text_field :min, id: "min_total_rooms", value: @total_rooms_min, class: "slider_input" %>
+          Max <%= with_total_rooms_fields.text_field :max, id: "max_total_rooms", value: @total_rooms_max, class: "slider_input" %>
+        <% end %>
+        <div id="available_rooms_slider">
+        </div>
+        Available rooms
+        <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
+          Min <%= with_available_rooms_fields.text_field :min, id: "min_available_rooms", value: @available_rooms_min, class: "slider_input" %>
+          Max <%= with_available_rooms_fields.text_field :max, id: "max_available_rooms", value: @available_rooms_max, class: "slider_input" %>
+        <% end %>
+        <div id="total_bathrooms_slider">
+        </div>
+        Total bathrooms
+        <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
+          Min <%= with_total_bathrooms_fields.text_field :min, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
+          Max <%= with_total_bathrooms_fields.text_field :max, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider_input" %>
+        <% end %>
+        <div id="private_bathrooms_slider">
+        </div>
+        Private bathrooms
+        <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
+          Min <%= with_private_bathrooms_fields.text_field :min, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
+          Max <%= with_private_bathrooms_fields.text_field :max, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider_input" %>
+        <% end %>
+        <button class="dropdown-item dropdown-toggle applyBtn btn btn-sm btn-success" type="button">Apply</button>
+        <button class="cancelBtn btn btn-sm btn-default" type="button">Clear</button>
+      </div>
     </div>
-    Total rooms:
-    <div id="total_rooms_slider">
-    </div>
-    <div>
-      <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
-        Min <%= with_total_rooms_fields.text_field :min, id: "min_total_rooms", value: @total_rooms_min, class: "slider_input" %>
-        Max <%= with_total_rooms_fields.text_field :max, id: "max_total_rooms", value: @total_rooms_max, class: "slider_input" %>
-      <% end %>
-    </div>
-    Available rooms:
-    <div id="available_rooms_slider">
-    </div>
-    <div>
-      <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
-        Min <%= with_available_rooms_fields.text_field :min, id: "min_available_rooms", value: @available_rooms_min, class: "slider_input" %>
-        Max <%= with_available_rooms_fields.text_field :max, id: "max_available_rooms", value: @available_rooms_max, class: "slider_input" %>
-      <% end %>
-    </div>
-    Total bathrooms:
-    <div id="total_bathrooms_slider">
-    </div>
-    <div>
-      <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
-        Min <%= with_total_bathrooms_fields.text_field :min, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
-        Max <%= with_total_bathrooms_fields.text_field :max, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider_input" %>
-      <% end %>
-    </div>
-    Private bathrooms:
-    <div id="private_bathrooms_slider">
-    </div>
-    <div>
-      <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
-        Min <%= with_private_bathrooms_fields.text_field :min, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider_input" %>
-        Max <%= with_private_bathrooms_fields.text_field :max, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider_input" %>
-      <% end %>
-    </div>
-    <div>
+  </div>
+  <div class = "col-sm-4">
     Furnished
     <%= f.select(
       :with_is_furnished,
       @filterrific.select_options[:with_is_furnished],
       { include_blank: '- Any -' }
     ) %>
-    </div>
-    <div>
-      Sorted by
-      <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
-    </div>
-    <div>
-      <%= link_to(
-        'Reset filters',
-        reset_filterrific_url,
-      ) %>
-    </div>
+  </div>
+  <div class = "col-sm-4">
+    Sorted by
+    <%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %>
+  </div>
+  <div class = "col-sm-4">
+    <%= link_to(
+      'Reset filters',
+      reset_filterrific_url,
+    ) %>
+  </div>
+  <div class = "col-sm-4">
     <%= f.submit 'Filter', id:'filterrific_button' %>
+  </div>
   <% end %>
-</div>
-<div class ="col-sm-4">
-  <div id="index">
+  <div class ="col-sm-4">
     <% if logged_in? && params.include?(:filterrific)%>
       <%= button_to 'Save search' ,{:controller => 'searches', :action => 'create', :user_id => current_user.id.to_i, :details => params.to_json.to_s}, {:method => :post} %>
     <% end %>
-    <%= render(
-      partial: 'homes/list',
-      locals: { homes: @homes }
-    ) %>
-  </div>
-  <%= will_paginate @homes %>
-  <br>
-  <%= link_to 'New Home', new_home_path, class:"new" %>
-</div>
-<div class = "col-sm-4">
-  <div id="map">
   </div>
 </div>
-
+<hr>
+<div class = "row">
+  <div class = "col-sm-6">
+    <div id="index">
+      <%= render(
+        partial: 'homes/list',
+        locals: { homes: @homes }
+      ) %>
+    </div>
+    <%= will_paginate @homes %>
+  </div>
+  <div class = "col-sm-6">
+    <div id="map">
+    </div>
+  </div>
+</div>
 <p hidden id="price_hidden" min="<%= @price_min %>" max="<%= @price_max %>" total-min="<%= @all_price_min %>" total-max="<%= @all_price_max %>" />
 <p hidden id="total_rooms_hidden" min="<%= @total_rooms_min %>" max="<%= @total_rooms_max %>" total-min="<%= @all_total_rooms_min %>" total-max="<%= @all_total_rooms_max %>" />
 <p hidden id="available_rooms_hidden" min="<%= @available_rooms_min %>" max="<%= @available_rooms_max %>" total-min="<%= @all_available_rooms_min %>" total-max="<%= @all_available_rooms_max %>" />
@@ -115,6 +129,42 @@
 
 <script type="text/javascript">
   $(function() {
-      $("#daterange").daterangepicker();
+    $("#daterange").daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+    });
+    $("#daterange").on('apply.daterangepicker', function() {
+        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        $("#filterrific-no-ajax-auto-submit").submit();
+    });
+    $("#daterange").on('cancel.daterangepicker', function() {
+        $(this).val('');
+    });
   });
+
+  $('.dropdown').on({
+    "shown.bs.dropdown": function() {
+      $('.dropdown').each(function() {
+        $('.dropdown-menu').hide();
+      });
+      $(this).children(".dropdown-menu").show();
+    },
+    "click":             function() { },
+    "hide.bs.dropdown":  function() {
+      $(this).children(".dropdown-menu").hide();
+    }
+  });
+  $('.dropdown-toggle').on({
+    "click": function() {
+      $(this).parent().attr('closable', true );
+      $(this).parent().parent().attr('closable', true );
+    }
+  })
+  $('.applyBtn').on({
+    "click": function() {
+      $("#filterrific-no-ajax-auto-submit").submit();
+    }
+  })
 </script>
