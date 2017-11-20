@@ -135,61 +135,18 @@ class Home < ApplicationRecord
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
 
-  # price range, support min and max
-  scope :with_price_range, lambda { |attrs|
-    if attrs.min.blank? && attrs.max.blank?
-      return all
-    elsif attrs.min.blank?
-      return where("price <= ?", attrs.max)
-    elsif attrs.max.blank?
-      return where("price >= ?", attrs.min)
-    end
-    where(price: attrs.min..attrs.max)
-  }
-
-  scope :with_total_rooms_range, lambda { |attrs|
-    if attrs.min.blank? && attrs.max.blank?
-      return all
-    elsif attrs.min.blank?
-      return where("total_rooms <= ?", attrs.max)
-    elsif attrs.max.blank?
-      return where("total_rooms >= ?", attrs.min)
-    end
-    where(total_rooms: attrs.min..attrs.max)
-  }
-
-  scope :with_available_rooms_range, lambda { |attrs|
-    if attrs.min.blank? && attrs.max.blank?
-      return all
-    elsif attrs.min.blank?
-      return where("available_rooms <= ?", attrs.max)
-    elsif attrs.max.blank?
-      return where("available_rooms >= ?", attrs.min)
-    end
-    where(available_rooms: attrs.min..attrs.max)
-  }
-
-  scope :with_total_bathrooms_range, lambda { |attrs|
-    if attrs.min.blank? && attrs.max.blank?
-      return all
-    elsif attrs.min.blank?
-      return where("total_bathrooms <= ?", attrs.max)
-    elsif attrs.max.blank?
-      return where("total_bathrooms >= ?", attrs.min)
-    end
-    where(total_bathrooms: attrs.min..attrs.max)
-  }
-
-  scope :with_private_bathrooms_range, lambda { |attrs|
-    if attrs.min.blank? && attrs.max.blank?
-      return all
-    elsif attrs.min.blank?
-      return where("private_bathrooms <= ?", attrs.max)
-    elsif attrs.max.blank?
-      return where("private_bathrooms >= ?", attrs.min)
-    end
-    where(private_bathrooms: attrs.min..attrs.max)
-  }
+  [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range].each do |sc|
+    scope sc, lambda { |attrs|
+      if attrs.min.blank? && attrs.max.blank?
+        return all
+      elsif attrs.min.blank?
+        return where("#{sc.to_s[5..-7]} <= ?", attrs.max)
+      elsif attrs.max.blank?
+        return where("#{sc.to_s[5..-7]} >= ?", attrs.min)
+      end
+      where("#{sc.to_s[5..-7]}": attrs.min..attrs.max)
+    }
+  end
 
   scope :with_is_furnished, lambda { |furnished|
     where(is_furnished: furnished)
