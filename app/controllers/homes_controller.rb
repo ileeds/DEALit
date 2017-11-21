@@ -108,6 +108,7 @@ class HomesController < ApplicationController
 
   # GET /homes/1/edit
   def edit
+    @home = Home.find(params[:home_id])
     if @home.option.nil?
       @home.option=Option.new
     end
