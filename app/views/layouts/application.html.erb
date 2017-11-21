@@ -3,7 +3,7 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <script src="//maps.google.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&libraries=places&sensor=false"></script>
+    <script src='//maps.google.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&libraries=places&sensor=false'></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= render 'layouts/shim' %>
@@ -11,7 +11,7 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <div class="container">
+    <div>
       <% flash.each do |message_type, message| %>
         <% if message_type!="notice" %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>

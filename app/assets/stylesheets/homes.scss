@@ -2,10 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-.marker_container  {
-
+.marker_container {
     width: 120px;
     height: 120px;
     background-color: black;
@@ -20,8 +17,8 @@
     left: 95%;
     margin-left: -70px;
 }
-.marker_container::after {
 
+.marker_container::after {
     content: " ";
     position: absolute;
     top: 100%;
@@ -29,23 +26,23 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent;}
+    border-color: black transparent transparent transparent;
+}
 
-    .marker_container1 {
+.marker_container1 {
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
 
-        background-color: white;
-        color: black;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px;
-        position: absolute;
-        z-index: 1;
-        bottom: 150%;
-        left: 50%;
-        margin-left: -60px;
-        }
-
-.marker_container1:hover{
+.marker_container1:hover {
   transform: scale(1.03);
   box-shadow:
                 1px 1px #A9A9A9,
@@ -59,7 +56,8 @@
   z-index: 1000;
 
 }
-.clicked{
+
+.clicked {
   background-color: white;
   color: black;
   text-align: center;
@@ -78,77 +76,134 @@
 #map {
   width: 380px;
   height: 400px;
-
 }
-#map-box{
+
+#map-box {
   position:fixed;
 }
 
-.new{
-  background-color: black;
-  border: none;
-  color: white;
-  margin: auto;
-  text-align: center;
-  text-decoration: none;
-  width:80px;
-  height:15px;
-  display: block;
-  font-size: 12px;
-  cursor: pointer;
+.new {
+  align:center;
 }
 
-.new:hover{
-  transform: scale(1.10);
-
-}
-#filters{
+#filters {
   position:fixed;
 }
 
-  //margin-left: 515px;
-
-
-
-.slider_input {
-  width: 100px;
+.slider-input {
+  width: 300%;
   display: inline-block;
-
+  margin-top: 100%;
 }
 
-.modal-main
-{
+.modal-main {
     background-color: white;
-
-
 }
-.modal{
+
+.modal {
   height: 530px;
   width: 700px;
   margin-left: 400px;
   margin-right: 400px;
   margin-top: 100px;
-
-
 }
 
-.modal-footer a.btn:hover{
+.modal-footer a.btn:hover {
   background-color: black;
   color:white;
-
 }
-.box{
+
+.box {
+  margin-top: 5px;
+  height: 18vh;
   border-width: 2px;
   border-color: black;
   border-style: solid;
   text-align:center;
-
+  border-bottom-style: none;
 }
-#index{
+
+.box:hover {
+  background-color: lightblue !important;
+}
+
+#index {
   height:400px;
   overflow-y:auto;
   overflow-x:hidden;
+}
 
+#map {
+  width: 100%;
+}
+
+#daterange {
+  resize: none;
+  text-align: left;
+  width: auto;
+}
+
+textarea::-webkit-input-placeholder {
+  color: black;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+  color: black;
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: black;
+}
+
+textarea:-ms-input-placeholder {
+  color: black;
+}
+
+.dropdown-menu {
+  overflow-x: visible;
+  width: 300%;
+}
+
+.send-message {
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-right-style: solid;
+  border-width: 2px;
+}
+
+.btn.send-message {
+  width: 100%;
+}
+
+.btn.send-message:hover {
+  background-color: lightblue;
+}
+
+.ui-slider-handle.custom-handle {
+  background: lightblue;
+}
+
+.ui-slider-range {
+  background: lightblue;
+}
+
+.btn-sm {
+  margin-top: 5%;
+}
+
+.slider-label-below {
+  margin-top: 10%;
+}
+
+.select-filter {
+  width: auto;
+}
+
+.reset {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 10px;
+  padding: 2%;
 }
 
 .hover_me{

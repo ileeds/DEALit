@@ -2,10 +2,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :searches
-  resources :commentz
+  resources :comments
   resources :notifications
-  resources :user_chats
-  resources :chats
   resources :galleries
   resources :photos
   resources :offers
@@ -13,6 +11,9 @@ Rails.application.routes.draw do
   resources :users
   resources :homes do
     resources :reviews
+  end
+  resources :conversations do
+    resources :messages
   end
 
   root   'homes#index'

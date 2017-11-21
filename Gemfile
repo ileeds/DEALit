@@ -36,6 +36,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'filterrific', git: 'https://github.com/ayaman/filterrific.git'
 gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'pg'
 gem 'json'
 gem 'simplecov', :require => false, :group => :test
@@ -54,3 +55,4 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'erubis'
 gem 'omniauth-google-oauth2'
 gem 'google_distance_matrix'
+gem 'mailboxer'
