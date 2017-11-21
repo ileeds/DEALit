@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
   # GET /homes
   # GET /homes.json
   def index
@@ -154,6 +154,7 @@ class HomesController < ApplicationController
   # DELETE /homes/1
   # DELETE /homes/1.json
   def destroy
+    @home = Home.find(params[:home_id])
     @home.destroy
     respond_to do |format|
       format.html { redirect_to homes_url, notice: 'Home was successfully destroyed.' }
