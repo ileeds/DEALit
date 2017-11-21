@@ -42,14 +42,22 @@
         z-index: 1;
         bottom: 150%;
         left: 50%;
-        margin-left: -60px;}
+        margin-left: -60px;
+        }
 
 .marker_container1:hover{
   transform: scale(1.03);
+  box-shadow:
+                1px 1px #A9A9A9,
+                2px 2px #A9A9A9,
+                3px 3px #A9A9A9;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
   border-width: 2px;
   border-color: black;
   border-style: solid;
   z-index: 1000;
+
 }
 .clicked{
   background-color: white;
@@ -77,9 +85,23 @@
 }
 
 .new{
-  align:center;
+  background-color: black;
+  border: none;
+  color: white;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  width:80px;
+  height:15px;
+  display: block;
+  font-size: 12px;
+  cursor: pointer;
 }
 
+.new:hover{
+  transform: scale(1.10);
+
+}
 #filters{
   position:fixed;
 }
@@ -126,5 +148,14 @@
   height:400px;
   overflow-y:auto;
   overflow-x:hidden;
+
+}
+
+.hover_me{
+  color:white;
+  text-decoration: underline;
+}
+#home_is_furnished{
+  margin-right: 200;
 
 }

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :searches
-  resources :reviews
+  resources :commentz
   resources :notifications
   resources :user_chats
   resources :chats
@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :offers
   resources :options
   resources :users
-  resources :homes
+  resources :homes do
+    resources :reviews
+  end
 
   root   'homes#index'
   get  '/signup',  to: 'users#new'

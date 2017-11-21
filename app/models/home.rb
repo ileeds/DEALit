@@ -1,6 +1,8 @@
 class Home < ApplicationRecord
   belongs_to :user
   has_one :option, :dependent => :destroy
+  has_many :reviews, :dependent => :destroy
+  has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
   validates :address, presence: true
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true

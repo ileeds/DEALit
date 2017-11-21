@@ -35,11 +35,12 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not create empty option" do
-    skip("redo test for this")
+
     home_number = Home.count
     option_number = Option.count
     assert Option.count == 2
     assert_difference('Home.count') do
+
       post homes_url, params: { home: { address: @home.address, total_bathrooms: @home.total_bathrooms, private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date,
          total_rooms: @home.total_rooms, user_id: @user.id }}
       assert Option.count == option_number
@@ -83,9 +84,8 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update home" do
-    skip("redo test for this")
     patch home_url(@home), params: { home: { address: @home.address, total_bathrooms: @home.total_bathrooms, private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date, total_rooms: @home.total_rooms, user_id: @home.user_id } }
-    assert_redirected_to home_url(@home)
+    assert_redirected_to assert_redirected_to "homes/#{@home.id}"
   end
 
   test "should not update home with invalid attributes" do

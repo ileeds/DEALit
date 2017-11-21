@@ -2,5 +2,5 @@
 
 <%= render 'form', review: @review %>
 
-<%= link_to 'Show', @review %> |
-<%= link_to 'Back', reviews_path %>
+<%= link_to 'Show', home_review_path(@review.home_id, @review.id) %> |
+<%= link_to 'Back', home_reviews_path(@review.home_id) %>

@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
 window.changeName = (id)->
 
   if document.getElementById(id).innerHTML == 'More options'
@@ -164,11 +163,30 @@ $(document).on 'click', '.marker_container1', ->
   $('.clicked').removeClass().addClass 'marker_container1'
   $(this).removeClass('marker_container1').addClass 'clicked'
   $('.box').css 'background-color', 'white'
-  $('.box#' + @id ).css 'background-color', 'yellow'
+  $('.box').css 'color', 'black'
+  $('.show2').css 'color', 'grey'
+  $id = @id
+
+  $('.show2').hover (->
+    $(this).css 'color', 'white'
+    console.log($id);
+    return
+  ), ->
+    $('.show2').css 'color', 'grey'
+    console.log($id);
+    $('.show2#' + $id+'a').css 'color', 'white'
+    $('.show2#' + $id+'b').css 'color', 'white'
+    return
+
+  $('.box#' + @id ).css 'background-color', 'black'
+  $('.box#' + @id ).css 'color', 'white'
+  $('.show2#' + @id+'a').css 'color', 'white'
+  $('.show2#' + $id+'b').css 'color', 'white'
   $container = $('#index')
   $scrollTo = $('#' + @id + '.box')
   $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)
   return
+
 
 $(document).on 'hidden.bs.modal', '.modal', ->
   $('#index').css 'overflow-y', 'scroll'

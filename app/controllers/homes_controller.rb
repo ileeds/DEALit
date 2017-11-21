@@ -80,10 +80,16 @@ class HomesController < ApplicationController
     @home.user_id = current_user.id
     respond_to do |format|
       if @home.save
+        if params[:images]
+        params[:images].each do |picture|
+
+        @home.photos.create(photo: picture)
+        end
+      end
         if !check
           @home.option.destroy
         end
-        format.html { redirect_to @home, notice: 'Home was successfully created.' }
+        format.html { redirect_to Home.last, notice: 'Home was successfully created.' }
         format.json { render :show, status: :created, location: @home }
       else
         format.html { render :new }
@@ -98,6 +104,12 @@ class HomesController < ApplicationController
   def update
     respond_to do |format|
       if @home.update(home_params)
+        if params[:images]
+        params[:images].each do |picture|
+
+        @home.photos.create(photo: picture)
+        end
+      end
         if !check
           @home.option.destroy
         end
@@ -109,6 +121,7 @@ class HomesController < ApplicationController
       end
     end
   end
+
 
   # DELETE /homes/1
   # DELETE /homes/1.json
@@ -128,7 +141,7 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration, :transit_distance, :transit_duration, :walking_distance, :walking_duration, option_attributes:[:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :photos, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration, :transit_distance, :transit_duration, :walking_distance, :walking_duration, option_attributes:[:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
     end
 
     def check

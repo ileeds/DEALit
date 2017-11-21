@@ -61,6 +61,11 @@
   <%= @home.is_furnished %>
 </p>
 <p>
+  <%@home.photos.each do |photo|%>
+<%= image_tag photo.photo.url(:square) %>
+<%end%>
+<br>
+<br>
 <%if @home.option %>
   <strong>Size of house:</strong>
   <%= @home.option.size_of_house %>

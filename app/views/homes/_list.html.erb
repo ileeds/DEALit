@@ -11,7 +11,7 @@
           User: <%= home.user_id %> <br>
 
 
-          Address: <%= home.address %> <br>
+          <p Address: <%= home.address %> <br>
 
         <div class="row">
           <div class = "col-sm-6">
@@ -32,7 +32,8 @@
       </div>
         </p>
         <p id="options">
-          <%= link_to 'Show', home, remote: true %>
+          <p><%= link_to 'Show', home, remote: true, class: "show2", id: home.id.to_s+'a'%></p>
+          <p><%= link_to 'Add review', new_home_review_path(home.id), class: "show2", id: home.id.to_s+'b'%> </p>
           <%if logged_in?&&current_user.id == home.user_id %>
           <%= link_to 'Edit', edit_home_path(home) %>
           <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>

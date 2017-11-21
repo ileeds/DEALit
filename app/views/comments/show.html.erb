@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @comment.text %>
+</p>
+
+  <td><%= link_to 'Edit', edit_home_comment_path(@comment.home, @comment) %></td>
+<%= link_to 'Back', root_url %>

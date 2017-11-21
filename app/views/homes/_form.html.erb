@@ -2,7 +2,7 @@
   <%= javascript_include_tag "new_home" %>
 <% end %>
 
-<%= form_for @home do |form| %>
+<%= form_for @home, :html => { :multipart => true } do |form| %>
   <% if @home.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>
@@ -15,15 +15,16 @@
   <% end %>
 
 <div class = "row" >
-  <div class = "col-sm-4">
+  <div class = "col-sm-2">
   <div class="field">
     <%= form.label :address %>
     <%= form.text_field :address, id: :home_address %>
   </div>
+
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
   <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price, id: :home_price %>
@@ -31,15 +32,15 @@
 </div>
 </div>
 <div class = "row" >
-  <div class = "col-sm-4">
+  <div class = "col-sm-2">
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :home_description %>
   </div>
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
   <div class="field">
     <%= form.label :size %>
     <%= form.number_field :size, id: :home_size %>
@@ -47,15 +48,15 @@
 </div>
 </div>
 <div class = "row" >
-  <div class = "col-sm-4">
+  <div class = "col-sm-2">
   <div class="field">
     <%= form.label :start_date %>
     <%= form.date_select :start_date, id: :home_start_date %>
   </div>
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
   <div class="field">
     <%= form.label :end_date %>
     <%= form.date_select :end_date, id: :home_end_date %>
@@ -63,15 +64,15 @@
 </div>
 </div>
 <div class = "row" >
-  <div class = "col-sm-4">
+  <div class = "col-sm-2">
   <div class="field">
     <%= form.label :total_rooms %>
     <%= form.number_field :total_rooms, id: :home_total_rooms %>
   </div>
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
   <div class="field">
     <%= form.label :available_rooms %>
     <%= form.text_field :available_rooms, id: :home_available_rooms %>
@@ -79,15 +80,15 @@
 </div>
 </div>
 <div class = "row" >
-  <div class = "col-sm-4">
+  <div class = "col-sm-2">
   <div class="field">
     <%= form.label :total_bathrooms %>
     <%= form.text_field :total_bathrooms, id: :home_total_bathrooms %>
   </div>
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
 </div>
-<div class = "col-sm-4">
+<div class = "col-sm-2">
   <div class="field">
     <%= form.label :private_bathrooms %>
     <%= form.text_field :private_bathrooms, id: :home_private_bathrooms %>
@@ -95,16 +96,27 @@
 </div>
 </div>
 <div class = "row">
-  <div class = "col-sm-4">
+  <div class = "col-sm-2">
   <div class="field">
-    <%= form.label :is_furnished %>
+    <%= form.label :is_furnished, id: :checkbox %>
     <%= form.check_box :is_furnished, id: :home_is_furnished, class: :roundedTwo%>
   </div>
+</div>
+
+  <div class = "col-sm-2">
+  <div class="field">
+    <%= form.label :photos %>
+    <%= file_field_tag 'images[]', multiple: true %>
+  </div>
+  <div id = "photos">
+    <%=render :file =>"homes/_photos.html.erb" %>
+   </div>
 </div>
 </div>
 
   <a href="#options" class="btn btn-info" id = "collapse" data-toggle="collapse" onclick=changeName("collapse")>More options</a>
-
+  <br>
+  <br>
   <div id="options" class="collapse">
 
 <%=  form.fields_for :option  do |form1| %>
