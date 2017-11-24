@@ -1,4 +1,5 @@
 <% js = escape_javascript(
   render(partial: 'homes/list', locals: { homes: @homes })
 ) %>
+buildMap(<%=raw @hash.to_json %>);
 $("#filterrific_results").html("<%= js %>");
