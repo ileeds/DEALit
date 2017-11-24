@@ -12,9 +12,11 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require jquery_ujs
+//= require bootstrap.min
 //= require jquery-ui
 //= require bootstrap
 //= require underscore
 //= require gmaps/google
-//= require jquery_ujs
+//= require filterrific/filterrific-jquery
 //= require_tree .

@@ -15,6 +15,9 @@ generate_slider = (slider_name)->
       $('#max_' + slider_name).val ui.values[1]
       $('#min_' + slider_name).text ui.values[0]
       $('#max_' + slider_name).text ui.values[1]
+      console.log 'a'
+      $('#filterrific-form').delay(200).submit()
+      console.log 'b'
   )
   $('#min_' + slider_name).val this_slider.slider('values')[0]
   $('#max_' + slider_name).val this_slider.slider('values')[1]
@@ -40,6 +43,9 @@ $(document).ready ->
   generate_slider('transit_duration')
   generate_slider('walking_distance')
   generate_slider('walking_duration')
+
+  $('.select-filter').on "change", ->
+    $('#filterrific-form').submit()
 
 class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from builtin builder
   #override create_marker method

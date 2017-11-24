@@ -90,6 +90,8 @@
   width: 300%;
   display: inline-block;
   margin-top: 100%;
+  border-style: none;
+  background: transparent;
 }
 
 .modal-main {
@@ -237,4 +239,8 @@ textarea:-ms-input-placeholder {
   height: 100%;
   width: 100%;
   z-index: -1;
+}
+
+.col-sm-1 {
+  display: inline-table;
 }
