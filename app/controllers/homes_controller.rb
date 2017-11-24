@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  #before_action :correct_user,   only: [:edit, :update, :destroy]
+
   # GET /homes
   # GET /homes.json
   def index
@@ -108,7 +109,7 @@ class HomesController < ApplicationController
 
   # GET /homes/1/edit
   def edit
-    @home = Home.find(params[:home_id])
+    @home = Home.find(params[:id])
     if @home.option.nil?
       @home.option=Option.new
     end
@@ -123,7 +124,6 @@ class HomesController < ApplicationController
       if @home.save
         if params[:images]
         params[:images].each do |picture|
-
         @home.photos.create(photo: picture)
         end
       end
@@ -137,24 +137,23 @@ class HomesController < ApplicationController
         format.json { render json: @home.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   # PATCH/PUT /homes/1
   # PATCH/PUT /homes/1.json
   def update
+    @home = Home.find(params[:id])
     respond_to do |format|
       if @home.update(home_params)
         if params[:images]
         params[:images].each do |picture|
-
         @home.photos.create(photo: picture)
         end
       end
         if !check
           @home.option.destroy
         end
-        format.html { redirect_to Home.last, notice: 'Home was successfully updated.' }
+        format.html { redirect_to @home, notice: 'Home was successfully updated.' }
         format.json { render :show, status: :ok, location: @home }
       else
         format.html { render :edit }
@@ -167,6 +166,7 @@ class HomesController < ApplicationController
   # DELETE /homes/1
   # DELETE /homes/1.json
   def destroy
+    @home = Home.find(params[:id])
     @home.destroy
     respond_to do |format|
       format.html { redirect_to homes_url, notice: 'Home was successfully destroyed.' }

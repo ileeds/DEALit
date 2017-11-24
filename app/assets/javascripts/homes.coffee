@@ -15,6 +15,7 @@ generate_slider = (slider_name)->
       $('#max_' + slider_name).val ui.values[1]
       $('#min_' + slider_name).text ui.values[0]
       $('#max_' + slider_name).text ui.values[1]
+      $('#filterrific-form').delay(200).submit()
   )
   $('#min_' + slider_name).val this_slider.slider('values')[0]
   $('#max_' + slider_name).val this_slider.slider('values')[1]
@@ -40,6 +41,9 @@ $(document).ready ->
   generate_slider('transit_duration')
   generate_slider('walking_distance')
   generate_slider('walking_duration')
+
+  $('.select-filter').on "change", ->
+    $('#filterrific-form').submit()
 
 class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from builtin builder
   #override create_marker method
@@ -81,10 +85,13 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
       map.setZoom(12)
 
 $(document).on 'click', '.marker_container1', ->
+  debugger;
   $('.clicked').removeClass().addClass 'marker_container1'
   $(this).removeClass('marker_container1').addClass 'clicked'
-  $('.box').css 'background-color', 'white'
+  $('.box').css 'background-color', 'transparent'
+  $('.box').css 'color', 'black'
   $('.box#' + @id ).css 'background-color', '#0070FF'
+  $('.box#' + @id ).css 'color', 'white'
   $container = $('#index')
   $scrollTo = $('#' + @id + '.box')
   $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)

@@ -9,165 +9,160 @@
 <p id="notice"><%= notice %></p>
 
 <div class = "row">
-  <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' } do |f| %>
-  <div class = "col-sm-1">
-    <div>
-      <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
-        <%= with_availability_fields.text_area :dates, id: "daterange", placeholder: "Move In/Out", class: "btn btn-secondary dropdown-toggle", readonly: true %>
-      <% end %>
-    </div>
-  </div>
-  <div class = "col-sm-1">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Price
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <div id="price_slider" class="custom-slider">
-          <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :max, id: "max_price", value: @price_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <button class="dropdown-item dropdown-toggle applyBtn btn btn-sm btn-success" type="button">Apply</button>
-        <button class="cancelBtn btn btn-sm btn-default" type="button">Clear</button>
+  <%= form_for_filterrific @filterrific, remote: true, html: { id: 'filterrific-form' } do |f| %>
+    <div class = "col-sm-1">
+      <div>
+        <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
+          <%= with_availability_fields.text_area :dates, id: "daterange", placeholder: "Move In/Out", class: "btn btn-secondary dropdown-toggle dropdown", readonly: true %>
+        <% end %>
       </div>
     </div>
-  </div>
-  <div class = "col-sm-1">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Rooms
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <div>Total Rooms</div>
-        <div id="total_rooms_slider" class="custom-slider">
-          <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_total_rooms_fields.text_field :min, id: "min_total_rooms", value: @total_rooms_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_total_rooms_fields.text_field :max, id: "max_total_rooms", value: @total_rooms_max, class: "slider-input" %> </div>
-          <% end %>
+    <div class = "col-sm-1">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Price
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <div id="price_slider" class="custom-slider">
+            <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :max, id: "max_price", value: @price_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <button class="cancelBtn btn btn-sm btn-default" type="button">Close</button>
         </div>
-        <div class="slider-label-below">Available rooms</div>
-        <div id="available_rooms_slider" class="custom-slider">
-          <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_available_rooms_fields.text_field :min, id: "min_available_rooms", value: @available_rooms_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_available_rooms_fields.text_field :max, id: "max_available_rooms", value: @available_rooms_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Total bathrooms</div>
-        <div id="total_bathrooms_slider" class="custom-slider">
-          <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_total_bathrooms_fields.text_field :min, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_total_bathrooms_fields.text_field :max, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Private bathrooms</div>
-        <div id="private_bathrooms_slider" class="custom-slider">
-          <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_private_bathrooms_fields.text_field :min, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_private_bathrooms_fields.text_field :max, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <button class="dropdown-item dropdown-toggle applyBtn btn btn-sm btn-success" type="button">Apply</button>
-        <button class="cancelBtn btn btn-sm btn-default" type="button">Clear</button>
       </div>
     </div>
-  </div>
-  <div class = "col-sm-1">
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Location
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-        <div>Driving distance</div>
-        <div id="driving_distance_slider" class="custom-slider">
-          <%= f.fields_for :with_driving_distance_range, OpenStruct.new(@filterrific.with_driving_distance_range) do |with_driving_distance_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_driving_distance_fields.text_field :min, id: "min_driving_distance", value: @driving_distance_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_driving_distance_fields.text_field :max, id: "max_driving_distance", value: @driving_distance_max, class: "slider-input" %> </div>
-          <% end %>
+    <div class = "col-sm-1">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Rooms
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <div>Total Rooms</div>
+          <div id="total_rooms_slider" class="custom-slider">
+            <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_total_rooms_fields.text_field :min, id: "min_total_rooms", value: @total_rooms_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_total_rooms_fields.text_field :max, id: "max_total_rooms", value: @total_rooms_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Available rooms</div>
+          <div id="available_rooms_slider" class="custom-slider">
+            <%= f.fields_for :with_available_rooms_range, OpenStruct.new(@filterrific.with_available_rooms_range) do |with_available_rooms_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_available_rooms_fields.text_field :min, id: "min_available_rooms", value: @available_rooms_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_available_rooms_fields.text_field :max, id: "max_available_rooms", value: @available_rooms_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Total bathrooms</div>
+          <div id="total_bathrooms_slider" class="custom-slider">
+            <%= f.fields_for :with_total_bathrooms_range, OpenStruct.new(@filterrific.with_total_bathrooms_range) do |with_total_bathrooms_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_total_bathrooms_fields.text_field :min, id: "min_total_bathrooms", value: @total_bathrooms_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_total_bathrooms_fields.text_field :max, id: "max_total_bathrooms", value: @total_bathrooms_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Private bathrooms</div>
+          <div id="private_bathrooms_slider" class="custom-slider">
+            <%= f.fields_for :with_private_bathrooms_range, OpenStruct.new(@filterrific.with_private_bathrooms_range) do |with_private_bathrooms_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_private_bathrooms_fields.text_field :min, id: "min_private_bathrooms", value: @total_bathrooms_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_private_bathrooms_fields.text_field :max, id: "max_private_bathrooms", value: @private_bathrooms_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <button class="cancelBtn btn btn-sm btn-default" type="button">Close</button>
         </div>
-        <div class="slider-label-below">Driving duration</div>
-        <div id="driving_duration_slider" class="custom-slider">
-          <%= f.fields_for :with_driving_duration_range, OpenStruct.new(@filterrific.with_driving_duration_range) do |with_driving_duration_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_driving_duration_fields.text_field :min, id: "min_driving_duration", value: @driving_duration_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_driving_duration_fields.text_field :max, id: "max_driving_duration", value: @driving_duration_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Bicycling distance</div>
-        <div id="bicycling_distance_slider" class="custom-slider">
-          <%= f.fields_for :with_bicycling_distance_range, OpenStruct.new(@filterrific.with_bicycling_distance_range) do |with_bicycling_distance_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_bicycling_distance_fields.text_field :min, id: "min_bicycling_distance", value: @bicycling_distance_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_bicycling_distance_fields.text_field :max, id: "max_bicycling_distance", value: @bicycling_distance_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Bicycling duration</div>
-        <div id="bicycling_duration_slider" class="custom-slider">
-          <%= f.fields_for :with_bicycling_duration_range, OpenStruct.new(@filterrific.with_bicycling_duration_range) do |with_bicycling_duration_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_bicycling_duration_fields.text_field :min, id: "min_bicycling_duration", value: @bicycling_duration_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_bicycling_duration_fields.text_field :max, id: "max_bicycling_duration", value: @bicycling_duration_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Transit distance</div>
-        <div id="transit_distance_slider" class="custom-slider">
-          <%= f.fields_for :with_transit_distance_range, OpenStruct.new(@filterrific.with_transit_distance_range) do |with_transit_distance_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_transit_distance_fields.text_field :min, id: "min_transit_distance", value: @transit_distance_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_transit_distance_fields.text_field :max, id: "max_transit_distance", value: @transit_distance_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Transit duration</div>
-        <div id="transit_duration_slider" class="custom-slider">
-          <%= f.fields_for :with_transit_duration_range, OpenStruct.new(@filterrific.with_transit_duration_range) do |with_transit_duration_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :min, id: "min_transit_duration", value: @transit_duration_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :max, id: "max_transit_duration", value: @transit_duration_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Walking distance</div>
-        <div id="walking_distance_slider" class="custom-slider">
-          <%= f.fields_for :with_walking_distance_range, OpenStruct.new(@filterrific.with_walking_distance_range) do |with_walking_distance_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_walking_distance_fields.text_field :min, id: "min_walking_distance", value: @walking_distance_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_walking_distance_fields.text_field :max, id: "max_walking_distance", value: @walking_distance_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <div class="slider-label-below">Walking duration</div>
-        <div id="walking_duration_slider" class="custom-slider">
-          <%= f.fields_for :with_walking_duration_range, OpenStruct.new(@filterrific.with_walking_duration_range) do |with_walking_duration_fields| %>
-            <div class="ui-slider-handle custom-handle"> <%= with_walking_duration_fields.text_field :min, id: "min_walking_duration", value: @walking_duration_min, class: "slider-input" %> </div>
-            <div class="ui-slider-handle custom-handle"> <%= with_walking_duration_fields.text_field :max, id: "max_walking_duration", value: @walking_duration_max, class: "slider-input" %> </div>
-          <% end %>
-        </div>
-        <button class="dropdown-item dropdown-toggle applyBtn btn btn-sm btn-success" type="button">Apply</button>
-        <button class="cancelBtn btn btn-sm btn-default" type="button">Clear</button>
       </div>
     </div>
-  </div>
-  <div class = "col-sm-1">
-    Furnished
-    <%= f.select(
-      :with_is_furnished,
-      @filterrific.select_options[:with_is_furnished],
-      { include_blank: '- Any -' },
-      class: "select-filter"
-    ) %>
-  </div>
-  <div class = "col-sm-1">
-    Sorted by
-    <%= f.select(
-      :sorted_by,
-      @filterrific.select_options[:sorted_by],
-      {},
-      class: "select-filter"
-    ) %>
-  </div>
-  <div class = "col-sm-1">
-    <%= link_to(
-      'Reset filters',
-      reset_filterrific_url,
-      class: "reset"
-    ) %>
-  </div>
-  <div class = "col-sm-1">
-    <%= f.submit 'Filter', id:'filterrific_button', class: "select-filter" %>
-  </div>
+    <div class = "col-sm-1">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Location
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
+          <div>Driving distance</div>
+          <div id="driving_distance_slider" class="custom-slider">
+            <%= f.fields_for :with_driving_distance_range, OpenStruct.new(@filterrific.with_driving_distance_range) do |with_driving_distance_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_driving_distance_fields.text_field :min, id: "min_driving_distance", value: @driving_distance_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_driving_distance_fields.text_field :max, id: "max_driving_distance", value: @driving_distance_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Driving duration</div>
+          <div id="driving_duration_slider" class="custom-slider">
+            <%= f.fields_for :with_driving_duration_range, OpenStruct.new(@filterrific.with_driving_duration_range) do |with_driving_duration_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_driving_duration_fields.text_field :min, id: "min_driving_duration", value: @driving_duration_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_driving_duration_fields.text_field :max, id: "max_driving_duration", value: @driving_duration_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Bicycling distance</div>
+          <div id="bicycling_distance_slider" class="custom-slider">
+            <%= f.fields_for :with_bicycling_distance_range, OpenStruct.new(@filterrific.with_bicycling_distance_range) do |with_bicycling_distance_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_bicycling_distance_fields.text_field :min, id: "min_bicycling_distance", value: @bicycling_distance_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_bicycling_distance_fields.text_field :max, id: "max_bicycling_distance", value: @bicycling_distance_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Bicycling duration</div>
+          <div id="bicycling_duration_slider" class="custom-slider">
+            <%= f.fields_for :with_bicycling_duration_range, OpenStruct.new(@filterrific.with_bicycling_duration_range) do |with_bicycling_duration_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_bicycling_duration_fields.text_field :min, id: "min_bicycling_duration", value: @bicycling_duration_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_bicycling_duration_fields.text_field :max, id: "max_bicycling_duration", value: @bicycling_duration_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Transit distance</div>
+          <div id="transit_distance_slider" class="custom-slider">
+            <%= f.fields_for :with_transit_distance_range, OpenStruct.new(@filterrific.with_transit_distance_range) do |with_transit_distance_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_transit_distance_fields.text_field :min, id: "min_transit_distance", value: @transit_distance_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_transit_distance_fields.text_field :max, id: "max_transit_distance", value: @transit_distance_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Transit duration</div>
+          <div id="transit_duration_slider" class="custom-slider">
+            <%= f.fields_for :with_transit_duration_range, OpenStruct.new(@filterrific.with_transit_duration_range) do |with_transit_duration_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :min, id: "min_transit_duration", value: @transit_duration_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :max, id: "max_transit_duration", value: @transit_duration_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Walking distance</div>
+          <div id="walking_distance_slider" class="custom-slider">
+            <%= f.fields_for :with_walking_distance_range, OpenStruct.new(@filterrific.with_walking_distance_range) do |with_walking_distance_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_walking_distance_fields.text_field :min, id: "min_walking_distance", value: @walking_distance_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_walking_distance_fields.text_field :max, id: "max_walking_distance", value: @walking_distance_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <div class="slider-label-below">Walking duration</div>
+          <div id="walking_duration_slider" class="custom-slider">
+            <%= f.fields_for :with_walking_duration_range, OpenStruct.new(@filterrific.with_walking_duration_range) do |with_walking_duration_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_walking_duration_fields.text_field :min, id: "min_walking_duration", value: @walking_duration_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_walking_duration_fields.text_field :max, id: "max_walking_duration", value: @walking_duration_max, class: "slider-input", readonly: true %> </div>
+            <% end %>
+          </div>
+          <button class="cancelBtn btn btn-sm btn-default" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+    <div class = "col-sm-1">
+      Furnished
+      <%= f.select(
+        :with_is_furnished,
+        @filterrific.select_options[:with_is_furnished],
+        { include_blank: '- Any -' },
+        class: "select-filter"
+      ) %>
+    </div>
+    <div class = "col-sm-1">
+      Sorted by
+      <%= f.select(
+        :sorted_by,
+        @filterrific.select_options[:sorted_by],
+        {},
+        class: "select-filter"
+      ) %>
+    </div>
+    <div class = "col-sm-1">
+      <%= link_to(
+        'Reset filters',
+        reset_filterrific_url,
+        class: "reset"
+      ) %>
+    </div>
+    <%= render_filterrific_spinner %>
   <% end %>
   <div class ="col-sm-4">
     <% if logged_in? && params.include?(:filterrific)%>
@@ -178,16 +173,15 @@
 <hr>
 <div class = "row">
   <div class = "col-sm-6">
-    <div id="index">
+    <div id="index" class = "bottom">
       <%= render(
         partial: 'homes/list',
         locals: { homes: @homes }
       ) %>
     </div>
-    <%= will_paginate @homes %>
   </div>
   <div class = "col-sm-6">
-    <div id="map">
+    <div id="map" class = "bottom">
     </div>
   </div>
 </div>
@@ -218,12 +212,13 @@
             cancelLabel: 'Clear'
         }
     });
-    $("#daterange").on('apply.daterangepicker', function() {
-        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-        $("#filterrific-no-ajax-auto-submit").submit();
+    $("#daterange").on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+      $("#filterrific-form").submit();
     });
     $("#daterange").on('cancel.daterangepicker', function() {
         $(this).val('');
+        $("#filterrific-form").submit();
     });
   });
 
@@ -243,11 +238,6 @@
         }
       });
       $(this).siblings(".dropdown-menu").toggle();
-    }
-  })
-  $('.applyBtn').on({
-    "click": function() {
-      $("#filterrific-no-ajax-auto-submit").submit();
     }
   })
   $('.cancelBtn').on({

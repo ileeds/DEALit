@@ -76,6 +76,9 @@
 #map {
   width: 380px;
   height: 400px;
+  right: 2%;
+  width: 50% !important;
+  z-index: -1;
 }
 
 #map-box {
@@ -94,10 +97,12 @@
   width: 300%;
   display: inline-block;
   margin-top: 100%;
+  border-style: none;
+  background: transparent;
 }
 
 .modal-main {
-    background-color: white;
+  background-color: white;
 }
 
 .modal {
@@ -114,7 +119,7 @@
 }
 
 .box {
-  margin-top: 5px;
+  margin-top: 10%;
   height: 18vh;
   border-width: 2px;
   border-color: black;
@@ -125,16 +130,19 @@
 
 .box:hover {
   background-color: #0070FF !important;
+  color: white !important;
 }
 
 #index {
-  height:400px;
+  height: 73%;
   overflow-y:auto;
   overflow-x:hidden;
+  width: 45%;
 }
 
 #map {
   width: 100%;
+  height: 73%;
 }
 
 #daterange {
@@ -164,23 +172,39 @@ textarea:-ms-input-placeholder {
   width: 300%;
 }
 
-.send-message {
-  border-left-style: solid;
-  border-bottom-style: solid;
-  border-right-style: solid;
+.home-button {
   border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
+  border-top-style: none;
+  width: 50%;
+  float: left;
+  border-radius: 0;
 }
 
-.btn.send-message {
-  width: 100%;
+.home-button.send {
+  border-right-style: none;
+  color: black;
 }
 
-.btn.send-message:hover {
+.home-button.notify {
+  border-left-style: none;
+}
+
+.btn.home-button:hover {
   background-color: #0070FF;
+  color: white;
 }
 
 .ui-slider-handle.custom-handle {
   background: #0070FF;
+}
+
+.custom-slider {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
 }
 
 .ui-slider-range {
@@ -188,7 +212,11 @@ textarea:-ms-input-placeholder {
 }
 
 .btn-sm {
-  margin-top: 5%;
+  margin-top: 15%;
+}
+
+.btn-secondary {
+  background: transparent;
 }
 
 .slider-label-below {
@@ -212,5 +240,27 @@ textarea:-ms-input-placeholder {
 }
 #home_is_furnished{
   margin-right: 200;
+}
+.bottom {
+  position: fixed !important;
+  bottom: 2%;
+}
 
+#filterrific_results > div:first-child {
+  margin-bottom: -10%;
+}
+
+.modal-backdrop {
+  position: absolute;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ) !important;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.col-sm-1 {
+  display: inline-table;
 }

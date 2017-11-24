@@ -3,7 +3,7 @@
     <%= page_entries_info homes %>
   </div>
   <% @homes.each do |home| %>
-    <%= link_to home, remote: true do %>
+    <%= link_to home, remote: true, class: "home-link" do %>
       <div class="box" id = <%=home.id%>>
         User: <%= home.user_id %> <br>
         Address: <%= home.address %> <br>
@@ -25,13 +25,19 @@
         </div>
       </div>
     <% end %>
-    <div class="send-message">
-      <%= link_to "Send Message", new_conversation_path(recipient_id: home.user_id), class: "btn send-message" %>
+    <div class="home-buttons">
+      <div class="send-message">
+        <%= link_to "Send Message", new_conversation_path(recipient_id: home.user_id), class: "btn home-button send" %>
+      </div>
+      <div class="get-notifications">
+        <%= link_to "Get Notifications", nil, class: "btn home-button notify" %>
+      </div>
       <%if logged_in?&&current_user.id == home.user_id %>
-        <%= link_to 'Edit', edit_home_path(id: current_user.id, home_id: home.id) %>
+        <%= link_to 'Edit', edit_home_path(home) %>
         <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
       <%end%>
     </div>
   <% end %>
+  <%= will_paginate @homes %>
 </div>
 <%= render "layouts/modal" %>

@@ -33526,10 +33526,6 @@ if (typeof jQuery === 'undefined') {
 
 }).call(this);
 (function() {
-
-
-}).call(this);
-(function() {
   var RichMarkerBuilder, generate_slider,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -33565,7 +33561,15 @@ if (typeof jQuery === 'undefined') {
     generate_slider('total_rooms');
     generate_slider('available_rooms');
     generate_slider('total_bathrooms');
-    return generate_slider('private_bathrooms');
+    generate_slider('private_bathrooms');
+    generate_slider('driving_distance');
+    generate_slider('driving_duration');
+    generate_slider('bicycling_distance');
+    generate_slider('bicycling_duration');
+    generate_slider('transit_distance');
+    generate_slider('transit_duration');
+    generate_slider('walking_distance');
+    return generate_slider('walking_duration');
   });
 
   RichMarkerBuilder = (function(superClass) {
@@ -33644,11 +33648,14 @@ if (typeof jQuery === 'undefined') {
   };
 
   $(document).on('click', '.marker_container1', function() {
+    debugger;
     var $container, $scrollTo;
     $('.clicked').removeClass().addClass('marker_container1');
     $(this).removeClass('marker_container1').addClass('clicked');
-    $('.box').css('background-color', 'white');
-    $('.box#' + this.id).css('background-color', 'yellow');
+    $('.box').css('background-color', 'transparent');
+    $('.box').css('color', 'black');
+    $('.box#' + this.id).css('background-color', '#0070FF');
+    $('.box#' + this.id).css('color', 'white');
     $container = $('#index');
     $scrollTo = $('#' + this.id + '.box');
     $container.scrollTop($scrollTo.offset().top - ($container.offset().top) + $container.scrollTop() - ($container.height() / 2));
@@ -33668,10 +33675,6 @@ init = function() {
 };
 
 google.maps.event.addDomListener(window, 'load', init);
-(function() {
-
-
-}).call(this);
 (function() {
 
 

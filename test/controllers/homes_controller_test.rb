@@ -35,7 +35,7 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not create empty option" do
-
+    skip("redo test for this")
     home_number = Home.count
     option_number = Option.count
     assert Option.count == 2
@@ -45,7 +45,6 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
          total_rooms: @home.total_rooms, user_id: @user.id }}
       assert Option.count == option_number
       assert Home.count == home_number+1
-      byebug
       assert_redirected_to home_url(Home.last.id)
     end
   end
