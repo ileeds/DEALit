@@ -3,6 +3,7 @@ require 'test_helper'
 class PhotosControllerTest < ActionDispatch::IntegrationTest
   setup do
     @photo = photos(:one)
+    @photo.home_id = homes(:one).id
   end
 
   test "should get index" do
@@ -17,7 +18,8 @@ class PhotosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create photo" do
     assert_difference('Photo.count') do
-      post photos_url, params: { photo: { filename: @photo.filename, gallery_id: @photo.gallery_id } }
+      post photos_url, params: { photo: { filename: @photo.filename, gallery_id: @photo.gallery_id, home_id:@photo.home_id } }
+      byebug
     end
 
     assert_redirected_to photo_url(Photo.last)
@@ -34,7 +36,7 @@ class PhotosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update photo" do
-    patch photo_url(@photo), params: { photo: { filename: @photo.filename, gallery_id: @photo.gallery_id } }
+    patch photo_url(@photo), params: { photo: { filename: @photo.filename, gallery_id: @photo.gallery_id,home_id:@photo.home_id  } }
     assert_redirected_to photo_url(@photo)
   end
 

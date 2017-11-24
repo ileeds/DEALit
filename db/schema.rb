@@ -15,12 +15,6 @@ ActiveRecord::Schema.define(version: 20171117200446) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "chats", force: :cascade do |t|
-    t.string "filename"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.integer "home_id"
@@ -186,6 +180,7 @@ ActiveRecord::Schema.define(version: 20171117200446) do
 
   create_table "photos", force: :cascade do |t|
     t.integer "home_id"
+    t.integer "gallery_id"
     t.string "filename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -210,18 +205,12 @@ ActiveRecord::Schema.define(version: 20171117200446) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_chats", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "chat_id"
-    t.boolean "read"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "remember_digest"
+    t.boolean "admin"
     t.string "provider"
     t.string "uid"
     t.string "oauth_token"

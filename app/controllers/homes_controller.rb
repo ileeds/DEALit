@@ -108,6 +108,7 @@ class HomesController < ApplicationController
 
   # GET /homes/1/edit
   def edit
+    @home = Home.find(params[:home_id])
     if @home.option.nil?
       @home.option=Option.new
     end
@@ -153,7 +154,7 @@ class HomesController < ApplicationController
         if !check
           @home.option.destroy
         end
-        format.html { redirect_to @home, notice: 'Home was successfully updated.' }
+        format.html { redirect_to Home.last, notice: 'Home was successfully updated.' }
         format.json { render :show, status: :ok, location: @home }
       else
         format.html { render :edit }

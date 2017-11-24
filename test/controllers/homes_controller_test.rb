@@ -45,7 +45,8 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
          total_rooms: @home.total_rooms, user_id: @user.id }}
       assert Option.count == option_number
       assert Home.count == home_number+1
-      assert_redirected_to home_url(Home.last)
+      byebug
+      assert_redirected_to home_url(Home.last.id)
     end
   end
 

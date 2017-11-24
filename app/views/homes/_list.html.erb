@@ -28,7 +28,7 @@
     <div class="send-message">
       <%= link_to "Send Message", new_conversation_path(recipient_id: home.user_id), class: "btn send-message" %>
       <%if logged_in?&&current_user.id == home.user_id %>
-        <%= link_to 'Edit', edit_home_path(home) %>
+        <%= link_to 'Edit', edit_home_path(id: current_user.id, home_id: home.id) %>
         <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
       <%end%>
     </div>
