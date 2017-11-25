@@ -21,7 +21,6 @@ class PhotosControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Photo.count') do
       post photos_url, params: { photo: { filename: @photo.filename, gallery_id: @photo.gallery_id, home_id:@photo.home_id } }
     end
-
     assert_redirected_to photo_url(Photo.last)
   end
 

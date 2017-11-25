@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
-  #before_action :correct_user,   only: [:edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 
   # GET /homes
   # GET /homes.json
@@ -123,10 +123,10 @@ class HomesController < ApplicationController
     respond_to do |format|
       if @home.save
         if params[:images]
-        params[:images].each do |picture|
-        @home.photos.create(photo: picture)
+          params[:images].each do |picture|
+            @home.photos.create(photo: picture)
+          end
         end
-      end
         if !check
           @home.option.destroy
         end
@@ -146,10 +146,10 @@ class HomesController < ApplicationController
     respond_to do |format|
       if @home.update(home_params)
         if params[:images]
-        params[:images].each do |picture|
-        @home.photos.create(photo: picture)
+          params[:images].each do |picture|
+            @home.photos.create(photo: picture)
+          end
         end
-      end
         if !check
           @home.option.destroy
         end

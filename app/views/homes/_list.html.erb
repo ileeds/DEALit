@@ -33,8 +33,8 @@
         <%= link_to "Get Notifications", nil, class: "btn home-button notify" %>
       </div>
       <%if logged_in?&&current_user.id == home.user_id %>
-        <%= link_to 'Edit', edit_home_path(home) %>
-        <%= link_to 'Destroy', home, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Edit', edit_home_path(id: current_user.id, home_id: home.id) %>
+        <%= link_to 'Destroy', home_path(id: current_user.id, home_id: home.id), method: :delete, data: { confirm: 'Are you sure?' } %>
       <%end%>
     </div>
   <% end %>

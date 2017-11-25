@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ReviewsControllerTest < ActionDispatch::IntegrationTest
-
   setup do
     @review = reviews(:one)
     @home = homes(:one)
@@ -24,7 +23,6 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Review.count') do
       post home_reviews_url(@home), params: { review: { description: @review.description, home_id: @review.home_id, user_id: @review.user_id } }
     end
-
     assert_redirected_to home_review_url(@home, Review.last)
   end
 
@@ -51,7 +49,6 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Review.count', -1) do
       delete home_review_url(@home, @review)
     end
-
     assert_redirected_to home_reviews_url(@home)
   end
 end
