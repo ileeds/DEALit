@@ -59,14 +59,14 @@ class Home < ApplicationRecord
       data_set[index] = matrix.data
     end
     # in miles and minutes
-    self.driving_distance = data_set[0][0][0].distance_text.split(" ")[0].to_f
-    self.driving_duration = data_set[0][0][0].duration_text.split(" ")[0].to_i
-    self.bicycling_distance = data_set[1][0][0].distance_text.split(" ")[0].to_f
-    self.bicycling_duration = data_set[1][0][0].duration_text.split(" ")[0].to_i
+    self.driving_distance = data_set[0][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.driving_duration = data_set[0][0][0].duration_text.split(" ")[0].to_i rescue nil
+    self.bicycling_distance = data_set[1][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.bicycling_duration = data_set[1][0][0].duration_text.split(" ")[0].to_i rescue nil
     self.transit_distance = data_set[2][0][0].distance_text.split(" ")[0].to_f rescue nil
     self.transit_duration = data_set[2][0][0].duration_text.split(" ")[0].to_i rescue nil
-    self.walking_distance = data_set[3][0][0].distance_text.split(" ")[0].to_f
-    self.walking_duration = data_set[3][0][0].duration_text.split(" ")[0].to_i
+    self.walking_distance = data_set[3][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.walking_duration = data_set[3][0][0].duration_text.split(" ")[0].to_i rescue nil
   end
 
   # provide select options for filters
