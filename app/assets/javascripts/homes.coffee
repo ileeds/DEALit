@@ -1,6 +1,7 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+hashmap={}
 generate_slider = (slider_name)->
   this_slider = $('#' + slider_name + '_slider').slider(
     range: true
@@ -55,6 +56,7 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
     marker = document.createElement("div")
     marker.setAttribute 'class', 'marker_container1'
     marker.setAttribute 'id', @args.id
+    hashmap[@args.id]=marker
     marker.innerHTML = "$"+@args.price
     { content: marker }
 
@@ -97,6 +99,15 @@ $(document).on 'click', '.marker_container1', ->
   $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)
   return
 
+$(document).on 'mouseover', '.box', ->
+  debugger;
+  $('#'+@id+'.marker_container1').css 'color', 'red'
+  return
+
+$(document).on 'mouseout', '.box', ->
+  debugger;
+  $('.marker_container1').css 'color', 'black'
+  return
 
 $(document).on 'hidden.bs.modal', '.modal', ->
   $('#index').css 'overflow-y', 'scroll'
