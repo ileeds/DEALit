@@ -44,7 +44,7 @@ class Home < ApplicationRecord
     data_set = []
     matrix = GoogleDistanceMatrix::Matrix.new
     matrix.configure do |config|
-      config.google_api_key = ENV['GOOGLE_DISTANCE_MATRIX']
+      config.google_api_key = ENV['GOOGLE_KEY']
       config.units = 'imperial'
     end
     here = GoogleDistanceMatrix::Place.new lng: longitude, lat: latitude
