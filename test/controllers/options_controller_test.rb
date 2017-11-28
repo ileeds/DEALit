@@ -3,10 +3,6 @@ require 'sessions_helper'
 class OptionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
-    @user.password="password"
-    get login_path
-    post login_path, params: { session: { email:    @user.email,
-                                          password: 'password' } }
     @home = homes(:one)
     @home.user_id = @user.id
     @option = options(:one)

@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
-  #before_action :correct_user,   only: [:edit, :update, :destroy]
+  before_action :set_home,       only: [:edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 
   # GET /homes
   # GET /homes.json
@@ -109,7 +110,6 @@ class HomesController < ApplicationController
 
   # GET /homes/1/edit
   def edit
-    @home = Home.find(params[:id])
     if @home.option.nil?
       @home.option=Option.new
     end
@@ -123,12 +123,9 @@ class HomesController < ApplicationController
     respond_to do |format|
       if @home.save
         if params[:images]
-        params[:images].each do |picture|
-        @home.photos.create(photo: picture)
-        end
-      end
-        if !check
-          @home.option.destroy
+          params[:images].each do |picture|
+            @home.photos.create(photo: picture)
+          end
         end
         format.html { redirect_to Home.last, notice: 'Home was successfully created.' }
         format.json { render :show, status: :created, location: @home }
@@ -142,16 +139,12 @@ class HomesController < ApplicationController
   # PATCH/PUT /homes/1
   # PATCH/PUT /homes/1.json
   def update
-    @home = Home.find(params[:id])
     respond_to do |format|
       if @home.update(home_params)
         if params[:images]
-        params[:images].each do |picture|
-        @home.photos.create(photo: picture)
-        end
-      end
-        if !check
-          @home.option.destroy
+          params[:images].each do |picture|
+            @home.photos.create(photo: picture)
+          end
         end
         format.html { redirect_to @home, notice: 'Home was successfully updated.' }
         format.json { render :show, status: :ok, location: @home }
@@ -166,7 +159,6 @@ class HomesController < ApplicationController
   # DELETE /homes/1
   # DELETE /homes/1.json
   def destroy
-    @home = Home.find(params[:id])
     @home.destroy
     respond_to do |format|
       format.html { redirect_to homes_url, notice: 'Home was successfully destroyed.' }
@@ -179,6 +171,14 @@ class HomesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
       params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :photos, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :total_bathrooms, :private_bathrooms, :is_furnished, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration, :transit_distance, :transit_duration, :walking_distance, :walking_duration, option_attributes:[:id, :size_of_house, :capacity, :free_parking, :street_parking, :deposit, :broker, :pets, :beds, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+    end
+
+    def set_home
+      @home = Home.find(params[:id])
+    end
+
+    def correct_user
+      redirect_to(root_url) unless current_user.id == @home.user_id
     end
 
     def check

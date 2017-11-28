@@ -87,7 +87,6 @@ class RichMarkerBuilder extends Gmaps.Google.Builders.Marker #inherit from built
       map.setZoom(12)
 
 $(document).on 'click', '.marker_container1', ->
-  debugger;
   $('.clicked').removeClass().addClass 'marker_container1'
   $(this).removeClass('marker_container1').addClass 'clicked'
   $('.box').css 'background-color', 'transparent'
@@ -98,7 +97,7 @@ $(document).on 'click', '.marker_container1', ->
   $scrollTo = $('#' + @id + '.box')
   $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)
   return
-
+  
 $(document).on 'mouseover', '.box', ->
   debugger;
   $('#'+@id+'.marker_container1').css 'color', 'red'

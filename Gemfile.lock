@@ -69,13 +69,13 @@ GEM
     autoprefixer-rails (7.1.6)
       execjs
     awesome_print (1.8.0)
-    aws-sdk (2.10.87)
-      aws-sdk-resources (= 2.10.87)
-    aws-sdk-core (2.10.87)
+    aws-sdk (2.10.89)
+      aws-sdk-resources (= 2.10.89)
+    aws-sdk-core (2.10.89)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.87)
-      aws-sdk-core (= 2.10.87)
+    aws-sdk-resources (2.10.89)
+      aws-sdk-core (= 2.10.89)
     aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     better_errors (2.4.0)
@@ -396,4 +396,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.2

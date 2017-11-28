@@ -4,14 +4,12 @@ class Home < ApplicationRecord
   has_many :reviews, :dependent => :destroy
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
-  validates :address, presence: true
-  validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
-  validates :address, presence: true
+  validates :address, presence: true, uniqueness: { case_sensitive: false }
+  validates :description, length: { minimum: 10, maximum: 1400 }, presence: true
   validates :price, presence: true, numericality: true
   validates :size, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :available_rooms, numericality: true, allow_nil: true
   validates :available_rooms, numericality: true, allow_nil: true
   validates :total_bathrooms, numericality: true, allow_nil: true
   validates :private_bathrooms, numericality: true, allow_nil: true
@@ -23,7 +21,7 @@ class Home < ApplicationRecord
 
   geocoded_by :address
   before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? and !obj.latitude? and !obj.longitude? }
-  before_validation :distance_matrix
+  before_create :distance_matrix
 
   def dates_cannot_be_in_the_past
     today = Date.today
@@ -59,14 +57,14 @@ class Home < ApplicationRecord
       data_set[index] = matrix.data
     end
     # in miles and minutes
-    self.driving_distance = data_set[0][0][0].distance_text.split(" ")[0].to_f
-    self.driving_duration = data_set[0][0][0].duration_text.split(" ")[0].to_i
-    self.bicycling_distance = data_set[1][0][0].distance_text.split(" ")[0].to_f
-    self.bicycling_duration = data_set[1][0][0].duration_text.split(" ")[0].to_i
+    self.driving_distance = data_set[0][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.driving_duration = data_set[0][0][0].duration_text.split(" ")[0].to_i rescue nil
+    self.bicycling_distance = data_set[1][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.bicycling_duration = data_set[1][0][0].duration_text.split(" ")[0].to_i rescue nil
     self.transit_distance = data_set[2][0][0].distance_text.split(" ")[0].to_f rescue nil
     self.transit_duration = data_set[2][0][0].duration_text.split(" ")[0].to_i rescue nil
-    self.walking_distance = data_set[3][0][0].distance_text.split(" ")[0].to_f
-    self.walking_duration = data_set[3][0][0].duration_text.split(" ")[0].to_i
+    self.walking_distance = data_set[3][0][0].distance_text.split(" ")[0].to_f rescue nil
+    self.walking_duration = data_set[3][0][0].duration_text.split(" ")[0].to_i rescue nil
   end
 
   # provide select options for filters

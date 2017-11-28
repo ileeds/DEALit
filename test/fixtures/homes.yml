@@ -21,7 +21,7 @@ two:
   gallery_id: nil
   notification_id: nil
   description: MyTextLonger
-  address: Ziv Residence Hall B, Waltham, MA 02453, USA
+  address: Ziv Residence Hall A, Waltham, MA 02453, USA
   latitude: 42.363007
   longitude: -71.261385
   price: 500.80
@@ -38,7 +38,7 @@ three:
   gallery_id: nil
   notification_id: nil
   description: MyTextLonger
-  address: Ziv Residence Hall B, Waltham, MA 02453, USA
+  address: Ziv Residence Hall C, Waltham, MA 02453, USA
   latitude: 42.363007
   longitude: -71.261385
   price: 700.80
