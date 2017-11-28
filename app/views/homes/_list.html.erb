@@ -4,8 +4,8 @@
   </div>
   <% @homes.each do |home| %>
     <div class="home-photo-gallery">
-      <% if !home.photos.blank? %>
-        <%= image_tag home.photos.first.url %>
+      <% home.photos.each do |photo| %>
+        <%= image_tag photo.photo.url(:square) %>
       <% end %>
     </div>
     <%= link_to home, remote: true, class: "home-link" do %>

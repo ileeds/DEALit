@@ -5,13 +5,11 @@ class Home < ApplicationRecord
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
   validates :address, presence: true, uniqueness: { case_sensitive: false }
-  validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
-  validates :address, presence: true
+  validates :description, length: { minimum: 10, maximum: 1400 }, presence: true
   validates :price, presence: true, numericality: true
   validates :size, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :available_rooms, numericality: true, allow_nil: true
   validates :available_rooms, numericality: true, allow_nil: true
   validates :total_bathrooms, numericality: true, allow_nil: true
   validates :private_bathrooms, numericality: true, allow_nil: true
@@ -23,7 +21,7 @@ class Home < ApplicationRecord
 
   geocoded_by :address
   before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? and !obj.latitude? and !obj.longitude? }
-  before_validation :distance_matrix
+  before_create :distance_matrix
 
   def dates_cannot_be_in_the_past
     today = Date.today
