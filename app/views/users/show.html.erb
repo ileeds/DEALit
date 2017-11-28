@@ -1,19 +1,6 @@
 <% provide(:title, "Show User") %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-
 <% if @user.homes.count > 0 %>
   <h1>My Homes</h1>
   <table>
@@ -51,8 +38,10 @@
           <td><%= home.private_bathrooms %></td>
           <td><%= home.is_furnished %></td>
           <td><%= link_to 'Show', home %></td>
-          <td><%= link_to 'Edit', edit_home_path(id: current_user.id, home_id: home.id) %></td>
-          <td><%= link_to 'Destroy', home_path(id: current_user.id, home_id: home.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= render(
+            partial: 'layouts/edit_destroy',
+            locals: { home: home }
+          ) %></td>
         </tr>
       <% end %>
     </tbody>

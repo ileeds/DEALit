@@ -4,7 +4,7 @@ class Home < ApplicationRecord
   has_many :reviews, :dependent => :destroy
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
-  validates :address, presence: true
+  validates :address, presence: true, uniqueness: { case_sensitive: false }
   validates :description, length: {minimum: 10, maximum: 1400 }, presence: true
   validates :address, presence: true
   validates :price, presence: true, numericality: true

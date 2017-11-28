@@ -28,12 +28,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_template :new
   end
 
-  test "should show user" do
-    skip("create integration test for this")
-    get user_url(@user)
-    assert_response :success
-  end
-
   test "should redirect edit when not logged in" do
     get edit_user_path(@user)
     assert_not flash.empty?
