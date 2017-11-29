@@ -2,7 +2,6 @@ class CreateHomes < ActiveRecord::Migration[5.1]
   def change
     create_table :homes do |t|
       t.integer :user_id
-      t.integer :gallery_id
       t.integer :notification_id
       t.integer :option_id
       t.float :latitude

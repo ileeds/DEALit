@@ -1,115 +1,30 @@
-<% content_for :javascript_includes do %>
-  <%= javascript_include_tag "new_home" %>
-<% end %>
+<ol class="breadcrumb">
+  <li><%= link_to "Step 1", step1_wizard_path %></li>
+  <li><%= link_to "Step 2", step2_wizard_path %></li>
+  <li><%= link_to "Step 3", step3_wizard_path %></li>
+  <li class="active">Step 4</li>
+</ol>
 
-<%= form_for @home, :html => { :multipart => true } do |form| %>
-  <% if @home.errors.any? %>
+<%= form_for @home_wizard, as: :home_wizard, url: validate_step_wizard_path do |form| %>
+  <% if @home_wizard.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>
+      <h2><%= pluralize(@home_wizard.errors.count, "error") %> prohibited this home from being saved:</h2>
       <ul>
-      <% @home.errors.full_messages.each do |message| %>
+      <% @home_wizard.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-<div class = "row" >
-  <div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :home_address %>
-  </div>
-</div>
-<div class = "col-sm-2">
-</div>
-<div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :home_price %>
-  </div>
-</div>
-</div>
-<div class = "row" >
-  <div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :home_description %>
-  </div>
-</div>
-<div class = "col-sm-2">
-</div>
-<div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.number_field :size, id: :home_size %>
-  </div>
-</div>
-</div>
-
-<div class = "row" >
-  <div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date, id: :home_start_date %>
-  </div>
-</div>
-<div class = "col-sm-2">
-</div>
-<div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date, id: :home_end_date %>
-  </div>
-</div>
-</div>
-<div class = "row" >
-  <div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :total_rooms %>
-    <%= form.number_field :total_rooms, id: :home_total_rooms %>
-  </div>
-</div>
-<div class = "col-sm-2">
-</div>
-<div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :available_rooms %>
-    <%= form.text_field :available_rooms, id: :home_available_rooms %>
-  </div>
-</div>
-</div>
-<div class = "row" >
-  <div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :total_bathrooms %>
-    <%= form.text_field :total_bathrooms, id: :home_total_bathrooms %>
-  </div>
-</div>
-<div class = "col-sm-2">
-</div>
-<div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :private_bathrooms %>
-    <%= form.text_field :private_bathrooms, id: :home_private_bathrooms %>
-  </div>
-</div>
-</div>
-<div class = "row">
-  <div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :is_furnished, id: :checkbox %>
-    <%= form.check_box :is_furnished, id: :home_is_furnished, class: :roundedTwo%>
-  </div>
-</div>
-
+  <%= hidden_field_tag :current_step, 'step4' %>
   <div class = "col-sm-2">
   <div class="field">
     <%= form.label :photos %>
     <%= file_field_tag 'images[]', multiple: true %>
   </div>
   <div id = "photos">
-    <%=render :file =>"homes/_photos.html.erb" %>
+    <%= render(partial: 'homes/photos', locals: { home: @home_wizard.home }) %>
    </div>
 </div>
 </div>
@@ -358,7 +273,5 @@
 <%end%>
 </div>
 
-  <div class="actions">
-    <%= form.submit%>
-  </div>
+  <%= form.submit 'Continue' %>
 <% end %>

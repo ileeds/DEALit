@@ -15,6 +15,13 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
+  resource :wizard do
+    get :step1
+    get :step2
+    get :step3
+    get :step4
+    post :validate_step
+  end
 
   root   'homes#index'
   get  '/signup',  to: 'users#new'

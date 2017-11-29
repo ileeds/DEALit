@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20171124230140) do
 
   create_table "homes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "gallery_id"
     t.integer "notification_id"
     t.float "latitude"
     t.float "longitude"
@@ -179,7 +178,6 @@ ActiveRecord::Schema.define(version: 20171124230140) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer "gallery_id"
     t.string "filename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
