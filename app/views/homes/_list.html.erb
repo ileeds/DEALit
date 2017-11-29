@@ -5,12 +5,10 @@
   <% @homes.each do |home| %>
     <div class="home-wrapper">
       <div class="home-photo-gallery">
-        <% if !home.photos.blank? %>
-          <%= render(
-            partial: 'layouts/image_carousel',
-            locals: { home: home }
-          ) %>
-        <% end %>
+        <%= render(
+          partial: 'layouts/image_carousel',
+          locals: { home: home }
+        ) %>
       </div>
       <%= link_to home, remote: true, class: "home-link" do %>
         <div class="box" id = <%=home.id%>>

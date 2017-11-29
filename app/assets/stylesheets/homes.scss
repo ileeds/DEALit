@@ -267,6 +267,7 @@ textarea:-ms-input-placeholder {
 
 .home-photo {
   margin: auto;
+  width: 100%;
 }
 
 .slick-arrow {
@@ -290,5 +291,21 @@ textarea:-ms-input-placeholder {
   width: 50%;
   display: inline-block;
   float: left;
-  margin-top: 10%;
+}
+
+.slick-slide img {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  right: 0;
+  position: absolute;
+  top: 0;
+}
+
+.photo-container {
+  padding-top: 62%;
+  position: relative;
+  width: 100%;
 }

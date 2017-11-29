@@ -221,25 +221,6 @@
         $("#filterrific-form").submit();
     });
   });
-
-  $('.dropdown').on({
-    "shown.bs.dropdown": function() { },
-    "click":             function() { },
-    "hide.bs.dropdown":  function() {
-      return false;
-    }
-  });
-  $('.dropdown-toggle').on({
-    "click": function() {
-      var clicked = $(this).parent();
-      $('.dropdown').each(function( a, dropped ) {
-        if (dropped != clicked[0]) {
-          $(dropped).children('.dropdown-menu').hide();
-        }
-      });
-      $(this).siblings(".dropdown-menu").toggle();
-    }
-  })
   $('.cancelBtn').on({
     "click": function() {
       $(this).parent(".dropdown-menu").hide();
