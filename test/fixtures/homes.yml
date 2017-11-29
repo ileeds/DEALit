@@ -1,7 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  gallery_id: nil
   notification_id: nil
   description: MyTextLonger
   address: Ziv Residence Hall B, Waltham, MA 02453, USA
@@ -18,7 +17,6 @@ one:
   is_furnished: true
 
 two:
-  gallery_id: nil
   notification_id: nil
   description: MyTextLonger
   address: Ziv Residence Hall A, Waltham, MA 02453, USA
@@ -35,7 +33,6 @@ two:
   is_furnished: false
 
 three:
-  gallery_id: nil
   notification_id: nil
   description: MyTextLonger
   address: Ziv Residence Hall C, Waltham, MA 02453, USA
