@@ -18,13 +18,13 @@ class CreateHomes < ActiveRecord::Migration[5.1]
       t.float :total_bathrooms
       t.float :private_bathrooms
       t.boolean :is_furnished
-      t.float :driving_distance
+      t.integer :driving_distance
       t.integer :driving_duration
-      t.float :bicycling_distance
+      t.integer :bicycling_distance
       t.integer :bicycling_duration
-      t.float :transit_distance
+      t.integer :transit_distance
       t.integer :transit_duration
-      t.float :walking_distance
+      t.integer :walking_distance
       t.integer :walking_duration
 
       t.timestamps

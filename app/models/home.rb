@@ -57,14 +57,14 @@ class Home < ApplicationRecord
       data_set[index] = matrix.data
     end
     # in miles and minutes
-    self.driving_distance = data_set[0][0][0].distance_text.split(" ")[0].to_f rescue nil
-    self.driving_duration = data_set[0][0][0].duration_text.split(" ")[0].to_i rescue nil
-    self.bicycling_distance = data_set[1][0][0].distance_text.split(" ")[0].to_f rescue nil
-    self.bicycling_duration = data_set[1][0][0].duration_text.split(" ")[0].to_i rescue nil
-    self.transit_distance = data_set[2][0][0].distance_text.split(" ")[0].to_f rescue nil
-    self.transit_duration = data_set[2][0][0].duration_text.split(" ")[0].to_i rescue nil
-    self.walking_distance = data_set[3][0][0].distance_text.split(" ")[0].to_f rescue nil
-    self.walking_duration = data_set[3][0][0].duration_text.split(" ")[0].to_i rescue nil
+    self.driving_distance = to_integer(data_set[0][0][0].distance_text)
+    self.driving_duration = to_integer(data_set[0][0][0].duration_text)
+    self.bicycling_distance = to_integer(data_set[1][0][0].distance_text)
+    self.bicycling_duration = to_integer(data_set[1][0][0].duration_text)
+    self.transit_distance = to_integer(data_set[2][0][0].distance_text)
+    self.transit_duration = to_integer(data_set[2][0][0].duration_text)
+    self.walking_distance = to_integer(data_set[3][0][0].distance_text)
+    self.walking_duration = to_integer(data_set[3][0][0].duration_text)
   end
 
   # provide select options for filters
@@ -152,5 +152,21 @@ class Home < ApplicationRecord
   scope :with_is_furnished, lambda { |furnished|
     where(is_furnished: furnished)
   }
+
+  private
+
+    def to_integer(data)
+      begin
+        value = data.split(" ")
+        if data.include? "hour"
+          value = value[0].to_i*60 + value[2].to_i
+        else
+          value = value[0]
+        end
+        return value.to_i
+      rescue
+        return nil
+      end
+    end
 
 end
