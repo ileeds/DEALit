@@ -118,11 +118,7 @@
 }
 
 .box {
-  margin-top: 10%;
   height: 18vh;
-  border-width: 2px;
-  border-color: black;
-  border-style: solid;
   text-align:center;
   border-bottom-style: none;
 }
@@ -171,24 +167,27 @@ textarea:-ms-input-placeholder {
   width: 450%;
 }
 
+.home-buttons {
+  display: inline-block;
+  float: left;
+  width: 100%
+}
+
 .home-button {
   border-width: 2px;
   border-color: black;
   border-style: solid;
   text-align: center;
-  border-top-style: none;
   width: 50%;
   float: left;
-  border-radius: 0;
 }
 
 .home-button.send {
-  border-right-style: none;
-  color: black;
+
 }
 
 .home-button.notify {
-  border-left-style: none;
+  color: black;
 }
 
 .btn.home-button:hover {
@@ -264,4 +263,32 @@ textarea:-ms-input-placeholder {
 
 .col-sm-1 {
   display: inline-table;
+}
+
+.home-photo {
+  margin: auto;
+}
+
+.slick-arrow {
+  background: black !important;
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 10%;
+}
+
+.slick-next {
+  right: 10%;
+}
+
+.carousel {
+  margin-top: 10%;
+}
+
+.home-wrapper {
+  width: 50%;
+  display: inline-block;
+  float: left;
+  margin-top: 10%;
 }

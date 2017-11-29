@@ -97,14 +97,12 @@ $(document).on 'click', '.marker_container1', ->
   $scrollTo = $('#' + @id + '.box')
   $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)
   return
-  
-$(document).on 'mouseover', '.box', ->
-  debugger;
+
+$(document).on 'mouseover', ('.box, .home-photo'), ->
   $('#'+@id+'.marker_container1').css 'color', 'red'
   return
 
-$(document).on 'mouseout', '.box', ->
-  debugger;
+$(document).on 'mouseout', ('.box, .home-photo'), ->
   $('.marker_container1').css 'color', 'black'
   return
 

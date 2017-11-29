@@ -11,6 +11,7 @@ class ConversationsController < ApplicationController
 
   def new
     @recipient = User.find(params[:recipient_id])
+    @home_address = params[:home_address]
   end
 
   def create

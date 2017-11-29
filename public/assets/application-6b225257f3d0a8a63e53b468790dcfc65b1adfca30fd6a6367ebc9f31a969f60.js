@@ -33642,9 +33642,15 @@ jQuery(document).on('ready page:load', function() {
 
 }).call(this);
 (function() {
-  var RichMarkerBuilder, generate_slider,
+
+
+}).call(this);
+(function() {
+  var RichMarkerBuilder, generate_slider, hashmap,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
+
+  hashmap = {};
 
   generate_slider = function(slider_name) {
     var this_slider;
@@ -33658,9 +33664,7 @@ jQuery(document).on('ready page:load', function() {
         $('#max_' + slider_name).val(ui.values[1]);
         $('#min_' + slider_name).text(ui.values[0]);
         $('#max_' + slider_name).text(ui.values[1]);
-        console.log('a');
-        $('#filterrific-form').delay(200).submit();
-        return console.log('b');
+        return $('#filterrific-form').delay(200).submit();
       }
     });
     $('#min_' + slider_name).val(this_slider.slider('values')[0]);
@@ -33712,6 +33716,7 @@ jQuery(document).on('ready page:load', function() {
       marker = document.createElement("div");
       marker.setAttribute('class', 'marker_container1');
       marker.setAttribute('id', this.args.id);
+      hashmap[this.args.id] = marker;
       marker.innerHTML = "$" + this.args.price;
       return {
         content: marker
@@ -33770,7 +33775,6 @@ jQuery(document).on('ready page:load', function() {
   };
 
   $(document).on('click', '.marker_container1', function() {
-    debugger;
     var $container, $scrollTo;
     $('.clicked').removeClass().addClass('marker_container1');
     $(this).removeClass('marker_container1').addClass('clicked');
@@ -33781,6 +33785,16 @@ jQuery(document).on('ready page:load', function() {
     $container = $('#index');
     $scrollTo = $('#' + this.id + '.box');
     $container.scrollTop($scrollTo.offset().top - ($container.offset().top) + $container.scrollTop() - ($container.height() / 2));
+  });
+
+  $(document).on('mouseover', '.box', function() {
+    debugger;
+    $('#' + this.id + '.marker_container1').css('color', 'red');
+  });
+
+  $(document).on('mouseout', '.box', function() {
+    debugger;
+    $('.marker_container1').css('color', 'black');
   });
 
   $(document).on('hidden.bs.modal', '.modal', function() {
