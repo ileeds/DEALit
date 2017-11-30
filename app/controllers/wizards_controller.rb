@@ -49,7 +49,7 @@ class WizardsController < ApplicationController
 
     def render_allowed_partial name
       if %w(step1 step2 step3 step4).include? name
-        @allowed_partial = name
+        render name
       else
         raise StandardError, "unexpected partial request: #{params[:partial]}"
       end
