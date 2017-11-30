@@ -162,6 +162,10 @@ textarea:-ms-input-placeholder {
   color: black;
 }
 
+hr {
+  margin-top: 0px;
+}
+
 .dropdown-menu {
   overflow-x: visible;
   width: 450%;
@@ -308,4 +312,8 @@ textarea:-ms-input-placeholder {
   padding-top: 62%;
   position: relative;
   width: 100%;
+}
+
+.slick-slider {
+    margin-bottom: 0px;
 }

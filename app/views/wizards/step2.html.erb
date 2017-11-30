@@ -18,22 +18,11 @@
   <% end %>
 
   <%= hidden_field_tag :current_step, 'step2' %>
-  <div class = "row" >
-    <div class = "col-sm-2">
-    <div class="field">
-      <%= form.label :start_date %>
-      <%= form.date_select :start_date, id: :home_start_date %>
-    </div>
-  </div>
-  <div class = "col-sm-2">
-  </div>
-  <div class = "col-sm-2">
-    <div class="field">
-      <%= form.label :end_date %>
-      <%= form.date_select :end_date, id: :home_end_date %>
-    </div>
-  </div>
-  </div>
+
+  <%= render(
+    partial: 'wizards/partials/rooms',
+    locals: { form: form }
+  ) %>
 
   <%= form.submit 'Continue' %>
 <% end %>

@@ -122,16 +122,6 @@
 <%=  form.fields_for :option  do |form1| %>
 
     <div class="field">
-      <%= form1.label :size_of_house %>
-      <%= form1.text_field :size_of_house, id: :option_size_of_house %>
-    </div>
-
-    <div class="field">
-      <%= form1.label :capacity %>
-      <%= form1.number_field :capacity, id: :option_capacity %>
-    </div>
-
-    <div class="field">
       <%= form1.label :free_parking %>
       <%= form1.check_box :free_parking, id: :option_free_parking, class: :roundedTwo%>
     </div>
@@ -154,11 +144,6 @@
     <div class="field">
       <%= form1.label :pets %>
       <%= form1.check_box :pets, id: :option_pets %>
-    </div>
-
-    <div class="field">
-      <%= form1.label :beds %>
-      <%= form1.text_field :beds, id: :option_beds %>
     </div>
 
     <div class="field">
@@ -344,16 +329,6 @@
     <div class="field">
       <%= form1.label :doorman %>
       <%= form1.check_box :doorman, id: :option_doorman %>
-    </div>
-
-    <div class="field">
-      <%= form1.label :house %>
-      <%= form1.check_box :house, id: :option_house %>
-    </div>
-
-    <div class="field">
-      <%= form1.label :apartment %>
-      <%= form1.check_box :apartment, id: :option_apartment %>
     </div>
 <%end%>
 </div>

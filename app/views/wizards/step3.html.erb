@@ -18,45 +18,11 @@
   <% end %>
 
   <%= hidden_field_tag :current_step, 'step3' %>
-  <div class = "row" >
-    <div class = "col-sm-2">
-    <div class="field">
-      <%= form.label :total_rooms %>
-      <%= form.number_field :total_rooms, id: :home_total_rooms %>
-    </div>
-  </div>
-  <div class = "col-sm-2">
-  </div>
-  <div class = "col-sm-2">
-    <div class="field">
-      <%= form.label :available_rooms %>
-      <%= form.text_field :available_rooms, id: :home_available_rooms %>
-    </div>
-  </div>
-  </div>
-  <div class = "row" >
-    <div class = "col-sm-2">
-    <div class="field">
-      <%= form.label :total_bathrooms %>
-      <%= form.text_field :total_bathrooms, id: :home_total_bathrooms %>
-    </div>
-  </div>
-  <div class = "col-sm-2">
-  </div>
-  <div class = "col-sm-2">
-    <div class="field">
-      <%= form.label :private_bathrooms %>
-      <%= form.text_field :private_bathrooms, id: :home_private_bathrooms %>
-    </div>
-  </div>
-  </div>
-  <div class = "row">
-    <div class = "col-sm-2">
-    <div class="field">
-      <%= form.label :is_furnished, id: :checkbox %>
-      <%= form.check_box :is_furnished, id: :home_is_furnished, class: :roundedTwo%>
-    </div>
-  </div>
+
+  <%= render(
+    partial: 'wizards/partials/amenities',
+    locals: { form: form }
+  ) %>
 
   <%= form.submit 'Continue' %>
 <% end %>

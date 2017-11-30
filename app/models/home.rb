@@ -5,15 +5,18 @@ class Home < ApplicationRecord
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
   validates :address, presence: true, uniqueness: { case_sensitive: false }
-  validates :description, length: { minimum: 10, maximum: 1400 }, presence: true
+  validates :title, presence: true
+  validates :description, length: { maximum: 1400 }, presence: true
   validates :price, presence: true, numericality: true
-  validates :size, presence: true
+  validates :capacity, presence: true, numericality: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :available_rooms, numericality: true, allow_nil: true
-  validates :total_bathrooms, numericality: true, allow_nil: true
+  validates :available_rooms, numericality: true
+  validates :total_rooms, numericality: true
+  validates :total_bathrooms, numericality: true
   validates :private_bathrooms, numericality: true, allow_nil: true
   validates :is_furnished, inclusion: { in: [ true, false ] }
+  validates :entire_home, inclusion: { in: [ true, false ] }
   validates :latitude, presence: true
   validates :longitude, presence: true
 

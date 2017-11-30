@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20171124230140) do
     t.float "latitude"
     t.float "longitude"
     t.text "description"
+    t.text "title"
     t.string "address"
     t.float "price"
     t.integer "size"
@@ -40,9 +41,12 @@ ActiveRecord::Schema.define(version: 20171124230140) do
     t.date "end_date"
     t.integer "total_rooms"
     t.integer "available_rooms"
+    t.integer "available_beds"
     t.float "total_bathrooms"
     t.float "private_bathrooms"
     t.boolean "is_furnished"
+    t.integer "capacity"
+    t.boolean "entire_home"
     t.integer "driving_distance"
     t.integer "driving_duration"
     t.integer "bicycling_distance"
@@ -125,14 +129,11 @@ ActiveRecord::Schema.define(version: 20171124230140) do
   end
 
   create_table "options", force: :cascade do |t|
-    t.float "size_of_house"
-    t.integer "capacity"
     t.boolean "free_parking"
     t.boolean "street_parking"
     t.float "deposit"
     t.float "broker"
     t.boolean "pets"
-    t.integer "beds"
     t.boolean "heated"
     t.boolean "ac"
     t.boolean "tv"
@@ -159,7 +160,6 @@ ActiveRecord::Schema.define(version: 20171124230140) do
     t.boolean "lawn"
     t.boolean "patio"
     t.boolean "storage"
-    t.integer "floors"
     t.boolean "refrigerator"
     t.boolean "stove"
     t.boolean "microwave"
@@ -170,8 +170,6 @@ ActiveRecord::Schema.define(version: 20171124230140) do
     t.boolean "intercom"
     t.boolean "gated"
     t.boolean "doorman"
-    t.boolean "house"
-    t.boolean "apartment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "home_id"

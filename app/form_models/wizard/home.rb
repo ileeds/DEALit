@@ -15,12 +15,33 @@ module Wizard
 
     class Step1 < Base
       validates :address, presence: true
-      validates :description, length: { minimum: 10, maximum: 1400 }, presence: true
       validates :price, presence: true, numericality: true
-      validates :size, presence: true
+      validate :address_must_be_unique
+      validates :title, presence: true
+      validates :description, length: { maximum: 1400 }, presence: true
+      validates :is_furnished, inclusion: { in: [ true, false ] }
+      validates :capacity, presence: true, numericality: true
+      validates :entire_home, inclusion: { in: [ true, false ] }
+
+      def address_must_be_unique
+        if !::Home.where('lower(address) = ?', address.downcase).blank?
+          errors.add(:address, "already exists")
+        end
+      end
     end
 
     class Step2 < Step1
+      validates :available_rooms, numericality: true
+      validates :total_rooms, numericality: true
+      validates :total_bathrooms, numericality: true
+      validates :private_bathrooms, numericality: true, allow_nil: true
+    end
+
+    class Step3 < Step2
+
+    end
+
+    class Step4 < Step3
       validates :start_date, presence: true
       validates :end_date, presence: true
       validate :dates_cannot_be_in_the_past, :start_date_before_end_date
@@ -40,17 +61,6 @@ module Wizard
           errors.add(:end_date, "cannot be before Start date")
         end
       end
-    end
-
-    class Step3 < Step2
-      validates :available_rooms, numericality: true, allow_nil: true
-      validates :total_bathrooms, numericality: true, allow_nil: true
-      validates :private_bathrooms, numericality: true, allow_nil: true
-      validates :is_furnished, inclusion: { in: [ true, false ] }
-    end
-
-    class Step4 < Step3
-      
     end
   end
 end
