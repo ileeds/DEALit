@@ -2,14 +2,11 @@
 
 one:
   id: 1
-  size_of_house: 1.5
-  capacity: 1
   free_parking: false
   street_parking: false
   deposit: 1.5
   broker: 1.5
   pets: false
-  beds: 1
   home_id: 1
   heated: false
   ac: false
@@ -37,7 +34,6 @@ one:
   lawn: false
   patio: false
   storage: false
-  floors: 1
   refrigerator: false
   stove: false
   microwave: false
@@ -48,20 +44,15 @@ one:
   intercom: false
   gated: false
   doorman: false
-  house: false
-  apartment: false
 
 two:
   id: 2
-  size_of_house: 1.5
-  capacity: 1
   free_parking: false
   street_parking: false
   deposit: 1.5
   broker: 1.5
   pets: false
   home_id: 1
-  beds: 1
   heated: false
   ac: false
   tv: false
@@ -88,7 +79,6 @@ two:
   lawn: false
   patio: false
   storage: false
-  floors: 1
   refrigerator: false
   stove: false
   microwave: false
@@ -99,5 +89,3 @@ two:
   intercom: false
   gated: false
   doorman: false
-  house: false
-  apartment: false

@@ -2,12 +2,12 @@ class CreateHomes < ActiveRecord::Migration[5.1]
   def change
     create_table :homes do |t|
       t.integer :user_id
-      t.integer :gallery_id
       t.integer :notification_id
       t.integer :option_id
       t.float :latitude
       t.float :longitude
       t.text :description
+      t.text :title
       t.string :address
       t.float :price
       t.integer :size
@@ -15,9 +15,12 @@ class CreateHomes < ActiveRecord::Migration[5.1]
       t.date :end_date
       t.integer :total_rooms
       t.integer :available_rooms
+      t.integer :available_beds
       t.float :total_bathrooms
       t.float :private_bathrooms
       t.boolean :is_furnished
+      t.integer :capacity
+      t.boolean :entire_home
       t.integer :driving_distance
       t.integer :driving_duration
       t.integer :bicycling_distance

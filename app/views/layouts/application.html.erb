@@ -21,3 +21,24 @@
     </div>
   </body>
 </html>
+
+<script type="text/javascript">
+  $('.dropdown').on({
+    "shown.bs.dropdown": function() { },
+    "click":             function() { },
+    "hide.bs.dropdown":  function() {
+      return false;
+    }
+  });
+  $('.dropdown-toggle').on({
+    "click": function() {
+      var clicked = $(this).parent();
+      $('.dropdown').each(function( a, dropped ) {
+        if (dropped != clicked[0]) {
+          $(dropped).children('.dropdown-menu').hide();
+        }
+      });
+      $(this).siblings(".dropdown-menu").toggle();
+    }
+  })
+</script>

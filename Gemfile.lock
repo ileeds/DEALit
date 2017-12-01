@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/sferik/rails_admin.git
-  revision: b634e00552bddff10ab000f7984b60b13fc3b669
+  revision: 5c5044d3d90ca5a4fb87fe1007463efc4efb4569
   specs:
     rails_admin (1.2.0)
       builder (~> 3.1)
@@ -69,13 +69,13 @@ GEM
     autoprefixer-rails (7.1.6)
       execjs
     awesome_print (1.8.0)
-    aws-sdk (2.10.89)
-      aws-sdk-resources (= 2.10.89)
-    aws-sdk-core (2.10.89)
+    aws-sdk (2.10.92)
+      aws-sdk-resources (= 2.10.92)
+    aws-sdk-core (2.10.92)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.89)
-      aws-sdk-core (= 2.10.89)
+    aws-sdk-resources (2.10.92)
+      aws-sdk-core (= 2.10.92)
     aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     better_errors (2.4.0)

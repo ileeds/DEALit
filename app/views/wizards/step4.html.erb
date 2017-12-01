@@ -1,0 +1,28 @@
+<ol class="breadcrumb">
+  <li><%= link_to "Step 1", step1_wizard_path %></li>
+  <li><%= link_to "Step 2", step2_wizard_path %></li>
+  <li><%= link_to "Step 3", step3_wizard_path %></li>
+  <li class="active">Step 4</li>
+</ol>
+
+<%= form_for @home_wizard, as: :home_wizard, url: validate_step_wizard_path do |form| %>
+  <% if @home_wizard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@home_wizard.errors.count, "error") %> prohibited this home from being saved:</h2>
+      <ul>
+      <% @home_wizard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag :current_step, 'step4' %>
+
+  <%= render(
+    partial: 'wizards/partials/calendar',
+    locals: { form: form }
+  ) %>
+
+  <%= form.submit 'Continue' %>
+<% end %>

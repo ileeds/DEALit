@@ -1,10 +1,18 @@
 <div class="carousel">
-  <% home.photos.each do |photo| %>
-    <div class="photo-container">
-      <%= link_to home, remote: true, class: "home-link" do %>
-        <%= image_tag photo.photo.url(:square), class: "home-photo", id: home.id %>
-      <% end %>
-    </div>
+  <% if !home.photos.blank? %>
+    <% home.photos.each do |photo| %>
+      <div class="photo-container">
+        <%= link_to home, remote: true, class: "home-link" do %>
+          <%= image_tag photo.photo.url(:square), class: "home-photo", id: home.id %>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+  <div class="photo-container">
+    <%= link_to home, remote: true, class: "home-link" do %>
+      <%= image_tag "home.png", class: "home-photo", id: home.id %>
+    <% end %>
+  </div>
   <% end %>
 </div>
 

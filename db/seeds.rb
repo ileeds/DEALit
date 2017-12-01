@@ -16,20 +16,21 @@ locations = GeoSeeder::Location.random({
   quantity: 10
 })
 
+@images = Dir.glob("#{Rails.root}/app/assets/images/home_samples/*.jpeg")
+
 locations.each do |location|
   start_date = Date.today
   end_date = Faker::Date.between(start_date + 1.year, start_date + 2.years)
   home = Home.create(
-    user_id: 1, gallery_id: nil, notification_id: nil,
-    description: Faker::Company.bs, address: [location.street_number + ' ' + location.street, location.city, location.state].join(", "),
-    price: Faker::Number.decimal(3, 2), size: Faker::Number.decimal(3, 2), start_date: start_date, end_date: end_date,
+    user_id: 1, notification_id: nil, title: Faker::Company.bs, description: Faker::Company.bs, address: [location.street_number + ' ' + location.street, location.city, location.state].join(", "),
+    price: Faker::Number.decimal(3, 2), size: Faker::Number.decimal(3, 2), start_date: start_date, end_date: end_date, capacity: Faker::Number.between(1, 10),
     total_rooms: Faker::Number.between(1, 10), available_rooms: Faker::Number.between(1, 10),
     total_bathrooms: Faker::Number.between(1, 10), private_bathrooms: Faker::Number.between(1, 10), is_furnished: Faker::Boolean,
-    latitude: location.lat, longitude: location.lng
+    latitude: location.lat, longitude: location.lng, entire_home: Faker::Boolean
   )
   3.times do
     Photo.create(
-      photo: Faker::Avatar.image, home_id: home.id
+      photo: File.new(@images.sample), home_id: home.id
     )
   end
 end
