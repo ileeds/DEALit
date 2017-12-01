@@ -103,7 +103,10 @@
     <%= file_field_tag 'images[]', multiple: true %>
   </div>
   <div id = "photos">
-    <%=render :file =>"homes/_photos.html.erb" %>
+    <%= render(
+      partial: 'homes/photos',
+      locals: { home: @home }
+    ) %>
    </div>
 </div>
 </div>
@@ -268,11 +271,6 @@
     <div class="field">
       <%= form1.label :storage %>
       <%= form1.check_box :storage, id: :option_storage %>
-    </div>
-
-    <div class="field">
-      <%= form1.label :floors %>
-      <%= form1.number_field :floors, id: :option_floors %>
     </div>
 
     <div class="field">

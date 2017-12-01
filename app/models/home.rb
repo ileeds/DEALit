@@ -79,6 +79,11 @@ class Home < ApplicationRecord
     self.distance = to_integer(data_set[3][0][0].distance_text)
   end
 
+  def self.clear_stale
+    stale_homes = Home.where("DATE(created_at) < DATE(?)", Date.yesterday).where.not(status: 'active')
+    stale_homes.map(&:destroy)
+  end
+
   # provide select options for filters
   def self.options_for_sorted_by
     [
