@@ -6,11 +6,11 @@
   </div>
 
   <div>
-    <%= text_field_tag :subject, nil, placeholder: "Subject" %>
+    <%= text_field_tag :subject, @home_address %>
   </div>
 
   <div>
-    <%= text_area_tag :body, nil, placeholder: "Leave a comment" %>
+    <%= text_area_tag :body, nil, placeholder: "Leave a message" %>
   </div>
 
   <%= submit_tag "Send" %>

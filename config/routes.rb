@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   root   'homes#index'
+  get  '/forum', to: 'comments#index'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
   get    '/login',   to: 'sessions#new'

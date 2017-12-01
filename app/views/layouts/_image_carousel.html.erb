@@ -1,0 +1,15 @@
+<div class="carousel">
+  <% home.photos.each do |photo| %>
+    <div class="photo-container">
+      <%= link_to home, remote: true, class: "home-link" do %>
+        <%= image_tag photo.photo.url(:square), class: "home-photo", id: home.id %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.carousel').not('.slick-initialized').slick();
+  });
+</script>

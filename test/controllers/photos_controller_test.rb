@@ -17,9 +17,10 @@ class PhotosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create photo" do
-    skip("redo test for this")
+    byebug
     assert_difference('Photo.count') do
       post photos_url, params: { photo: { filename: @photo.filename, gallery_id: @photo.gallery_id, home_id:@photo.home_id } }
+      byebug
     end
     assert_redirected_to photo_url(Photo.last)
   end
@@ -35,16 +36,14 @@ class PhotosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update photo" do
-    skip("redo test for this")
     patch photo_url(@photo), params: { photo: { filename: @photo.filename, gallery_id: @photo.gallery_id,home_id:@photo.home_id  } }
     assert_redirected_to photo_url(@photo)
   end
 
   test "should destroy photo" do
-    skip("redo test for this")
     assert_difference('Photo.count', -1) do
       delete photo_url(@photo)
     end
-    assert_redirected_to photos_url
+    #assert_template partial: 'homes/_form'
   end
 end

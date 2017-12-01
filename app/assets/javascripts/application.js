@@ -19,4 +19,5 @@
 //= require underscore
 //= require gmaps/google
 //= require filterrific/filterrific-jquery
+//= require jquery.slick
 //= require_tree .

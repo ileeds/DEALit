@@ -3,3 +3,4 @@
 ) %>
 buildMap(<%=raw @hash.to_json %>);
 $("#filterrific_results").html("<%= js %>");
+$('.carousel').not('.slick-initialized').slick();
