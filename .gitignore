@@ -31,4 +31,4 @@ coverage
 /config/application.yml
 
 # Ignore images
-# /public/images/*
+/public/images/*
