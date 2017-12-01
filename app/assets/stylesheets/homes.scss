@@ -102,6 +102,8 @@
 
 .modal-main {
   background-color: white;
+  position:fixed;
+  width:650px;
 }
 
 .modal {
@@ -133,6 +135,12 @@
   overflow-y:auto;
   overflow-x:hidden;
   width: 45%;
+}
+#index1 {
+  height: 58%;
+  overflow-y:auto;
+  overflow-x:hidden;
+  width: 16.5%;
 }
 
 #map {
@@ -249,7 +257,9 @@ hr {
   position: fixed !important;
   bottom: 2%;
 }
-
+.bottom1 {
+  position: fixed;
+}
 #filterrific_results > div:first-child {
   margin-bottom: -10%;
 }

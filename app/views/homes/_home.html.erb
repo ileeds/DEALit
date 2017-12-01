@@ -1,3 +1,5 @@
+<div class = "row">
+<div class = "col-sm-6">
 <p>
   <strong>User:</strong>
   <%= @home.user_id %>
@@ -57,3 +59,17 @@
   <strong>Is furnished:</strong>
   <%= @home.is_furnished %>
 </p>
+</div>
+<div class = "col-sm-6">
+
+   <div id="index1" class = "bottom1">
+     <%if @home.reviews%>
+
+      <% @home.reviews.each do |review| %>
+          <p><%= review.description %> <i> by <%=review.user.name%> </i></p>
+      <% end %>
+      <%= link_to 'New Review', new_home_review_path(@home) %>
+    <%end%>
+  </div>
+</div>
+</div>

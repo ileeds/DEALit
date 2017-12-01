@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = Review.where({home_id:params[:home_id]})
+    @home = Home.find(params[:home_id])
   end
 
   # GET /reviews/1
