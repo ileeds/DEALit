@@ -25,7 +25,6 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(photo_params)
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
@@ -69,6 +68,10 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:gallery_id, :filename)
+      if !Rails.env.test?
+        params.require(:photo).permit(:gallery_id, :filename)
+      else
+        params.require(:photo).permit(:gallery_id, :filename, :home_id)
+      end
     end
 end

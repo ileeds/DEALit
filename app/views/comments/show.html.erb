@@ -5,5 +5,5 @@
   <%= @comment.text %>
 </p>
 
-  <td><%= link_to 'Edit', edit_home_comment_path(@comment.home, @comment) %></td>
-<%= link_to 'Back', root_url %>
+  <td><%= link_to 'Edit', edit_comment_path(@comment) %></td>
+<%= link_to 'Back', comments_path %>

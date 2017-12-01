@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :home_steps
 
   root   'homes#index'
+  get  '/forum', to: 'comments#index'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
   get    '/login',   to: 'sessions#new'
