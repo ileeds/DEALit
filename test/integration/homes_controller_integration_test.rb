@@ -41,7 +41,7 @@ class HomesControllerIntegrationTest < ActionDispatch::IntegrationTest
   test "should create home" do
     skip("redo test")
     assert_difference('Home.count', 1) do
-      post homes_url, params: { home: { address: "110 South St, Waltham, MA 02453, USA", total_bathrooms: @home.total_bathrooms, private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date,
+      post homes_url, params: { home: { address: "110 South St, Waltham, MA 02453, USA", total_bathrooms: @home.total_bathrooms, private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, start_date: @home.start_date,
         total_rooms: @home.total_rooms, title: @home.title, capacity: @home.capacity, entire_home: @home.entire_home } }
       follow_redirect!
     end
@@ -52,7 +52,7 @@ class HomesControllerIntegrationTest < ActionDispatch::IntegrationTest
     skip("redo test")
     option_number = Option.count
     assert_difference('Home.count', 1) do
-      post homes_url, params: { home: { address: "110 South St, Waltham, MA 02453, USA", total_bathrooms: @home.total_bathrooms, private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date,
+      post homes_url, params: { home: { address: "110 South St, Waltham, MA 02453, USA", total_bathrooms: @home.total_bathrooms, private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, start_date: @home.start_date,
          total_rooms: @home.total_rooms, title: @home.title, capacity: @home.capacity, entire_home: @home.entire_home }}
       follow_redirect!
       assert Option.count == option_number
@@ -63,7 +63,7 @@ class HomesControllerIntegrationTest < ActionDispatch::IntegrationTest
   test "should not create invalid home" do
     skip("redo test")
     assert_difference('Home.count', 0) do
-      post homes_url, params: { home: { address: @home.address, total_bathrooms: "a", private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, size: @home.size, start_date: @home.start_date, total_rooms: @home.total_rooms, title: @home.title, capacity: @home.capacity, entire_home: @home.entire_home } }
+      post homes_url, params: { home: { address: @home.address, total_bathrooms: "a", private_bathrooms: @home.private_bathrooms, description: @home.description, end_date: @home.end_date, is_furnished: @home.is_furnished, price: @home.price, available_rooms: @home.available_rooms, start_date: @home.start_date, total_rooms: @home.total_rooms, title: @home.title, capacity: @home.capacity, entire_home: @home.entire_home } }
     end
     assert_template 'homes/new'
   end

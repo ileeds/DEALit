@@ -77,11 +77,11 @@
           Location
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-          <div>Driving distance</div>
-          <div id="driving_distance_slider" class="custom-slider">
-            <%= f.fields_for :with_driving_distance_range, OpenStruct.new(@filterrific.with_driving_distance_range) do |with_driving_distance_fields| %>
-              <div class="ui-slider-handle custom-handle"> <%= with_driving_distance_fields.text_field :min, id: "min_driving_distance", value: @driving_distance_min, class: "slider-input", readonly: true %> </div>
-              <div class="ui-slider-handle custom-handle"> <%= with_driving_distance_fields.text_field :max, id: "max_driving_distance", value: @driving_distance_max, class: "slider-input", readonly: true %> </div>
+          <div>Distance</div>
+          <div id="distance_slider" class="custom-slider">
+            <%= f.fields_for :with_distance_range, OpenStruct.new(@filterrific.with_distance_range) do |with_distance_fields| %>
+              <div class="ui-slider-handle custom-handle"> <%= with_distance_fields.text_field :min, id: "min_distance", value: @distance_min, class: "slider-input", readonly: true %> </div>
+              <div class="ui-slider-handle custom-handle"> <%= with_distance_fields.text_field :max, id: "max_distance", value: @distance_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
           <div class="slider-label-below">Driving duration</div>
@@ -91,13 +91,6 @@
               <div class="ui-slider-handle custom-handle"> <%= with_driving_duration_fields.text_field :max, id: "max_driving_duration", value: @driving_duration_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
-          <div class="slider-label-below">Bicycling distance</div>
-          <div id="bicycling_distance_slider" class="custom-slider">
-            <%= f.fields_for :with_bicycling_distance_range, OpenStruct.new(@filterrific.with_bicycling_distance_range) do |with_bicycling_distance_fields| %>
-              <div class="ui-slider-handle custom-handle"> <%= with_bicycling_distance_fields.text_field :min, id: "min_bicycling_distance", value: @bicycling_distance_min, class: "slider-input", readonly: true %> </div>
-              <div class="ui-slider-handle custom-handle"> <%= with_bicycling_distance_fields.text_field :max, id: "max_bicycling_distance", value: @bicycling_distance_max, class: "slider-input", readonly: true %> </div>
-            <% end %>
-          </div>
           <div class="slider-label-below">Bicycling duration</div>
           <div id="bicycling_duration_slider" class="custom-slider">
             <%= f.fields_for :with_bicycling_duration_range, OpenStruct.new(@filterrific.with_bicycling_duration_range) do |with_bicycling_duration_fields| %>
@@ -105,25 +98,11 @@
               <div class="ui-slider-handle custom-handle"> <%= with_bicycling_duration_fields.text_field :max, id: "max_bicycling_duration", value: @bicycling_duration_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
-          <div class="slider-label-below">Transit distance</div>
-          <div id="transit_distance_slider" class="custom-slider">
-            <%= f.fields_for :with_transit_distance_range, OpenStruct.new(@filterrific.with_transit_distance_range) do |with_transit_distance_fields| %>
-              <div class="ui-slider-handle custom-handle"> <%= with_transit_distance_fields.text_field :min, id: "min_transit_distance", value: @transit_distance_min, class: "slider-input", readonly: true %> </div>
-              <div class="ui-slider-handle custom-handle"> <%= with_transit_distance_fields.text_field :max, id: "max_transit_distance", value: @transit_distance_max, class: "slider-input", readonly: true %> </div>
-            <% end %>
-          </div>
           <div class="slider-label-below">Transit duration</div>
           <div id="transit_duration_slider" class="custom-slider">
             <%= f.fields_for :with_transit_duration_range, OpenStruct.new(@filterrific.with_transit_duration_range) do |with_transit_duration_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :min, id: "min_transit_duration", value: @transit_duration_min, class: "slider-input", readonly: true %> </div>
               <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :max, id: "max_transit_duration", value: @transit_duration_max, class: "slider-input", readonly: true %> </div>
-            <% end %>
-          </div>
-          <div class="slider-label-below">Walking distance</div>
-          <div id="walking_distance_slider" class="custom-slider">
-            <%= f.fields_for :with_walking_distance_range, OpenStruct.new(@filterrific.with_walking_distance_range) do |with_walking_distance_fields| %>
-              <div class="ui-slider-handle custom-handle"> <%= with_walking_distance_fields.text_field :min, id: "min_walking_distance", value: @walking_distance_min, class: "slider-input", readonly: true %> </div>
-              <div class="ui-slider-handle custom-handle"> <%= with_walking_distance_fields.text_field :max, id: "max_walking_distance", value: @walking_distance_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
           <div class="slider-label-below">Walking duration</div>
@@ -191,13 +170,10 @@
 <p hidden id="available_rooms_hidden" min="<%= @available_rooms_min %>" max="<%= @available_rooms_max %>" total-min="<%= @all_available_rooms_min %>" total-max="<%= @all_available_rooms_max %>" />
 <p hidden id="total_bathrooms_hidden" min="<%= @total_bathrooms_min %>" max="<%= @total_bathrooms_max %>" total-min="<%= @all_total_bathrooms_min %>" total-max="<%= @all_total_bathrooms_max %>" />
 <p hidden id="private_bathrooms_hidden" min="<%= @private_bathrooms_min %>" max="<%= @private_bathrooms_max %>" total-min="<%= @all_private_bathrooms_min %>" total-max="<%= @all_private_bathrooms_max %>" />
-<p hidden id="driving_distance_hidden" min="<%= @driving_distance_min %>" max="<%= @driving_distance_max %>" total-min="<%= @all_driving_distance_min %>" total-max="<%= @all_driving_distance_max %>" />
+<p hidden id="distance_hidden" min="<%= @distance_min %>" max="<%= @distance_max %>" total-min="<%= @all_distance_min %>" total-max="<%= @all_distance_max %>" />
 <p hidden id="driving_duration_hidden" min="<%= @driving_duration_min %>" max="<%= @driving_duration_max %>" total-min="<%= @all_driving_duration_min %>" total-max="<%= @all_driving_duration_max %>" />
-<p hidden id="bicycling_distance_hidden" min="<%= @bicycling_distance_min %>" max="<%= @bicycling_distance_max %>" total-min="<%= @all_bicycling_distance_min %>" total-max="<%= @all_bicycling_distance_max %>" />
 <p hidden id="bicycling_duration_hidden" min="<%= @bicycling_duration_min %>" max="<%= @bicycling_duration_max %>" total-min="<%= @all_bicycling_duration_min %>" total-max="<%= @all_bicycling_duration_max %>" />
-<p hidden id="transit_distance_hidden" min="<%= @transit_distance_min %>" max="<%= @transit_distance_max %>" total-min="<%= @all_transit_distance_min %>" total-max="<%= @all_transit_distance_max %>" />
 <p hidden id="transit_duration_hidden" min="<%= @transit_duration_min %>" max="<%= @transit_duration_max %>" total-min="<%= @all_transit_duration_min %>" total-max="<%= @all_transit_duration_max %>" />
-<p hidden id="walking_distance_hidden" min="<%= @walking_distance_min %>" max="<%= @walking_distance_max %>" total-min="<%= @all_walking_distance_min %>" total-max="<%= @all_walking_distance_max %>" />
 <p hidden id="walking_duration_hidden" min="<%= @walking_duration_min %>" max="<%= @walking_duration_max %>" total-min="<%= @all_walking_duration_min %>" total-max="<%= @all_walking_duration_max %>" />
 
 <script type="text/javascript">

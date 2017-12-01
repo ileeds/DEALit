@@ -72,22 +72,18 @@ class Home < ApplicationRecord
       data_set[index] = matrix.data
     end
     # in miles and minutes
-    self.driving_distance = to_integer(data_set[0][0][0].distance_text)
     self.driving_duration = to_integer(data_set[0][0][0].duration_text)
-    self.bicycling_distance = to_integer(data_set[1][0][0].distance_text)
     self.bicycling_duration = to_integer(data_set[1][0][0].duration_text)
-    self.transit_distance = to_integer(data_set[2][0][0].distance_text)
     self.transit_duration = to_integer(data_set[2][0][0].duration_text)
-    self.walking_distance = to_integer(data_set[3][0][0].distance_text)
     self.walking_duration = to_integer(data_set[3][0][0].duration_text)
+    self.distance = to_integer(data_set[3][0][0].distance_text)
   end
 
   # provide select options for filters
   def self.options_for_sorted_by
     [
       ['Start date', 'start_date'],
-      ['Price', 'price'],
-      ['Size', 'size']
+      ['Price', 'price']
     ]
   end
 
@@ -110,13 +106,10 @@ class Home < ApplicationRecord
       :with_total_bathrooms_range,
       :with_private_bathrooms_range,
       :with_is_furnished,
-      :with_driving_distance_range,
+      :with_distance_range,
       :with_driving_duration_range,
-      :with_bicycling_distance_range,
       :with_bicycling_duration_range,
-      :with_transit_distance_range,
       :with_transit_duration_range,
-      :with_walking_distance_range,
       :with_walking_duration_range
     ]
   )
@@ -128,8 +121,6 @@ class Home < ApplicationRecord
       order("homes.start_date asc")
     when 'price'
       order("homes.price asc")
-    when 'size'
-      order("homes.size desc")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_key.inspect }")
     end
@@ -150,7 +141,7 @@ class Home < ApplicationRecord
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
 
-  [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range, :with_driving_distance_range, :with_driving_duration_range, :with_bicycling_distance_range, :with_bicycling_duration_range, :with_transit_distance_range, :with_transit_duration_range, :with_walking_distance_range, :with_walking_duration_range].each do |sc|
+  [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range, :with_distance_range, :with_driving_duration_range, :with_bicycling_duration_range, :with_transit_duration_range, :with_walking_duration_range].each do |sc|
     scope sc, lambda { |attrs|
       column = "#{sc.to_s[5..-7]}".to_sym
       if attrs.min.blank? && attrs.max.blank?

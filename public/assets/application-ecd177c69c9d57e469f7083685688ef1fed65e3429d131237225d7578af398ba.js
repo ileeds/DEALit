@@ -36658,6 +36658,10 @@ jQuery(document).on('ready page:load', function() {
 
 }).call(this);
 (function() {
+
+
+}).call(this);
+(function() {
   var RichMarkerBuilder, generate_slider, hashmap,
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
@@ -36697,13 +36701,10 @@ jQuery(document).on('ready page:load', function() {
     generate_slider('available_rooms');
     generate_slider('total_bathrooms');
     generate_slider('private_bathrooms');
-    generate_slider('driving_distance');
+    generate_slider('distance');
     generate_slider('driving_duration');
-    generate_slider('bicycling_distance');
     generate_slider('bicycling_duration');
-    generate_slider('transit_distance');
     generate_slider('transit_duration');
-    generate_slider('walking_distance');
     generate_slider('walking_duration');
     return $('.select-filter').on("change", function() {
       return $('#filterrific-form').submit();
@@ -36792,19 +36793,21 @@ jQuery(document).on('ready page:load', function() {
     $(this).removeClass('marker_container1').addClass('clicked');
     $('.box').css('background-color', 'transparent');
     $('.box').css('color', 'black');
-    $('.box#' + this.id).css('background-color', '#0070FF');
-    $('.box#' + this.id).css('color', 'white');
+    $('#' + this.id + '.box').css('background-color', '#0070FF');
+    $('#' + this.id + '.box').css('color', 'white');
     $container = $('#index');
     $scrollTo = $('#' + this.id + '.box');
     $container.scrollTop($scrollTo.offset().top - ($container.offset().top) + $container.scrollTop() - ($container.height() / 2));
   });
 
-  $(document).on('mouseover', '.box', function() {
+  $(document).on('mouseover', '.box, .home-photo', function() {
     $('#' + this.id + '.marker_container1').css('color', 'red');
+    $('#' + this.id + '.clicked').css('color', 'red');
   });
 
-  $(document).on('mouseout', '.box', function() {
+  $(document).on('mouseout', '.box, .home-photo', function() {
     $('.marker_container1').css('color', 'black');
+    $('.clicked').css('color', 'black');
   });
 
   $(document).on('hidden.bs.modal', '.modal', function() {

@@ -10,7 +10,6 @@ class CreateHomes < ActiveRecord::Migration[5.1]
       t.text :title
       t.string :address
       t.float :price
-      t.integer :size
       t.date :start_date
       t.date :end_date
       t.integer :total_rooms
@@ -21,13 +20,10 @@ class CreateHomes < ActiveRecord::Migration[5.1]
       t.boolean :is_furnished
       t.integer :capacity
       t.boolean :entire_home
-      t.integer :driving_distance
+      t.integer :distance
       t.integer :driving_duration
-      t.integer :bicycling_distance
       t.integer :bicycling_duration
-      t.integer :transit_distance
       t.integer :transit_duration
-      t.integer :walking_distance
       t.integer :walking_duration
       t.string :status
 
