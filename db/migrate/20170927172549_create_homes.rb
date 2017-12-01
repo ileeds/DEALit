@@ -29,6 +29,7 @@ class CreateHomes < ActiveRecord::Migration[5.1]
       t.integer :transit_duration
       t.integer :walking_distance
       t.integer :walking_duration
+      t.string :status
 
       t.timestamps
     end

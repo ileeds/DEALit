@@ -1,0 +1,23 @@
+<%= render layout: 'form' do |form| %>
+
+  <div class="field">
+    <%= form.label :available_rooms %>
+    <%= form.number_field :available_rooms, id: :home_available_rooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_rooms %>
+    <%= form.number_field :total_rooms, id: :home_total_rooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_bathrooms %>
+    <%= form.number_field :total_bathrooms, id: :home_total_bathrooms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :private_bathrooms %>
+    <%= form.number_field :private_bathrooms, id: :home_private_bathrooms %>
+  </div>
+
+<% end %>

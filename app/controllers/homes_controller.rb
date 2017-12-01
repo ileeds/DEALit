@@ -102,6 +102,11 @@ class HomesController < ApplicationController
     @home = Home.find(params[:id])
   end
 
+  # GET /homes/new
+  def new
+    @home = Home.new
+  end
+
   # GET /homes/1/edit
   def edit
     if @home.option.nil?
@@ -116,12 +121,13 @@ class HomesController < ApplicationController
     @home.user_id = current_user.id
     respond_to do |format|
       if @home.save
+        @home.option = Option.create(home_id: @home.id)
         if params[:images]
           params[:images].each do |picture|
             @home.photos.create(photo: picture)
           end
         end
-        format.html { redirect_to Home.last, notice: 'Home was successfully created.' }
+        format.html { redirect_to home_steps_path(home_id: @home.id) }
         format.json { render :show, status: :created, location: @home }
       else
         format.html { render :new }
@@ -164,7 +170,7 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :title, :photos, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :available_beds, :total_bathrooms, :private_bathrooms, :is_furnished, :capacity, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration, :transit_distance, :transit_duration, :walking_distance, :walking_duration, option_attributes:[:id, :free_parking, :street_parking, :deposit, :broker, :pets, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :title, :photos, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :available_beds, :total_bathrooms, :private_bathrooms, :is_furnished, :entire_home, :capacity, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration, :transit_distance, :transit_duration, :walking_distance, :status, :walking_duration, option_attributes:[:id, :free_parking, :street_parking, :deposit, :broker, :pets, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
     end
 
     def set_home

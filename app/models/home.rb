@@ -4,27 +4,39 @@ class Home < ApplicationRecord
   has_many :reviews, :dependent => :destroy
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
+
   validates :address, presence: true, uniqueness: { case_sensitive: false }
-  validates :title, presence: true
-  validates :description, length: { maximum: 1400 }, presence: true
-  validates :price, presence: true, numericality: true
-  validates :capacity, presence: true, numericality: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validates :available_rooms, numericality: true
-  validates :total_rooms, numericality: true
-  validates :total_bathrooms, numericality: true
-  validates :private_bathrooms, numericality: true, allow_nil: true
-  validates :is_furnished, inclusion: { in: [ true, false ] }
-  validates :entire_home, inclusion: { in: [ true, false ] }
   validates :latitude, presence: true
   validates :longitude, presence: true
-
-  validate :dates_cannot_be_in_the_past, :start_date_before_end_date
+  validates :price, presence: true, numericality: true
+  validates :title, presence: true
+  validates :description, length: { maximum: 1400 }, presence: true
+  validates :is_furnished, inclusion: { in: [ true, false ] }
+  validates :capacity, presence: true, numericality: true
+  validates :entire_home, inclusion: { in: [ true, false ] }
+  validates :available_rooms, numericality: true, :if => :active_or_rooms?
+  validates :total_rooms, numericality: true, :if => :active_or_rooms?
+  validates :total_bathrooms, numericality: true, :if => :active_or_rooms?
+  validates :private_bathrooms, numericality: true, :if => :active_or_rooms?
+  validates :start_date, presence: true, :if => :active_or_calendar?
+  validates :end_date, presence: true, :if => :active_or_calendar?
+  validate :dates_cannot_be_in_the_past, :start_date_before_end_date, :if => :active_or_calendar?
 
   geocoded_by :address
   before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? and !obj.latitude? and !obj.longitude? }
   before_create :distance_matrix
+
+  def active?
+    status == 'active'
+  end
+
+  def active_or_rooms?
+    status.to_s.include?('rooms') || active?
+  end
+
+  def active_or_calendar?
+    status.to_s.include?('calendar') || active?
+  end
 
   def dates_cannot_be_in_the_past
     today = Date.today

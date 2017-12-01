@@ -26,7 +26,7 @@ locations.each do |location|
     price: Faker::Number.decimal(3, 2), size: Faker::Number.decimal(3, 2), start_date: start_date, end_date: end_date, capacity: Faker::Number.between(1, 10),
     total_rooms: Faker::Number.between(1, 10), available_rooms: Faker::Number.between(1, 10),
     total_bathrooms: Faker::Number.between(1, 10), private_bathrooms: Faker::Number.between(1, 10), is_furnished: Faker::Boolean,
-    latitude: location.lat, longitude: location.lng, entire_home: Faker::Boolean
+    latitude: location.lat, longitude: location.lng, entire_home: Faker::Boolean, status: "active"
   )
   3.times do
     Photo.create(

@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20171124230140) do
     t.integer "transit_duration"
     t.integer "walking_distance"
     t.integer "walking_duration"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
