@@ -1,11 +1,12 @@
 class CommentsController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.all.order('updated_at DESC')
   end
 
   # GET /comments/1

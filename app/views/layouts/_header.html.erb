@@ -13,6 +13,7 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Find a Home",  root_path, class:"logo-link" %></li>
+            <li> <%= link_to "Forum", comments_path, class: "logo-link"%> </li>
             <li><%= link_to "Post a Home", new_home_path, class:"logo-link" %></li>
             <% if logged_in? %>
               <li><%= link_to "Inbox", conversations_path, class:"logo-link" %></li>
