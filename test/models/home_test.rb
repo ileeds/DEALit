@@ -25,10 +25,6 @@ class HomeTest < ActiveSupport::TestCase
     assert Home.sorted_by("price").first == @home_two
   end
 
-  test "homes sorted by size" do
-    assert Home.sorted_by("size").first == @home_three
-  end
-
   test "homes sorted by invalid" do
     assert_raises ArgumentError do
       Home.sorted_by("other")

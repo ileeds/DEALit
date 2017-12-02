@@ -17,7 +17,7 @@ class HomesController < ApplicationController
       }
     ) or return
 
-    @homes = @filterrific.find.page(params[:page])
+    @homes = @filterrific.find.page(params[:page]).where(status: "active")
     respond_to do |format|
       format.html
       format.js
@@ -26,7 +26,7 @@ class HomesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@homes) do |home, marker|
       marker.lat home.latitude
       marker.lng home.longitude
-      marker.infowindow "Address: #{home.address} \n \n Rooms: #{home.total_rooms} \n\n Size: #{home.size.to_i}".gsub(/\n/, '<br/>')
+      marker.infowindow "Address: #{home.address} \n \n Rooms: #{home.total_rooms}".gsub(/\n/, '<br/>')
       marker.json({ price: home.price, id:home.id })
     end
 
@@ -55,40 +55,25 @@ class HomesController < ApplicationController
     @private_bathrooms_min = params[:filterrific]["with_private_bathrooms_range"]["min"] rescue @all_private_bathrooms_min
     @private_bathrooms_max = params[:filterrific]["with_private_bathrooms_range"]["max"] rescue @all_private_bathrooms_max
 
-    @all_driving_distance_min = Home.minimum(:driving_distance).floor rescue nil
-    @all_driving_distance_max = Home.maximum(:driving_distance).ceil rescue nil
-    @driving_distance_min = params[:filterrific]["with_driving_distance_range"]["min"] rescue @all_driving_distance_min
-    @driving_distance_max = params[:filterrific]["with_driving_distance_range"]["max"] rescue @all_driving_distance_max
+    @all_distance_min = Home.minimum(:distance).floor rescue nil
+    @all_distance_max = Home.maximum(:distance).ceil rescue nil
+    @distance_min = params[:filterrific]["with_distance_range"]["min"] rescue @all_distance_min
+    @distance_max = params[:filterrific]["with_distance_range"]["max"] rescue @all_distance_max
 
     @all_driving_duration_min = Home.minimum(:driving_duration).floor rescue nil
     @all_driving_duration_max = Home.maximum(:driving_duration).ceil rescue nil
     @driving_duration_min = params[:filterrific]["with_driving_duration_range"]["min"] rescue @all_driving_duration_min
     @driving_duration_max = params[:filterrific]["with_driving_duration_range"]["max"] rescue @all_driving_duration_max
 
-    @all_bicycling_distance_min = Home.minimum(:bicycling_distance).floor rescue nil
-    @all_bicycling_distance_max = Home.maximum(:bicycling_distance).ceil rescue nil
-    @bicycling_distance_min = params[:filterrific]["with_bicycling_distance_range"]["min"] rescue @all_bicycling_distance_min
-    @bicycling_distance_max = params[:filterrific]["with_bicycling_distance_range"]["max"] rescue @all_bicycling_distance_max
-
     @all_bicycling_duration_min = Home.minimum(:bicycling_duration).floor rescue nil
     @all_bicycling_duration_max = Home.maximum(:bicycling_duration).ceil rescue nil
     @bicycling_duration_min = params[:filterrific]["with_bicycling_duration_range"]["min"] rescue @all_bicycling_duration_min
     @bicycling_duration_max = params[:filterrific]["with_bicycling_duration_range"]["max"] rescue @all_bicycling_duration_max
 
-    @all_transit_distance_min = Home.minimum(:transit_distance).floor rescue nil
-    @all_transit_distance_max = Home.maximum(:transit_distance).ceil rescue nil
-    @transit_distance_min = params[:filterrific]["with_transit_distance_range"]["min"] rescue @all_transit_distance_min
-    @transit_distance_max = params[:filterrific]["with_transit_distance_range"]["max"] rescue @all_transit_distance_max
-
     @all_transit_duration_min = Home.minimum(:transit_duration).floor rescue nil
     @all_transit_duration_max = Home.maximum(:transit_duration).ceil rescue nil
     @transit_duration_min = params[:filterrific]["with_transit_duration_range"]["min"] rescue @all_transit_duration_min
     @transit_duration_max = params[:filterrific]["with_transit_duration_range"]["max"] rescue @all_transit_duration_max
-
-    @all_walking_distance_min = Home.minimum(:walking_distance).floor rescue nil
-    @all_walking_distance_max = Home.maximum(:walking_distance).ceil rescue nil
-    @walking_distance_min = params[:filterrific]["with_walking_distance_range"]["min"] rescue @all_walking_distance_min
-    @walking_distance_max = params[:filterrific]["with_walking_distance_range"]["max"] rescue @all_walking_distance_max
 
     @all_walking_duration_min = Home.minimum(:walking_duration).floor rescue nil
     @all_walking_duration_max = Home.maximum(:walking_duration).ceil rescue nil
@@ -100,6 +85,11 @@ class HomesController < ApplicationController
   # GET /homes/1.json
   def show
     @home = Home.find(params[:id])
+  end
+
+  # GET /homes/new
+  def new
+    @home = Home.new
   end
 
   # GET /homes/1/edit
@@ -116,12 +106,13 @@ class HomesController < ApplicationController
     @home.user_id = current_user.id
     respond_to do |format|
       if @home.save
+        @home.option = Option.create(home_id: @home.id)
         if params[:images]
           params[:images].each do |picture|
             @home.photos.create(photo: picture)
           end
         end
-        format.html { redirect_to Home.last, notice: 'Home was successfully created.' }
+        format.html { redirect_to home_steps_path(home_id: @home.id) }
         format.json { render :show, status: :created, location: @home }
       else
         format.html { render :new }
@@ -164,7 +155,7 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :title, :photos, :address, :price, :size, :start_date, :end_date, :total_rooms, :available_rooms, :available_beds, :total_bathrooms, :private_bathrooms, :is_furnished, :capacity, :driving_distance, :driving_duration, :bicycling_distance, :bicycling_duration, :transit_distance, :transit_duration, :walking_distance, :walking_duration, option_attributes:[:id, :free_parking, :street_parking, :deposit, :broker, :pets, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+      params.require(:home).permit(:user_id, :gallery_id, :notification_id, :description, :title, :photos, :address, :price, :start_date, :end_date, :total_rooms, :available_rooms, :available_beds, :total_bathrooms, :private_bathrooms, :is_furnished, :entire_home, :capacity, :distance, :driving_duration, :bicycling_duration, :transit_duration, :status, :walking_duration, option_attributes:[:id, :free_parking, :street_parking, :deposit, :broker, :pets, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
     end
 
     def set_home

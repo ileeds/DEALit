@@ -8,7 +8,6 @@ one:
   latitude: 42.363007
   longitude: -71.261385
   price: 600.80
-  size: 700.80
   start_date: <%= 4.days.from_now %>
   end_date: <%= 1.year.from_now %>
   total_rooms: 5
@@ -27,7 +26,6 @@ two:
   latitude: 42.363007
   longitude: -71.261385
   price: 500.80
-  size: 700.80
   start_date: <%= 6.days.from_now %>
   end_date: <%= 1.year.from_now + 4.days %>
   total_rooms: 1
@@ -46,7 +44,6 @@ three:
   latitude: 42.363007
   longitude: -71.261385
   price: 700.80
-  size: 800.80
   start_date: <%= 8.days.from_now %>
   end_date: <%= 1.year.from_now + 2.days %>
   total_rooms: 3
