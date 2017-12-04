@@ -22,11 +22,6 @@
 </p>
 
 <p>
-  <strong>Size:</strong>
-  <%= @home.size %>
-</p>
-
-<p>
   <strong>Start date:</strong>
   <%= @home.start_date %>
 </p>
@@ -67,14 +62,7 @@
 <br>
 <br>
 <%if @home.option %>
-  <strong>Size of house:</strong>
-  <%= @home.option.size_of_house %>
 
-</p>
-
-<p>
-  <strong>Capacity:</strong>
-  <%= @home.option.capacity %>
 </p>
 
 <p>
@@ -100,11 +88,6 @@
 <p>
   <strong>Pets:</strong>
   <%= @home.option.pets %>
-</p>
-
-<p>
-  <strong>Beds:</strong>
-  <%= @home.option.beds %>
 </p>
 
 <p>
@@ -238,11 +221,6 @@
 </p>
 
 <p>
-  <strong>Floors:</strong>
-  <%= @home.option.floors %>
-</p>
-
-<p>
   <strong>Refrigerator:</strong>
   <%= @home.option.refrigerator %>
 </p>
@@ -290,16 +268,6 @@
 <p>
   <strong>Doorman:</strong>
   <%= @home.option.doorman %>
-</p>
-
-<p>
-  <strong>House:</strong>
-  <%= @home.option.house %>
-</p>
-
-<p>
-  <strong>Apartment:</strong>
-  <%= @home.option.apartment %>
 </p>
 <%end%>
 <%= render(

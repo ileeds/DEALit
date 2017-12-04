@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171204084920) do
     t.integer "home_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "followings", force: :cascade do |t|
@@ -40,24 +41,25 @@ ActiveRecord::Schema.define(version: 20171204084920) do
     t.float "latitude"
     t.float "longitude"
     t.text "description"
+    t.text "title"
     t.string "address"
     t.float "price"
-    t.integer "size"
     t.date "start_date"
     t.date "end_date"
     t.integer "total_rooms"
     t.integer "available_rooms"
+    t.integer "available_beds"
     t.float "total_bathrooms"
     t.float "private_bathrooms"
     t.boolean "is_furnished"
-    t.integer "driving_distance"
+    t.integer "capacity"
+    t.boolean "entire_home"
+    t.integer "distance"
     t.integer "driving_duration"
-    t.integer "bicycling_distance"
     t.integer "bicycling_duration"
-    t.integer "transit_distance"
     t.integer "transit_duration"
-    t.integer "walking_distance"
     t.integer "walking_duration"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -135,14 +137,11 @@ ActiveRecord::Schema.define(version: 20171204084920) do
   end
 
   create_table "options", force: :cascade do |t|
-    t.float "size_of_house"
-    t.integer "capacity"
     t.boolean "free_parking"
     t.boolean "street_parking"
     t.float "deposit"
     t.float "broker"
     t.boolean "pets"
-    t.integer "beds"
     t.boolean "heated"
     t.boolean "ac"
     t.boolean "tv"
@@ -169,7 +168,6 @@ ActiveRecord::Schema.define(version: 20171204084920) do
     t.boolean "lawn"
     t.boolean "patio"
     t.boolean "storage"
-    t.integer "floors"
     t.boolean "refrigerator"
     t.boolean "stove"
     t.boolean "microwave"
@@ -180,8 +178,6 @@ ActiveRecord::Schema.define(version: 20171204084920) do
     t.boolean "intercom"
     t.boolean "gated"
     t.boolean "doorman"
-    t.boolean "house"
-    t.boolean "apartment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "home_id"

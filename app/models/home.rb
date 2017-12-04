@@ -6,24 +6,39 @@ class Home < ApplicationRecord
   has_many :reviews, :dependent => :destroy
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
+
   validates :address, presence: true, uniqueness: { case_sensitive: false }
-  validates :description, length: { minimum: 10, maximum: 1400 }, presence: true
-  validates :price, presence: true, numericality: true
-  validates :size, presence: true
-  validates :start_date, presence: true
-  validates :end_date, presence: true
-  validates :available_rooms, numericality: true, allow_nil: true
-  validates :total_bathrooms, numericality: true, allow_nil: true
-  validates :private_bathrooms, numericality: true, allow_nil: true
-  validates :is_furnished, inclusion: { in: [ true, false ] }
   validates :latitude, presence: true
   validates :longitude, presence: true
-
-  validate :dates_cannot_be_in_the_past, :start_date_before_end_date
+  validates :price, presence: true, numericality: true
+  validates :title, presence: true
+  validates :description, length: { maximum: 1400 }, presence: true
+  validates :is_furnished, inclusion: { in: [ true, false ] }
+  validates :capacity, presence: true, numericality: true
+  validates :entire_home, inclusion: { in: [ true, false ] }
+  validates :available_rooms, numericality: true, :if => :active_or_rooms?
+  validates :total_rooms, numericality: true, :if => :active_or_rooms?
+  validates :total_bathrooms, numericality: true, :if => :active_or_rooms?
+  validates :private_bathrooms, numericality: true, :if => :active_or_rooms?
+  validates :start_date, presence: true, :if => :active_or_calendar?
+  validates :end_date, presence: true, :if => :active_or_calendar?
+  validate :dates_cannot_be_in_the_past, :start_date_before_end_date, :if => :active_or_calendar?
 
   geocoded_by :address
   before_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? and !obj.latitude? and !obj.longitude? }
   before_create :distance_matrix
+
+  def active?
+    status == 'active'
+  end
+
+  def active_or_rooms?
+    status.to_s.include?('rooms') || active?
+  end
+
+  def active_or_calendar?
+    status.to_s.include?('calendar') || active?
+  end
 
   def dates_cannot_be_in_the_past
     today = Date.today
@@ -59,22 +74,23 @@ class Home < ApplicationRecord
       data_set[index] = matrix.data
     end
     # in miles and minutes
-    self.driving_distance = to_integer(data_set[0][0][0].distance_text)
     self.driving_duration = to_integer(data_set[0][0][0].duration_text)
-    self.bicycling_distance = to_integer(data_set[1][0][0].distance_text)
     self.bicycling_duration = to_integer(data_set[1][0][0].duration_text)
-    self.transit_distance = to_integer(data_set[2][0][0].distance_text)
     self.transit_duration = to_integer(data_set[2][0][0].duration_text)
-    self.walking_distance = to_integer(data_set[3][0][0].distance_text)
     self.walking_duration = to_integer(data_set[3][0][0].duration_text)
+    self.distance = to_integer(data_set[3][0][0].distance_text)
+  end
+
+  def self.clear_stale
+    stale_homes = Home.where("DATE(created_at) < DATE(?)", Date.yesterday).where.not(status: 'active')
+    stale_homes.map(&:destroy)
   end
 
   # provide select options for filters
   def self.options_for_sorted_by
     [
       ['Start date', 'start_date'],
-      ['Price', 'price'],
-      ['Size', 'size']
+      ['Price', 'price']
     ]
   end
 
@@ -97,13 +113,10 @@ class Home < ApplicationRecord
       :with_total_bathrooms_range,
       :with_private_bathrooms_range,
       :with_is_furnished,
-      :with_driving_distance_range,
+      :with_distance_range,
       :with_driving_duration_range,
-      :with_bicycling_distance_range,
       :with_bicycling_duration_range,
-      :with_transit_distance_range,
       :with_transit_duration_range,
-      :with_walking_distance_range,
       :with_walking_duration_range
     ]
   )
@@ -115,8 +128,6 @@ class Home < ApplicationRecord
       order("homes.start_date asc")
     when 'price'
       order("homes.price asc")
-    when 'size'
-      order("homes.size desc")
     else
       raise(ArgumentError, "Invalid sort option: #{ sort_key.inspect }")
     end
@@ -137,7 +148,7 @@ class Home < ApplicationRecord
     where("start_date <= ? AND end_date >= ?", start_date, end_date)
   }
 
-  [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range, :with_driving_distance_range, :with_driving_duration_range, :with_bicycling_distance_range, :with_bicycling_duration_range, :with_transit_distance_range, :with_transit_duration_range, :with_walking_distance_range, :with_walking_duration_range].each do |sc|
+  [:with_price_range, :with_total_rooms_range, :with_available_rooms_range, :with_private_bathrooms_range, :with_total_bathrooms_range, :with_distance_range, :with_driving_duration_range, :with_bicycling_duration_range, :with_transit_duration_range, :with_walking_duration_range].each do |sc|
     scope sc, lambda { |attrs|
       column = "#{sc.to_s[5..-7]}".to_sym
       if attrs.min.blank? && attrs.max.blank?

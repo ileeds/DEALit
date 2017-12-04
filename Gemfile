@@ -58,3 +58,5 @@ gem 'omniauth-google-oauth2'
 gem 'google_distance_matrix'
 gem 'mailboxer'
 gem 'jquery-slick-rails'
+gem 'wicked'
+gem 'whenever', require: false

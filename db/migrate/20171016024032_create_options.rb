@@ -1,14 +1,11 @@
 class CreateOptions < ActiveRecord::Migration[5.1]
   def change
     create_table :options do |t|
-      t.float :size_of_house
-      t.integer :capacity
       t.boolean :free_parking
       t.boolean :street_parking
       t.float :deposit
       t.float :broker
       t.boolean :pets
-      t.integer :beds
       t.boolean :heated
       t.boolean :ac
       t.boolean :tv
@@ -35,7 +32,6 @@ class CreateOptions < ActiveRecord::Migration[5.1]
       t.boolean :lawn
       t.boolean :patio
       t.boolean :storage
-      t.integer :floors
       t.boolean :refrigerator
       t.boolean :stove
       t.boolean :microwave
@@ -46,8 +42,6 @@ class CreateOptions < ActiveRecord::Migration[5.1]
       t.boolean :intercom
       t.boolean :gated
       t.boolean :doorman
-      t.boolean :house
-      t.boolean :apartment
 
       t.timestamps
     end

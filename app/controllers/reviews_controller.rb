@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = Review.where({home_id:params[:home_id]})
+    @home = Home.find(params[:home_id])
   end
 
   # GET /reviews/1
@@ -27,7 +28,6 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     @review.home_id = params[:home_id]
-
     respond_to do |format|
       if @review.save
         format.html { redirect_to home_review_path(params[:home_id], @review.id), notice: 'Review was successfully created.' }
@@ -72,6 +72,10 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:description)
+      if !Rails.env.test?
+        params.require(:review).permit(:description)
+      else
+        params.require(:review).permit(:description, :home_id, :user_id)
+      end
     end
 end

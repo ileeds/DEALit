@@ -1,10 +1,12 @@
 class CommentsController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.all.order('updated_at DESC')
   end
 
   # GET /comments/1
@@ -25,10 +27,10 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
-    @comment.home_id = params[:home_id]
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to home_comment_path(params[:home_id], @comment.id), notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -54,7 +56,6 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    home = @comment.home
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to home_comments_url(home), notice: 'Comment was successfully destroyed.' }
@@ -68,6 +69,9 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
     end
 
+    def correct_user
+      redirect_to(comments_path) unless current_user.id == @comment.user_id
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
       params.require(:comment).permit(:text)

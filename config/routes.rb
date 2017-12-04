@@ -22,15 +22,10 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-  resource :wizard do
-    get :step1
-    get :step2
-    get :step3
-    get :step4
-    post :validate_step
-  end
+  resources :home_steps
 
   root   'homes#index'
+  get  '/forum', to: 'comments#index'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
   get    '/login',   to: 'sessions#new'

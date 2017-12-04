@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :homes
   has_many :followings
   has_many :reviews
+  has_many :comments
   acts_as_messageable
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }

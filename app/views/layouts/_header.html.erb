@@ -13,17 +13,14 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Find a Home",  root_path, class:"logo-link" %></li>
+            <li> <%= link_to "Forum", comments_path, class: "logo-link"%> </li>
+            <li><%= link_to "Post a Home", new_home_path, class:"logo-link" %></li>
             <% if logged_in? %>
-              <li><%= link_to "Post a Home", step1_wizard_path, class:"logo-link" %></li>
               <li class="dropdown-1" data-behavior="notifications">
                 <a class="dropdown-toggle logo-link" type="button" id="dropdownMenu2" data-toggle="dropdown" >
                   <%= fa_icon "bell", id: "bell-icon" %><span hidden data-behavior="unread-count" id="unread" class="unread-true"></span>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" data-behavior="notification-items">
-                  <!--<li><a class="logo-link" href="#">Action</a></li>
-                  <li><a class="logo-link" href="#">Another Action</a></li>
-                  <li><a class="logo-link" href="#">One MoreAction</a></li>
-                -->
                 </ul>
             </li>
 

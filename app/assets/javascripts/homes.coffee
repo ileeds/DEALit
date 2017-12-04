@@ -34,13 +34,10 @@ $(document).ready ->
   generate_slider('available_rooms')
   generate_slider('total_bathrooms')
   generate_slider('private_bathrooms')
-  generate_slider('driving_distance')
+  generate_slider('distance')
   generate_slider('driving_duration')
-  generate_slider('bicycling_distance')
   generate_slider('bicycling_duration')
-  generate_slider('transit_distance')
   generate_slider('transit_duration')
-  generate_slider('walking_distance')
   generate_slider('walking_duration')
 
   $('.select-filter').on "change", ->
@@ -92,8 +89,8 @@ $(document).on 'click', '.marker_container1', ->
   $(this).removeClass('marker_container1').addClass 'clicked'
   $('.box').css 'background-color', 'transparent'
   $('.box').css 'color', 'black'
-  $('.box#' + @id ).css 'background-color', '#0070FF'
-  $('.box#' + @id ).css 'color', 'white'
+  $('#' + @id + '.box').css 'background-color', '#0070FF'
+  $('#' + @id + '.box' ).css 'color', 'white'
   $container = $('#index')
   $scrollTo = $('#' + @id + '.box')
   $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)
@@ -101,10 +98,12 @@ $(document).on 'click', '.marker_container1', ->
 
 $(document).on 'mouseover', ('.box, .home-photo'), ->
   $('#'+@id+'.marker_container1').css 'color', 'red'
+  $('#'+@id+'.clicked').css 'color', 'red'
   return
 
 $(document).on 'mouseout', ('.box, .home-photo'), ->
   $('.marker_container1').css 'color', 'black'
+  $('.clicked').css 'color', 'black'
   return
 
 $(document).on 'hidden.bs.modal', '.modal', ->

@@ -27,9 +27,8 @@ coverage
 # Ignore Spring files.
 /spring/*.pid
 
-Ignore photos
-/public/images/*
-
 # Ignore application configuration
 /config/application.yml
-/config/initializers/pusher.rb
+
+# Ignore images
+/public/images/*
