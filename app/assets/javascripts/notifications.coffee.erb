@@ -1,0 +1,36 @@
+class Notifications
+  constructor: ->
+    @notifications = $("[data-behavior='notifications']")
+    @setup() if @notifications.length > 0
+
+  setup: ->
+    $.ajax(
+      url: "/notifications.json"
+      dataType: "JSON"
+      method: "GET"
+      success: @handleSuccess
+    )
+
+  handleClick: (e,j) =>
+    console.log(j)
+    console.log($(this).attr("id"))
+    $.ajax(
+      url: "/notifications/mark_as_read"
+      #dataType: "JSON"
+      method: "PUT"
+      #success: ->
+      #  $("[data-behavior='unread-count']").text()
+    )
+
+  handleSuccess: (data) =>
+    items = $.map data, (notification) ->
+      "<li class='notification-li notification-unread-#{notification.unread}'><a class='notification-dropdown-item' id='dropdown-item-#{notification.id}' href='/notifications/#{notification.id}/mark_as_read'>#{notification.actor} #{notification.action} #{notification.notifiable.type}</a></li>"
+    unread_items = 0
+    $.map data, (notification) ->
+      if notification.unread is true
+        unread_items += 1
+    $("[data-behavior='unread-count']").text(unread_items)
+    $("[data-behavior='notification-items']").html(items)
+
+
+jQuery -> new Notifications

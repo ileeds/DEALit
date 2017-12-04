@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  resources :notifications do
+    member do
+      get :mark_as_read
+    end
+  end
+
   resources :searches
   resources :comments
-  resources :notifications
   resources :galleries
   resources :photos
   resources :offers

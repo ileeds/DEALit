@@ -15,4 +15,48 @@
  *= require slick-theme
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+
+.notification-unread-true {
+  background: lighten(#E3EBEF, 2%);
+  display: inline-block;
+  white-space: nowrap;
+}
+#bell-icon {
+  font-size: 20px;
+  //display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: right; /* All 'absolute'ly positioned elements are relative to this one */
+  padding: 2px 5px;
+}
+
+
+
+/**#unr {
+  background-color: #fa3e3e;
+  border-radius: 0px;
+  color: white;
+
+  padding: 4px 3px;
+  font-size: 10px;
+
+  position: absolute;
+  top: 0;
+  right: 4;
+}**/
+
+
+#unr {
+   position:absolute;
+   top:10px;
+   right:11px;
+   font-size:1em;
+   background:red;
+   color:white;
+   width:18px;height:18px;
+   text-align:center;
+   line-height:18px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}
