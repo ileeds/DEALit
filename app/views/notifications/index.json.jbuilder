@@ -8,13 +8,9 @@ json.array! @notifications do |notification|
     if !notification.action.include?("replied")
       json.type ""
     else
-      json.type "about #{notification.notifiable.subject}"    #"a comment #{notification.notifiable.class.to_s.underscore.humanize.downcase}"
+      json.type "about #{notification.notifiable.subject}"
     end
-
-    #json.type "a comment #{notification.notifiable.class.to_s.underscore.humanize.downcase}"
   end
-  json.url conversation_path(notification.notifiable)#, anchor: dom_id(notification.notifiable))
+  json.url conversation_path(notification.notifiable)
   json.unread notification.read_at == nil
-  #byebug
-  #json.url polymorphic_path(notification.notifiable)
 end

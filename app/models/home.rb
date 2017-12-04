@@ -1,5 +1,7 @@
 class Home < ApplicationRecord
   belongs_to :user
+  has_many :followings
+  has_many :users, through: :followings
   has_one :option, :dependent => :destroy
   has_many :reviews, :dependent => :destroy
   has_many :photos, :dependent => :destroy

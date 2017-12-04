@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :followings
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :notifications do
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  post '/followings', to: 'followings#create'
   resources :searches
   resources :comments
   resources :galleries

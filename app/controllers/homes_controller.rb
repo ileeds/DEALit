@@ -142,6 +142,9 @@ class HomesController < ApplicationController
         end
         format.html { redirect_to @home, notice: 'Home was successfully updated.' }
         format.json { render :show, status: :ok, location: @home }
+        @home.users.each do |user|
+          Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ')} of #{@home.address}", notifiable: @home)
+        end
       else
         format.html { render :edit }
         format.json { render json: @home.errors, status: :unprocessable_entity }

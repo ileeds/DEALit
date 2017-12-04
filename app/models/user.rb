@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   has_many :homes
+  has_many :followings
   has_many :reviews
   acts_as_messageable
   before_save { email.downcase! }
