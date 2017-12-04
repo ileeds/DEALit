@@ -11,22 +11,22 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  <%if @home.reviews%>
-  <tbody>
-    <% @home.reviews.each do |review| %>
-      <tr>
-        <td><%= review.home_id %></td>
-        <td><%= review.user_id %></td>
-        <td><%= review.description %></td>
-        <td><%= link_to 'Show', home_review_path(review.home_id, review.id) %></td>
-        <td><%= link_to 'Edit', edit_home_review_path(review.home_id, review.id) %></td>
-        <td><%= link_to 'Destroy', home_review_path(review.home_id, review.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <br>
-        <br>
-        <br>
-      </tr>
-    <% end %>
-  </tbody>
+  <% if @home.reviews %>
+    <tbody>
+      <% @home.reviews.each do |review| %>
+        <tr>
+          <td><%= review.home_id %></td>
+          <td><%= review.user_id %></td>
+          <td><%= review.description %></td>
+          <td><%= link_to 'Show', home_review_path(review.home_id, review.id) %></td>
+          <td><%= link_to 'Edit', edit_home_review_path(review.home_id, review.id) %></td>
+          <td><%= link_to 'Destroy', home_review_path(review.home_id, review.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <br>
+          <br>
+          <br>
+        </tr>
+      <% end %>
+    </tbody>
   <%end%>
 </table>
 
