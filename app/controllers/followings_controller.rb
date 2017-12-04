@@ -25,7 +25,7 @@ class FollowingsController < ApplicationController
   # POST /followings
   # POST /followings.json
   def create
-    @following = Following.new(following_params)
+    @following = Following.new(home_id: following_params[:home_id], user_id: current_user.id)
     respond_to do |format|
       if(Following.exists?(home_id: following_params[:home_id], user_id: current_user.id))
         flash[:notice] = 'You are already following this home.'
@@ -34,7 +34,7 @@ class FollowingsController < ApplicationController
         flash[:notice] = 'Successfully followed'
         format.html { redirect_to root_url }
       else
-        format.html { redirect_to root_url, notice: 'Unsuccessful.' }
+        format.html { redirect_to root_url, notice: "Unsuccessful" }
         format.json { render json: @following.errors, status: :unprocessable_entity }
       end
 
