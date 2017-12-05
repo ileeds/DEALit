@@ -16,6 +16,7 @@ module Thredded
           .order_recently_posted_first
           .page(params[:page])
       )
+      
       if params[:recipient_id] && params[:home_address]
         @recipient = User.find(params[:recipient_id])
         @home_address = params[:home_address]
@@ -36,12 +37,6 @@ module Thredded
         .order_oldest_first
         .page(current_page)
       @posts = Thredded::TopicPostsPageView.new(thredded_current_user, private_topic, page_scope)
-
-      if thredded_signed_in?
-        Thredded::UserPrivateTopicReadState.touch!(
-          thredded_current_user.id, private_topic.id, page_scope.last, current_page
-        )
-      end
 
       @new_post = Thredded::PrivatePostForm.new(
         user: thredded_current_user, topic: private_topic, post_params: new_private_post_params

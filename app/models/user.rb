@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :followings
   has_many :reviews
   has_many :comments
+  has_many :searches
   acts_as_messageable
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }
@@ -13,7 +14,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  has_many :searches
+  after_save :first_private_topic
 
   class << self
     # Returns the hash digest of the given string.
@@ -56,7 +57,9 @@ class User < ApplicationRecord
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.password = user.password_confirmation = "aaaaaa"
       user.password_digest = "google_oauth2 authorized account"
-      if auth.extra.raw_info.hd == "brandeis.edu"
+      if auth.extra.raw_info.hd != "brandeis.edu"
+        user.errors.add(:email, "must be from Brandeis")
+      elsif User.where(email: auth.info.email).blank?
         user.save!
       end
     end
@@ -65,4 +68,16 @@ class User < ApplicationRecord
   def mailboxer_email(object)
     nil
   end
+
+  private
+
+    def first_private_topic
+      if id!=1
+        admin_topic = Thredded::PrivateTopic.new(user_id: id, title: "Welcome to OffCampus!", created_at: Time.now, last_post_at: Time.now, last_user_id: 1)
+        admin_topic.users << User.find(id)
+        admin_topic.users << User.find(1)
+        admin_topic.save!
+        Thredded::PrivatePost.create(user: User.find(1), content: "Have any comments/concerns about OffCampus? Send us a message here!", postable: admin_topic)
+      end
+    end
 end

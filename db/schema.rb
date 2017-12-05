@@ -384,7 +384,7 @@ ActiveRecord::Schema.define(version: 20171204201231) do
     t.integer "posts_count", default: 0
     t.integer "topics_count", default: 0
     t.datetime "last_seen_at"
-    t.integer "moderation_state", default: 1, null: false
+    t.integer "moderation_state", default: 0, null: false
     t.datetime "moderation_state_changed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -454,7 +454,6 @@ ActiveRecord::Schema.define(version: 20171204201231) do
     t.string "uid"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
-    t.string "notification_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

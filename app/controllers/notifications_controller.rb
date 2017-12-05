@@ -1,7 +1,6 @@
 class NotificationsController < ApplicationController
   before_action :logged_in_user
   def index
-    #byebug
     @notifications = Notification.where(recipient: current_user).limit(10).order(created_at: :desc)
   end
 
