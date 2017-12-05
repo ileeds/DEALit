@@ -10,3 +10,10 @@ two:
   name: MyString2
   email: mystring@yahoo.com
   password_digest: <%= User.digest('password') %>
+
+admin:
+  id: 1
+  name: offcampus
+  email: admin@offcampus.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
