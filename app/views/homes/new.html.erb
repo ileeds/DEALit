@@ -1,7 +1,7 @@
 <% provide(:title, "New Home") %>
 <h1>New Home</h1>
 
-<%= form_for @home, :html => { :multipart => true } do |form| %>
+<%= bootstrap_form_for @home, :html => { :multipart => true } do |form| %>
   <% if @home.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>
@@ -14,42 +14,34 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :address %>
     <%= form.text_field :address, id: :home_address %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
     <%= form.number_field :price, id: :home_price %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
     <%= form.text_area :title, id: :home_title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
     <%= form.text_area :description, id: :home_description %>
   </div>
 
   <div class="field">
-    <%= form.label :is_furnished, id: :checkbox %>
     <%= form.check_box :is_furnished, id: :home_is_furnished, class: :roundedTwo%>
   </div>
 
   <div class="field">
-    <%= form.label :capacity %>
     <%= form.number_field :capacity, id: :option_capacity %>
   </div>
 
   <div class="field">
-    <%= form.label :entire_home %>
     <%= form.check_box :entire_home, id: :option_entire_home %>
   </div>
 
   <div class="field">
-    <%= form.label :photos %>
     <%= file_field_tag 'images[]', multiple: true %>
   </div>
 

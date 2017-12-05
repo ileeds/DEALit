@@ -61,3 +61,4 @@ gem 'jquery-slick-rails'
 gem 'wicked'
 gem 'whenever', require: false
 gem 'thredded', '~> 0.13.8'
+gem 'bootstrap_form'

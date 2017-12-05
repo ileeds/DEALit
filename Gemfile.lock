@@ -71,13 +71,13 @@ GEM
     autoprefixer-rails (7.2.1)
       execjs
     awesome_print (1.8.0)
-    aws-sdk (2.10.95)
-      aws-sdk-resources (= 2.10.95)
-    aws-sdk-core (2.10.95)
+    aws-sdk (2.10.96)
+      aws-sdk-resources (= 2.10.96)
+    aws-sdk-core (2.10.96)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.95)
-      aws-sdk-core (= 2.10.95)
+    aws-sdk-resources (2.10.96)
+      aws-sdk-core (= 2.10.96)
     aws-sigv4 (1.0.2)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -94,6 +94,7 @@ GEM
       sass (>= 3.3.4)
     bootstrap-will_paginate (1.0.0)
       will_paginate
+    bootstrap_form (2.7.0)
     brakeman (4.0.1)
     builder (3.2.3)
     byebug (9.0.6)
@@ -268,7 +269,7 @@ GEM
     omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    onebox (1.8.28)
+    onebox (1.8.29)
       fast_blank (>= 1.0.0)
       htmlentities (~> 4.3)
       moneta (~> 1.0)
@@ -436,6 +437,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   bootstrap-will_paginate
+  bootstrap_form
   brakeman
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
