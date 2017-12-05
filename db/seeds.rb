@@ -2,6 +2,8 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 User.delete_all
+Thredded::PrivateTopic.delete_all
+Thredded::PrivatePost.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 
 User.create!(name: "OffCampus", email: "admin@offcampus.com", password: ENV['ADMIN_PASSWORD'], admin: true)
@@ -35,3 +37,5 @@ locations.each do |location|
     )
   end
 end
+
+Thredded::Messageboard.create(name: "Post here if you're looking for a home")

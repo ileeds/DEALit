@@ -53,7 +53,10 @@
 .notification-unread-true {
   background: lighten(#E3EBEF, 2%);
   display: inline-block;
-  white-space: nowrap;
+}
+
+.notification-dropdown-item {
+  white-space: initial !important;
 }
 
 #bell-icon {
