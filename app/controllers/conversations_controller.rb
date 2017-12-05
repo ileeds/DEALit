@@ -17,6 +17,8 @@ class ConversationsController < ApplicationController
   def create
     recipient = User.find(params[:user_id])
     receipt = current_user.send_message(recipient, params[:body], params[:subject])
+    @conversation = receipt.conversation
+    Notification.create(recipient: recipient, actor: current_user, action: "initiated a chat", notifiable: @conversation)
     redirect_to conversation_path(receipt.conversation)
   end
 end

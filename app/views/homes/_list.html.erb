@@ -31,10 +31,10 @@
         <% end %>
         <div class="home-buttons">
           <div class="send-message">
-            <%= link_to "Send Message", new_conversation_path(recipient_id: home.user_id, home_address: home.address), class: "btn home-button send" %>
+            <%= link_to "Send Message", private_topic_path(recipient_id: home.user_id, home_address: home.address), class: "btn home-button send" %>
           </div>
           <div class="get-notifications">
-            <%= link_to "Get Notifications", nil, class: "btn home-button notify" %>
+            <%= link_to "Get Notifications", followings_path(:following => { home_id: home.id } ), method: 'post', class: "btn home-button notify"%>
           </div>
         </div>
       </div>

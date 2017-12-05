@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  resources :followings
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Thredded::Engine => '/forum'
+  get '/private_topic', to: 'thredded/private_topics#index'
 
+  resources :notifications do
+    member do
+      get :mark_as_read
+    end
+  end
+
+  post '/followings', to: 'followings#create'
   resources :searches
   resources :comments
-  resources :notifications
   resources :galleries
   resources :photos
   resources :offers
@@ -17,7 +26,7 @@ Rails.application.routes.draw do
   end
   resources :home_steps
 
-  root   'homes#index'
+  root 'homes#index'
   get  '/forum', to: 'comments#index'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
