@@ -116,6 +116,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    database_cleaner (1.6.2)
     db_text_search (0.2.2)
       activerecord (>= 4.1.15, < 6.0)
     docile (1.1.5)
@@ -441,6 +442,7 @@ DEPENDENCIES
   brakeman
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
+  database_cleaner
   erubis
   faker
   figaro
