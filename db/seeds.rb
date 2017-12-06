@@ -1,9 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-User.delete_all
-Thredded::PrivateTopic.delete_all
-Thredded::PrivatePost.delete_all
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
 
 User.create!(name: "OffCampus", email: "admin@offcampus.com", password: ENV['ADMIN_PASSWORD'], admin: true)
@@ -16,7 +13,7 @@ end
 locations = GeoSeeder::Location.random({
   center: "02453",
   radius: 2,
-  quantity: 10
+  quantity: 50
 })
 
 @images = Dir.glob("#{Rails.root}/app/assets/images/home_samples/*.jpeg")
