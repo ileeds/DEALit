@@ -37,8 +37,8 @@
   display: none;
 }
 
-#q {
-  width: 150%;
+#q, .thredded--preview-area {
+  display: none !important;
 }
 
 .thredded--topics--title, .thredded--topic-header--title {
@@ -48,6 +48,23 @@
 .thredded--topics--title > a {
   font-size: 20px !important;
   font-weight: normal !important;
+}
+
+.thredded--topic-unread > .thredded--topics--title a {
+  -webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
+
+@-webkit-keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
+
+@keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
 }
 
 .notification-unread-true {
