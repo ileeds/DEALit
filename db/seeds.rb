@@ -1,7 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-ActiveRecord::Base.connection.reset_pk_sequence!("users")
+DatabaseCleaner.clean_with(:truncation)
 
 User.create!(name: "OffCampus", email: "admin@offcampus.com", password: ENV['ADMIN_PASSWORD'], admin: true)
 User.create!(name: "Tester", email: "test@test.com", password: "password")
