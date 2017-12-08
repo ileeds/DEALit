@@ -145,7 +145,6 @@
 
 #daterange {
   resize: none;
-  text-align: left;
   width: auto;
   color: white !important;
 }
@@ -335,4 +334,8 @@ hr {
 
 .btn-warning {
   color: white !important;
+}
+
+.btn-info {
+  width: 100%;
 }
