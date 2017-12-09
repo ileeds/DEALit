@@ -63,3 +63,4 @@ gem 'whenever', require: false
 gem 'thredded', '~> 0.13.8'
 gem 'bootstrap_form'
 gem 'database_cleaner'
+gem 'rails-erd', require: false, group: :development
