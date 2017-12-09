@@ -1,0 +1,4 @@
+
+$(".new_review").html("");
+$("#list_rev").append("<p><%= @review.description %> <i> by <%= @review.user.name %> </i></p>");
+$("#new_rev_link").toggle();

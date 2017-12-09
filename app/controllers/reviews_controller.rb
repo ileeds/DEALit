@@ -16,6 +16,9 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   def new
     @review = Review.new
+    respond_to do |format|
+    format.js { render template: "reviews/new", :locals => {:home => @home} }
+    end
   end
 
   # GET /reviews/1/edit
@@ -33,7 +36,7 @@ class ReviewsController < ApplicationController
         format.html { redirect_to home_review_path(params[:home_id], @review.id), notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
-        format.html { render :new }
+        format.js { render :new }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end

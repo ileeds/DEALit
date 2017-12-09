@@ -59,10 +59,15 @@
 <div class = "col-sm-6">
    <div id="index1" class = "bottom1">
      <% if @home.reviews %>
+     <div id ="list_rev">
       <% @home.reviews.each do |review| %>
           <p><%= review.description %> <i> by <%= review.user.name %> </i></p>
       <% end %>
-      <%= link_to 'New Review', new_home_review_path(@home) %>
+    </div>
+     <div id="new_rev_link">
+      <%= link_to 'New Review', new_home_review_path(@home), remote: true %>
+    </div>
+      <div class = "new_review"> </div>
     <% end %>
   </div>
 </div>
