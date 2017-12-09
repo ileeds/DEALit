@@ -1,6 +1,10 @@
 <% js = escape_javascript(
   render(partial: 'homes/list', locals: { homes: @homes })
 ) %>
+setTimeout(func, 200);
+function func() {
+    console.log("delaying build map");
+}
 buildMap(<%=raw @hash.to_json %>);
 $("#filterrific_results").html("<%= js %>");
 $('.carousel').not('.slick-initialized').slick();

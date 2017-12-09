@@ -116,18 +116,13 @@
 
 .modal-footer a.btn:hover {
   background-color: black;
-  color:white;
 }
 
 .box {
   height: 18vh;
   text-align:center;
   border-bottom-style: none;
-}
-
-.box:hover {
-  background-color: #0070FF !important;
-  color: white !important;
+  color: black;
 }
 
 #index {
@@ -150,8 +145,12 @@
 
 #daterange {
   resize: none;
-  text-align: left;
   width: auto;
+  color: white !important;
+}
+
+#daterange::placeholder {
+  color: white;
 }
 
 textarea::-webkit-input-placeholder {
@@ -176,7 +175,7 @@ hr {
 
 .dropdown-menu {
   overflow-x: visible;
-  width: 450%;
+  width: 150%;
 }
 
 .home-buttons {
@@ -186,24 +185,20 @@ hr {
 }
 
 .home-button {
-  border-width: 2px;
-  border-color: black;
-  border-style: solid;
   text-align: center;
-  width: 50%;
+  width: 48%;
   float: left;
 }
 
 .home-button.send {
-
+  margin-right: 1%
 }
 
 .home-button.notify {
-  color: black;
+
 }
 
-.btn.home-button:hover {
-  background-color: #0070FF;
+.home-buttons div a:visited {
   color: white;
 }
 
@@ -237,15 +232,7 @@ hr {
   width: auto;
 }
 
-.reset {
-  border-style: solid;
-  border-width: thin;
-  border-radius: 10px;
-  padding: 2%;
-}
-
 .hover_me{
-  color:white;
   text-decoration: underline;
 }
 
@@ -304,10 +291,11 @@ hr {
 }
 
 .home-wrapper {
-  width: 50%;
+  width: 48%;
   display: inline-block;
   float: left;
-  margin-top: 5%;
+  margin-top: 6%;
+  margin-left: 2%;
 }
 
 .slick-slide img {
@@ -328,10 +316,26 @@ hr {
 }
 
 .slick-slider {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .form-container {
   width: 100%;
   text-align: center;
+}
+
+.col-sm-12 {
+  text-align: left;
+}
+
+.pagination {
+  width: 100%;
+}
+
+.btn-warning {
+  color: white !important;
+}
+
+.btn-info {
+  width: 100%;
 }

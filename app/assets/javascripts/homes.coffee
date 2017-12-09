@@ -88,9 +88,6 @@ $(document).on 'click', '.marker_container1', ->
   $('.clicked').removeClass().addClass 'marker_container1'
   $(this).removeClass('marker_container1').addClass 'clicked'
   $('.box').css 'background-color', 'transparent'
-  $('.box').css 'color', 'black'
-  $('#' + @id + '.box').css 'background-color', '#0070FF'
-  $('#' + @id + '.box' ).css 'color', 'white'
   $container = $('#index')
   $scrollTo = $('#' + @id + '.box')
   $container.scrollTop $scrollTo.offset().top - ($container.offset().top) + $container.scrollTop()- ($container.height()/2)
