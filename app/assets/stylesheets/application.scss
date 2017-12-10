@@ -74,6 +74,7 @@
 
 .notification-dropdown-item {
   white-space: initial !important;
+  width: 350px;
 }
 
 #bell-icon {
@@ -95,4 +96,25 @@
    line-height:18px;
    border-radius:50%;
    box-shadow:0 0 1px #333;
+}
+
+#unread-inbox {
+   position:absolute;
+   top:9px;
+   right:2px;
+   font-size:1em;
+   background:#4a90e2;
+   color:white;
+   width:16px;height:16px;
+   text-align:center;
+   line-height:16px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}
+
+#notifications-dropdown-menu {
+  //height: auto;
+  max-height: 350px;
+  width: 350px;
+  overflow-x: hidden;
 }

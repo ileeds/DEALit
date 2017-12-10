@@ -1,0 +1,8 @@
+<% if notification.recipient_id == current_user.id %>
+  <li class='notification-li notification-unread-<%="#{notification.read_at == nil}"%>'>
+
+  <a class='notification-dropdown-item' id='dropdown-item-<%=notification.id%>'
+    href='/notifications/<%=notification.id%>/mark_as_read'>
+    <%="#{notification.actor.name} #{notification.action}"%>
+  </a></li>
+<% end %>

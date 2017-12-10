@@ -16,7 +16,6 @@ module Thredded
           .order_recently_posted_first
           .page(params[:page])
       )
-      
       if params[:recipient_id] && params[:home_address]
         @recipient = User.find(params[:recipient_id])
         @home_address = params[:home_address]

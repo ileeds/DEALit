@@ -134,7 +134,9 @@ class HomesController < ApplicationController
         format.html { redirect_to @home, notice: 'Home was successfully updated.' }
         format.json { render :show, status: :ok, location: @home }
         @home.users.each do |user|
-          Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ')} of #{@home.address}", notifiable: @home)
+          @notification = Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ')} of #{@home.address}", notifiable: @home)
+          sync_new @notification
+          push_count(Notification.actives(user.id).to_a.select{|notification| notification.read_at==nil}.length,user.id.to_s)
         end
       else
         format.html { render :edit }
@@ -176,6 +178,11 @@ class HomesController < ApplicationController
        end
       end
       return false
+    end
+
+    def push_count(count,user)
+      Pusher.trigger('count-'+user,
+                    'notification_event', count: count)
     end
 
 end

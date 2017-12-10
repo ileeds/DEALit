@@ -22,3 +22,4 @@
 //= require jquery.slick
 //= require thredded
 //= require_tree .
+//= require sync
