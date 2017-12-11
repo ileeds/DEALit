@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :followings
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Thredded::Engine => '/forum'
+  mount ActionCable.server => '/cable'
   get '/private_topic', to: 'thredded/private_topics#index'
 
   resources :notifications do

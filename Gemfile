@@ -60,7 +60,9 @@ gem 'mailboxer'
 gem 'jquery-slick-rails'
 gem 'wicked'
 gem 'whenever', require: false
-gem 'thredded', '~> 0.13.8'
+gem 'thredded', '~> 0.14.0'
 gem 'bootstrap_form'
 gem 'database_cleaner'
 gem 'rails-erd', require: false, group: :development
+gem 'redis', '~> 3.2'
+gem 'pundit'

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email].downcase)
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
-      params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
+      remember @user
       redirect_back_or root_path
     else
       flash.now[:danger] = 'Invalid email/password combination'
@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.id
       log_in @user
+      remember @user
       redirect_back_or root_path
     else
       redirect_to root_path, flash: { danger: "Please log out of current email and log in with Brandeis email" }
