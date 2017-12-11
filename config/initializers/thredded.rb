@@ -71,7 +71,7 @@ Thredded.email_from = 'ileeds@brandeis.edu'
 Thredded.email_outgoing_prefix = '[Notification from OffCampus] '
 #
 # The parent mailer for all Thredded mailers
-# Thredded.parent_mailer = 'ActionMailer::Base'
+Thredded.parent_mailer = 'ActionMailer::Base'
 
 # ==> View Configuration
 # Set the layout for rendering the thredded views.
