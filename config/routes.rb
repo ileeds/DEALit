@@ -14,9 +14,7 @@ Rails.application.routes.draw do
   post '/followings', to: 'followings#create'
   resources :searches
   resources :comments
-  resources :galleries
   resources :photos
-  resources :offers
   resources :options
   resources :users
   resources :homes do

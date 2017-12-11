@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :comments
   has_many :searches
   has_many :private_posts, class_name: "Thredded::PrivatePost"
-  acts_as_messageable
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -64,10 +63,6 @@ class User < ApplicationRecord
         user.save!
       end
     end
-  end
-
-  def mailboxer_email(object)
-    nil
   end
 
   private

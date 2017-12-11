@@ -8,11 +8,7 @@ class NotificationsController < ApplicationController
     @notification = Notification.find(params[:id])
     #@notifications = Notification.where(recipient: current_user).unread
     @notification.update(read_at: Time.zone.now)
-    if @notification.notifiable.class == Mailboxer::Conversation
-      redirect_to conversation_path(@notification.notifiable_id)
-    else
-      redirect_to @notification.notifiable
-    end
+    redirect_to @notification.notifiable
     #render json: {success: true}
   end
 
