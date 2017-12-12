@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_many :homes
   has_many :followings
   has_many :reviews
-  has_many :comments
   has_many :searches
   has_many :private_posts, class_name: "Thredded::PrivatePost"
   before_save { email.downcase! }

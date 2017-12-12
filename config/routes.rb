@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   post '/followings', to: 'followings#create'
   resources :searches
-  resources :comments
   resources :photos
   resources :options
   resources :users
