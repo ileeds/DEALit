@@ -148,7 +148,6 @@
   <% end %>
   <div class ="col-sm-4">
 
-      <%= button_to 'Save search' ,{:style => "display:none;", :controller => 'searches', :action => 'create', :user_id => current_user.id.to_i, :details => params.to_json.to_s}, {:id => "savesearch", :style => "display: none;", :method => :post} %>
   </div>
 </div>
 <hr>

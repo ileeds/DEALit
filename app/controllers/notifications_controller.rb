@@ -17,5 +17,20 @@ class NotificationsController < ApplicationController
     #render json: {success: true}
   end
 
+  def destroy
+    @notification = Notification.find(params[:id])
+    @notification.destroy
+    respond_to do |format|
+      format.html { head :no_content }
+      format.js {render "destroy", :locals => {:id => params[:id]} }
+    end
+    push_count(Notification.actives(current_user.id).to_a.select{|notification| notification.read_at==nil}.length,current_user.id.to_s)
+  end
+
+private
+  def push_count(count,user)
+    Pusher.trigger('count-'+user,
+                  'notification_event', count: count)
+  end
 
 end

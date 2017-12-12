@@ -29,6 +29,9 @@
                     	if (elt[0] != null) {
                         elt[0].innerHTML = data.count;
                       }
+                      if(data.count == 0) {
+                        $("#unread").hide();
+                      }
                     });
                   </script>
                 </a>

@@ -67,6 +67,20 @@
 	100% { opacity: 1; }
 }
 
+.notification-li {
+  position: relative;
+}
+
+.x-button {
+    position: absolute;
+    top: -1px;
+    right: 10px;
+    font-size: 16px;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
+}
+
 .notification-unread-true {
   background: lighten(#E3EBEF, 2%);
   display: inline-block;
