@@ -69,6 +69,7 @@
 
 .notification-li {
   position: relative;
+  width: inherit;
 }
 
 .x-button {
@@ -88,7 +89,7 @@
 
 .notification-dropdown-item {
   white-space: initial !important;
-  width: 350px;
+  width: 345px;
 }
 
 #bell-icon {

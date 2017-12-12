@@ -36,6 +36,7 @@
                   </script>
                 </a>
                 <ul class="dropdown-menu" id="notifications-dropdown-menu">
+                  <%= no_notifications %>
                   <%= sync_new partial: "list", resource: Notification.new %>
                   <%= sync partial: "list", collection: Notification.active(current_user.id) %>
                 </ul>

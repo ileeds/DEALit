@@ -11,11 +11,19 @@ module ApplicationHelper
   end
 
   def count(current_user)
-    count = Notification.actives(current_user.id).to_a.select{|notification| notification.read_at==nil}.length
-    if count != 0
-      "<span id='unread' class='unread-true'>#{count}</span>".html_safe
+    @count = Notification.actives(current_user.id).to_a.select{|notification| notification.read_at==nil}.length
+    if @count != 0
+      "<span id='unread' class='unread-true'>#{@count}</span>".html_safe
     else
       '<span hidden id="unread" class="unread-true"></span>'.html_safe
+    end
+  end
+
+  def no_notifications
+    if @count == 0
+      "<li id='no-notifications' style='text-align: center;'>No new notifications</li>".html_safe
+    else
+      "<li hidden id='no-notifications'>No new notifications</li>".html_safe
     end
   end
 
