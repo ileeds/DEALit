@@ -3,9 +3,8 @@ class User < ApplicationRecord
   has_many :homes
   has_many :followings
   has_many :reviews
-  has_many :comments
   has_many :searches
-  acts_as_messageable
+  has_many :private_posts, class_name: "Thredded::PrivatePost"
   before_save { email.downcase! }
   validates :name,  presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -14,7 +13,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  after_save :first_private_topic
+  after_create :first_private_topic
 
   class << self
     # Returns the hash digest of the given string.
@@ -63,10 +62,6 @@ class User < ApplicationRecord
         user.save!
       end
     end
-  end
-
-  def mailboxer_email(object)
-    nil
   end
 
   private
