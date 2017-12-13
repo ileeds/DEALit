@@ -21,7 +21,7 @@ module ApplicationHelper
 
   def no_notifications
     if @count == 0
-      "<li id='no-notifications' style='text-align: center;'>No new notifications</li>".html_safe
+      "<li id='no-notifications'>No new notifications</li>".html_safe
     else
       "<li hidden id='no-notifications'>No new notifications</li>".html_safe
     end

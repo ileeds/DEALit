@@ -8,7 +8,7 @@
 
 # Pusher
   development:
-    adapter_javascript_url: "http://js.pusher.com/4.1/pusher.min.js"
+    adapter_javascript_url: "https://js.pusher.com/4.1/pusher.min.js"
     app_id: <%= ENV["PUSHER_APP_ID"]%>
     api_key: <%= ENV["PUSHER_KEY"]%>
     auth_token: <%= ENV["PUSHER_SECRET"]%>
@@ -20,7 +20,7 @@
   #   adapter: false
 
   test:
-    adapter_javascript_url: "http://js.pusher.com/4.1/pusher.min.js"
+    adapter_javascript_url: "https://js.pusher.com/4.1/pusher.min.js"
     app_id: <%= ENV["PUSHER_APP_ID"]%>
     api_key: <%= ENV["PUSHER_KEY"]%>
     auth_token: <%= ENV["PUSHER_SECRET"]%>
@@ -28,7 +28,7 @@
     async: true
 
   production:
-    adapter_javascript_url: "http://js.pusher.com/4.1/pusher.min.js"
+    adapter_javascript_url: "https://js.pusher.com/4.1/pusher.min.js"
     app_id: <%= ENV["PUSHER_APP_ID"]%>
     api_key: <%= ENV["PUSHER_KEY"]%>
     auth_token: <%= ENV["PUSHER_SECRET"]%>
