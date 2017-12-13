@@ -21,7 +21,7 @@
                   <%= fa_icon "bell", id: "bell-icon" %>
                   <%= count(current_user) %>
                   <script>
-                    var pusher = new Pusher(<%=ENV['PUSHER_KEY']%>, {
+                    var pusher = new Pusher('<%=ENV['PUSHER_KEY']%>', {
                       encrypted: true
                     });
                     var channel = pusher.subscribe('count-<%= current_user.id %>');
