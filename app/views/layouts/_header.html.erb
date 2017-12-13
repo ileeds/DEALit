@@ -22,21 +22,7 @@
                   <%= count(current_user) %>
                   <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
                   <script>
-
-                    // Enable pusher logging - don't include this in production
-                    Pusher.logToConsole = true;
-
-                    var pusher = new Pusher('ac43c161d91a5d18e1a8', {
-                      encrypted: true
-                    });
-
-                    var channel = pusher.subscribe('my-channel');
-                    channel.bind('my-event', function(data) {
-                      alert(data.message);
-                    });
-                  </script>
-                  <script>
-                    var pusher = new Pusher('ac43c161d91a5d18e1a8', {
+                    var pusher = new Pusher(<%=ENV['PUSHER_KEY']%>, {
                       encrypted: true
                     });
                     var channel = pusher.subscribe('count-<%= current_user.id %>');
