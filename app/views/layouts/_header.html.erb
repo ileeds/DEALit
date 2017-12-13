@@ -36,7 +36,9 @@
                     });
                   </script>
                   <script>
-                    var pusher = new Pusher('186bae6f8d18b8a0266f');
+                    var pusher = new Pusher('ac43c161d91a5d18e1a8', {
+                      encrypted: true
+                    });
                     var channel = pusher.subscribe('count-<%= current_user.id %>');
                     channel.bind('notification_event', function(data) {
                       var elt = $("#unread");
