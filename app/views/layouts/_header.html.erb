@@ -33,8 +33,6 @@
                       }
                       if(data.count == 0) {
                         $("#unread").hide();
-                      } else {
-                        $("#no-notifications").hide();
                       }
                     });
                     channel.bind('inbox_event', function(data) {
@@ -51,7 +49,7 @@
                 </a>
                 <ul class="dropdown-menu" id="notifications-dropdown-menu">
                   <%= no_notifications %>
-                  <%= sync_new partial: "list", resource: Notification.new %>
+                  <%= sync_new partial: "listfetch", resource: Notification.new, refetch: true %>
                   <%= sync partial: "list", collection: Notification.active(current_user.id) %>
                 </ul>
               <li class="thredded--user-navigation--item"><%= link_to "Inbox", '/forum/private-topics' %>
