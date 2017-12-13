@@ -21,7 +21,7 @@
                   <%= fa_icon "bell", id: "bell-icon" %>
                   <%= count(current_user) %>
                   <script>
-                    var pusher = new Pusher('<%=ENV['PUSHER_KEY']%>', {
+                    var pusher = new Pusher('<%=ENV["PUSHER_KEY"]%>', {
                       encrypted: true
                     });
                     var channel = pusher.subscribe('count-<%= current_user.id %>');
@@ -33,10 +33,11 @@
                       }
                       if(data.count == 0) {
                         $("#unread").hide();
+                      } else {
+                        $("#no-notifications").hide();
                       }
                     });
                     channel.bind('inbox_event', function(data) {
-                      console.log(data.count);
                       var elt = $("#unread-inbox");
                       elt.show();
                     	if (elt[0] != null) {
