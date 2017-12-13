@@ -10,7 +10,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'pusher'
-gem 'render_sync'#, path: "./render_sync-0.5.0"
+gem 'render_sync', path: "./render_sync-0.5.0"
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri

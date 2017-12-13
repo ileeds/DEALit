@@ -9,5 +9,6 @@ class PrivateTopicsChannel < ApplicationCable::Channel
 
   def send_private_post(data)
     current_user.private_posts.create!(content: data['private_post'], postable: Thredded::PrivateTopic.find(data['private_topic_id']))
+    puts jjjj+Thredded::PrivateTopic.find(data['private_topic_id']).private_users
   end
 end
