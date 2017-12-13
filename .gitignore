@@ -32,3 +32,4 @@ coverage
 
 # Ignore images
 /public/images/*
+render_sync-0.5.0

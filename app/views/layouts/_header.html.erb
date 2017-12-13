@@ -33,6 +33,17 @@
                         $("#unread").hide();
                       }
                     });
+                    channel.bind('inbox_event', function(data) {
+                      console.log(data.count);
+                      var elt = $("#unread-inbox");
+                      elt.show();
+                    	if (elt[0] != null) {
+                        elt[0].innerHTML = data.count;
+                      }
+                      if(data.count == 0) {
+                        $("#unread-inbox").hide();
+                      }
+                    });
                   </script>
                 </a>
                 <ul class="dropdown-menu" id="notifications-dropdown-menu">
