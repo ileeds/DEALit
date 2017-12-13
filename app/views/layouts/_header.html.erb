@@ -20,6 +20,7 @@
                 <a class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" >
                   <%= fa_icon "bell", id: "bell-icon" %>
                   <%= count(current_user) %>
+                  <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
                   <script>
                     var pusher = new Pusher('186bae6f8d18b8a0266f');
                     var channel = pusher.subscribe('count-<%= current_user.id %>');

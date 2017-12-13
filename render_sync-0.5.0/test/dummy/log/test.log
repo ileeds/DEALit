@@ -1,0 +1,626 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+Connection refused - connect(2) for "localhost" port 9292
+  Rendered render_sync/users/_show.html.erb (3.9ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/refetch/_show.html.erb (0.4ms)
+  Rendered render_sync/users/_show.html.erb (0.3ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered render_sync/users/_show.html.erb (1.5ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/refetch/_show.html.erb (0.8ms)
+  Rendered render_sync/users/_show.html.erb (0.3ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered render_sync/users/_show.html.erb (4.8ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.1ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/refetch/_show.html.erb (0.6ms)
+  Rendered render_sync/users/_show.html.erb (0.4ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered render_sync/users/_show.html.erb (4.5ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/refetch/_show.html.erb (0.7ms)
+  Rendered render_sync/users/_show.html.erb (1.4ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered render_sync/users/_show.html.erb (4.3ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.1ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/refetch/_show.html.erb (0.6ms)
+  Rendered render_sync/users/_show.html.erb (0.4ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered render_sync/users/_show.html.erb (4.4ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/_show.html.erb (0.0ms)
+  Rendered render_sync/users/refetch/_show.html.erb (0.9ms)
+  Rendered render_sync/users/_show.html.erb (0.5ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered sync/users/_show.html.erb (4.5ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered sync/users/_show.html.erb (4.4ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered sync/users/_show.html.erb (3.8ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/refetch/_show.html.erb (0.6ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered sync/users/_show.html.erb (4.3ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/refetch/_show.html.erb (0.6ms)
+  Rendered sync/users/_show.html.erb (0.4ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered sync/users/_show.html.erb (4.5ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/refetch/_show.html.erb (0.3ms)
+  Rendered sync/users/_show.html.erb (0.3ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.0ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE IF EXISTS todos[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE todos (id INTEGER PRIMARY KEY, name TEXT, complete BOOLEAN, user_id INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS users[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, cool BOOLEAN, group_id INTEGER, project_id INTEGER, age INTEGER)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS groups[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE groups (id INTEGER PRIMARY KEY, name TEXT)
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE IF EXISTS projects[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE projects (id INTEGER PRIMARY KEY, name TEXT)
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+end of file reached
+  Rendered sync/users/_show.html.erb (4.4ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/_show.html.erb (0.0ms)
+  Rendered sync/users/refetch/_show.html.erb (0.7ms)
+  Rendered sync/users/_show.html.erb (0.6ms)

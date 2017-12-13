@@ -32,4 +32,6 @@ coverage
 
 # Ignore images
 /public/images/*
-render_sync-0.5.0
+#render_sync-0.5.0
+/render_sync-0.5.0.gem
+render_sync-0.5.0.gemspec
