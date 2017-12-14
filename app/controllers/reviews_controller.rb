@@ -72,10 +72,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      if !Rails.env.test?
-        params.require(:review).permit(:description)
-      else
-        params.require(:review).permit(:description, :home_id, :user_id)
-      end
+      params.require(:review).permit(:description)
     end
 end
