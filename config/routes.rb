@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   resources :conversations do
     resources :messages
   end
-  resources :home_steps
+  resources :home_steps do
+    collection do
+      post 'add_photos'
+    end
+  end
 
   root 'homes#index'
   get  '/forum', to: 'comments#index'

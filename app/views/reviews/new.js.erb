@@ -1,0 +1,7 @@
+if ($(".new_review").html().trim()===""){
+  $("#new_rev_link").toggle();
+}
+<% js = escape_javascript(
+  render(partial: 'reviews/form', locals: { home: @home })
+) %>
+$(".new_review").html("<%= js %>");
