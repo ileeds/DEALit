@@ -39,28 +39,30 @@ module ApplicationHelper
 
 
   def link_to_toggle_post_favorite(home)
-    url = followings_path(:following => { home_id: home.id } )
+
     if Following.where(user_id: current_user.id, home_id: home.id).length == 1
       @following = Following.where(user_id: current_user.id, home_id: home.id).first
-      url = @following
-      link_to_with_icon('icon-star', 'a', url, {
-        method: 'DELETE',
+      url_destroy = following_path(Following.where(user_id: current_user.id, home_id: home.id).first)
+      link_to_with_icon('fa fa-heart fa-2x', url_destroy, {
+        method: :delete,
         remote: true,
-        class: 'heart',
+        class: 'followed',
+        id: 'heart-'+home.id.to_s
       })
     else
-      #url = following_path(:following => { home_id: home.id } )
-      link_to_with_icon('icon-star', 'a', url, {
+      url_create = followings_path(:following => { home_id: home.id } )
+      link_to_with_icon('fa fa-heart fa-2x', url_create, {
         method: 'POST',
         remote: true,
-        class: 'heart2',
+        class: 'notfollowed',
+        id: 'heart2-'+home.id.to_s
       })
     end
   end
 
-  def link_to_with_icon(icon_css, title, url, options = {})
+  def link_to_with_icon(icon_css, url, options = {})
     icon = content_tag(:i, nil, class: icon_css)
-    title_with_icon = icon << ' '.html_safe << h(title)
+    title_with_icon = icon
     link_to(title_with_icon, url, options)
   end
 

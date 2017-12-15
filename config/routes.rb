@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :followings
+  resources :followings, only: %w(new create destroy)
   resources :searches
   resources :photos
   resources :options

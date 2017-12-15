@@ -148,14 +148,44 @@
   text-align: center;
 }
 
-.heart:hover {
-  color: red;
+.followed:hover {
+  color:red;
+  background: transparent;
   //border: hidden !important
-  border-color: purple;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+  size:10em;
 }
+
+.notfollowed:hover {
+  color: #737373;
+  background: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+}
+
+
+
+.followed {
+  color: red;
+}
+
+.notfollowed {
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #666;
+}
+
 .img-overlay:before {
   content: ' ';
   display: block;
   /* adjust 'height' to position overlay content vertically */
   height: 50%;
+}
+
+.photo-notifications {
+    position: absolute;
+    margin-left: 43%;
+    margin-top: 1%;
+    z-index: 10;
 }
