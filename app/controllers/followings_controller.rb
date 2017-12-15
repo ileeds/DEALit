@@ -68,12 +68,11 @@ class FollowingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_following
-      byebug
       @following = Following.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def following_params
-      params.require(:following).permit(:home_id)
+      params.require(:following)
     end
 end
