@@ -339,3 +339,15 @@ hr {
 .btn-info {
   width: 100%;
 }
+
+.daterange.caret{
+  position: absolute;
+  margin-left: 75%;
+  margin-top: -9%;
+  color: white;
+}
+
+.daterange-container{
+  display: inline-block;
+  position: relative;
+}

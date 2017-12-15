@@ -11,10 +11,11 @@
 <div class = "row">
   <%= form_for_filterrific @filterrific, remote: true, html: { id: 'filterrific-form' } do |f| %>
     <div class = "col-sm-1">
-      <div>
+      <div class = "daterange-container">
         <%= f.fields_for :with_availability_range, OpenStruct.new(@filterrific.with_availability_range) do |with_availability_fields| %>
           <%= with_availability_fields.text_area :dates, id: "daterange", placeholder: "Move In/Out", class: "btn btn-info dropdown-toggle dropdown", readonly: true, rows: 1 %>
         <% end %>
+        <b class="daterange caret"></b>
       </div>
     </div>
     <div class = "col-sm-2">

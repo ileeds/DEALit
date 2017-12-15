@@ -16,9 +16,8 @@ generate_slider = (slider_name)->
       $('#max_' + slider_name).val ui.values[1]
       $('#min_' + slider_name).text ui.values[0]
       $('#max_' + slider_name).text ui.values[1]
-      $('#filterrific-form').delay(200).submit()
-      debugger
-      $('#savesearch').show();
+    change: (event, ui) ->
+      $('#filterrific-form').submit()
   )
   $('#min_' + slider_name).val this_slider.slider('values')[0]
   $('#max_' + slider_name).val this_slider.slider('values')[1]
