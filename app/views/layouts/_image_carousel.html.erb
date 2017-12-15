@@ -5,6 +5,10 @@
         <%= link_to home, remote: true, class: "home-link" do %>
           <%= image_tag photo.photo.url(:square), class: "home-photo", id: home.id %>
         <% end %>
+        <div class="photo-notifications img-overlay">
+          <%= link_to_toggle_post_favorite(home) %>
+          
+        </div>
       </div>
     <% end %>
   <% else %>

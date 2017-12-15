@@ -17,8 +17,8 @@ generate_slider = (slider_name)->
       $('#min_' + slider_name).text ui.values[0]
       $('#max_' + slider_name).text ui.values[1]
       $('#filterrific-form').delay(200).submit()
-      debugger
       $('#savesearch').show();
+      $('.pagination a').attr('data-remote', 'true');
   )
   $('#min_' + slider_name).val this_slider.slider('values')[0]
   $('#max_' + slider_name).val this_slider.slider('values')[1]

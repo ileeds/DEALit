@@ -68,6 +68,7 @@ class FollowingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_following
+      byebug
       @following = Following.find(params[:id])
     end
 

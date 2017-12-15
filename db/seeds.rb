@@ -33,6 +33,10 @@ locations.each do |location|
       photo: File.new(@images.sample), home_id: home.id
     )
   end
+
+  2.times do
+    Review.create(home_id: home.id, user_id: 2, description: Faker::Company.bs)
+  end
 end
 
 Thredded::Messageboard.create(name: "Post here if you're looking for a home")

@@ -2,6 +2,12 @@
   <div>
     <%= page_entries_info homes %>
   </div>
+  <script>
+    $(function(){
+      $('.pagination a').attr('data-remote', 'true')
+    });
+  </script>
+
   <% @homes.each do |home| %>
     <div class="home-wrapper">
       <div class="home-photo-gallery">

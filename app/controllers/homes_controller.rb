@@ -16,7 +16,6 @@ class HomesController < ApplicationController
         with_is_furnished: Home.options_for_furnished
       }
     ) or return
-
     @homes = @filterrific.find.page(params[:page]).where(status: "active")
     respond_to do |format|
       format.html

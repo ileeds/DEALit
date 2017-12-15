@@ -36,4 +36,32 @@ module ApplicationHelper
     end
   end
 
+
+
+  def link_to_toggle_post_favorite(home)
+    url = followings_path(:following => { home_id: home.id } )
+    if Following.where(user_id: current_user.id, home_id: home.id).length == 1
+      @following = Following.where(user_id: current_user.id, home_id: home.id).first
+      url = @following
+      link_to_with_icon('icon-star', 'a', url, {
+        method: 'DELETE',
+        remote: true,
+        class: 'heart',
+      })
+    else
+      #url = following_path(:following => { home_id: home.id } )
+      link_to_with_icon('icon-star', 'a', url, {
+        method: 'POST',
+        remote: true,
+        class: 'heart2',
+      })
+    end
+  end
+
+  def link_to_with_icon(icon_css, title, url, options = {})
+    icon = content_tag(:i, nil, class: icon_css)
+    title_with_icon = icon << ' '.html_safe << h(title)
+    link_to(title_with_icon, url, options)
+  end
+
 end
