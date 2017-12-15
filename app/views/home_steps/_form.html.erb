@@ -1,5 +1,5 @@
 <div class="form-container">
-  <%= bootstrap_form_for @home, url: wizard_path, :html => { :multipart => true }, class: "center" do |form| %>
+  <%= bootstrap_form_for @home, url: wizard_path, :html => { :multipart => true }, class: "center", id: "form_ajax" do |form| %>
     <% if @home.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>

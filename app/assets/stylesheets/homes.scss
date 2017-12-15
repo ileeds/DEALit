@@ -55,7 +55,10 @@
   border-style: solid;
   z-index: 1000;
 }
-
+.form-group{
+  margin-left: 500px;
+  width: 900px;
+}
 .clicked {
   background-color: white;
   color: black;
@@ -104,6 +107,11 @@
   background-color: white;
   position:fixed;
   width:650px;
+  border-style: solid;
+  border-width: medium;
+}
+.input{
+  width: 150px;
 }
 
 .modal {
@@ -132,7 +140,7 @@
   width: 45%;
 }
 #index1 {
-  height: 58%;
+  height: 46%;
   overflow-y:auto;
   overflow-x:hidden;
   width: 16.5%;
@@ -231,18 +239,40 @@ hr {
 .select-filter {
   width: auto;
 }
+.btn-default{
+  margin-left: 550px;
+  width:300px;
+}
 
 .hover_me{
   text-decoration: underline;
 }
 
 #home_is_furnished{
-  margin-right: 200;
+  margin-right: 0;
+  text-align: center;
+  width:20px;
+  height:40px;
+  font-weight: bold;
+}
+.radio label, .checkbox label{
+  font-weight: bold;
+  padding-left: 20px;
+  margin-left:250px;
+}
+.radio-inline{
+  width:100px;
+  margin-left: -5px;
 }
 
 .bottom {
   position: fixed !important;
   bottom: 2%;
+}
+input[type="file"] {
+    display: block;
+    margin-left: 480px;
+    width:300px;
 }
 
 .bottom1 {
@@ -263,7 +293,16 @@ hr {
   width: 100%;
   z-index: -1;
 }
-
+.modal-backdrop.in{
+  opacity:0;
+}
+#option_entire_home{
+  margin-right: 0;
+  text-align: center;
+  width:20px;
+  height:40px;
+  font-weight: bold;
+}
 .col-sm-1 {
   display: inline-table;
 }
@@ -338,4 +377,68 @@ hr {
 
 .btn-info {
   width: 100%;
+}
+
+#home_available_rooms{
+  margin-left:-400px;
+}
+#home_total_bathrooms{
+  margin-left:-400px;
+}
+#home_total_rooms{
+  margin-left:-400px;
+}
+#home_private_bathrooms{
+  margin-left:-400px;
+}
+.control-label{
+  margin-left:-200px;
+}
+body.label_first .control-label{
+    margin-left:0px;
+    width:300px;
+}
+body.page2 .btn-default{
+  margin-left:120px;
+}
+body.label_first{
+  max-width:3000px;
+}
+
+.cancelBtn{
+  margin-left:0;
+}
+.photos_show{
+  margin-left:120px;
+}
+#photos_new{
+  margin-left:120px;
+}
+.checkbox{
+  width:400px;
+  margin-left:400px;
+}
+body.page3 .form-control{
+  margin-left:-400px;
+}
+body.page3 .control-label{
+  margin-left:-207px;
+}
+body.page3 #photos_new{
+  margin-left:110px;
+}
+body.page4 .btn-default{
+  margin-left:120px;
+}
+body.page3 .btn-default{
+  margin-left:120px;
+}
+
+.rails-bootstrap-forms-date-select{
+  margin-right:400px;
+}
+#photos{
+  display:block;
+  margin:auto;
+  text-align:center;
 }

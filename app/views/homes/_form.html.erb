@@ -2,7 +2,7 @@
   <%= javascript_include_tag "new_home" %>
 <% end %>
 
-<%= form_for @home, :html => { :multipart => true } do |form| %>
+<%= form_for @home, :html => { :multipart => true }, remote:true do |form| %>
   <% if @home.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@home.errors.count, "error") %> prohibited this home from being saved:</h2>
@@ -14,15 +14,19 @@
     </div>
   <% end %>
 
-<div class = "row" >
-  <div class = "col-sm-2">
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :home_address %>
-  </div>
-</div>
+
+
+
 <div class = "col-sm-2">
+  <div class="pretty p-default p-round">
+          <input type="checkbox" />
+          <div class="state p-success-o">
+              <label>Success</label>
+          </div>
+      </div>
 </div>
+
+
 <div class = "col-sm-2">
   <div class="field">
     <%= form.label :price %>
@@ -142,6 +146,7 @@
       <%= form1.label :pets %>
       <%= form1.check_box :pets, id: :option_pets %>
     </div>
+
 
     <div class="field">
       <%= form1.label :heated %>
