@@ -10941,7 +10941,13 @@ input {
   z-index: 1000;
 }
 
-/* line 59, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 58, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.form-group {
+  margin-left: 500px;
+  width: 900px;
+}
+
+/* line 62, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .clicked {
   background-color: white;
   color: black;
@@ -10958,7 +10964,7 @@ input {
   border-style: solid;
 }
 
-/* line 75, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 78, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #map {
   width: 380px;
   height: 400px;
@@ -10967,22 +10973,22 @@ input {
   z-index: -1;
 }
 
-/* line 83, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 86, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #map-box {
   position: fixed;
 }
 
-/* line 87, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 90, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .new {
   align: center;
 }
 
-/* line 91, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 94, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #filters {
   position: fixed;
 }
 
-/* line 95, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 98, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slider-input {
   width: 300%;
   display: inline-block;
@@ -10991,14 +10997,21 @@ input {
   background: transparent;
 }
 
-/* line 103, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 106, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal-main {
   background-color: white;
   position: fixed;
   width: 650px;
+  border-style: solid;
+  border-width: medium;
 }
 
-/* line 109, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 113, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.input {
+  width: 150px;
+}
+
+/* line 117, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal {
   height: 530px;
   width: 700px;
@@ -11007,12 +11020,12 @@ input {
   margin-top: 100px;
 }
 
-/* line 117, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 125, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal-footer a.btn:hover {
   background-color: black;
 }
 
-/* line 121, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 129, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .box {
   height: 18vh;
   text-align: center;
@@ -11020,7 +11033,7 @@ input {
   color: black;
 }
 
-/* line 128, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 136, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #index {
   height: 73%;
   overflow-y: auto;
@@ -11028,28 +11041,28 @@ input {
   width: 45%;
 }
 
-/* line 134, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 142, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #index1 {
-  height: 58%;
+  height: 46%;
   overflow-y: auto;
   overflow-x: hidden;
   width: 16.5%;
 }
 
-/* line 141, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 149, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #map {
   width: 100%;
   height: 73%;
 }
 
-/* line 146, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 154, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #daterange {
   resize: none;
   width: auto;
   color: white !important;
 }
 
-/* line 152, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 160, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #daterange::-webkit-input-placeholder {
   color: white;
 }
@@ -11063,127 +11076,157 @@ input {
   color: white;
 }
 
-/* line 156, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 164, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea::-webkit-input-placeholder {
   color: black;
 }
 
-/* line 160, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 168, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea:-moz-placeholder {
   /* Firefox 18- */
   color: black;
 }
 
-/* line 164, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 172, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea::-moz-placeholder {
   /* Firefox 19+ */
   color: black;
 }
 
-/* line 168, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 176, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea:-ms-input-placeholder {
   color: black;
 }
 
-/* line 172, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 180, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 hr {
   margin-top: 0px;
 }
 
-/* line 176, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 184, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .dropdown-menu {
   overflow-x: visible;
   width: 150%;
 }
 
-/* line 181, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 189, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-buttons {
   display: inline-block;
   float: left;
   width: 100%;
 }
 
-/* line 187, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 195, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-button {
   text-align: center;
   width: 48%;
   float: left;
 }
 
-/* line 193, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 201, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-button.send {
   margin-right: 1%;
 }
 
-/* line 201, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 209, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-buttons div a:visited {
   color: white;
 }
 
-/* line 205, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 213, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .ui-slider-handle.custom-handle {
   background: #0070FF;
 }
 
-/* line 209, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 217, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .custom-slider {
   width: 80%;
   margin-left: 10%;
   margin-top: 2%;
 }
 
-/* line 215, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 223, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .ui-slider-range {
   background: #0070FF;
 }
 
-/* line 219, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 227, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-sm {
   margin-top: 15%;
 }
 
-/* line 223, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 231, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-secondary {
   background: transparent;
 }
 
-/* line 227, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 235, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slider-label-below {
   margin-top: 10%;
 }
 
-/* line 231, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 239, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .select-filter {
   width: auto;
 }
 
-/* line 235, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 242, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.btn-default {
+  margin-left: 550px;
+  width: 300px;
+}
+
+/* line 247, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .hover_me {
   text-decoration: underline;
 }
 
-/* line 239, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 251, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #home_is_furnished {
-  margin-right: 200;
+  margin-right: 0;
+  text-align: center;
+  width: 20px;
+  height: 40px;
+  font-weight: bold;
 }
 
-/* line 243, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 258, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.radio label, .checkbox label {
+  font-weight: bold;
+  padding-left: 20px;
+  margin-left: 250px;
+}
+
+/* line 263, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.radio-inline {
+  width: 100px;
+  margin-left: -5px;
+}
+
+/* line 268, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .bottom {
   position: fixed !important;
   bottom: 2%;
 }
 
-/* line 248, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 272, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+input[type="file"] {
+  display: block;
+  margin-left: 480px;
+  width: 300px;
+}
+
+/* line 278, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .bottom1 {
   position: fixed;
 }
 
-/* line 252, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 282, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #filterrific_results > div:first-child {
   margin-bottom: -10%;
 }
 
-/* line 256, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 286, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal-backdrop {
   position: absolute;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))) !important;
@@ -11193,39 +11236,60 @@ hr {
   z-index: -1;
 }
 
-/* line 267, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 297, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.modal-backdrop.in {
+  opacity: 0;
+}
+
+/* line 301, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#option_entire_home {
+  margin-right: 0;
+  text-align: center;
+  width: 20px;
+  height: 40px;
+  font-weight: bold;
+}
+
+/* line 309, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .col-sm-1 {
   display: inline-table;
 }
 
-/* line 271, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 313, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-photo {
   margin: auto;
   width: 100%;
 }
 
-/* line 276, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 318, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-arrow {
-  background: black !important;
   z-index: 1;
+  position: absolute;
 }
 
-/* line 281, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 323, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.slick-arrow:hover {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 30px 0px white;
+  box-shadow: 0px 0px 30px 0px white;
+}
+
+/* line 332, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-prev {
-  left: 10%;
+  left: 2%;
 }
 
-/* line 285, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 336, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-next {
-  right: 10%;
+  right: 2%;
 }
 
-/* line 289, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 340, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .carousel {
   margin-top: 10%;
 }
 
-/* line 293, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 344, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-wrapper {
   width: 48%;
   display: inline-block;
@@ -11234,7 +11298,7 @@ hr {
   margin-left: 2%;
 }
 
-/* line 301, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 352, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-slide img {
   bottom: 0;
   left: 0;
@@ -11246,42 +11310,155 @@ hr {
   top: 0;
 }
 
-/* line 312, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 363, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .photo-container {
   padding-top: 62%;
   position: relative;
   width: 100%;
 }
 
-/* line 318, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 369, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-slider {
   margin-bottom: 0px;
 }
 
-/* line 322, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 373, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .form-container {
   width: 100%;
   text-align: center;
 }
 
-/* line 327, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 378, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .col-sm-12 {
   text-align: left;
 }
 
-/* line 331, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 382, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .pagination {
   width: 100%;
 }
 
-/* line 335, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 386, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-warning {
   color: white !important;
 }
 
-/* line 339, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 390, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-info {
   width: 100%;
+}
+
+/* line 394, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.daterange.caret {
+  position: absolute;
+  margin-left: 75%;
+  margin-top: -9%;
+  color: white;
+}
+
+/* line 401, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.daterange-container {
+  display: inline-block;
+  position: relative;
+}
+
+/* line 406, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_available_rooms {
+  margin-left: -400px;
+}
+
+/* line 410, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_total_bathrooms {
+  margin-left: -400px;
+}
+
+/* line 414, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_total_rooms {
+  margin-left: -400px;
+}
+
+/* line 418, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_private_bathrooms {
+  margin-left: -400px;
+}
+
+/* line 422, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.control-label {
+  margin-left: -200px;
+}
+
+/* line 426, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.label_first .control-label {
+  margin-left: 0px;
+  width: 300px;
+}
+
+/* line 431, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page2 .btn-default {
+  margin-left: 120px;
+}
+
+/* line 435, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.label_first {
+  max-width: 3000px;
+}
+
+/* line 439, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.cancelBtn {
+  margin-left: 0;
+}
+
+/* line 443, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.photos_show {
+  margin-left: 120px;
+}
+
+/* line 447, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#photos_new {
+  margin-left: 120px;
+}
+
+/* line 451, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.checkbox {
+  width: 400px;
+  margin-left: 400px;
+}
+
+/* line 456, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 .form-control {
+  margin-left: -400px;
+}
+
+/* line 460, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 .control-label {
+  margin-left: -207px;
+}
+
+/* line 464, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 #photos_new {
+  margin-left: 110px;
+}
+
+/* line 468, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page4 .btn-default {
+  margin-left: 120px;
+}
+
+/* line 472, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 .btn-default {
+  margin-left: 120px;
+}
+
+/* line 476, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.rails-bootstrap-forms-date-select {
+  margin-right: 400px;
+}
+
+/* line 480, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#photos {
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 /* line 1, /Users/work2/n/DEALit/app/assets/stylesheets/scaffolds.scss */
 body {
@@ -11388,6 +11565,7 @@ label {
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
 
 
 
@@ -13718,44 +13896,44 @@ aside.onebox.stackexchange .onebox-body .tags {
   float: none !important;
 }
 
-/* line 25, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 27, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--main-container {
   max-width: none;
   padding: 0;
 }
 @media (min-width: 34.00001rem) {
-  /* line 25, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+  /* line 27, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
   .thredded--main-container {
     padding: 0;
   }
 }
-/* line 32, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 34, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--main-container * {
   font-size: 13px !important;
 }
 
-/* line 37, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 39, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--currently-online {
   display: none;
 }
 
-/* line 41, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 43, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #q, .thredded--preview-area {
   display: none !important;
 }
 
-/* line 45, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 47, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--topics--title, .thredded--topic-header--title {
   letter-spacing: normal;
 }
 
-/* line 49, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 51, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--topics--title > a {
   font-size: 20px !important;
   font-weight: normal !important;
 }
 
-/* line 54, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 56, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--topic-unread > .thredded--topics--title a {
   -webkit-animation: flash linear 1s infinite;
   animation: flash linear 1s infinite;
@@ -13783,12 +13961,13 @@ aside.onebox.stackexchange .onebox-body .tags {
     opacity: 1;
   }
 }
-/* line 71, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 73, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .notification-li {
   position: relative;
+  width: inherit;
 }
 
-/* line 75, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 78, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .x-button {
   position: absolute;
   top: -1px;
@@ -13799,19 +13978,19 @@ aside.onebox.stackexchange .onebox-body .tags {
   color: inherit !important;
 }
 
-/* line 85, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 88, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .notification-unread-true {
   background: #e9f0f3;
   display: inline-block;
 }
 
-/* line 90, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 93, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .notification-dropdown-item {
   white-space: initial !important;
-  width: 350px;
+  width: 345px;
 }
 
-/* line 95, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 98, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #bell-icon {
   font-size: 20px;
   position: right;
@@ -13819,7 +13998,7 @@ aside.onebox.stackexchange .onebox-body .tags {
   padding: 2px 5px;
 }
 
-/* line 102, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 105, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #unread {
   position: absolute;
   top: 10px;
@@ -13836,7 +14015,7 @@ aside.onebox.stackexchange .onebox-body .tags {
           box-shadow: 0 0 1px #333;
 }
 
-/* line 116, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 119, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #unread-inbox {
   position: absolute;
   top: 9px;
@@ -13853,11 +14032,70 @@ aside.onebox.stackexchange .onebox-body .tags {
           box-shadow: 0 0 1px #333;
 }
 
-/* line 130, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 133, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+#no-notifications {
+  text-align: center;
+}
+
+/* line 137, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #notifications-dropdown-menu {
   max-height: 350px;
   width: 350px;
   overflow-x: hidden;
+}
+
+/* line 144, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.img-overlay {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* line 152, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.followed:hover {
+  color: red;
+  background: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+  size: 10em;
+}
+
+/* line 161, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.notfollowed:hover {
+  color: #737373;
+  background: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+}
+
+/* line 170, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.followed {
+  color: red;
+}
+
+/* line 174, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.notfollowed {
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #666;
+}
+
+/* line 180, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;
+}
+
+/* line 187, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.photo-notifications {
+  position: absolute;
+  margin-left: 43%;
+  margin-top: 1%;
+  z-index: 10;
 }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -16196,4 +16434,775 @@ aside.onebox.stackexchange .onebox-body .tags {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+/* iCheck plugin Square skin
+----------------------------------- */
+/* line 4, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square,
+.iradio_square {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/square-8a7989b98489642a7862a32e1f66748a3671d6677941af3129d5504e31cfbccd.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 18, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square {
+  background-position: 0 0;
+}
+
+/* line 21, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.hover {
+  background-position: -24px 0;
+}
+
+/* line 24, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.checked {
+  background-position: -48px 0;
+}
+
+/* line 27, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 31, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 35, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square {
+  background-position: -120px 0;
+}
+
+/* line 38, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.hover {
+  background-position: -144px 0;
+}
+
+/* line 41, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.checked {
+  background-position: -168px 0;
+}
+
+/* line 44, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 48, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 54, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square,
+  .iradio_square {
+    background-image: url(/assets/icheck/square/square@2x-8ed64c959db4f6f50081d5de7430983af90c88ef10abd334b2b53f9a61424b9d.png);
+    background-size: 240px 24px;
+  }
+}
+/* red */
+/* line 63, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red,
+.iradio_square-red {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/red-07396c4458cd328a3ad8c3de309f5cbc948babb2d022f212e8bdbb7cb571ddb5.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 77, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red {
+  background-position: 0 0;
+}
+
+/* line 80, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.hover {
+  background-position: -24px 0;
+}
+
+/* line 83, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.checked {
+  background-position: -48px 0;
+}
+
+/* line 86, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 90, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 94, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red {
+  background-position: -120px 0;
+}
+
+/* line 97, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.hover {
+  background-position: -144px 0;
+}
+
+/* line 100, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.checked {
+  background-position: -168px 0;
+}
+
+/* line 103, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 107, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 113, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-red,
+  .iradio_square-red {
+    background-image: url(/assets/icheck/square/red@2x-44008e3df669f173ad9e67364f419caed9bbf243d7bdc57e46c38bdd2e9d8657.png);
+    background-size: 240px 24px;
+  }
+}
+/* green */
+/* line 122, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green,
+.iradio_square-green {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/green-4828efe2a264a35e799fbd342fcf005ba57d8335750879bcf66279e573dcfa23.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 136, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green {
+  background-position: 0 0;
+}
+
+/* line 139, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.hover {
+  background-position: -24px 0;
+}
+
+/* line 142, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.checked {
+  background-position: -48px 0;
+}
+
+/* line 145, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 149, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 153, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green {
+  background-position: -120px 0;
+}
+
+/* line 156, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.hover {
+  background-position: -144px 0;
+}
+
+/* line 159, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.checked {
+  background-position: -168px 0;
+}
+
+/* line 162, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 166, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 172, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-green,
+  .iradio_square-green {
+    background-image: url(/assets/icheck/square/green@2x-7b89106773bb4fc754f47e0f1cc0633d64b2ef8a4fb6ba3cbf2b4ede2de903ba.png);
+    background-size: 240px 24px;
+  }
+}
+/* blue */
+/* line 181, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue,
+.iradio_square-blue {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/blue-abff66ea99f7e2b2a51d02feb00d0385f2ac35100fdc65b5d4e4395228fd020b.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 195, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue {
+  background-position: 0 0;
+}
+
+/* line 198, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.hover {
+  background-position: -24px 0;
+}
+
+/* line 201, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.checked {
+  background-position: -48px 0;
+}
+
+/* line 204, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 208, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 212, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue {
+  background-position: -120px 0;
+}
+
+/* line 215, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.hover {
+  background-position: -144px 0;
+}
+
+/* line 218, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.checked {
+  background-position: -168px 0;
+}
+
+/* line 221, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 225, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 231, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-blue,
+  .iradio_square-blue {
+    background-image: url(/assets/icheck/square/blue@2x-c0ce7ecfbd5605a7a0d0239d83b736eda75dbc71ff183472e02c6d6cdfbcc888.png);
+    background-size: 240px 24px;
+  }
+}
+/* aero */
+/* line 240, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero,
+.iradio_square-aero {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/aero-0256fcd9601e1bad8dc98bad53f2de7c8e78d9416e92c1b5c4db3cccf0931768.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 254, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero {
+  background-position: 0 0;
+}
+
+/* line 257, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.hover {
+  background-position: -24px 0;
+}
+
+/* line 260, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.checked {
+  background-position: -48px 0;
+}
+
+/* line 263, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 267, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 271, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero {
+  background-position: -120px 0;
+}
+
+/* line 274, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.hover {
+  background-position: -144px 0;
+}
+
+/* line 277, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.checked {
+  background-position: -168px 0;
+}
+
+/* line 280, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 284, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 290, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-aero,
+  .iradio_square-aero {
+    background-image: url(/assets/icheck/square/aero@2x-978e637c09ea1fa3cfbdb340142ad86a351c1fb863851a8fb86dba05f20e139f.png);
+    background-size: 240px 24px;
+  }
+}
+/* grey */
+/* line 299, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey,
+.iradio_square-grey {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/grey-80ed11e21b6c2f1217c83fd9150f90d73587ae049681750d5b75bba2a6aac87b.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 313, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey {
+  background-position: 0 0;
+}
+
+/* line 316, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.hover {
+  background-position: -24px 0;
+}
+
+/* line 319, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.checked {
+  background-position: -48px 0;
+}
+
+/* line 322, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 326, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 330, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey {
+  background-position: -120px 0;
+}
+
+/* line 333, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.hover {
+  background-position: -144px 0;
+}
+
+/* line 336, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.checked {
+  background-position: -168px 0;
+}
+
+/* line 339, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 343, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 349, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-grey,
+  .iradio_square-grey {
+    background-image: url(/assets/icheck/square/grey@2x-40bb731297212c86a4c0141ca76dc6d4ed4a753a681336a8b92d75ab30cb7495.png);
+    background-size: 240px 24px;
+  }
+}
+/* orange */
+/* line 358, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange,
+.iradio_square-orange {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/orange-2bdda400b27bc002d0573094587f9a198e7b8e1e5fcf82f2e2932796f6a32c34.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 372, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange {
+  background-position: 0 0;
+}
+
+/* line 375, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.hover {
+  background-position: -24px 0;
+}
+
+/* line 378, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.checked {
+  background-position: -48px 0;
+}
+
+/* line 381, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 385, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 389, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange {
+  background-position: -120px 0;
+}
+
+/* line 392, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.hover {
+  background-position: -144px 0;
+}
+
+/* line 395, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.checked {
+  background-position: -168px 0;
+}
+
+/* line 398, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 402, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 408, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-orange,
+  .iradio_square-orange {
+    background-image: url(/assets/icheck/square/orange@2x-52de7be969ad86e226bb1f93773a1933b44617069dae00a1f02f32fd2ad07c20.png);
+    background-size: 240px 24px;
+  }
+}
+/* yellow */
+/* line 417, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow,
+.iradio_square-yellow {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/yellow-5c2016d71a7eb13a848f0c1441486d2d01f8de05a0e4f10e1c8a6c7e1ccf30bf.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 431, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow {
+  background-position: 0 0;
+}
+
+/* line 434, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.hover {
+  background-position: -24px 0;
+}
+
+/* line 437, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.checked {
+  background-position: -48px 0;
+}
+
+/* line 440, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 444, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 448, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow {
+  background-position: -120px 0;
+}
+
+/* line 451, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.hover {
+  background-position: -144px 0;
+}
+
+/* line 454, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.checked {
+  background-position: -168px 0;
+}
+
+/* line 457, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 461, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 467, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-yellow,
+  .iradio_square-yellow {
+    background-image: url(/assets/icheck/square/yellow@2x-7cba0273efb682c044ff6b908a81a013fd7a58d8e8ca23ec282b62f58e6595f6.png);
+    background-size: 240px 24px;
+  }
+}
+/* pink */
+/* line 476, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink,
+.iradio_square-pink {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/pink-bb85090ae0fedbd3fd0cadc1a74b0c9ceac38f09eb947c7d229a1b0b342a8d82.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 490, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink {
+  background-position: 0 0;
+}
+
+/* line 493, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.hover {
+  background-position: -24px 0;
+}
+
+/* line 496, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.checked {
+  background-position: -48px 0;
+}
+
+/* line 499, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 503, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 507, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink {
+  background-position: -120px 0;
+}
+
+/* line 510, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.hover {
+  background-position: -144px 0;
+}
+
+/* line 513, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.checked {
+  background-position: -168px 0;
+}
+
+/* line 516, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 520, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 526, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-pink,
+  .iradio_square-pink {
+    background-image: url(/assets/icheck/square/pink@2x-775bb94369b6742d9cde67d8e65ce7b24c495866420ade49ae2291afc8d9a777.png);
+    background-size: 240px 24px;
+  }
+}
+/* purple */
+/* line 535, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple,
+.iradio_square-purple {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/purple-1fe326c961b2a8320dca1b0041ca34df702c23bbe5d2a3fd2064539ebbbf06ce.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 549, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple {
+  background-position: 0 0;
+}
+
+/* line 552, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.hover {
+  background-position: -24px 0;
+}
+
+/* line 555, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.checked {
+  background-position: -48px 0;
+}
+
+/* line 558, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 562, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 566, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple {
+  background-position: -120px 0;
+}
+
+/* line 569, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.hover {
+  background-position: -144px 0;
+}
+
+/* line 572, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.checked {
+  background-position: -168px 0;
+}
+
+/* line 575, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 579, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 585, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-purple,
+  .iradio_square-purple {
+    background-image: url(/assets/icheck/square/purple@2x-1fa92204f94dabdba60b69a0f4fed54ca83f4367a97f384ae8f4bb01e0b6eea7.png);
+    background-size: 240px 24px;
+  }
 }
