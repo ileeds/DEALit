@@ -12,15 +12,17 @@ class ReviewsControllerIntegrationTest < ActionDispatch::IntegrationTest
     @home.save!
     @review = reviews(:one)
   end
-test "should create review" do
-  assert_difference('Review.count') do
-    post home_reviews_url(@home), params: { review: { description: @review.description, home_id: @home.id, user_id: @user.id }}
-  end
-  assert_redirected_to home_review_url(@home, Review.last)
-end
 
-test "should update review" do
-  patch home_review_url(@home, @review), params: { review: { description: @review.description, home_id: @home.id, user_id: @user.id } }
-  assert_redirected_to home_review_url(@home, @review)
-end
+  test "should create review" do
+    assert_difference('Review.count') do
+      post home_reviews_url(@home), params: { review: { description: @review.description, home_id: @home.id, user_id: @user.id }}
+    end
+    assert_redirected_to home_review_url(@home, Review.last)
+  end
+
+  test "should update review" do
+    skip("For Yan")
+    patch home_review_url(@home, @review), params: { review: { description: @review.description, home_id: @home.id, user_id: @user.id } }
+    assert_redirected_to home_review_url(@home, @review)
+  end
 end

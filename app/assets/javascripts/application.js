@@ -21,4 +21,6 @@
 //= require filterrific/filterrific-jquery
 //= require jquery.slick
 //= require thredded
+//= require cable
 //= require_tree .
+//= require sync

@@ -73,6 +73,6 @@ class FollowingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def following_params
-      params.require(:following).permit(:home_id)
+      params.require(:following)
     end
 end

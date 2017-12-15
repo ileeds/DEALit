@@ -7,6 +7,7 @@
     <script src='//maps.google.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&libraries=places&sensor=false'></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= include_sync_config %>
     <%= render 'layouts/shim' %>
   </head>
 

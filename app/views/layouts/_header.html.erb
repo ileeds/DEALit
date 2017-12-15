@@ -16,15 +16,47 @@
             <li class="thredded--user-navigation--item"> <%= link_to "Forum", main_app.forum_path %> </li>
             <li class="thredded--user-navigation--item"><%= link_to "Post a Home", main_app.new_home_path %></li>
             <% if logged_in? %>
-              <li class="dropdown-1 thredded--user-navigation--item" data-behavior="notifications">
+              <li class="dropdown-1 thredded--user-navigation--item" >
                 <a class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" >
-                  <%= fa_icon "bell", id: "bell-icon" %><span hidden data-behavior="unread-count" id="unread" class="unread-true"></span>
+                  <%= fa_icon "bell", id: "bell-icon" %>
+                  <%= count(current_user) %>
+                  <script>
+                    var pusher = new Pusher('<%=ENV["PUSHER_KEY"]%>', {
+                      encrypted: true
+                    });
+                    var channel = pusher.subscribe('count-<%= current_user.id %>');
+                    channel.bind('notification_event', function(data) {
+                      var elt = $("#unread");
+                      elt.show();
+                    	if (elt[0] != null) {
+                        elt[0].innerHTML = data.count;
+                      }
+                      if(data.count == 0) {
+                        $("#unread").hide();
+                      }
+                    });
+                    channel.bind('inbox_event', function(data) {
+                      var elt = $("#unread-inbox");
+                      elt.show();
+                    	if (elt[0] != null) {
+                        elt[0].innerHTML = data.count;
+                      }
+                      if(data.count == 0) {
+                        $("#unread-inbox").hide();
+                      } else {
+                        $("#no-notifications").hide();
+                      }
+                    });
+                  </script>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" data-behavior="notification-items">
+                <ul class="dropdown-menu" id="notifications-dropdown-menu">
+                  <%= no_notifications %>
+                  <%= sync_new partial: "listfetch", resource: Notification.new, refetch: true %>
+                  <%= sync partial: "list", collection: Notification.active(current_user.id) %>
                 </ul>
-            </li>
-
-              <li class="thredded--user-navigation--item"><%= link_to "Inbox", '/forum/private-topics' %><span id="inbox-number"></span></li>
+              <li class="thredded--user-navigation--item"><%= link_to "Inbox", '/forum/private-topics' %>
+                <%= unread_inbox(current_user) %>
+              </li>
               <li class="dropdown thredded--user-navigation--item">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   ME <b class="caret"></b>

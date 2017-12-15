@@ -11,6 +11,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'pusher'
 gem 'icheck-rails'
+gem 'render_sync', path: "./render_sync-0.5.0"
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
@@ -57,10 +58,12 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'erubis'
 gem 'omniauth-google-oauth2'
 gem 'google_distance_matrix'
-gem 'mailboxer'
 gem 'jquery-slick-rails'
 gem 'wicked'
 gem 'whenever', require: false
-gem 'thredded', '~> 0.13.8'
+gem 'thredded', '~> 0.14.0'
 gem 'bootstrap_form'
 gem 'database_cleaner'
+gem 'rails-erd', require: false, group: :development
+gem 'redis', '~> 3.2'
+gem 'pundit'
