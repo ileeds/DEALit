@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Forum</h1>
+
+
+  <tbody>
+    <% @comments.each do |comment| %>
+        <br>
+        <td> <strong><%= comment.text %></strong></td>
+        <br>
+        <td>By <i><%=comment.user.name%></i> </td>
+        <br>
+        <td> At <small><%=comment.updated_at%></small> </td>
+        <%if comment.user==current_user%>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <br>
+        <%end%>
+        <br>
+        <br>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comment', new_comment_path %>
