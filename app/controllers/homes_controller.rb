@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_home,       only: [:edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy, :add_photos]
+  before_action :set_home,       only: [:edit, :update, :destroy, :add_photos]
+  before_action :correct_user,   only: [:edit, :update, :destroy, :add_photos]
 
   # GET /homes
   # GET /homes.json
@@ -121,6 +121,19 @@ class HomesController < ApplicationController
     end
   end
 
+  def add_photos
+    if params[:images]
+      params[:images].each do |picture|
+        @home.photos.create(photo: picture)
+      end
+    end
+    respond_to do |format|
+      format.js { render :file => "/homes/photo.js.erb" }
+    end
+  end
+
+
+
   # PATCH/PUT /homes/1
   # PATCH/PUT /homes/1.json
   def update
@@ -133,12 +146,11 @@ class HomesController < ApplicationController
         end
         format.html { redirect_to @home, notice: 'Home was successfully updated.' }
         format.json { render :show, status: :ok, location: @home }
-        @home.users.each do |user|
-          Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ')} of #{@home.address}", notifiable: @home)
-        end
+        format.js { render :file => "/homes/photo.js.erb" }
       else
         format.html { render :edit }
         format.json { render json: @home.errors, status: :unprocessable_entity }
+        format.js { render :file => "/homes/photo.js.erb" }
       end
     end
   end
@@ -153,6 +165,8 @@ class HomesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
 

@@ -12,11 +12,33 @@ class HomeStepsController < ApplicationController
     params[:home][:status] = step.to_s
     params[:home][:status] = 'active' if step == steps.last
     @home.update_attributes(home_params)
+    if params[:images]
+      params[:images].each do |picture|
+        @home.photos.create(photo: picture)
+      end
+    end
     render_wizard(@home, {}, { home_id: @home.id })
+  end
+
+  def add_photos
+    byebug
+    respond_to do |format|
+    if params[:images]
+      params[:images].each do |picture|
+        @home.photos.create(photo: picture)
+      end
+    end
+    format.js { render :file => "/homes/photo.js.erb" }
+  end
   end
 
   def create
     @home = Home.create(home_params)
+    if params[:images]
+      params[:images].each do |picture|
+        @home.photos.create(photo: picture)
+      end
+    end
     redirect_to wizard_path(steps.first, :home_id => @home.id)
   end
 

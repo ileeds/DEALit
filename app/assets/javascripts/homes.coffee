@@ -106,3 +106,21 @@ $(document).on 'mouseout', ('.box, .home-photo'), ->
 $(document).on 'hidden.bs.modal', '.modal', ->
   $('#index').css 'overflow-y', 'scroll'
   return
+
+
+ $('form_ajax1').submit ->
+  valuesToSubmit = $(this).serialize()
+  $.ajax(
+    type: 'POST'
+    url: $(this).attr('action')
+    data: valuesToSubmit
+    dataType: 'JSON').success (json) ->
+    console.log 'success', json
+    return
+  false
+
+  $('form#form_ajax1').trigger('submit.rails');
+
+  document.getElementById('pictureInput').onchange = ->
+  document.getElementById('form_ajax1').submit()
+  return

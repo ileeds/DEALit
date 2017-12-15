@@ -1,3 +1,6 @@
+
+
+
 <%= form_for([:home, @review], :remote =>true) do |form| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
@@ -15,6 +18,7 @@
     <%= form.label :description %>
     <%= form.text_field :description, id: :review_description %>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>

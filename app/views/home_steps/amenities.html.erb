@@ -1,5 +1,5 @@
 <%= render layout: 'form' do |form| %>
-
+<body class ="page3">
   <%=  form.fields_for :option do |form1| %>
     <div class="field">
       <%= form1.check_box :free_parking, id: :option_free_parking, class: :roundedTwo%>
@@ -164,6 +164,29 @@
     <div class="field">
       <%= form1.check_box :doorman, id: :option_doorman %>
     </div>
+
+    <button type = "button" id = "photos_new">See and upload photos</button>
+    <br>
+    <br>
+    <div hidden class="photos_show">
+    <div class="field">
+      <%= file_field_tag 'images[]', multiple: true, id: :pictureInput %>
+
+    </div>
+
+    <div id="target">
+    </div>
+
+    <div id = "photos">
+      <p id ="saved">Saved photos: </p>
+      <%= render(
+        partial: 'homes/photos',
+        locals: { home: @home }
+      ) %>
+     </div>
+     </div>
+
   <%end%>
+</body>
 
 <% end %>

@@ -10,6 +10,7 @@ gem 'jbuilder',     '2.7.0'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'pusher'
+gem 'icheck-rails'
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
