@@ -293,9 +293,11 @@ input[type="file"] {
   width: 100%;
   z-index: -1;
 }
+
 .modal-backdrop.in{
   opacity:0;
 }
+
 #option_entire_home{
   margin-right: 0;
   text-align: center;
@@ -303,6 +305,7 @@ input[type="file"] {
   height:40px;
   font-weight: bold;
 }
+
 .col-sm-1 {
   display: inline-table;
 }
@@ -313,16 +316,25 @@ input[type="file"] {
 }
 
 .slick-arrow {
-  background: black !important;
   z-index: 1;
+  position: absolute;
+}
+
+.slick-arrow:hover{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow:    0px 0px 30px 0px rgba(255, 255, 255, 1);
+  box-shadow:         0px 0px 30px 0px rgba(255, 255, 255, 1);
 }
 
 .slick-prev {
-  left: 10%;
+  left: 2%;
 }
 
 .slick-next {
-  right: 10%;
+  right: 2%;
 }
 
 .carousel {
@@ -379,64 +391,92 @@ input[type="file"] {
   width: 100%;
 }
 
-#home_available_rooms{
+.daterange.caret{
+  position: absolute;
+  margin-left: 75%;
+  margin-top: -9%;
+  color: white;
+}
+
+.daterange-container{
+  display: inline-block;
+  position: relative;
+}
+
+#home_available_rooms {
   margin-left:-400px;
 }
-#home_total_bathrooms{
+
+#home_total_bathrooms {
   margin-left:-400px;
 }
-#home_total_rooms{
+
+#home_total_rooms {
   margin-left:-400px;
 }
-#home_private_bathrooms{
+
+#home_private_bathrooms {
   margin-left:-400px;
 }
-.control-label{
+
+.control-label {
   margin-left:-200px;
 }
-body.label_first .control-label{
+
+body.label_first .control-label {
     margin-left:0px;
     width:300px;
 }
-body.page2 .btn-default{
+
+body.page2 .btn-default {
   margin-left:120px;
 }
-body.label_first{
+
+body.label_first {
   max-width:3000px;
 }
 
-.cancelBtn{
+.cancelBtn {
   margin-left:0;
 }
-.photos_show{
-  margin-left:120px;
-}
-#photos_new{
-  margin-left:120px;
-}
-.checkbox{
-  width:400px;
-  margin-left:400px;
-}
-body.page3 .form-control{
-  margin-left:-400px;
-}
-body.page3 .control-label{
-  margin-left:-207px;
-}
-body.page3 #photos_new{
-  margin-left:110px;
-}
-body.page4 .btn-default{
-  margin-left:120px;
-}
-body.page3 .btn-default{
+
+.photos_show {
   margin-left:120px;
 }
 
-.rails-bootstrap-forms-date-select{
+#photos_new {
+  margin-left:120px;
+}
+
+.checkbox {
+  width:400px;
+  margin-left:400px;
+}
+
+body.page3 .form-control {
+  margin-left:-400px;
+}
+
+body.page3 .control-label {
+  margin-left:-207px;
+}
+
+body.page3 #photos_new {
+  margin-left:110px;
+}
+
+body.page4 .btn-default {
+  margin-left:120px;
+}
+
+body.page3 .btn-default {
+  margin-left:120px;
+}
+
+.rails-bootstrap-forms-date-select {
   margin-right:400px;
 }
+
 #photos{
   display:block;
   margin:auto;

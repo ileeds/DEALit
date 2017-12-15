@@ -14,7 +14,8 @@ class HomesController < ApplicationController
       select_options: {
         sorted_by: Home.options_for_sorted_by,
         with_is_furnished: Home.options_for_furnished
-      }
+      },
+      persistence_id: false
     ) or return
     @homes = @filterrific.find.page(params[:page]).where(status: "active")
     respond_to do |format|
