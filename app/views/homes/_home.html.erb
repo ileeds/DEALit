@@ -1,74 +1,85 @@
-<div class = "row">
-<div class = "col-sm-6">
-<p>
-  <strong>Posted by:</strong>
-  <%= @home.user.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @home.address %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @home.price %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @home.description %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @home.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @home.end_date %>
-</p>
-
-<p>
-  <strong>Total bathrooms:</strong>
-  <%= @home.total_bathrooms %>
-</p>
-
-<p>
-  <strong>Private bathrooms:</strong>
-  <%= @home.private_bathrooms %>
-</p>
-
-<p>
-  <strong>Total rooms:</strong>
-  <%= @home.total_rooms %>
-</p>
-
-<p>
-  <strong>Available rooms:</strong>
-  <%= @home.available_rooms %>
-</p>
-
-<p>
-  <strong>Is furnished:</strong>
-  <%= @home.is_furnished %>
-</p>
-</div>
-
-<div class = "col-sm-6">
-   <div id="index1" class = "bottom1">
-     <% if @home.reviews %>
-     <div id ="list_rev">
-      <% @home.reviews.each do |review| %>
-          <p><%= review.description %> <i> by <%= review.user.name %> </i></p>
+<div class="row">
+  <div class="carousel">
+    <% if !home.photos.blank? %>
+      <% home.photos.each do |photo| %>
+        <div class="home-photo-gallery">
+          <div class="photo-container">
+            <%= image_tag photo.photo.url(:square), class: "home-photo", id: home.id %>
+          </div>
+        </div>
       <% end %>
-    </div>
-     <div id="new_rev_link">
-      <%= link_to 'New Review', new_home_review_path(@home), remote: true %>
-    </div>
-      <div class = "new_review"> </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
+<div class = "row">
+  <div class = "col-md-6">
+
+    <p>
+      <strong>Posted by:</strong>
+      <%= @home.user.name %>
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      <%= @home.address %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @home.price %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @home.description %>
+    </p>
+
+    <p>
+      <strong>Start date:</strong>
+      <%= @home.start_date %>
+    </p>
+
+    <p>
+      <strong>End date:</strong>
+      <%= @home.end_date %>
+    </p>
+
+    <p>
+      <strong>Total bathrooms:</strong>
+      <%= @home.total_bathrooms %>
+    </p>
+
+    <p>
+      <strong>Private bathrooms:</strong>
+      <%= @home.private_bathrooms %>
+    </p>
+
+    <p>
+      <strong>Total rooms:</strong>
+      <%= @home.total_rooms %>
+    </p>
+
+    <p>
+      <strong>Available rooms:</strong>
+      <%= @home.available_rooms %>
+    </p>
+
+    <p>
+      <strong>Is furnished:</strong>
+      <%= @home.is_furnished %>
+    </p>
+  </div>
+  <div class = "col-md-6">
+      <% if @home.reviews %>
+      <div id ="list_rev">
+        <% @home.reviews.each do |review| %>
+        <p><%= review.description %> <i> by <%= review.user.name %> </i></p>
+        <% end %>
+      </div>
+      <div id="new_rev_link">
+        <%= link_to 'New Review', new_home_review_path(@home), remote: true %>
+      </div>
+      <div class = "new_review"> </div>
+      <% end %>
+  </div>
 </div>

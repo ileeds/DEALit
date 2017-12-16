@@ -1,17 +1,20 @@
+<h2 style="color:black;">Sign up</h2>
 <%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: @user %>
+<div class="row">
+  <div class="col-md-12" style="float:right">
+    <div class="col-md-7" style="float:left;">
+      <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+      <%= f.email_field :email, class: 'form-control', placeholder: 'Email Address' %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
+          </div>
+      <%= f.submit 'Sign up', class: "btn btn-primary" %>
+      <div class="input-group">
+      <%= link_to image_tag('brandeis.jpg', size:"30x30")+"Sign up with your Brandeis account", "/auth/google_oauth2", id: "brandeis_sign_in", class: "btn btn-block btn-social btn-microsoft" %>
+    </div>
+  </div>
+</div>
+<p>Already have an account? <%= link_to "Log in", login_path, remote: true %></p>
 <% end %>

@@ -1,0 +1,18 @@
+<h2 style="color:black;">Sign in</h2>
+<%= form_for(:session, url: login_path) do |f| %>
+<div class="input-group">
+  <span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i></span>
+  <%= f.email_field :email, class: 'form-control', hide_label: true, placeholder: 'Email Address' %>
+</div>
+
+<div class="input-group">
+  <span class="input-group-addon"> <i class="glyphicon glyphicon-lock"></i></span>
+  <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+  </div>
+  <%= f.submit "Log in", class: "btn btn-primary" %>
+
+  <div class="input-group">
+  <%= link_to image_tag('brandeis.jpg', size:"30x30")+"Sign in with your Brandeis account", "/auth/google_oauth2", id: "brandeis_sign_in", class: "btn btn-block btn-social btn-microsoft" %>
+</div>
+<p>New user? <%= link_to "Sign up now!", signup_path, remote: true %></p>
+  <% end %>
