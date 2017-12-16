@@ -75,6 +75,7 @@
 
 .x-button {
     position: absolute;
+    background: transparent !important;
     top: -1px;
     right: 10px;
     font-size: 16px;
@@ -137,4 +138,54 @@
   max-height: 350px;
   width: 350px;
   overflow-x: hidden;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.followed:hover {
+  color:red;
+  background: transparent;
+  //border: hidden !important
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+  size:10em;
+}
+
+.notfollowed:hover {
+  color: #737373;
+  background: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+}
+
+
+
+.followed {
+  color: red;
+}
+
+.notfollowed {
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #666;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;
+}
+
+.photo-notifications {
+    position: absolute;
+    margin-left: 43%;
+    margin-top: 1%;
+    z-index: 10;
 }

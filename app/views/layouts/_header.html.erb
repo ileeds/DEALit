@@ -33,6 +33,8 @@
                       }
                       if(data.count == 0) {
                         $("#unread").hide();
+                      } else {
+                        $("#no-notifications").hide();
                       }
                     });
                     channel.bind('inbox_event', function(data) {

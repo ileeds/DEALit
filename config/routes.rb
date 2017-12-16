@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/followings', to: 'followings#create'
+  resources :followings, only: %w(new create destroy)
   resources :searches
   resources :photos
   resources :options

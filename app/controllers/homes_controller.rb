@@ -17,7 +17,6 @@ class HomesController < ApplicationController
       },
       persistence_id: false
     ) or return
-
     @homes = @filterrific.find.page(params[:page]).where(status: "active")
     respond_to do |format|
       format.html

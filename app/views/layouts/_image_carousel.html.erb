@@ -1,10 +1,18 @@
+<% if logged_in? %>
+  <div class="photo-notifications">
+    <%= link_to_toggle_post_favorite(home) %>
+  </div>
+<% end %>
 <div class="carousel">
   <% if !home.photos.blank? %>
     <% home.photos.each do |photo| %>
       <div class="photo-container">
+
         <%= link_to home, remote: true, class: "home-link" do %>
           <%= image_tag photo.photo.url(:medium), class: "home-photo", id: home.id %>
         <% end %>
+
+
       </div>
     <% end %>
   <% else %>
