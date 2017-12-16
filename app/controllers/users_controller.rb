@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
-        format.html { redirect_to root_url, notice: 'User was successfully created.' }
+        format.html { redirect_to root_url }
         format.json { render root_url, status: :created }
       else
         format.html { render :new }

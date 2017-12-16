@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
     @review.home_id = params[:home_id]
     respond_to do |format|
       if @review.save
-        format.html { redirect_to home_review_path(params[:home_id], @review.id), notice: 'Review was successfully created.' }
+        format.html { redirect_to home_review_path(params[:home_id], @review.id) }
         format.json { render :show, status: :created, location: @review }
       else
         format.js { render :new }
