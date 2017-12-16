@@ -1,21 +1,19 @@
 // Place all the styles related to the Homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .marker_container {
-    width: 120px;
-    height: 120px;
-    background-color: black;
-    color: white;
-    margin-left: -100px;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: -1;
-    bottom: 0%;
-    left: 95%;
-    margin-left: -70px;
+  width: 250%;
+  height: 100px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: -1;
+  bottom: -10px;
+  left: 20%;
+  margin-left: -70px;
 }
 
 .marker_container::after {
@@ -24,7 +22,7 @@
     top: 100%;
     left: 50%;
     margin-left: -5px;
-    border-width: 5px;
+    border-width: 10px;
     border-style: solid;
     border-color: black transparent transparent transparent;
 }
@@ -131,6 +129,10 @@
   text-align:center;
   border-bottom-style: none;
   color: black;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: -1;
 }
 
 #index {
@@ -184,12 +186,17 @@ hr {
 .dropdown-menu {
   overflow-x: visible;
   width: 150%;
+  padding-left: 2%;
+  padding-right: 2%;
+  text-align: center;
 }
 
 .home-buttons {
   display: inline-block;
   float: left;
-  width: 100%
+  width: 100%;
+  margin-bottom: 10%;
+  margin-top: -15%;
 }
 
 .home-button {
@@ -199,11 +206,7 @@ hr {
 }
 
 .home-button.send {
-  margin-right: 1%
-}
-
-.home-button.notify {
-
+  position: absolute;
 }
 
 .home-buttons div a:visited {
@@ -212,6 +215,7 @@ hr {
 
 .ui-slider-handle.custom-handle {
   background: #0070FF;
+  border-radius: 50%;
 }
 
 .custom-slider {
@@ -280,7 +284,7 @@ input[type="file"] {
 }
 
 #filterrific_results > div:first-child {
-  margin-bottom: -10%;
+  display: none;
 }
 
 .modal-backdrop {
@@ -337,16 +341,12 @@ input[type="file"] {
   right: 2%;
 }
 
-.carousel {
-  margin-top: 10%;
-}
-
 .home-wrapper {
   width: 48%;
   display: inline-block;
   float: left;
-  margin-top: 6%;
   margin-left: 2%;
+  margin-bottom: 2%;
 }
 
 .slick-slide img {
@@ -394,7 +394,7 @@ input[type="file"] {
 .daterange.caret{
   position: absolute;
   margin-left: 75%;
-  margin-top: -9%;
+  margin-top: -14%;
   color: white;
 }
 
@@ -437,7 +437,8 @@ body.label_first {
 }
 
 .cancelBtn {
-  margin-left:0;
+  margin-left: 0;
+  width: 49%;
 }
 
 .photos_show {
@@ -481,4 +482,46 @@ body.page3 .btn-default {
   display:block;
   margin:auto;
   text-align:center;
+}
+
+.ranges {
+  clear: both;
+  width: 100% !important;
+}
+
+.applyBtn {
+  width: 49%
+}
+
+.box-text {
+  font-family: georgia;
+  font-size: 1vw;
+}
+
+.dropdown {
+  margin-bottom: 5%;
+}
+
+.infoBox > img {
+  margin: -10px 4px !important;
+}
+
+#chart-1 {
+  position: relative;
+  left: -30px;
+}
+
+#price_slider {
+  top: -10px;
+}
+
+.graph-container {
+  overflow: hidden;
+  height: 110px;
+  left: 30px;
+  position: relative;
+}
+
+.chartjs-render-monitor {
+  width: 92% !important;
 }

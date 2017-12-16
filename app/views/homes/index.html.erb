@@ -25,6 +25,10 @@
           <b class="caret"></b>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <div>Price per month</div>
+          <div class="graph-container">
+            <%= area_chart Home.price_graph, discrete: true, library: {vAxis: {gridlines: {color: "transparent"}}} %>
+          </div>
           <div id="price_slider" class="custom-slider">
             <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider-input", readonly: true %> </div>
@@ -120,7 +124,7 @@
         </div>
       </div>
     </div>
-    <div class = "col-sm-1">
+    <!-- <div class = "col-sm-1">
       Furnished
       <%= f.select(
         :with_is_furnished,
@@ -137,7 +141,7 @@
         {},
         class: "select-filter"
       ) %>
-    </div>
+    </div> -->
     <div class = "col-sm-1">
       <%= link_to(
         'Reset filters',
@@ -192,10 +196,13 @@
     $("#daterange").on('apply.daterangepicker', function(ev, picker) {
       $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
       $("#filterrific-form").submit();
+      $(".daterange.caret").css("display", "none");
+      $(this).css("background-color", "#5cb85c");
     });
     $("#daterange").on('cancel.daterangepicker', function() {
-        $(this).val('');
-        $("#filterrific-form").submit();
+      $(this).val('');
+      $("#filterrific-form").submit();
+      $(this).css("background-color", "#5bc0de");
     });
   });
   $('.cancelBtn').on({

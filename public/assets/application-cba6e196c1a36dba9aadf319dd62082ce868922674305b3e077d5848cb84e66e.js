@@ -37790,7 +37790,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 }).call(this);
 (function() {
+  $(document).on('click', '#photos_new', function() {
+    $('.photos_show').toggle();
+    if (document.getElementById("photos_new").innerHTML === 'Hide') {
+      document.getElementById("photos_new").innerHTML = 'See and upload photos';
+    } else {
+      document.getElementById("photos_new").innerHTML = 'Hide';
+    }
+    return;
+    document.getElementById("pictureInput").onchange = function() {};
+    document.getElementById("form_ajax-1").submit();
+  });
 
+  $(function() {
+    $('#pictureInput').on('change', function(event) {
+      var files, i, image, reader;
+      event.target.files === null;
+      files = event.target.files;
+      i = 0;
+      while (i < files.length) {
+        image = files[i];
+        reader = new FileReader;
+        reader.onload = function(file) {
+          var img;
+          img = new Image;
+          console.log(img);
+          img.src = file.target.result;
+          $('#target').append(img);
+          $('#target').append("<strong> </strong>");
+        };
+        reader.readAsDataURL(image);
+        i++;
+        console.log($('#form-ajax-1').submit());
+      }
+    });
+    return;
+    document.getElementById('pictureInput').onchange = function() {};
+    document.getElementById('form-ajax-1').submit();
+  });
 
 }).call(this);
 (function() {
@@ -37811,10 +37848,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         $('#min_' + slider_name).val(ui.values[0]);
         $('#max_' + slider_name).val(ui.values[1]);
         $('#min_' + slider_name).text(ui.values[0]);
-        $('#max_' + slider_name).text(ui.values[1]);
-        $('#filterrific-form').delay(200).submit();
-        debugger;
-        return $('#savesearch').show();
+        return $('#max_' + slider_name).text(ui.values[1]);
+      },
+      change: function(event, ui) {
+        $('#filterrific-form').submit();
+        return $(this).parent().prev().css('background-color', '#5cb85c');
       }
     });
     $('#min_' + slider_name).val(this_slider.slider('values')[0]);
@@ -37932,8 +37970,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   });
 
   $(document).on('mouseover', '.box, .home-photo', function() {
-    $('#' + this.id + '.marker_container1').css('color', 'red');
-    $('#' + this.id + '.clicked').css('color', 'red');
+    $('#' + this.id + '.marker_container1').css('color', '#5bc0de');
+    $('#' + this.id + '.clicked').css('color', '#5bc0de');
   });
 
   $(document).on('mouseout', '.box, .home-photo', function() {
@@ -37943,6 +37981,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
   $(document).on('hidden.bs.modal', '.modal', function() {
     $('#index').css('overflow-y', 'scroll');
+  });
+
+  $('form_ajax1').submit(function() {
+    var valuesToSubmit;
+    valuesToSubmit = $(this).serialize();
+    $.ajax({
+      type: 'POST',
+      url: $(this).attr('action'),
+      data: valuesToSubmit,
+      dataType: 'JSON'
+    }).success(function(json) {
+      console.log('success', json);
+    });
+    false;
+    $('form#form_ajax1').trigger('submit.rails');
+    document.getElementById('pictureInput').onchange = function() {};
+    document.getElementById('form_ajax1').submit();
   });
 
 }).call(this);

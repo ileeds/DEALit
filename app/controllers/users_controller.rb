@@ -33,7 +33,6 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
-        flash[:success] = "Welcome to Off Campus!"
         format.html { redirect_to root_url, notice: 'User was successfully created.' }
         format.json { render root_url, status: :created }
       else

@@ -17,6 +17,7 @@ gem 'bootstrap-glyphicons'
 gem 'bootstrap_form'
 gem 'bootstrap-social-rails'
 
+
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
 end
@@ -71,3 +72,4 @@ gem 'database_cleaner'
 gem 'rails-erd', require: false, group: :development
 gem 'redis', '~> 3.2'
 gem 'pundit'
+gem 'chartkick'
