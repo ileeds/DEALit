@@ -27,8 +27,8 @@ class HomesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@homes) do |home, marker|
       marker.lat home.latitude
       marker.lng home.longitude
-      marker.infowindow "Address: #{home.address} \n \n Rooms: #{home.total_rooms}".gsub(/\n/, '<br/>')
       marker.json({ price: home.price, id:home.id })
+      marker.infowindow render_to_string(:partial => "/homes/home_container", :locals => { :home => home})
     end
 
     @all_price_min = Home.minimum(:price).floor rescue nil

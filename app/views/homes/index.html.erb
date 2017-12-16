@@ -120,7 +120,7 @@
         </div>
       </div>
     </div>
-    <div class = "col-sm-1">
+    <!-- <div class = "col-sm-1">
       Furnished
       <%= f.select(
         :with_is_furnished,
@@ -137,7 +137,7 @@
         {},
         class: "select-filter"
       ) %>
-    </div>
+    </div> -->
     <div class = "col-sm-1">
       <%= link_to(
         'Reset filters',
@@ -192,10 +192,13 @@
     $("#daterange").on('apply.daterangepicker', function(ev, picker) {
       $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
       $("#filterrific-form").submit();
+      $(".daterange.caret").css("display", "none");
+      $(this).css("background-color", "#5cb85c");
     });
     $("#daterange").on('cancel.daterangepicker', function() {
-        $(this).val('');
-        $("#filterrific-form").submit();
+      $(this).val('');
+      $("#filterrific-form").submit();
+      $(this).css("background-color", "#5bc0de");
     });
   });
   $('.cancelBtn').on({

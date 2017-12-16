@@ -11,29 +11,22 @@
         ) %>
       </div>
       <%= link_to home, remote: true, class: "home-link" do %>
-        <div class="box" id = <%=home.id%>>
-          <div class="row">
-            <div class = "col-sm-12">
-              Posted by <%= home.user.name %> <br>
-              <%= home.address %> <br>
-              <%= home.title.titleize %> <br>
-              $<%= home.price %> per month <br>
-              Available from <%= home.start_date %> to <%= home.end_date %><br>
-            </div>
-          </div>
+        <%= render(
+          partial: 'homes/home_container',
+          locals: { home: home }
+        ) %>
+      <% end %>
+      <div class="home-buttons">
+        <div class="send-message">
+          <%= link_to "Send Message", private_topic_path(recipient_id: home.user_id, home_address: home.address), class: "btn btn-success home-button send" %>
         </div>
-        <% end %>
-        <div class="home-buttons">
-          <div class="send-message">
-            <%= link_to "Send Message", private_topic_path(recipient_id: home.user_id, home_address: home.address), class: "btn btn-success home-button send" %>
-          </div>
-          <div class="get-notifications">
-            <%= link_to "Get Notifications", followings_path(:following => { home_id: home.id } ), method: 'post', class: "btn btn-success home-button notify"%>
-          </div>
+        <div class="get-notifications">
+          <%= link_to "Get Notifications", followings_path(:following => { home_id: home.id } ), method: 'post', class: "btn btn-success home-button notify"%>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
   <br>
+</div>
 <%= will_paginate @homes %>
 <%= render "layouts/modal" %>
