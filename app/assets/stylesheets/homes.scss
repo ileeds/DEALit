@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .marker_container {
-  width: 200%;
+  width: 250%;
   height: 100px;
   background-color: white;
   color: black;
@@ -12,7 +12,7 @@
   position: absolute;
   z-index: -1;
   bottom: -10px;
-  left: 42%;
+  left: 20%;
   margin-left: -70px;
 }
 
@@ -503,7 +503,7 @@ body.page3 .btn-default {
 }
 
 .infoBox > img {
-  margin: -10px 7px !important;
+  margin: -10px 4px !important;
 }
 
 #chart-1 {
