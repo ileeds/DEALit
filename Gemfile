@@ -12,9 +12,7 @@ gem 'aws-sdk', '~> 2.3'
 gem 'pusher'
 gem 'icheck-rails'
 gem 'render_sync', path: "./render_sync-0.5.0"
-gem 'simple_form'
 gem 'bootstrap-glyphicons'
-gem 'bootstrap_form'
 gem 'bootstrap-social-rails'
 
 
