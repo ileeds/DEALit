@@ -132,16 +132,6 @@
   position: relative;
   white-space: nowrap;
   overflow: hidden;
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30%;
-    height: 55%;
-    background-image: linear-gradient(left, rgba(255,255,255,0) 0%, white 80%, white 100%);
-    pointer-events: none;
-  }
   z-index: -1;
 }
 
@@ -216,7 +206,7 @@ hr {
 }
 
 .home-button.send {
-  margin-right: 1%
+  position: absolute;
 }
 
 .home-buttons div a:visited {
@@ -225,6 +215,7 @@ hr {
 
 .ui-slider-handle.custom-handle {
   background: #0070FF;
+  border-radius: 50%;
 }
 
 .custom-slider {
@@ -355,6 +346,7 @@ input[type="file"] {
   display: inline-block;
   float: left;
   margin-left: 2%;
+  margin-bottom: 2%;
 }
 
 .slick-slide img {
@@ -501,12 +493,9 @@ body.page3 .btn-default {
   width: 49%
 }
 
-.box-test {
+.box-text {
   font-family: georgia;
-}
-
-.title {
-  font-size: 20px;
+  font-size: 1vw;
 }
 
 .dropdown {
@@ -515,4 +504,24 @@ body.page3 .btn-default {
 
 .infoBox > img {
   margin: -10px 7px !important;
+}
+
+#chart-1 {
+  position: relative;
+  left: -30px;
+}
+
+#price_slider {
+  top: -10px;
+}
+
+.graph-container {
+  overflow: hidden;
+  height: 110px;
+  left: 30px;
+  position: relative;
+}
+
+.chartjs-render-monitor {
+  width: 92% !important;
 }

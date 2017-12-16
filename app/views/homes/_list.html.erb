@@ -20,9 +20,6 @@
         <div class="send-message">
           <%= link_to "Send Message", private_topic_path(recipient_id: home.user_id, home_address: home.address), class: "btn btn-success home-button send" %>
         </div>
-        <div class="get-notifications">
-          <%= link_to "Get Notifications", followings_path(:following => { home_id: home.id } ), method: 'post', class: "btn btn-success home-button notify"%>
-        </div>
       </div>
     </div>
   <% end %>

@@ -25,6 +25,10 @@
           <b class="caret"></b>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <div>Price per month</div>
+          <div class="graph-container">
+            <%= area_chart Home.price_graph, discrete: true, library: {vAxis: {gridlines: {color: "transparent"}}} %>
+          </div>
           <div id="price_slider" class="custom-slider">
             <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_price_fields.text_field :min, id: "min_price", value: @price_min, class: "slider-input", readonly: true %> </div>

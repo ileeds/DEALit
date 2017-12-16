@@ -7,11 +7,6 @@ gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 gem 'jbuilder',     '2.7.0'
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
-gem 'pusher'
-gem 'icheck-rails'
-gem 'render_sync', path: "./render_sync-0.5.0"
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
@@ -67,3 +62,9 @@ gem 'database_cleaner'
 gem 'rails-erd', require: false, group: :development
 gem 'redis', '~> 3.2'
 gem 'pundit'
+gem 'chartkick'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
+gem 'pusher'
+gem 'icheck-rails'
+gem 'render_sync', path: "./render_sync-0.5.0"
