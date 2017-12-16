@@ -2,7 +2,6 @@
   <div>
     <%= page_entries_info homes %>
   </div>
-
   <% @homes.each do |home| %>
     <div class="home-wrapper">
       <div class="home-photo-gallery">
@@ -25,9 +24,9 @@
           <%= link_to "Get Notifications", followings_path(:following => { home_id: home.id } ), method: 'post', class: "btn btn-success home-button notify"%>
         </div>
       </div>
-    <% end %>
-    <%= will_paginate @homes, remote: true %>
-  </div>
+    </div>
+  <% end %>
+  <%= will_paginate @homes, remote: true %>
   <br>
 </div>
 <%= render "layouts/modal" %>
