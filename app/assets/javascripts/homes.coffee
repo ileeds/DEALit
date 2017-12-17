@@ -128,3 +128,5 @@ $(document).on 'hidden.bs.modal', '.modal', ->
   document.getElementById('pictureInput').onchange = ->
   document.getElementById('form_ajax1').submit()
   return
+
+  

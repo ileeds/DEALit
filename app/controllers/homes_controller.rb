@@ -109,7 +109,7 @@ class HomesController < ApplicationController
         @home.option = Option.create(home_id: @home.id)
         if params[:images]
           params[:images].each do |picture|
-            @home.photos.create(photo: picture)
+            @home.photos.create(image: picture)
           end
         end
         format.html { redirect_to home_steps_path(home_id: @home.id) }
@@ -124,7 +124,7 @@ class HomesController < ApplicationController
   def add_photos
     if params[:images]
       params[:images].each do |picture|
-        @home.photos.create(photo: picture)
+        @home.photos.create(image: picture)
       end
     end
     respond_to do |format|

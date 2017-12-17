@@ -17,6 +17,7 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require dropzone
  *= require 'icheck/square/_all'
  *= require bootstrap-social
  */
@@ -118,7 +119,6 @@
 
 .notification-dropdown-item {
   white-space: initial !important;
-  width: 345px;
 }
 
 #bell-icon {
@@ -141,7 +141,6 @@
    border-radius:50%;
    box-shadow:0 0 1px #333;
 }
-
 #unread-inbox {
    position:absolute;
    top:9px;

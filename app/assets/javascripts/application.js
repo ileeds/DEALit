@@ -23,6 +23,7 @@
 //= require thredded
 //= require cable
 //= require sync
+//= require dropzone.min
 //= require Chart.bundle
 //= require chartkick
 //= require_tree .

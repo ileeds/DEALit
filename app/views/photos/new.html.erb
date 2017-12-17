@@ -1,5 +1,7 @@
-<h1>New Photo</h1>
-
-<%= render 'form', photo: @photo %>
-
-<%= link_to 'Back', photos_path %>
+<h1> Upload photos here </h1>
+<%= form_for([:home, @photo], html: { multipart: true, class: "dropzone"}) do |f|  %>
+<div class="fallback">
+  <%= f.file_field :image %><br>
+  <%= f.submit "Upload" %>
+</div>
+<% end %>
