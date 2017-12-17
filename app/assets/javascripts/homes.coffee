@@ -18,7 +18,7 @@ generate_slider = (slider_name)->
       $('#max_' + slider_name).text ui.values[1]
     change: (event, ui) ->
       $('#filterrific-form').submit()
-      $(this).parent().prev().css 'background-color', '#5cb85c'
+      $(this).parent().prev().addClass("filtered")
   )
   $('#min_' + slider_name).val this_slider.slider('values')[0]
   $('#max_' + slider_name).val this_slider.slider('values')[1]
