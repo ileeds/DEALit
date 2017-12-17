@@ -96,14 +96,17 @@ $(document).on 'click', '.marker_container1', ->
   return
 
 $(document).on 'mouseover', ('.box, .home-photo'), ->
-  $('#'+@id+'.marker_container1').css 'background-color', '#5bc0de'
-  $('#'+@id+'.marker_container1').css 'color', 'white'
-  $('#'+@id+'.clicked').css 'color', '#5bc0de'
+  $('#'+@id+'.marker_container1').css 'background-color', '#5bc0de', 'important'
+  $('#'+@id+'.marker_container1').css 'color', 'white', 'important'
+  $('#'+@id+'.clicked').css 'background-color', '#5bc0de', 'important'
+  $('#'+@id+'.clicked').css 'color', 'white', 'important'
+
   return
 
 $(document).on 'mouseout', ('.box, .home-photo'), ->
   $('.marker_container1').css 'background-color', 'white'
   $('#'+@id+'.marker_container1').css 'color', 'black'
+  $('.clicked').css 'background-color', 'white'
   $('.clicked').css 'color', 'black'
   return
 
@@ -128,5 +131,3 @@ $(document).on 'hidden.bs.modal', '.modal', ->
   document.getElementById('pictureInput').onchange = ->
   document.getElementById('form_ajax1').submit()
   return
-
-  

@@ -113,7 +113,6 @@ class HomesController < ApplicationController
           end
         end
         format.html { redirect_to home_steps_path(home_id: @home.id) }
-        format.json { render :show, status: :created, location: @home }
       else
         format.html { render :new }
         format.json { render json: @home.errors, status: :unprocessable_entity }
@@ -144,8 +143,7 @@ class HomesController < ApplicationController
             @home.photos.create(photo: picture)
           end
         end
-        format.html { redirect_to @home, notice: 'Home was successfully updated.' }
-        format.json { render :show, status: :ok, location: @home }
+        format.html { redirect_to home_steps_path(home_id: @home.id) }
         @home.users.each do |user|
           @notification = Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ')} of #{@home.address}", notifiable: @home)
           sync_new @notification
@@ -169,7 +167,6 @@ class HomesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
 
 
   private
