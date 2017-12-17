@@ -12,7 +12,7 @@
   <%= f.submit "Log in", class: "btn btn-primary" %>
 
   <div class="input-group">
-  <%= link_to image_tag('brandeis.jpg', size:"30x30")+"Sign in with your Brandeis account", "/auth/google_oauth2", id: "brandeis_sign_in", class: "btn btn-block btn-social btn-microsoft" %>
+  <%= link_to image_tag('brandeis.jpg', size:"32x32")+"Sign in with your Brandeis account", "/auth/google_oauth2", id: "brandeis_sign_in", class: "btn btn-block btn-social btn-brandeis" %>
 </div>
 <p>New user? <%= link_to "Sign up now!", signup_path, remote: true %></p>
   <% end %>

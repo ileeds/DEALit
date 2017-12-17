@@ -21,8 +21,9 @@
  *= require bootstrap-social
  */
 
-@import 'bootstrap/glyphicons';
+//@import 'bootstrap/glyphicons';
 @import "thredded";
+//@import "font-awesome";
 
 .thredded--main-container {
   // The padding and max-width are handled by the app's container.
@@ -255,6 +256,9 @@
   text-align: center;
 }
 
+.btn-brandeis {
+  background-color: #002F6C;
+}
 
 .modal-body{
     height: 350px;
