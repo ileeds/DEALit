@@ -19,11 +19,10 @@ class HomeStepsController < ApplicationController
     end
 
     if @step==:calendar
-      
       redirect_to "/homes/"+@home.id.to_s+"/photos/new"
     else
-    render_wizard(@home, {}, { home_id: @home.id })
-  end
+      render_wizard(@home, {}, { home_id: @home.id })
+    end
   end
 
   def add_photos
