@@ -1,0 +1,8 @@
+<% unless @mark %>
+  <%= link_to 'Mark Conversation as Read',
+              main_app.mark_read_path(postable_id: Thredded::PrivateTopic.where(slug: params[:id]).pluck(:id)[0]),
+              class: 'thredded--button thredded--button-light thredded--button-wide',
+              id: 'mark-read-button',
+              remote: true,
+              method: :put %>
+<% end %>

@@ -73,6 +73,14 @@
   display: none;
 }
 
+.thredded--post--dropdown--toggle {
+  display: none;
+}
+
+#private_topic_user_names {
+  color: blue;
+}
+
 @-webkit-keyframes flash {
 	0% { opacity: 1; }
 	50% { opacity: .1; }
