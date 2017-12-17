@@ -10884,36 +10884,35 @@ input {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 5, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 4, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .marker_container {
-  width: 120px;
-  height: 120px;
-  background-color: black;
-  color: white;
-  margin-left: -100px;
+  width: 250%;
+  height: 100px;
+  background-color: white;
+  color: black;
   text-align: center;
   border-radius: 6px;
   padding: 5px;
   position: absolute;
   z-index: -1;
-  bottom: 0%;
-  left: 95%;
+  bottom: -10px;
+  left: 20%;
   margin-left: -70px;
 }
 
-/* line 21, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 19, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .marker_container::after {
   content: " ";
   position: absolute;
   top: 100%;
   left: 50%;
   margin-left: -5px;
-  border-width: 5px;
+  border-width: 10px;
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
 
-/* line 32, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 30, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .marker_container1 {
   background-color: white;
   color: black;
@@ -10927,7 +10926,7 @@ input {
   margin-left: -60px;
 }
 
-/* line 45, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 43, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .marker_container1:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
@@ -10941,7 +10940,13 @@ input {
   z-index: 1000;
 }
 
-/* line 59, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 56, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.form-group {
+  margin-left: 500px;
+  width: 900px;
+}
+
+/* line 60, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .clicked {
   background-color: white;
   color: black;
@@ -10958,7 +10963,7 @@ input {
   border-style: solid;
 }
 
-/* line 75, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 76, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #map {
   width: 380px;
   height: 400px;
@@ -10967,22 +10972,22 @@ input {
   z-index: -1;
 }
 
-/* line 83, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 84, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #map-box {
   position: fixed;
 }
 
-/* line 87, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 88, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .new {
   align: center;
 }
 
-/* line 91, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 92, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #filters {
   position: fixed;
 }
 
-/* line 95, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 96, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slider-input {
   width: 300%;
   display: inline-block;
@@ -10991,14 +10996,21 @@ input {
   background: transparent;
 }
 
-/* line 103, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 104, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal-main {
   background-color: white;
   position: fixed;
   width: 650px;
+  border-style: solid;
+  border-width: medium;
 }
 
-/* line 109, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 111, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.input {
+  width: 150px;
+}
+
+/* line 115, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal {
   height: 530px;
   width: 700px;
@@ -11007,20 +11019,24 @@ input {
   margin-top: 100px;
 }
 
-/* line 117, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 123, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal-footer a.btn:hover {
   background-color: black;
 }
 
-/* line 121, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 127, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .box {
   height: 18vh;
   text-align: center;
   border-bottom-style: none;
   color: black;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: -1;
 }
 
-/* line 128, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 138, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #index {
   height: 73%;
   overflow-y: auto;
@@ -11028,28 +11044,28 @@ input {
   width: 45%;
 }
 
-/* line 134, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 144, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #index1 {
-  height: 58%;
+  height: 46%;
   overflow-y: auto;
   overflow-x: hidden;
   width: 16.5%;
 }
 
-/* line 141, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 151, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #map {
   width: 100%;
   height: 73%;
 }
 
-/* line 146, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 156, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #daterange {
   resize: none;
   width: auto;
   color: white !important;
 }
 
-/* line 152, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 162, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #daterange::-webkit-input-placeholder {
   color: white;
 }
@@ -11063,127 +11079,163 @@ input {
   color: white;
 }
 
-/* line 156, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 166, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea::-webkit-input-placeholder {
   color: black;
 }
 
-/* line 160, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 170, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea:-moz-placeholder {
   /* Firefox 18- */
   color: black;
 }
 
-/* line 164, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 174, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea::-moz-placeholder {
   /* Firefox 19+ */
   color: black;
 }
 
-/* line 168, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 178, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 textarea:-ms-input-placeholder {
   color: black;
 }
 
-/* line 172, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 182, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 hr {
   margin-top: 0px;
 }
 
-/* line 176, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 186, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .dropdown-menu {
   overflow-x: visible;
   width: 150%;
+  padding-left: 2%;
+  padding-right: 2%;
+  text-align: center;
 }
 
-/* line 181, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 194, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-buttons {
   display: inline-block;
   float: left;
   width: 100%;
+  margin-bottom: 10%;
+  margin-top: -15%;
 }
 
-/* line 187, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 202, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-button {
   text-align: center;
   width: 48%;
   float: left;
 }
 
-/* line 193, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 208, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-button.send {
-  margin-right: 1%;
+  position: absolute;
 }
 
-/* line 201, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 212, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-buttons div a:visited {
   color: white;
 }
 
-/* line 205, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 216, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .ui-slider-handle.custom-handle {
   background: #0070FF;
+  border-radius: 50%;
 }
 
-/* line 209, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 221, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .custom-slider {
   width: 80%;
   margin-left: 10%;
   margin-top: 2%;
 }
 
-/* line 215, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 227, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .ui-slider-range {
   background: #0070FF;
 }
 
-/* line 219, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 231, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-sm {
   margin-top: 15%;
 }
 
-/* line 223, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 235, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-secondary {
   background: transparent;
 }
 
-/* line 227, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 239, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slider-label-below {
   margin-top: 10%;
 }
 
-/* line 231, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 243, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .select-filter {
   width: auto;
 }
 
-/* line 235, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 246, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.btn-default {
+  margin-left: 550px;
+  width: 300px;
+}
+
+/* line 251, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .hover_me {
   text-decoration: underline;
 }
 
-/* line 239, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 255, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #home_is_furnished {
-  margin-right: 200;
+  margin-right: 0;
+  text-align: center;
+  width: 20px;
+  height: 40px;
+  font-weight: bold;
 }
 
-/* line 243, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 262, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.radio label, .checkbox label {
+  font-weight: bold;
+  padding-left: 20px;
+  margin-left: 250px;
+}
+
+/* line 267, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.radio-inline {
+  width: 100px;
+  margin-left: -5px;
+}
+
+/* line 272, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .bottom {
   position: fixed !important;
   bottom: 2%;
 }
 
-/* line 248, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 276, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+input[type="file"] {
+  display: block;
+  margin-left: 480px;
+  width: 300px;
+}
+
+/* line 282, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .bottom1 {
   position: fixed;
 }
 
-/* line 252, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 286, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 #filterrific_results > div:first-child {
-  margin-bottom: -10%;
+  display: none;
 }
 
-/* line 256, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 290, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .modal-backdrop {
   position: absolute;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))) !important;
@@ -11193,48 +11245,64 @@ hr {
   z-index: -1;
 }
 
-/* line 267, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 301, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.modal-backdrop.in {
+  opacity: 0;
+}
+
+/* line 305, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#option_entire_home {
+  margin-right: 0;
+  text-align: center;
+  width: 20px;
+  height: 40px;
+  font-weight: bold;
+}
+
+/* line 313, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .col-sm-1 {
   display: inline-table;
 }
 
-/* line 271, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 317, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-photo {
   margin: auto;
   width: 100%;
 }
 
-/* line 276, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 322, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-arrow {
-  background: black !important;
   z-index: 1;
+  position: absolute;
 }
 
-/* line 281, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 327, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.slick-arrow:hover {
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 30px 0px white;
+  box-shadow: 0px 0px 30px 0px white;
+}
+
+/* line 336, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-prev {
-  left: 10%;
+  left: 2%;
 }
 
-/* line 285, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 340, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-next {
-  right: 10%;
+  right: 2%;
 }
 
-/* line 289, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
-.carousel {
-  margin-top: 10%;
-}
-
-/* line 293, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 344, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .home-wrapper {
   width: 48%;
   display: inline-block;
   float: left;
-  margin-top: 6%;
   margin-left: 2%;
+  margin-bottom: 2%;
 }
 
-/* line 301, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 352, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-slide img {
   bottom: 0;
   left: 0;
@@ -11246,42 +11314,207 @@ hr {
   top: 0;
 }
 
-/* line 312, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 363, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .photo-container {
   padding-top: 62%;
   position: relative;
   width: 100%;
 }
 
-/* line 318, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 369, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .slick-slider {
   margin-bottom: 0px;
 }
 
-/* line 322, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 373, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .form-container {
   width: 100%;
   text-align: center;
 }
 
-/* line 327, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 378, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .col-sm-12 {
   text-align: left;
 }
 
-/* line 331, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 382, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .pagination {
   width: 100%;
 }
 
-/* line 335, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 386, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-warning {
   color: white !important;
 }
 
-/* line 339, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+/* line 390, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
 .btn-info {
   width: 100%;
+}
+
+/* line 394, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.daterange.caret {
+  position: absolute;
+  margin-left: 75%;
+  margin-top: -14%;
+  color: white;
+}
+
+/* line 401, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.daterange-container {
+  display: inline-block;
+  position: relative;
+}
+
+/* line 406, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_available_rooms {
+  margin-left: -400px;
+}
+
+/* line 410, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_total_bathrooms {
+  margin-left: -400px;
+}
+
+/* line 414, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_total_rooms {
+  margin-left: -400px;
+}
+
+/* line 418, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#home_private_bathrooms {
+  margin-left: -400px;
+}
+
+/* line 422, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.control-label {
+  margin-left: -200px;
+}
+
+/* line 426, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.label_first .control-label {
+  margin-left: 0px;
+  width: 300px;
+}
+
+/* line 431, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page2 .btn-default {
+  margin-left: 120px;
+}
+
+/* line 435, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.label_first {
+  max-width: 3000px;
+}
+
+/* line 439, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.cancelBtn {
+  margin-left: 0;
+  width: 49%;
+}
+
+/* line 444, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.photos_show {
+  margin-left: 120px;
+}
+
+/* line 448, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#photos_new {
+  margin-left: 120px;
+}
+
+/* line 452, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.checkbox {
+  width: 400px;
+  margin-left: 400px;
+}
+
+/* line 457, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 .form-control {
+  margin-left: -400px;
+}
+
+/* line 461, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 .control-label {
+  margin-left: -207px;
+}
+
+/* line 465, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 #photos_new {
+  margin-left: 110px;
+}
+
+/* line 469, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page4 .btn-default {
+  margin-left: 120px;
+}
+
+/* line 473, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+body.page3 .btn-default {
+  margin-left: 120px;
+}
+
+/* line 477, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.rails-bootstrap-forms-date-select {
+  margin-right: 400px;
+}
+
+/* line 481, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#photos {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+/* line 487, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.ranges {
+  clear: both;
+  width: 100% !important;
+}
+
+/* line 492, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.applyBtn {
+  width: 49%;
+}
+
+/* line 496, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.box-text {
+  font-family: georgia;
+  font-size: 1vw;
+}
+
+/* line 501, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.dropdown {
+  margin-bottom: 5%;
+}
+
+/* line 505, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.infoBox > img {
+  margin: -10px 4px !important;
+}
+
+/* line 509, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#chart-1 {
+  position: relative;
+  left: -30px;
+}
+
+/* line 514, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+#price_slider {
+  top: -10px;
+}
+
+/* line 518, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.graph-container {
+  overflow: hidden;
+  height: 110px;
+  left: 30px;
+  position: relative;
+}
+
+/* line 525, /Users/work2/n/DEALit/app/assets/stylesheets/homes.scss */
+.chartjs-render-monitor {
+  width: 92% !important;
 }
 /* line 1, /Users/work2/n/DEALit/app/assets/stylesheets/scaffolds.scss */
 body {
@@ -11395,7 +11628,823 @@ label {
 
 
 
+
+
  */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(/assets/bootstrap/glyphiconshalflings-regular-fdf01160e744e3ffb9cb1a71b97eec3a5564f590258f17e0caa2d1d7735841cb.eot);
+  src: url(/assets/bootstrap/glyphiconshalflings-regular-fdf01160e744e3ffb9cb1a71b97eec3a5564f590258f17e0caa2d1d7735841cb.eot?#iefix) format("embedded-opentype"), url(/assets/bootstrap/glyphiconshalflings-regular-964ed0e1a845d8335aca2c7e0b6f007bdbd00acf1f8a19935c4a3a0cf55c08cf.woff) format("woff"), url(/assets/bootstrap/glyphiconshalflings-regular-9ffb2c62ba9a65f5f9588dc20982205649f3318b75eea919390d31a03380246e.ttf) format("truetype"), url(/assets/bootstrap/glyphiconshalflings-regular-3f9d496045d4e1cc937fac96667dad0adb62002cba30effddaee9a2a0093b235.svg#glyphicons_halflingsregular) format("svg");
+}
+/* line 34, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon:before {
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 43, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-glass:before {
+  content: "\e001";
+}
+
+/* line 44, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-music:before {
+  content: "\e002";
+}
+
+/* line 45, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-search:before {
+  content: "\e003";
+}
+
+/* line 46, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-envelope:before {
+  content: "\2709";
+}
+
+/* line 47, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-heart:before {
+  content: "\e005";
+}
+
+/* line 48, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-star:before {
+  content: "\e006";
+}
+
+/* line 49, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-star-empty:before {
+  content: "\e007";
+}
+
+/* line 50, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-user:before {
+  content: "\e008";
+}
+
+/* line 51, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-film:before {
+  content: "\e009";
+}
+
+/* line 52, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-th-large:before {
+  content: "\e010";
+}
+
+/* line 53, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-th:before {
+  content: "\e011";
+}
+
+/* line 54, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-th-list:before {
+  content: "\e012";
+}
+
+/* line 55, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-ok:before {
+  content: "\e013";
+}
+
+/* line 56, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-remove:before {
+  content: "\e014";
+}
+
+/* line 57, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-zoom-in:before {
+  content: "\e015";
+}
+
+/* line 58, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-zoom-out:before {
+  content: "\e016";
+}
+
+/* line 59, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-off:before {
+  content: "\e017";
+}
+
+/* line 60, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-signal:before {
+  content: "\e018";
+}
+
+/* line 61, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-cog:before {
+  content: "\e019";
+}
+
+/* line 62, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-trash:before {
+  content: "\e020";
+}
+
+/* line 63, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-home:before {
+  content: "\e021";
+}
+
+/* line 64, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-file:before {
+  content: "\e022";
+}
+
+/* line 65, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-time:before {
+  content: "\e023";
+}
+
+/* line 66, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-road:before {
+  content: "\e024";
+}
+
+/* line 67, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-download-alt:before {
+  content: "\e025";
+}
+
+/* line 68, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-download:before {
+  content: "\e026";
+}
+
+/* line 69, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-upload:before {
+  content: "\e027";
+}
+
+/* line 70, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-inbox:before {
+  content: "\e028";
+}
+
+/* line 71, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-play-circle:before {
+  content: "\e029";
+}
+
+/* line 72, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-repeat:before {
+  content: "\e030";
+}
+
+/* line 73, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-refresh:before {
+  content: "\e031";
+}
+
+/* line 74, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-list-alt:before {
+  content: "\e032";
+}
+
+/* line 75, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-lock:before {
+  content: "\e033";
+}
+
+/* line 76, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-flag:before {
+  content: "\e034";
+}
+
+/* line 77, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-headphones:before {
+  content: "\e035";
+}
+
+/* line 78, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-volume-off:before {
+  content: "\e036";
+}
+
+/* line 79, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-volume-down:before {
+  content: "\e037";
+}
+
+/* line 80, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-volume-up:before {
+  content: "\e038";
+}
+
+/* line 81, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-qrcode:before {
+  content: "\e039";
+}
+
+/* line 82, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-barcode:before {
+  content: "\e040";
+}
+
+/* line 83, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-tag:before {
+  content: "\e041";
+}
+
+/* line 84, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-tags:before {
+  content: "\e042";
+}
+
+/* line 85, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-book:before {
+  content: "\e043";
+}
+
+/* line 86, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-bookmark:before {
+  content: "\e044";
+}
+
+/* line 87, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-print:before {
+  content: "\e045";
+}
+
+/* line 88, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-camera:before {
+  content: "\e046";
+}
+
+/* line 89, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-font:before {
+  content: "\e047";
+}
+
+/* line 90, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-bold:before {
+  content: "\e048";
+}
+
+/* line 91, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-italic:before {
+  content: "\e049";
+}
+
+/* line 92, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-text-height:before {
+  content: "\e050";
+}
+
+/* line 93, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-text-width:before {
+  content: "\e051";
+}
+
+/* line 94, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-align-left:before {
+  content: "\e052";
+}
+
+/* line 95, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-align-center:before {
+  content: "\e053";
+}
+
+/* line 96, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-align-right:before {
+  content: "\e054";
+}
+
+/* line 97, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-align-justify:before {
+  content: "\e055";
+}
+
+/* line 98, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-list:before {
+  content: "\e056";
+}
+
+/* line 99, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-indent-left:before {
+  content: "\e057";
+}
+
+/* line 100, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-indent-right:before {
+  content: "\e058";
+}
+
+/* line 101, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-facetime-video:before {
+  content: "\e059";
+}
+
+/* line 102, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-picture:before {
+  content: "\e060";
+}
+
+/* line 103, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-pencil:before {
+  content: "\270f";
+}
+
+/* line 104, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-map-marker:before {
+  content: "\e062";
+}
+
+/* line 105, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-adjust:before {
+  content: "\e063";
+}
+
+/* line 106, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-tint:before {
+  content: "\e064";
+}
+
+/* line 107, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-edit:before {
+  content: "\e065";
+}
+
+/* line 108, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-share:before {
+  content: "\e066";
+}
+
+/* line 109, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-check:before {
+  content: "\e067";
+}
+
+/* line 110, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-move:before {
+  content: "\e068";
+}
+
+/* line 111, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-step-backward:before {
+  content: "\e069";
+}
+
+/* line 112, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-fast-backward:before {
+  content: "\e070";
+}
+
+/* line 113, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-backward:before {
+  content: "\e071";
+}
+
+/* line 114, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-play:before {
+  content: "\e072";
+}
+
+/* line 115, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-pause:before {
+  content: "\e073";
+}
+
+/* line 116, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-stop:before {
+  content: "\e074";
+}
+
+/* line 117, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-forward:before {
+  content: "\e075";
+}
+
+/* line 118, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-fast-forward:before {
+  content: "\e076";
+}
+
+/* line 119, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-step-forward:before {
+  content: "\e077";
+}
+
+/* line 120, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-eject:before {
+  content: "\e078";
+}
+
+/* line 121, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-chevron-left:before {
+  content: "\e079";
+}
+
+/* line 122, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-chevron-right:before {
+  content: "\e080";
+}
+
+/* line 123, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-plus-sign:before {
+  content: "\e081";
+}
+
+/* line 124, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-minus-sign:before {
+  content: "\e082";
+}
+
+/* line 125, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-remove-sign:before {
+  content: "\e083";
+}
+
+/* line 126, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-ok-sign:before {
+  content: "\e084";
+}
+
+/* line 127, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-question-sign:before {
+  content: "\e085";
+}
+
+/* line 128, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-info-sign:before {
+  content: "\e086";
+}
+
+/* line 129, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-screenshot:before {
+  content: "\e087";
+}
+
+/* line 130, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-remove-circle:before {
+  content: "\e088";
+}
+
+/* line 131, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-ok-circle:before {
+  content: "\e089";
+}
+
+/* line 132, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-ban-circle:before {
+  content: "\e090";
+}
+
+/* line 133, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-arrow-left:before {
+  content: "\e091";
+}
+
+/* line 134, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-arrow-right:before {
+  content: "\e092";
+}
+
+/* line 135, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-arrow-up:before {
+  content: "\e093";
+}
+
+/* line 136, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-arrow-down:before {
+  content: "\e094";
+}
+
+/* line 137, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-share-alt:before {
+  content: "\e095";
+}
+
+/* line 138, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-resize-full:before {
+  content: "\e096";
+}
+
+/* line 139, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-resize-small:before {
+  content: "\e097";
+}
+
+/* line 140, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-plus:before {
+  content: "\002b";
+}
+
+/* line 141, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-minus:before {
+  content: "\2212";
+}
+
+/* line 142, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-asterisk:before {
+  content: "\002a";
+}
+
+/* line 143, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-exclamation-sign:before {
+  content: "\e101";
+}
+
+/* line 144, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-gift:before {
+  content: "\e102";
+}
+
+/* line 145, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-leaf:before {
+  content: "\e103";
+}
+
+/* line 146, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-fire:before {
+  content: "\e104";
+}
+
+/* line 147, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-eye-open:before {
+  content: "\e105";
+}
+
+/* line 148, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-eye-close:before {
+  content: "\e106";
+}
+
+/* line 149, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-warning-sign:before {
+  content: "\e107";
+}
+
+/* line 150, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-plane:before {
+  content: "\e108";
+}
+
+/* line 151, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-calendar:before {
+  content: "\e109";
+}
+
+/* line 152, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-random:before {
+  content: "\e110";
+}
+
+/* line 153, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-comment:before {
+  content: "\e111";
+}
+
+/* line 154, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-magnet:before {
+  content: "\e112";
+}
+
+/* line 155, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-chevron-up:before {
+  content: "\e113";
+}
+
+/* line 156, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-chevron-down:before {
+  content: "\e114";
+}
+
+/* line 157, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-retweet:before {
+  content: "\e115";
+}
+
+/* line 158, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-shopping-cart:before {
+  content: "\e116";
+}
+
+/* line 159, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-folder-close:before {
+  content: "\e117";
+}
+
+/* line 160, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-folder-open:before {
+  content: "\e118";
+}
+
+/* line 161, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-resize-vertical:before {
+  content: "\e119";
+}
+
+/* line 162, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-resize-horizontal:before {
+  content: "\e120";
+}
+
+/* line 163, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-hdd:before {
+  content: "\e121";
+}
+
+/* line 164, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-bullhorn:before {
+  content: "\e122";
+}
+
+/* line 165, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-bell:before {
+  content: "\e123";
+}
+
+/* line 166, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-certificate:before {
+  content: "\e124";
+}
+
+/* line 167, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-thumbs-up:before {
+  content: "\e125";
+}
+
+/* line 168, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-thumbs-down:before {
+  content: "\e126";
+}
+
+/* line 169, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-hand-right:before {
+  content: "\e127";
+}
+
+/* line 170, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-hand-left:before {
+  content: "\e128";
+}
+
+/* line 171, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-hand-up:before {
+  content: "\e129";
+}
+
+/* line 172, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-hand-down:before {
+  content: "\e130";
+}
+
+/* line 173, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-circle-arrow-right:before {
+  content: "\e131";
+}
+
+/* line 174, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-circle-arrow-left:before {
+  content: "\e132";
+}
+
+/* line 175, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-circle-arrow-up:before {
+  content: "\e133";
+}
+
+/* line 176, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-circle-arrow-down:before {
+  content: "\e134";
+}
+
+/* line 177, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-globe:before {
+  content: "\e135";
+}
+
+/* line 178, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-wrench:before {
+  content: "\e136";
+}
+
+/* line 179, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-tasks:before {
+  content: "\e137";
+}
+
+/* line 180, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-filter:before {
+  content: "\e138";
+}
+
+/* line 181, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-briefcase:before {
+  content: "\e139";
+}
+
+/* line 182, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-fullscreen:before {
+  content: "\e140";
+}
+
+/* line 183, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-dashboard:before {
+  content: "\e141";
+}
+
+/* line 184, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-paperclip:before {
+  content: "\e142";
+}
+
+/* line 185, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-heart-empty:before {
+  content: "\e143";
+}
+
+/* line 186, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-link:before {
+  content: "\e144";
+}
+
+/* line 187, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-phone:before {
+  content: "\e145";
+}
+
+/* line 188, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-pushpin:before {
+  content: "\e146";
+}
+
+/* line 189, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-euro:before {
+  content: "\20ac";
+}
+
+/* line 190, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-usd:before {
+  content: "\e148";
+}
+
+/* line 191, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-gbp:before {
+  content: "\e149";
+}
+
+/* line 192, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-sort:before {
+  content: "\e150";
+}
+
+/* line 193, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-sort-by-alphabet:before {
+  content: "\e151";
+}
+
+/* line 194, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-sort-by-alphabet-alt:before {
+  content: "\e152";
+}
+
+/* line 195, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-sort-by-order:before {
+  content: "\e153";
+}
+
+/* line 196, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-sort-by-order-alt:before {
+  content: "\e154";
+}
+
+/* line 197, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-sort-by-attributes:before {
+  content: "\e155";
+}
+
+/* line 198, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-sort-by-attributes-alt:before {
+  content: "\e156";
+}
+
+/* line 199, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-unchecked:before {
+  content: "\e157";
+}
+
+/* line 200, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-expand:before {
+  content: "\e158";
+}
+
+/* line 201, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-collapse:before {
+  content: "\e159";
+}
+
+/* line 202, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/bootstrap-glyphicons-0.0.1/app/assets/stylesheets/bootstrap/glyphicons.scss */
+.glyphicon-collapse-top:before {
+  content: "\e160";
+}
+
 /* line 17, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/thredded-0.14.0/app/assets/stylesheets/thredded/base/_alerts.scss */
 .thredded--alert, .thredded--flash-message, .thredded--topic--locked-notice {
   border: solid 1px;
@@ -13718,47 +14767,68 @@ aside.onebox.stackexchange .onebox-body .tags {
   float: none !important;
 }
 
-/* line 25, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 28, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--main-container {
   max-width: none;
   padding: 0;
 }
 @media (min-width: 34.00001rem) {
-  /* line 25, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+  /* line 28, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
   .thredded--main-container {
     padding: 0;
   }
 }
-/* line 32, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 35, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--main-container * {
   font-size: 13px !important;
 }
 
-/* line 37, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 40, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--currently-online {
   display: none;
 }
 
-/* line 41, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 44, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #q, .thredded--preview-area {
   display: none !important;
 }
 
-/* line 45, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 48, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--topics--title, .thredded--topic-header--title {
   letter-spacing: normal;
 }
 
-/* line 49, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 52, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--topics--title > a {
   font-size: 20px !important;
   font-weight: normal !important;
 }
 
-/* line 54, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 57, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .thredded--topic-unread > .thredded--topics--title a {
   -webkit-animation: flash linear 1s infinite;
   animation: flash linear 1s infinite;
+}
+
+/* line 62, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.thredded--navigation {
+  display: none;
+}
+
+/* line 66, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.thredded--messageboard {
+  position: relative;
+  left: 33%;
+}
+
+/* line 71, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.thredded--topics--topic.thredded--topic-read.thredded--topic-following {
+  text-align: center;
+}
+
+/* line 75, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.thredded--topic-header--follow-info {
+  display: none;
 }
 
 @-webkit-keyframes flash {
@@ -13783,15 +14853,16 @@ aside.onebox.stackexchange .onebox-body .tags {
     opacity: 1;
   }
 }
-/* line 71, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 91, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .notification-li {
   position: relative;
   width: inherit;
 }
 
-/* line 76, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 96, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .x-button {
   position: absolute;
+  background: transparent !important;
   top: -1px;
   right: 10px;
   font-size: 16px;
@@ -13800,19 +14871,19 @@ aside.onebox.stackexchange .onebox-body .tags {
   color: inherit !important;
 }
 
-/* line 86, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 107, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .notification-unread-true {
   background: #e9f0f3;
   display: inline-block;
 }
 
-/* line 91, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 112, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 .notification-dropdown-item {
   white-space: initial !important;
   width: 345px;
 }
 
-/* line 96, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 117, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #bell-icon {
   font-size: 20px;
   position: right;
@@ -13820,7 +14891,7 @@ aside.onebox.stackexchange .onebox-body .tags {
   padding: 2px 5px;
 }
 
-/* line 103, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 124, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #unread {
   position: absolute;
   top: 10px;
@@ -13837,7 +14908,7 @@ aside.onebox.stackexchange .onebox-body .tags {
           box-shadow: 0 0 1px #333;
 }
 
-/* line 117, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 138, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #unread-inbox {
   position: absolute;
   top: 9px;
@@ -13854,11 +14925,137 @@ aside.onebox.stackexchange .onebox-body .tags {
           box-shadow: 0 0 1px #333;
 }
 
-/* line 131, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+/* line 152, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+#no-notifications {
+  text-align: center;
+}
+
+/* line 156, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
 #notifications-dropdown-menu {
   max-height: 350px;
   width: 350px;
   overflow-x: hidden;
+}
+
+/* line 163, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.img-overlay {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* line 171, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.followed:hover {
+  color: red;
+  background: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+  size: 10em;
+}
+
+/* line 180, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.notfollowed:hover {
+  color: #737373;
+  background: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+}
+
+/* line 187, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.dropdown-menu.user {
+  text-align: left;
+  width: auto;
+}
+/* line 190, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.dropdown-menu.user > li {
+  width: 100%;
+}
+
+/* line 195, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.followed {
+  color: red;
+}
+
+/* line 199, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.notfollowed {
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #666;
+}
+
+/* line 205, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;
+}
+
+/* line 212, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.photo-notifications {
+  position: absolute;
+  margin-left: 43%;
+  margin-top: 1%;
+  z-index: 10;
+}
+
+/* line 219, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.form-control {
+  width: 320px !important;
+}
+
+/* line 223, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.input-group {
+  margin-bottom: 25px !important;
+}
+
+/* line 226, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.border-form-div {
+  max-width: 415px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* line 239, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+
+/* line 243, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  padding: 7px 9px;
+  align: center;
+}
+
+/* line 252, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+#brandeis_sign_in {
+  color: white;
+  margin-top: 10px;
+  width: 355px;
+  text-align: center;
+}
+
+/* line 260, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.modal-body {
+  height: 350px;
+  overflow-y: auto;
+}
+
+/* line 264, /Users/work2/n/DEALit/app/assets/stylesheets/application.scss */
+.modal {
+  height: 500px;
 }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -16198,3 +17395,922 @@ aside.onebox.stackexchange .onebox-body .tags {
   overflow: visible;
   clip: auto;
 }
+/* iCheck plugin Square skin
+----------------------------------- */
+/* line 4, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square,
+.iradio_square {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/square-8a7989b98489642a7862a32e1f66748a3671d6677941af3129d5504e31cfbccd.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 18, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square {
+  background-position: 0 0;
+}
+
+/* line 21, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.hover {
+  background-position: -24px 0;
+}
+
+/* line 24, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.checked {
+  background-position: -48px 0;
+}
+
+/* line 27, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 31, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 35, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square {
+  background-position: -120px 0;
+}
+
+/* line 38, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.hover {
+  background-position: -144px 0;
+}
+
+/* line 41, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.checked {
+  background-position: -168px 0;
+}
+
+/* line 44, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 48, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 54, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square,
+  .iradio_square {
+    background-image: url(/assets/icheck/square/square@2x-8ed64c959db4f6f50081d5de7430983af90c88ef10abd334b2b53f9a61424b9d.png);
+    background-size: 240px 24px;
+  }
+}
+/* red */
+/* line 63, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red,
+.iradio_square-red {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/red-07396c4458cd328a3ad8c3de309f5cbc948babb2d022f212e8bdbb7cb571ddb5.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 77, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red {
+  background-position: 0 0;
+}
+
+/* line 80, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.hover {
+  background-position: -24px 0;
+}
+
+/* line 83, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.checked {
+  background-position: -48px 0;
+}
+
+/* line 86, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 90, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-red.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 94, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red {
+  background-position: -120px 0;
+}
+
+/* line 97, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.hover {
+  background-position: -144px 0;
+}
+
+/* line 100, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.checked {
+  background-position: -168px 0;
+}
+
+/* line 103, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 107, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-red.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 113, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-red,
+  .iradio_square-red {
+    background-image: url(/assets/icheck/square/red@2x-44008e3df669f173ad9e67364f419caed9bbf243d7bdc57e46c38bdd2e9d8657.png);
+    background-size: 240px 24px;
+  }
+}
+/* green */
+/* line 122, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green,
+.iradio_square-green {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/green-4828efe2a264a35e799fbd342fcf005ba57d8335750879bcf66279e573dcfa23.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 136, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green {
+  background-position: 0 0;
+}
+
+/* line 139, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.hover {
+  background-position: -24px 0;
+}
+
+/* line 142, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.checked {
+  background-position: -48px 0;
+}
+
+/* line 145, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 149, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-green.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 153, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green {
+  background-position: -120px 0;
+}
+
+/* line 156, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.hover {
+  background-position: -144px 0;
+}
+
+/* line 159, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.checked {
+  background-position: -168px 0;
+}
+
+/* line 162, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 166, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-green.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 172, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-green,
+  .iradio_square-green {
+    background-image: url(/assets/icheck/square/green@2x-7b89106773bb4fc754f47e0f1cc0633d64b2ef8a4fb6ba3cbf2b4ede2de903ba.png);
+    background-size: 240px 24px;
+  }
+}
+/* blue */
+/* line 181, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue,
+.iradio_square-blue {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/blue-abff66ea99f7e2b2a51d02feb00d0385f2ac35100fdc65b5d4e4395228fd020b.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 195, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue {
+  background-position: 0 0;
+}
+
+/* line 198, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.hover {
+  background-position: -24px 0;
+}
+
+/* line 201, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.checked {
+  background-position: -48px 0;
+}
+
+/* line 204, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 208, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-blue.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 212, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue {
+  background-position: -120px 0;
+}
+
+/* line 215, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.hover {
+  background-position: -144px 0;
+}
+
+/* line 218, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.checked {
+  background-position: -168px 0;
+}
+
+/* line 221, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 225, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-blue.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 231, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-blue,
+  .iradio_square-blue {
+    background-image: url(/assets/icheck/square/blue@2x-c0ce7ecfbd5605a7a0d0239d83b736eda75dbc71ff183472e02c6d6cdfbcc888.png);
+    background-size: 240px 24px;
+  }
+}
+/* aero */
+/* line 240, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero,
+.iradio_square-aero {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/aero-0256fcd9601e1bad8dc98bad53f2de7c8e78d9416e92c1b5c4db3cccf0931768.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 254, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero {
+  background-position: 0 0;
+}
+
+/* line 257, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.hover {
+  background-position: -24px 0;
+}
+
+/* line 260, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.checked {
+  background-position: -48px 0;
+}
+
+/* line 263, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 267, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-aero.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 271, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero {
+  background-position: -120px 0;
+}
+
+/* line 274, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.hover {
+  background-position: -144px 0;
+}
+
+/* line 277, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.checked {
+  background-position: -168px 0;
+}
+
+/* line 280, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 284, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-aero.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 290, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-aero,
+  .iradio_square-aero {
+    background-image: url(/assets/icheck/square/aero@2x-978e637c09ea1fa3cfbdb340142ad86a351c1fb863851a8fb86dba05f20e139f.png);
+    background-size: 240px 24px;
+  }
+}
+/* grey */
+/* line 299, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey,
+.iradio_square-grey {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/grey-80ed11e21b6c2f1217c83fd9150f90d73587ae049681750d5b75bba2a6aac87b.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 313, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey {
+  background-position: 0 0;
+}
+
+/* line 316, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.hover {
+  background-position: -24px 0;
+}
+
+/* line 319, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.checked {
+  background-position: -48px 0;
+}
+
+/* line 322, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 326, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-grey.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 330, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey {
+  background-position: -120px 0;
+}
+
+/* line 333, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.hover {
+  background-position: -144px 0;
+}
+
+/* line 336, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.checked {
+  background-position: -168px 0;
+}
+
+/* line 339, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 343, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-grey.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 349, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-grey,
+  .iradio_square-grey {
+    background-image: url(/assets/icheck/square/grey@2x-40bb731297212c86a4c0141ca76dc6d4ed4a753a681336a8b92d75ab30cb7495.png);
+    background-size: 240px 24px;
+  }
+}
+/* orange */
+/* line 358, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange,
+.iradio_square-orange {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/orange-2bdda400b27bc002d0573094587f9a198e7b8e1e5fcf82f2e2932796f6a32c34.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 372, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange {
+  background-position: 0 0;
+}
+
+/* line 375, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.hover {
+  background-position: -24px 0;
+}
+
+/* line 378, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.checked {
+  background-position: -48px 0;
+}
+
+/* line 381, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 385, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-orange.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 389, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange {
+  background-position: -120px 0;
+}
+
+/* line 392, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.hover {
+  background-position: -144px 0;
+}
+
+/* line 395, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.checked {
+  background-position: -168px 0;
+}
+
+/* line 398, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 402, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-orange.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 408, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-orange,
+  .iradio_square-orange {
+    background-image: url(/assets/icheck/square/orange@2x-52de7be969ad86e226bb1f93773a1933b44617069dae00a1f02f32fd2ad07c20.png);
+    background-size: 240px 24px;
+  }
+}
+/* yellow */
+/* line 417, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow,
+.iradio_square-yellow {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/yellow-5c2016d71a7eb13a848f0c1441486d2d01f8de05a0e4f10e1c8a6c7e1ccf30bf.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 431, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow {
+  background-position: 0 0;
+}
+
+/* line 434, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.hover {
+  background-position: -24px 0;
+}
+
+/* line 437, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.checked {
+  background-position: -48px 0;
+}
+
+/* line 440, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 444, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-yellow.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 448, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow {
+  background-position: -120px 0;
+}
+
+/* line 451, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.hover {
+  background-position: -144px 0;
+}
+
+/* line 454, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.checked {
+  background-position: -168px 0;
+}
+
+/* line 457, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 461, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-yellow.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 467, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-yellow,
+  .iradio_square-yellow {
+    background-image: url(/assets/icheck/square/yellow@2x-7cba0273efb682c044ff6b908a81a013fd7a58d8e8ca23ec282b62f58e6595f6.png);
+    background-size: 240px 24px;
+  }
+}
+/* pink */
+/* line 476, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink,
+.iradio_square-pink {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/pink-bb85090ae0fedbd3fd0cadc1a74b0c9ceac38f09eb947c7d229a1b0b342a8d82.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 490, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink {
+  background-position: 0 0;
+}
+
+/* line 493, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.hover {
+  background-position: -24px 0;
+}
+
+/* line 496, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.checked {
+  background-position: -48px 0;
+}
+
+/* line 499, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 503, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-pink.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 507, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink {
+  background-position: -120px 0;
+}
+
+/* line 510, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.hover {
+  background-position: -144px 0;
+}
+
+/* line 513, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.checked {
+  background-position: -168px 0;
+}
+
+/* line 516, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 520, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-pink.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 526, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-pink,
+  .iradio_square-pink {
+    background-image: url(/assets/icheck/square/pink@2x-775bb94369b6742d9cde67d8e65ce7b24c495866420ade49ae2291afc8d9a777.png);
+    background-size: 240px 24px;
+  }
+}
+/* purple */
+/* line 535, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple,
+.iradio_square-purple {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  background: url(/assets/icheck/square/purple-1fe326c961b2a8320dca1b0041ca34df702c23bbe5d2a3fd2064539ebbbf06ce.png) no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+/* line 549, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple {
+  background-position: 0 0;
+}
+
+/* line 552, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.hover {
+  background-position: -24px 0;
+}
+
+/* line 555, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.checked {
+  background-position: -48px 0;
+}
+
+/* line 558, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.disabled {
+  background-position: -72px 0;
+  cursor: default;
+}
+
+/* line 562, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.icheckbox_square-purple.checked.disabled {
+  background-position: -96px 0;
+}
+
+/* line 566, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple {
+  background-position: -120px 0;
+}
+
+/* line 569, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.hover {
+  background-position: -144px 0;
+}
+
+/* line 572, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.checked {
+  background-position: -168px 0;
+}
+
+/* line 575, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.disabled {
+  background-position: -192px 0;
+  cursor: default;
+}
+
+/* line 579, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+.iradio_square-purple.checked.disabled {
+  background-position: -216px 0;
+}
+
+/* HiDPI support */
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  /* line 585, /Users/work2/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/icheck-rails-1.0.2.2/vendor/assets/stylesheets/icheck/square/_all.scss */
+  .icheckbox_square-purple,
+  .iradio_square-purple {
+    background-image: url(/assets/icheck/square/purple@2x-1fa92204f94dabdba60b69a0f4fed54ca83f4367a97f384ae8f4bb01e0b6eea7.png);
+    background-size: 240px 24px;
+  }
+}
+/*
+ * Social Buttons for Bootstrap
+ *
+ * Copyright 2013-2015 Panayiotis Lipiridis
+ * Licensed under the MIT License
+ *
+ * https://github.com/lipis/bootstrap-social
+ */
+
+
+.btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:34px;width:34px;padding:0}.btn-social-icon>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social-icon.btn-lg{padding-left:61px}.btn-social-icon.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social-icon.btn-sm{padding-left:38px}.btn-social-icon.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social-icon.btn-xs{padding-left:30px}.btn-social-icon.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon>:first-child{border:none;text-align:center;width:100% !important}
+.btn-social-icon.btn-lg{height:45px;width:45px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-sm{height:30px;width:30px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-xs{height:22px;width:22px;padding-left:0;padding-right:0}
+.btn-adn{color:#fff;background-color:#d87a68;border-color:rgba(0,0,0,0.2)}.btn-adn:focus,.btn-adn.focus{color:#fff;background-color:#ce563f;border-color:rgba(0,0,0,0.2)}
+.btn-adn:hover{color:#fff;background-color:#ce563f;border-color:rgba(0,0,0,0.2)}
+.btn-adn:active,.btn-adn.active,.open>.dropdown-toggle.btn-adn{color:#fff;background-color:#ce563f;border-color:rgba(0,0,0,0.2)}.btn-adn:active:hover,.btn-adn.active:hover,.open>.dropdown-toggle.btn-adn:hover,.btn-adn:active:focus,.btn-adn.active:focus,.open>.dropdown-toggle.btn-adn:focus,.btn-adn:active.focus,.btn-adn.active.focus,.open>.dropdown-toggle.btn-adn.focus{color:#fff;background-color:#b94630;border-color:rgba(0,0,0,0.2)}
+.btn-adn:active,.btn-adn.active,.open>.dropdown-toggle.btn-adn{background-image:none}
+.btn-adn.disabled,.btn-adn[disabled],fieldset[disabled] .btn-adn,.btn-adn.disabled:hover,.btn-adn[disabled]:hover,fieldset[disabled] .btn-adn:hover,.btn-adn.disabled:focus,.btn-adn[disabled]:focus,fieldset[disabled] .btn-adn:focus,.btn-adn.disabled.focus,.btn-adn[disabled].focus,fieldset[disabled] .btn-adn.focus,.btn-adn.disabled:active,.btn-adn[disabled]:active,fieldset[disabled] .btn-adn:active,.btn-adn.disabled.active,.btn-adn[disabled].active,fieldset[disabled] .btn-adn.active{background-color:#d87a68;border-color:rgba(0,0,0,0.2)}
+.btn-adn .badge{color:#d87a68;background-color:#fff}
+.btn-bitbucket{color:#fff;background-color:#205081;border-color:rgba(0,0,0,0.2)}.btn-bitbucket:focus,.btn-bitbucket.focus{color:#fff;background-color:#163758;border-color:rgba(0,0,0,0.2)}
+.btn-bitbucket:hover{color:#fff;background-color:#163758;border-color:rgba(0,0,0,0.2)}
+.btn-bitbucket:active,.btn-bitbucket.active,.open>.dropdown-toggle.btn-bitbucket{color:#fff;background-color:#163758;border-color:rgba(0,0,0,0.2)}.btn-bitbucket:active:hover,.btn-bitbucket.active:hover,.open>.dropdown-toggle.btn-bitbucket:hover,.btn-bitbucket:active:focus,.btn-bitbucket.active:focus,.open>.dropdown-toggle.btn-bitbucket:focus,.btn-bitbucket:active.focus,.btn-bitbucket.active.focus,.open>.dropdown-toggle.btn-bitbucket.focus{color:#fff;background-color:#0f253c;border-color:rgba(0,0,0,0.2)}
+.btn-bitbucket:active,.btn-bitbucket.active,.open>.dropdown-toggle.btn-bitbucket{background-image:none}
+.btn-bitbucket.disabled,.btn-bitbucket[disabled],fieldset[disabled] .btn-bitbucket,.btn-bitbucket.disabled:hover,.btn-bitbucket[disabled]:hover,fieldset[disabled] .btn-bitbucket:hover,.btn-bitbucket.disabled:focus,.btn-bitbucket[disabled]:focus,fieldset[disabled] .btn-bitbucket:focus,.btn-bitbucket.disabled.focus,.btn-bitbucket[disabled].focus,fieldset[disabled] .btn-bitbucket.focus,.btn-bitbucket.disabled:active,.btn-bitbucket[disabled]:active,fieldset[disabled] .btn-bitbucket:active,.btn-bitbucket.disabled.active,.btn-bitbucket[disabled].active,fieldset[disabled] .btn-bitbucket.active{background-color:#205081;border-color:rgba(0,0,0,0.2)}
+.btn-bitbucket .badge{color:#205081;background-color:#fff}
+.btn-dropbox{color:#fff;background-color:#1087dd;border-color:rgba(0,0,0,0.2)}.btn-dropbox:focus,.btn-dropbox.focus{color:#fff;background-color:#0d6aad;border-color:rgba(0,0,0,0.2)}
+.btn-dropbox:hover{color:#fff;background-color:#0d6aad;border-color:rgba(0,0,0,0.2)}
+.btn-dropbox:active,.btn-dropbox.active,.open>.dropdown-toggle.btn-dropbox{color:#fff;background-color:#0d6aad;border-color:rgba(0,0,0,0.2)}.btn-dropbox:active:hover,.btn-dropbox.active:hover,.open>.dropdown-toggle.btn-dropbox:hover,.btn-dropbox:active:focus,.btn-dropbox.active:focus,.open>.dropdown-toggle.btn-dropbox:focus,.btn-dropbox:active.focus,.btn-dropbox.active.focus,.open>.dropdown-toggle.btn-dropbox.focus{color:#fff;background-color:#0a568c;border-color:rgba(0,0,0,0.2)}
+.btn-dropbox:active,.btn-dropbox.active,.open>.dropdown-toggle.btn-dropbox{background-image:none}
+.btn-dropbox.disabled,.btn-dropbox[disabled],fieldset[disabled] .btn-dropbox,.btn-dropbox.disabled:hover,.btn-dropbox[disabled]:hover,fieldset[disabled] .btn-dropbox:hover,.btn-dropbox.disabled:focus,.btn-dropbox[disabled]:focus,fieldset[disabled] .btn-dropbox:focus,.btn-dropbox.disabled.focus,.btn-dropbox[disabled].focus,fieldset[disabled] .btn-dropbox.focus,.btn-dropbox.disabled:active,.btn-dropbox[disabled]:active,fieldset[disabled] .btn-dropbox:active,.btn-dropbox.disabled.active,.btn-dropbox[disabled].active,fieldset[disabled] .btn-dropbox.active{background-color:#1087dd;border-color:rgba(0,0,0,0.2)}
+.btn-dropbox .badge{color:#1087dd;background-color:#fff}
+.btn-facebook{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}.btn-facebook:focus,.btn-facebook.focus{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:hover{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}.btn-facebook:active:hover,.btn-facebook.active:hover,.open>.dropdown-toggle.btn-facebook:hover,.btn-facebook:active:focus,.btn-facebook.active:focus,.open>.dropdown-toggle.btn-facebook:focus,.btn-facebook:active.focus,.btn-facebook.active.focus,.open>.dropdown-toggle.btn-facebook.focus{color:#fff;background-color:#23345a;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
+.btn-facebook.disabled,.btn-facebook[disabled],fieldset[disabled] .btn-facebook,.btn-facebook.disabled:hover,.btn-facebook[disabled]:hover,fieldset[disabled] .btn-facebook:hover,.btn-facebook.disabled:focus,.btn-facebook[disabled]:focus,fieldset[disabled] .btn-facebook:focus,.btn-facebook.disabled.focus,.btn-facebook[disabled].focus,fieldset[disabled] .btn-facebook.focus,.btn-facebook.disabled:active,.btn-facebook[disabled]:active,fieldset[disabled] .btn-facebook:active,.btn-facebook.disabled.active,.btn-facebook[disabled].active,fieldset[disabled] .btn-facebook.active{background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+.btn-facebook .badge{color:#3b5998;background-color:#fff}
+.btn-flickr{color:#fff;background-color:#ff0084;border-color:rgba(0,0,0,0.2)}.btn-flickr:focus,.btn-flickr.focus{color:#fff;background-color:#cc006a;border-color:rgba(0,0,0,0.2)}
+.btn-flickr:hover{color:#fff;background-color:#cc006a;border-color:rgba(0,0,0,0.2)}
+.btn-flickr:active,.btn-flickr.active,.open>.dropdown-toggle.btn-flickr{color:#fff;background-color:#cc006a;border-color:rgba(0,0,0,0.2)}.btn-flickr:active:hover,.btn-flickr.active:hover,.open>.dropdown-toggle.btn-flickr:hover,.btn-flickr:active:focus,.btn-flickr.active:focus,.open>.dropdown-toggle.btn-flickr:focus,.btn-flickr:active.focus,.btn-flickr.active.focus,.open>.dropdown-toggle.btn-flickr.focus{color:#fff;background-color:#a80057;border-color:rgba(0,0,0,0.2)}
+.btn-flickr:active,.btn-flickr.active,.open>.dropdown-toggle.btn-flickr{background-image:none}
+.btn-flickr.disabled,.btn-flickr[disabled],fieldset[disabled] .btn-flickr,.btn-flickr.disabled:hover,.btn-flickr[disabled]:hover,fieldset[disabled] .btn-flickr:hover,.btn-flickr.disabled:focus,.btn-flickr[disabled]:focus,fieldset[disabled] .btn-flickr:focus,.btn-flickr.disabled.focus,.btn-flickr[disabled].focus,fieldset[disabled] .btn-flickr.focus,.btn-flickr.disabled:active,.btn-flickr[disabled]:active,fieldset[disabled] .btn-flickr:active,.btn-flickr.disabled.active,.btn-flickr[disabled].active,fieldset[disabled] .btn-flickr.active{background-color:#ff0084;border-color:rgba(0,0,0,0.2)}
+.btn-flickr .badge{color:#ff0084;background-color:#fff}
+.btn-foursquare{color:#fff;background-color:#f94877;border-color:rgba(0,0,0,0.2)}.btn-foursquare:focus,.btn-foursquare.focus{color:#fff;background-color:#f71752;border-color:rgba(0,0,0,0.2)}
+.btn-foursquare:hover{color:#fff;background-color:#f71752;border-color:rgba(0,0,0,0.2)}
+.btn-foursquare:active,.btn-foursquare.active,.open>.dropdown-toggle.btn-foursquare{color:#fff;background-color:#f71752;border-color:rgba(0,0,0,0.2)}.btn-foursquare:active:hover,.btn-foursquare.active:hover,.open>.dropdown-toggle.btn-foursquare:hover,.btn-foursquare:active:focus,.btn-foursquare.active:focus,.open>.dropdown-toggle.btn-foursquare:focus,.btn-foursquare:active.focus,.btn-foursquare.active.focus,.open>.dropdown-toggle.btn-foursquare.focus{color:#fff;background-color:#e30742;border-color:rgba(0,0,0,0.2)}
+.btn-foursquare:active,.btn-foursquare.active,.open>.dropdown-toggle.btn-foursquare{background-image:none}
+.btn-foursquare.disabled,.btn-foursquare[disabled],fieldset[disabled] .btn-foursquare,.btn-foursquare.disabled:hover,.btn-foursquare[disabled]:hover,fieldset[disabled] .btn-foursquare:hover,.btn-foursquare.disabled:focus,.btn-foursquare[disabled]:focus,fieldset[disabled] .btn-foursquare:focus,.btn-foursquare.disabled.focus,.btn-foursquare[disabled].focus,fieldset[disabled] .btn-foursquare.focus,.btn-foursquare.disabled:active,.btn-foursquare[disabled]:active,fieldset[disabled] .btn-foursquare:active,.btn-foursquare.disabled.active,.btn-foursquare[disabled].active,fieldset[disabled] .btn-foursquare.active{background-color:#f94877;border-color:rgba(0,0,0,0.2)}
+.btn-foursquare .badge{color:#f94877;background-color:#fff}
+.btn-github{color:#fff;background-color:#444;border-color:rgba(0,0,0,0.2)}.btn-github:focus,.btn-github.focus{color:#fff;background-color:#2b2b2b;border-color:rgba(0,0,0,0.2)}
+.btn-github:hover{color:#fff;background-color:#2b2b2b;border-color:rgba(0,0,0,0.2)}
+.btn-github:active,.btn-github.active,.open>.dropdown-toggle.btn-github{color:#fff;background-color:#2b2b2b;border-color:rgba(0,0,0,0.2)}.btn-github:active:hover,.btn-github.active:hover,.open>.dropdown-toggle.btn-github:hover,.btn-github:active:focus,.btn-github.active:focus,.open>.dropdown-toggle.btn-github:focus,.btn-github:active.focus,.btn-github.active.focus,.open>.dropdown-toggle.btn-github.focus{color:#fff;background-color:#191919;border-color:rgba(0,0,0,0.2)}
+.btn-github:active,.btn-github.active,.open>.dropdown-toggle.btn-github{background-image:none}
+.btn-github.disabled,.btn-github[disabled],fieldset[disabled] .btn-github,.btn-github.disabled:hover,.btn-github[disabled]:hover,fieldset[disabled] .btn-github:hover,.btn-github.disabled:focus,.btn-github[disabled]:focus,fieldset[disabled] .btn-github:focus,.btn-github.disabled.focus,.btn-github[disabled].focus,fieldset[disabled] .btn-github.focus,.btn-github.disabled:active,.btn-github[disabled]:active,fieldset[disabled] .btn-github:active,.btn-github.disabled.active,.btn-github[disabled].active,fieldset[disabled] .btn-github.active{background-color:#444;border-color:rgba(0,0,0,0.2)}
+.btn-github .badge{color:#444;background-color:#fff}
+.btn-google{color:#fff;background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}.btn-google:focus,.btn-google.focus{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}
+.btn-google:hover{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}
+.btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}.btn-google:active:hover,.btn-google.active:hover,.open>.dropdown-toggle.btn-google:hover,.btn-google:active:focus,.btn-google.active:focus,.open>.dropdown-toggle.btn-google:focus,.btn-google:active.focus,.btn-google.active.focus,.open>.dropdown-toggle.btn-google.focus{color:#fff;background-color:#a32b1c;border-color:rgba(0,0,0,0.2)}
+.btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{background-image:none}
+.btn-google.disabled,.btn-google[disabled],fieldset[disabled] .btn-google,.btn-google.disabled:hover,.btn-google[disabled]:hover,fieldset[disabled] .btn-google:hover,.btn-google.disabled:focus,.btn-google[disabled]:focus,fieldset[disabled] .btn-google:focus,.btn-google.disabled.focus,.btn-google[disabled].focus,fieldset[disabled] .btn-google.focus,.btn-google.disabled:active,.btn-google[disabled]:active,fieldset[disabled] .btn-google:active,.btn-google.disabled.active,.btn-google[disabled].active,fieldset[disabled] .btn-google.active{background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}
+.btn-google .badge{color:#dd4b39;background-color:#fff}
+.btn-instagram{color:#fff;background-color:#3f729b;border-color:rgba(0,0,0,0.2)}.btn-instagram:focus,.btn-instagram.focus{color:#fff;background-color:#305777;border-color:rgba(0,0,0,0.2)}
+.btn-instagram:hover{color:#fff;background-color:#305777;border-color:rgba(0,0,0,0.2)}
+.btn-instagram:active,.btn-instagram.active,.open>.dropdown-toggle.btn-instagram{color:#fff;background-color:#305777;border-color:rgba(0,0,0,0.2)}.btn-instagram:active:hover,.btn-instagram.active:hover,.open>.dropdown-toggle.btn-instagram:hover,.btn-instagram:active:focus,.btn-instagram.active:focus,.open>.dropdown-toggle.btn-instagram:focus,.btn-instagram:active.focus,.btn-instagram.active.focus,.open>.dropdown-toggle.btn-instagram.focus{color:#fff;background-color:#26455d;border-color:rgba(0,0,0,0.2)}
+.btn-instagram:active,.btn-instagram.active,.open>.dropdown-toggle.btn-instagram{background-image:none}
+.btn-instagram.disabled,.btn-instagram[disabled],fieldset[disabled] .btn-instagram,.btn-instagram.disabled:hover,.btn-instagram[disabled]:hover,fieldset[disabled] .btn-instagram:hover,.btn-instagram.disabled:focus,.btn-instagram[disabled]:focus,fieldset[disabled] .btn-instagram:focus,.btn-instagram.disabled.focus,.btn-instagram[disabled].focus,fieldset[disabled] .btn-instagram.focus,.btn-instagram.disabled:active,.btn-instagram[disabled]:active,fieldset[disabled] .btn-instagram:active,.btn-instagram.disabled.active,.btn-instagram[disabled].active,fieldset[disabled] .btn-instagram.active{background-color:#3f729b;border-color:rgba(0,0,0,0.2)}
+.btn-instagram .badge{color:#3f729b;background-color:#fff}
+.btn-linkedin{color:#fff;background-color:#007bb6;border-color:rgba(0,0,0,0.2)}.btn-linkedin:focus,.btn-linkedin.focus{color:#fff;background-color:#005983;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin:hover{color:#fff;background-color:#005983;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin:active,.btn-linkedin.active,.open>.dropdown-toggle.btn-linkedin{color:#fff;background-color:#005983;border-color:rgba(0,0,0,0.2)}.btn-linkedin:active:hover,.btn-linkedin.active:hover,.open>.dropdown-toggle.btn-linkedin:hover,.btn-linkedin:active:focus,.btn-linkedin.active:focus,.open>.dropdown-toggle.btn-linkedin:focus,.btn-linkedin:active.focus,.btn-linkedin.active.focus,.open>.dropdown-toggle.btn-linkedin.focus{color:#fff;background-color:#00405f;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin:active,.btn-linkedin.active,.open>.dropdown-toggle.btn-linkedin{background-image:none}
+.btn-linkedin.disabled,.btn-linkedin[disabled],fieldset[disabled] .btn-linkedin,.btn-linkedin.disabled:hover,.btn-linkedin[disabled]:hover,fieldset[disabled] .btn-linkedin:hover,.btn-linkedin.disabled:focus,.btn-linkedin[disabled]:focus,fieldset[disabled] .btn-linkedin:focus,.btn-linkedin.disabled.focus,.btn-linkedin[disabled].focus,fieldset[disabled] .btn-linkedin.focus,.btn-linkedin.disabled:active,.btn-linkedin[disabled]:active,fieldset[disabled] .btn-linkedin:active,.btn-linkedin.disabled.active,.btn-linkedin[disabled].active,fieldset[disabled] .btn-linkedin.active{background-color:#007bb6;border-color:rgba(0,0,0,0.2)}
+.btn-linkedin .badge{color:#007bb6;background-color:#fff}
+.btn-microsoft{color:#fff;background-color:#2672ec;border-color:rgba(0,0,0,0.2)}.btn-microsoft:focus,.btn-microsoft.focus{color:#fff;background-color:#125acd;border-color:rgba(0,0,0,0.2)}
+.btn-microsoft:hover{color:#fff;background-color:#125acd;border-color:rgba(0,0,0,0.2)}
+.btn-microsoft:active,.btn-microsoft.active,.open>.dropdown-toggle.btn-microsoft{color:#fff;background-color:#125acd;border-color:rgba(0,0,0,0.2)}.btn-microsoft:active:hover,.btn-microsoft.active:hover,.open>.dropdown-toggle.btn-microsoft:hover,.btn-microsoft:active:focus,.btn-microsoft.active:focus,.open>.dropdown-toggle.btn-microsoft:focus,.btn-microsoft:active.focus,.btn-microsoft.active.focus,.open>.dropdown-toggle.btn-microsoft.focus{color:#fff;background-color:#0f4bac;border-color:rgba(0,0,0,0.2)}
+.btn-microsoft:active,.btn-microsoft.active,.open>.dropdown-toggle.btn-microsoft{background-image:none}
+.btn-microsoft.disabled,.btn-microsoft[disabled],fieldset[disabled] .btn-microsoft,.btn-microsoft.disabled:hover,.btn-microsoft[disabled]:hover,fieldset[disabled] .btn-microsoft:hover,.btn-microsoft.disabled:focus,.btn-microsoft[disabled]:focus,fieldset[disabled] .btn-microsoft:focus,.btn-microsoft.disabled.focus,.btn-microsoft[disabled].focus,fieldset[disabled] .btn-microsoft.focus,.btn-microsoft.disabled:active,.btn-microsoft[disabled]:active,fieldset[disabled] .btn-microsoft:active,.btn-microsoft.disabled.active,.btn-microsoft[disabled].active,fieldset[disabled] .btn-microsoft.active{background-color:#2672ec;border-color:rgba(0,0,0,0.2)}
+.btn-microsoft .badge{color:#2672ec;background-color:#fff}
+.btn-odnoklassniki{color:#fff;background-color:#f4731c;border-color:rgba(0,0,0,0.2)}.btn-odnoklassniki:focus,.btn-odnoklassniki.focus{color:#fff;background-color:#d35b0a;border-color:rgba(0,0,0,0.2)}
+.btn-odnoklassniki:hover{color:#fff;background-color:#d35b0a;border-color:rgba(0,0,0,0.2)}
+.btn-odnoklassniki:active,.btn-odnoklassniki.active,.open>.dropdown-toggle.btn-odnoklassniki{color:#fff;background-color:#d35b0a;border-color:rgba(0,0,0,0.2)}.btn-odnoklassniki:active:hover,.btn-odnoklassniki.active:hover,.open>.dropdown-toggle.btn-odnoklassniki:hover,.btn-odnoklassniki:active:focus,.btn-odnoklassniki.active:focus,.open>.dropdown-toggle.btn-odnoklassniki:focus,.btn-odnoklassniki:active.focus,.btn-odnoklassniki.active.focus,.open>.dropdown-toggle.btn-odnoklassniki.focus{color:#fff;background-color:#b14c09;border-color:rgba(0,0,0,0.2)}
+.btn-odnoklassniki:active,.btn-odnoklassniki.active,.open>.dropdown-toggle.btn-odnoklassniki{background-image:none}
+.btn-odnoklassniki.disabled,.btn-odnoklassniki[disabled],fieldset[disabled] .btn-odnoklassniki,.btn-odnoklassniki.disabled:hover,.btn-odnoklassniki[disabled]:hover,fieldset[disabled] .btn-odnoklassniki:hover,.btn-odnoklassniki.disabled:focus,.btn-odnoklassniki[disabled]:focus,fieldset[disabled] .btn-odnoklassniki:focus,.btn-odnoklassniki.disabled.focus,.btn-odnoklassniki[disabled].focus,fieldset[disabled] .btn-odnoklassniki.focus,.btn-odnoklassniki.disabled:active,.btn-odnoklassniki[disabled]:active,fieldset[disabled] .btn-odnoklassniki:active,.btn-odnoklassniki.disabled.active,.btn-odnoklassniki[disabled].active,fieldset[disabled] .btn-odnoklassniki.active{background-color:#f4731c;border-color:rgba(0,0,0,0.2)}
+.btn-odnoklassniki .badge{color:#f4731c;background-color:#fff}
+.btn-openid{color:#fff;background-color:#f7931e;border-color:rgba(0,0,0,0.2)}.btn-openid:focus,.btn-openid.focus{color:#fff;background-color:#da7908;border-color:rgba(0,0,0,0.2)}
+.btn-openid:hover{color:#fff;background-color:#da7908;border-color:rgba(0,0,0,0.2)}
+.btn-openid:active,.btn-openid.active,.open>.dropdown-toggle.btn-openid{color:#fff;background-color:#da7908;border-color:rgba(0,0,0,0.2)}.btn-openid:active:hover,.btn-openid.active:hover,.open>.dropdown-toggle.btn-openid:hover,.btn-openid:active:focus,.btn-openid.active:focus,.open>.dropdown-toggle.btn-openid:focus,.btn-openid:active.focus,.btn-openid.active.focus,.open>.dropdown-toggle.btn-openid.focus{color:#fff;background-color:#b86607;border-color:rgba(0,0,0,0.2)}
+.btn-openid:active,.btn-openid.active,.open>.dropdown-toggle.btn-openid{background-image:none}
+.btn-openid.disabled,.btn-openid[disabled],fieldset[disabled] .btn-openid,.btn-openid.disabled:hover,.btn-openid[disabled]:hover,fieldset[disabled] .btn-openid:hover,.btn-openid.disabled:focus,.btn-openid[disabled]:focus,fieldset[disabled] .btn-openid:focus,.btn-openid.disabled.focus,.btn-openid[disabled].focus,fieldset[disabled] .btn-openid.focus,.btn-openid.disabled:active,.btn-openid[disabled]:active,fieldset[disabled] .btn-openid:active,.btn-openid.disabled.active,.btn-openid[disabled].active,fieldset[disabled] .btn-openid.active{background-color:#f7931e;border-color:rgba(0,0,0,0.2)}
+.btn-openid .badge{color:#f7931e;background-color:#fff}
+.btn-pinterest{color:#fff;background-color:#cb2027;border-color:rgba(0,0,0,0.2)}.btn-pinterest:focus,.btn-pinterest.focus{color:#fff;background-color:#9f191f;border-color:rgba(0,0,0,0.2)}
+.btn-pinterest:hover{color:#fff;background-color:#9f191f;border-color:rgba(0,0,0,0.2)}
+.btn-pinterest:active,.btn-pinterest.active,.open>.dropdown-toggle.btn-pinterest{color:#fff;background-color:#9f191f;border-color:rgba(0,0,0,0.2)}.btn-pinterest:active:hover,.btn-pinterest.active:hover,.open>.dropdown-toggle.btn-pinterest:hover,.btn-pinterest:active:focus,.btn-pinterest.active:focus,.open>.dropdown-toggle.btn-pinterest:focus,.btn-pinterest:active.focus,.btn-pinterest.active.focus,.open>.dropdown-toggle.btn-pinterest.focus{color:#fff;background-color:#801419;border-color:rgba(0,0,0,0.2)}
+.btn-pinterest:active,.btn-pinterest.active,.open>.dropdown-toggle.btn-pinterest{background-image:none}
+.btn-pinterest.disabled,.btn-pinterest[disabled],fieldset[disabled] .btn-pinterest,.btn-pinterest.disabled:hover,.btn-pinterest[disabled]:hover,fieldset[disabled] .btn-pinterest:hover,.btn-pinterest.disabled:focus,.btn-pinterest[disabled]:focus,fieldset[disabled] .btn-pinterest:focus,.btn-pinterest.disabled.focus,.btn-pinterest[disabled].focus,fieldset[disabled] .btn-pinterest.focus,.btn-pinterest.disabled:active,.btn-pinterest[disabled]:active,fieldset[disabled] .btn-pinterest:active,.btn-pinterest.disabled.active,.btn-pinterest[disabled].active,fieldset[disabled] .btn-pinterest.active{background-color:#cb2027;border-color:rgba(0,0,0,0.2)}
+.btn-pinterest .badge{color:#cb2027;background-color:#fff}
+.btn-reddit{color:#000;background-color:#eff7ff;border-color:rgba(0,0,0,0.2)}.btn-reddit:focus,.btn-reddit.focus{color:#000;background-color:#bcddff;border-color:rgba(0,0,0,0.2)}
+.btn-reddit:hover{color:#000;background-color:#bcddff;border-color:rgba(0,0,0,0.2)}
+.btn-reddit:active,.btn-reddit.active,.open>.dropdown-toggle.btn-reddit{color:#000;background-color:#bcddff;border-color:rgba(0,0,0,0.2)}.btn-reddit:active:hover,.btn-reddit.active:hover,.open>.dropdown-toggle.btn-reddit:hover,.btn-reddit:active:focus,.btn-reddit.active:focus,.open>.dropdown-toggle.btn-reddit:focus,.btn-reddit:active.focus,.btn-reddit.active.focus,.open>.dropdown-toggle.btn-reddit.focus{color:#000;background-color:#98ccff;border-color:rgba(0,0,0,0.2)}
+.btn-reddit:active,.btn-reddit.active,.open>.dropdown-toggle.btn-reddit{background-image:none}
+.btn-reddit.disabled,.btn-reddit[disabled],fieldset[disabled] .btn-reddit,.btn-reddit.disabled:hover,.btn-reddit[disabled]:hover,fieldset[disabled] .btn-reddit:hover,.btn-reddit.disabled:focus,.btn-reddit[disabled]:focus,fieldset[disabled] .btn-reddit:focus,.btn-reddit.disabled.focus,.btn-reddit[disabled].focus,fieldset[disabled] .btn-reddit.focus,.btn-reddit.disabled:active,.btn-reddit[disabled]:active,fieldset[disabled] .btn-reddit:active,.btn-reddit.disabled.active,.btn-reddit[disabled].active,fieldset[disabled] .btn-reddit.active{background-color:#eff7ff;border-color:rgba(0,0,0,0.2)}
+.btn-reddit .badge{color:#eff7ff;background-color:#000}
+.btn-soundcloud{color:#fff;background-color:#f50;border-color:rgba(0,0,0,0.2)}.btn-soundcloud:focus,.btn-soundcloud.focus{color:#fff;background-color:#c40;border-color:rgba(0,0,0,0.2)}
+.btn-soundcloud:hover{color:#fff;background-color:#c40;border-color:rgba(0,0,0,0.2)}
+.btn-soundcloud:active,.btn-soundcloud.active,.open>.dropdown-toggle.btn-soundcloud{color:#fff;background-color:#c40;border-color:rgba(0,0,0,0.2)}.btn-soundcloud:active:hover,.btn-soundcloud.active:hover,.open>.dropdown-toggle.btn-soundcloud:hover,.btn-soundcloud:active:focus,.btn-soundcloud.active:focus,.open>.dropdown-toggle.btn-soundcloud:focus,.btn-soundcloud:active.focus,.btn-soundcloud.active.focus,.open>.dropdown-toggle.btn-soundcloud.focus{color:#fff;background-color:#a83800;border-color:rgba(0,0,0,0.2)}
+.btn-soundcloud:active,.btn-soundcloud.active,.open>.dropdown-toggle.btn-soundcloud{background-image:none}
+.btn-soundcloud.disabled,.btn-soundcloud[disabled],fieldset[disabled] .btn-soundcloud,.btn-soundcloud.disabled:hover,.btn-soundcloud[disabled]:hover,fieldset[disabled] .btn-soundcloud:hover,.btn-soundcloud.disabled:focus,.btn-soundcloud[disabled]:focus,fieldset[disabled] .btn-soundcloud:focus,.btn-soundcloud.disabled.focus,.btn-soundcloud[disabled].focus,fieldset[disabled] .btn-soundcloud.focus,.btn-soundcloud.disabled:active,.btn-soundcloud[disabled]:active,fieldset[disabled] .btn-soundcloud:active,.btn-soundcloud.disabled.active,.btn-soundcloud[disabled].active,fieldset[disabled] .btn-soundcloud.active{background-color:#f50;border-color:rgba(0,0,0,0.2)}
+.btn-soundcloud .badge{color:#f50;background-color:#fff}
+.btn-tumblr{color:#fff;background-color:#2c4762;border-color:rgba(0,0,0,0.2)}.btn-tumblr:focus,.btn-tumblr.focus{color:#fff;background-color:#1c2d3f;border-color:rgba(0,0,0,0.2)}
+.btn-tumblr:hover{color:#fff;background-color:#1c2d3f;border-color:rgba(0,0,0,0.2)}
+.btn-tumblr:active,.btn-tumblr.active,.open>.dropdown-toggle.btn-tumblr{color:#fff;background-color:#1c2d3f;border-color:rgba(0,0,0,0.2)}.btn-tumblr:active:hover,.btn-tumblr.active:hover,.open>.dropdown-toggle.btn-tumblr:hover,.btn-tumblr:active:focus,.btn-tumblr.active:focus,.open>.dropdown-toggle.btn-tumblr:focus,.btn-tumblr:active.focus,.btn-tumblr.active.focus,.open>.dropdown-toggle.btn-tumblr.focus{color:#fff;background-color:#111c26;border-color:rgba(0,0,0,0.2)}
+.btn-tumblr:active,.btn-tumblr.active,.open>.dropdown-toggle.btn-tumblr{background-image:none}
+.btn-tumblr.disabled,.btn-tumblr[disabled],fieldset[disabled] .btn-tumblr,.btn-tumblr.disabled:hover,.btn-tumblr[disabled]:hover,fieldset[disabled] .btn-tumblr:hover,.btn-tumblr.disabled:focus,.btn-tumblr[disabled]:focus,fieldset[disabled] .btn-tumblr:focus,.btn-tumblr.disabled.focus,.btn-tumblr[disabled].focus,fieldset[disabled] .btn-tumblr.focus,.btn-tumblr.disabled:active,.btn-tumblr[disabled]:active,fieldset[disabled] .btn-tumblr:active,.btn-tumblr.disabled.active,.btn-tumblr[disabled].active,fieldset[disabled] .btn-tumblr.active{background-color:#2c4762;border-color:rgba(0,0,0,0.2)}
+.btn-tumblr .badge{color:#2c4762;background-color:#fff}
+.btn-twitter{color:#fff;background-color:#55acee;border-color:rgba(0,0,0,0.2)}.btn-twitter:focus,.btn-twitter.focus{color:#fff;background-color:#2795e9;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:hover{color:#fff;background-color:#2795e9;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:active,.btn-twitter.active,.open>.dropdown-toggle.btn-twitter{color:#fff;background-color:#2795e9;border-color:rgba(0,0,0,0.2)}.btn-twitter:active:hover,.btn-twitter.active:hover,.open>.dropdown-toggle.btn-twitter:hover,.btn-twitter:active:focus,.btn-twitter.active:focus,.open>.dropdown-toggle.btn-twitter:focus,.btn-twitter:active.focus,.btn-twitter.active.focus,.open>.dropdown-toggle.btn-twitter.focus{color:#fff;background-color:#1583d7;border-color:rgba(0,0,0,0.2)}
+.btn-twitter:active,.btn-twitter.active,.open>.dropdown-toggle.btn-twitter{background-image:none}
+.btn-twitter.disabled,.btn-twitter[disabled],fieldset[disabled] .btn-twitter,.btn-twitter.disabled:hover,.btn-twitter[disabled]:hover,fieldset[disabled] .btn-twitter:hover,.btn-twitter.disabled:focus,.btn-twitter[disabled]:focus,fieldset[disabled] .btn-twitter:focus,.btn-twitter.disabled.focus,.btn-twitter[disabled].focus,fieldset[disabled] .btn-twitter.focus,.btn-twitter.disabled:active,.btn-twitter[disabled]:active,fieldset[disabled] .btn-twitter:active,.btn-twitter.disabled.active,.btn-twitter[disabled].active,fieldset[disabled] .btn-twitter.active{background-color:#55acee;border-color:rgba(0,0,0,0.2)}
+.btn-twitter .badge{color:#55acee;background-color:#fff}
+.btn-vimeo{color:#fff;background-color:#1ab7ea;border-color:rgba(0,0,0,0.2)}.btn-vimeo:focus,.btn-vimeo.focus{color:#fff;background-color:#1295bf;border-color:rgba(0,0,0,0.2)}
+.btn-vimeo:hover{color:#fff;background-color:#1295bf;border-color:rgba(0,0,0,0.2)}
+.btn-vimeo:active,.btn-vimeo.active,.open>.dropdown-toggle.btn-vimeo{color:#fff;background-color:#1295bf;border-color:rgba(0,0,0,0.2)}.btn-vimeo:active:hover,.btn-vimeo.active:hover,.open>.dropdown-toggle.btn-vimeo:hover,.btn-vimeo:active:focus,.btn-vimeo.active:focus,.open>.dropdown-toggle.btn-vimeo:focus,.btn-vimeo:active.focus,.btn-vimeo.active.focus,.open>.dropdown-toggle.btn-vimeo.focus{color:#fff;background-color:#0f7b9f;border-color:rgba(0,0,0,0.2)}
+.btn-vimeo:active,.btn-vimeo.active,.open>.dropdown-toggle.btn-vimeo{background-image:none}
+.btn-vimeo.disabled,.btn-vimeo[disabled],fieldset[disabled] .btn-vimeo,.btn-vimeo.disabled:hover,.btn-vimeo[disabled]:hover,fieldset[disabled] .btn-vimeo:hover,.btn-vimeo.disabled:focus,.btn-vimeo[disabled]:focus,fieldset[disabled] .btn-vimeo:focus,.btn-vimeo.disabled.focus,.btn-vimeo[disabled].focus,fieldset[disabled] .btn-vimeo.focus,.btn-vimeo.disabled:active,.btn-vimeo[disabled]:active,fieldset[disabled] .btn-vimeo:active,.btn-vimeo.disabled.active,.btn-vimeo[disabled].active,fieldset[disabled] .btn-vimeo.active{background-color:#1ab7ea;border-color:rgba(0,0,0,0.2)}
+.btn-vimeo .badge{color:#1ab7ea;background-color:#fff}
+.btn-vk{color:#fff;background-color:#587ea3;border-color:rgba(0,0,0,0.2)}.btn-vk:focus,.btn-vk.focus{color:#fff;background-color:#466482;border-color:rgba(0,0,0,0.2)}
+.btn-vk:hover{color:#fff;background-color:#466482;border-color:rgba(0,0,0,0.2)}
+.btn-vk:active,.btn-vk.active,.open>.dropdown-toggle.btn-vk{color:#fff;background-color:#466482;border-color:rgba(0,0,0,0.2)}.btn-vk:active:hover,.btn-vk.active:hover,.open>.dropdown-toggle.btn-vk:hover,.btn-vk:active:focus,.btn-vk.active:focus,.open>.dropdown-toggle.btn-vk:focus,.btn-vk:active.focus,.btn-vk.active.focus,.open>.dropdown-toggle.btn-vk.focus{color:#fff;background-color:#3a526b;border-color:rgba(0,0,0,0.2)}
+.btn-vk:active,.btn-vk.active,.open>.dropdown-toggle.btn-vk{background-image:none}
+.btn-vk.disabled,.btn-vk[disabled],fieldset[disabled] .btn-vk,.btn-vk.disabled:hover,.btn-vk[disabled]:hover,fieldset[disabled] .btn-vk:hover,.btn-vk.disabled:focus,.btn-vk[disabled]:focus,fieldset[disabled] .btn-vk:focus,.btn-vk.disabled.focus,.btn-vk[disabled].focus,fieldset[disabled] .btn-vk.focus,.btn-vk.disabled:active,.btn-vk[disabled]:active,fieldset[disabled] .btn-vk:active,.btn-vk.disabled.active,.btn-vk[disabled].active,fieldset[disabled] .btn-vk.active{background-color:#587ea3;border-color:rgba(0,0,0,0.2)}
+.btn-vk .badge{color:#587ea3;background-color:#fff}
+.btn-yahoo{color:#fff;background-color:#720e9e;border-color:rgba(0,0,0,0.2)}.btn-yahoo:focus,.btn-yahoo.focus{color:#fff;background-color:#500a6f;border-color:rgba(0,0,0,0.2)}
+.btn-yahoo:hover{color:#fff;background-color:#500a6f;border-color:rgba(0,0,0,0.2)}
+.btn-yahoo:active,.btn-yahoo.active,.open>.dropdown-toggle.btn-yahoo{color:#fff;background-color:#500a6f;border-color:rgba(0,0,0,0.2)}.btn-yahoo:active:hover,.btn-yahoo.active:hover,.open>.dropdown-toggle.btn-yahoo:hover,.btn-yahoo:active:focus,.btn-yahoo.active:focus,.open>.dropdown-toggle.btn-yahoo:focus,.btn-yahoo:active.focus,.btn-yahoo.active.focus,.open>.dropdown-toggle.btn-yahoo.focus{color:#fff;background-color:#39074e;border-color:rgba(0,0,0,0.2)}
+.btn-yahoo:active,.btn-yahoo.active,.open>.dropdown-toggle.btn-yahoo{background-image:none}
+.btn-yahoo.disabled,.btn-yahoo[disabled],fieldset[disabled] .btn-yahoo,.btn-yahoo.disabled:hover,.btn-yahoo[disabled]:hover,fieldset[disabled] .btn-yahoo:hover,.btn-yahoo.disabled:focus,.btn-yahoo[disabled]:focus,fieldset[disabled] .btn-yahoo:focus,.btn-yahoo.disabled.focus,.btn-yahoo[disabled].focus,fieldset[disabled] .btn-yahoo.focus,.btn-yahoo.disabled:active,.btn-yahoo[disabled]:active,fieldset[disabled] .btn-yahoo:active,.btn-yahoo.disabled.active,.btn-yahoo[disabled].active,fieldset[disabled] .btn-yahoo.active{background-color:#720e9e;border-color:rgba(0,0,0,0.2)}
+.btn-yahoo .badge{color:#720e9e;background-color:#fff}

@@ -12,6 +12,9 @@ gem 'aws-sdk', '~> 2.3'
 gem 'pusher'
 gem 'icheck-rails'
 gem 'render_sync', path: "./render_sync-0.5.0"
+gem 'bootstrap-glyphicons'
+gem 'bootstrap-social-rails'
+
 
 
 group :development, :test do
@@ -68,3 +71,4 @@ gem 'database_cleaner'
 gem 'rails-erd', require: false, group: :development
 gem 'redis', '~> 3.2'
 gem 'pundit'
+gem 'chartkick'

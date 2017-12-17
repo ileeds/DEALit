@@ -22,6 +22,8 @@
 //= require jquery.slick
 //= require thredded
 //= require cable
-//= require_tree .
 //= require sync
-//= require dropzone.min 
+//= require dropzone.min
+//= require Chart.bundle
+//= require chartkick
+//= require_tree .

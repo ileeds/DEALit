@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   mount Thredded::Engine => '/forum'
   mount ActionCable.server => '/cable'
   get '/private_topic', to: 'thredded/private_topics#index'
+  put '/mark_read', to: 'thredded/private_topics#mark_read'
 
   resources :notifications do
     member do
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  post '/followings', to: 'followings#create'
+  resources :followings, only: %w(new create destroy)
   resources :searches
   resources :options
   resources :users

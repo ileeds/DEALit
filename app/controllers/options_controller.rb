@@ -17,7 +17,7 @@ class OptionsController < ApplicationController
 
     respond_to do |format|
       if @option.save
-        format.html { redirect_to @option, notice: 'Option was successfully created.' }
+        format.html { redirect_to @option }
         format.json { render :show, status: :created, location: @option }
       else
         format.html { render :new }

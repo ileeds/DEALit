@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:show, :edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
   # GET /users
@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if User.find(params[:id]) != current_user
+      redirect_to private_topic_path(recipient_id: params[:id])
+    end
     @user = User.find(params[:id])
   end
 
@@ -33,8 +36,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
-        flash[:success] = "Welcome to Off Campus!"
-        format.html { redirect_to root_url, notice: 'User was successfully created.' }
+        format.html { redirect_to root_url }
         format.json { render root_url, status: :created }
       else
         format.html { render :new }

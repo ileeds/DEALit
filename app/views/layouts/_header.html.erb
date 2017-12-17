@@ -18,7 +18,38 @@
             <% if logged_in? %>
               <li class="dropdown-1 thredded--user-navigation--item" data-behavior="notifications">
                 <a class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" >
-                  <%= fa_icon "bell", id: "bell-icon" %><span hidden data-behavior="unread-count" id="unread" class="unread-true"></span>
+                  <%= fa_icon "bell", id: "bell-icon" %>
+                  <%= count(current_user) %>
+                  <script>
+                    var pusher = new Pusher('<%=ENV["PUSHER_KEY"]%>', {
+                      encrypted: true
+                    });
+                    var channel = pusher.subscribe('count-<%= current_user.id %>');
+                    channel.bind('notification_event', function(data) {
+                      var elt = $("#unread");
+                      elt.show();
+                    	if (elt[0] != null) {
+                        elt[0].innerHTML = data.count;
+                      }
+                      if(data.count == 0) {
+                        $("#unread").hide();
+                      } else {
+                        $("#no-notifications").hide();
+                      }
+                    });
+                    channel.bind('inbox_event', function(data) {
+                      var elt = $("#unread-inbox");
+                      elt.show();
+                    	if (elt[0] != null) {
+                        elt[0].innerHTML = data.count;
+                      }
+                      if(data.count == 0) {
+                        $("#unread-inbox").hide();
+                      } else {
+                        $("#no-notifications").hide();
+                      }
+                    });
+                  </script>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" data-behavior="notification-items">
                 </ul>
@@ -27,12 +58,13 @@
               <li class="thredded--user-navigation--item"><%= link_to "Inbox", '/forum/private-topics' %><span id="inbox-number"></span></li>
               <li class="dropdown thredded--user-navigation--item">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  ME <b class="caret"></b>
+                  <%= current_user.name[0] + current_user.name.split(' ')[1][0] rescue current_user.name[0] %> <b class="caret"></b>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu user">
                   <li class="thredded--user-navigation--item"><%= link_to "My Homes", current_user %></li>
-                  <li class="thredded--user-navigation--item"><%= link_to "Settings", main_app.edit_user_path(current_user) %></li>
-                  <li class="thredded--user-navigation--item"><%= link_to "Saved Searches", main_app.searches_path %></li>
+                  <li class="thredded--user-navigation--item"><%= link_to "Notification Settings", '/forum/preferences/edit' %></li>
+                  <!-- <li class="thredded--user-navigation--item"><%= link_to "Edit Profile", main_app.edit_user_path(current_user) %></li>
+                  <li class="thredded--user-navigation--item"><%= link_to "Saved Searches", main_app.searches_path %></li> -->
                   <li class="divider"></li>
                   <li class="thredded--user-navigation--item">
                     <%= link_to "Log out", main_app.logout_path, method: :delete %>

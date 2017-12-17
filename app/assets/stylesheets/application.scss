@@ -18,8 +18,11 @@
  *= require_self
  *= require font-awesome
  *= require dropzone
+ *= require 'icheck/square/_all'
+ *= require bootstrap-social
  */
 
+@import 'bootstrap/glyphicons';
 @import "thredded";
 
 .thredded--main-container {
@@ -56,6 +59,31 @@
 	animation: flash linear 1s infinite;
 }
 
+.thredded--navigation {
+  display: none;
+}
+
+.thredded--messageboard {
+  position: relative;
+  left: 33%;
+}
+
+.thredded--topics--topic.thredded--topic-read.thredded--topic-following {
+  text-align: center;
+}
+
+.thredded--topic-header--follow-info {
+  display: none;
+}
+
+.thredded--post--dropdown--toggle {
+  display: none;
+}
+
+#private_topic_user_names {
+  color: blue;
+}
+
 @-webkit-keyframes flash {
 	0% { opacity: 1; }
 	50% { opacity: .1; }
@@ -66,6 +94,22 @@
 	0% { opacity: 1; }
 	50% { opacity: .1; }
 	100% { opacity: 1; }
+}
+
+.notification-li {
+  position: relative;
+  width: inherit;
+}
+
+.x-button {
+    position: absolute;
+    background: transparent !important;
+    top: -1px;
+    right: 10px;
+    font-size: 16px;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: inherit !important;
 }
 
 .notification-unread-true {
@@ -96,4 +140,133 @@
    line-height:18px;
    border-radius:50%;
    box-shadow:0 0 1px #333;
+}
+#unread-inbox {
+   position:absolute;
+   top:9px;
+   right:2px;
+   font-size:1em;
+   background:#4a90e2;
+   color:white;
+   width:16px;height:16px;
+   text-align:center;
+   line-height:16px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}
+
+#no-notifications {
+  text-align: center;
+}
+
+#notifications-dropdown-menu {
+  //height: auto;
+  max-height: 350px;
+  width: 350px;
+  overflow-x: hidden;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.followed:hover {
+  color:red;
+  background: transparent;
+  //border: hidden !important
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+  size:10em;
+}
+
+.notfollowed:hover {
+  color: #737373;
+  background: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #666;
+}
+
+.dropdown-menu.user {
+  text-align: left;
+  width: auto;
+  > li {
+    width: 100%;
+  }
+}
+
+.followed {
+  color: red;
+}
+
+.notfollowed {
+  color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #666;
+}
+
+.img-overlay:before {
+  content: ' ';
+  display: block;
+  /* adjust 'height' to position overlay content vertically */
+  height: 50%;
+}
+
+.photo-notifications {
+    position: absolute;
+    margin-left: 43%;
+    margin-top: 1%;
+    z-index: 10;
+}
+
+.form-control {
+  width: 320px !important;
+}
+
+.input-group {
+  margin-bottom: 25px !important;
+}
+.border-form-div {
+  max-width: 415px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  padding: 7px 9px;
+  align: center;
+}
+
+#brandeis_sign_in {
+  color: white;
+  margin-top: 10px;
+  width: 355px;
+  text-align: center;
+}
+
+
+.modal-body{
+    height: 350px;
+    overflow-y: auto;
+}
+.modal {
+  height: 500px;
 }

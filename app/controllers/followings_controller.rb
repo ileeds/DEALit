@@ -27,12 +27,8 @@ class FollowingsController < ApplicationController
   def create
     @following = Following.new(home_id: following_params[:home_id], user_id: current_user.id)
     respond_to do |format|
-      if(Following.exists?(home_id: following_params[:home_id], user_id: current_user.id))
-        flash[:notice] = 'You are already following this home.'
-        format.html { redirect_to root_url }
-      elsif(@following.save)
-        flash[:notice] = 'Successfully followed'
-        format.html { redirect_to root_url }
+      if(@following.save)
+        format.js { render :create, locals: {home: @following.home} }
       else
         format.html { redirect_to root_url, notice: "Unsuccessful" }
         format.json { render json: @following.errors, status: :unprocessable_entity }
@@ -60,7 +56,7 @@ class FollowingsController < ApplicationController
   def destroy
     @following.destroy
     respond_to do |format|
-      format.html { redirect_to followings_url, notice: 'Following was successfully destroyed.' }
+      format.js { render :destroy, locals: {home: @following.home} }
       format.json { head :no_content }
     end
   end

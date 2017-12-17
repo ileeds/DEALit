@@ -102,6 +102,37 @@ class Home < ApplicationRecord
     ]
   end
 
+  def self.price_graph
+    group = Hash.new(10)
+    min = minimum(:price)
+    step = (maximum(:price) - min)/10
+    pluck(:price).each { |price|
+      case
+      when price <= step + min
+        group[0] += 1
+      when price <= 2 * step + min
+        group[1] += 1
+      when price <= 3 * step + min
+        group[2] += 1
+      when price <= 4 * step + min
+        group[3] += 1
+      when price <= 5 * step + min
+        group[4] += 1
+      when price <= 6 * step + min
+        group[5] += 1
+      when price <= 7 * step + min
+        group[6] += 1
+      when price <= 8 * step + min
+        group[7] += 1
+      when price <= 9 * step + min
+        group[8] += 1
+      else
+        group[9] += 1
+      end
+    }
+    group
+  end
+
   filterrific(
     default_filter_params: { sorted_by: 'start_date' },
     # filters go here
