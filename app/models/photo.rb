@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
   belongs_to :home
-  attr_accessor :avatar_file_name
+  attr_accessor :image_file_name
   has_attached_file :image,
   :path => ":rails_root/public/images/:id/:filename",
     :url  => "/images/:id/:filename",
