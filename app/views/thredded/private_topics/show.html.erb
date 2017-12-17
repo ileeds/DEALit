@@ -4,6 +4,7 @@
 <% content_for :thredded_breadcrumbs, render('thredded/private_topics/breadcrumbs') %>
 
 <%= thredded_page do %>
+  <p hidden id="current_user" data-user-id="<%= @current_user_id %>" />
   <%= content_tag :section,
                   id: dom_id(private_topic),
                   class: ['thredded--main-section', 'thredded--topic', *topic_css_classes(private_topic)] do %>

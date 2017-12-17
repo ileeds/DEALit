@@ -1,6 +1,8 @@
 // Place all the styles related to the Homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.css");
+
 .marker_container {
   width: 250%;
   height: 100px;
@@ -57,6 +59,7 @@
   margin-left: 500px;
   width: 900px;
 }
+
 .clicked {
   background-color: white;
   color: black;
@@ -195,7 +198,7 @@ hr {
   display: inline-block;
   float: left;
   width: 100%;
-  margin-bottom: 10%;
+  margin-bottom: 15%;
   margin-top: -15%;
 }
 
@@ -214,7 +217,7 @@ hr {
 }
 
 .ui-slider-handle.custom-handle {
-  background: #0070FF;
+  background: #2D5154;
   border-radius: 50%;
 }
 
@@ -225,7 +228,7 @@ hr {
 }
 
 .ui-slider-range {
-  background: #0070FF;
+  background: #2D5154;
 }
 
 .btn-sm {
@@ -233,7 +236,14 @@ hr {
 }
 
 .btn-secondary {
-  background: transparent;
+  border-color: black;
+  &:hover{
+    background-color: #ccc;
+  }
+}
+
+::placeholder {
+  color: black !important;
 }
 
 .slider-label-below {
@@ -395,7 +405,7 @@ input[type="file"] {
   position: absolute;
   margin-left: 75%;
   margin-top: -14%;
-  color: white;
+  color: black;
 }
 
 .daterange-container{
@@ -524,4 +534,34 @@ body.page3 .btn-default {
 
 .chartjs-render-monitor {
   width: 92% !important;
+}
+
+.btn-reset {
+  background-color: #366645;
+  color: white !important;
+  &:hover{
+    background-color: #264630;
+  }
+}
+
+.btn-primary {
+  background-color: #35787E;
+  &:hover{
+    background-color: #295e63;
+  }
+}
+
+.btn-success {
+  background-color: #366645;
+  &:hover{
+    background-color: #264630;
+  }
+}
+
+.filtered {
+  color: white !important;
+  background-color: #707773;
+  &:hover{
+    background-color: #5e6561;
+  }
 }

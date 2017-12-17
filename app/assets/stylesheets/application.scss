@@ -22,8 +22,8 @@
  *= require bootstrap-social
  */
 
-@import 'bootstrap/glyphicons';
 @import "thredded";
+@import "font-awesome";
 
 .thredded--main-container {
   // The padding and max-width are handled by the app's container.
@@ -80,8 +80,24 @@
   display: none;
 }
 
+.thredded--pagination-top {
+  margin-bottom: 2%;
+}
+
+.thredded--button-wide {
+  margin-bottom: 2%;
+}
+
 #private_topic_user_names {
   color: blue;
+}
+
+.other-user-message {
+  margin-left: 50%;
+}
+
+.current-user-message {
+  margin-left: 5%;
 }
 
 @-webkit-keyframes flash {
@@ -222,10 +238,6 @@
     z-index: 10;
 }
 
-.form-control {
-  width: 320px !important;
-}
-
 .input-group {
   margin-bottom: 25px !important;
 }
@@ -262,6 +274,9 @@
   text-align: center;
 }
 
+.btn-brandeis {
+  background-color: #002F6C;
+}
 
 .modal-body{
     height: 350px;

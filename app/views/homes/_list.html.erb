@@ -18,7 +18,7 @@
       <% end %>
       <div class="home-buttons">
         <div class="send-message">
-          <%= link_to "Send Message", private_topic_path(recipient_id: home.user_id, home_address: home.address), class: "btn btn-success home-button send" %>
+          <%= link_to(raw("Send Message <i class='fa fa-paper-plane'></i>"), private_topic_path(recipient_id: home.user_id, home_address: home.address), class: "btn btn-primary home-button send") %>
         </div>
       </div>
     </div>

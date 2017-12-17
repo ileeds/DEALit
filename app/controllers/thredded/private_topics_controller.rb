@@ -45,6 +45,7 @@ module Thredded
       )
 
       @mark = Thredded::UserPrivateTopicReadState.where(user_id: current_user.id, postable_id: Thredded::PrivateTopic.where(slug: params[:id]).pluck(:id)[0]).where("read_at > ?", Thredded::PrivateTopic.where(slug: params[:id])[0].last_post_at).exists?
+      @current_user_id = current_user.id
     end
 
     def new
