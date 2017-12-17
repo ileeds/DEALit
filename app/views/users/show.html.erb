@@ -2,7 +2,53 @@
 <p id="notice"><%= notice %></p>
 
 <% if @user.homes.count > 0 %>
-  <h1>My Homes</h1>
+<h1>My Homes</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Total rooms</th>
+      <th>Available rooms</th>
+      <th>Total bathrooms</th>
+      <th>Private bathrooms</th>
+      <th>Is furnished</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.homes.each do |home| %>
+    <tr>
+      <td><%= home.address %></td>
+      <td><%= home.price %></td>
+      <td><%= home.description %></td>
+      <td><%= home.start_date %></td>
+      <td><%= home.end_date %></td>
+      <td><%= home.total_rooms %></td>
+      <td><%= home.available_rooms %></td>
+      <td><%= home.total_bathrooms %></td>
+      <td><%= home.private_bathrooms %></td>
+      <td><%= home.is_furnished %></td>
+      <td><%= link_to 'Show', home %></td>
+      <td><%= render(
+        partial: 'layouts/edit_destroy',
+        locals: { home: home }
+        ) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= render "layouts/modal" %>
+  <% else %>
+  <h3>You have not posted any homes yet.</h3>
+  <% end %>
+
+  <% if Following.where(user_id: @user.id).count > 0 %>
+  <h1>Homes I am following</h1>
   <table>
     <thead>
       <tr>
@@ -22,29 +68,28 @@
     </thead>
 
     <tbody>
-      <% @user.homes.each do |home| %>
-        <tr>
-          <td><%= home.user_id %></td>
-          <td><%= home.address %></td>
-          <td><%= home.price %></td>
-          <td><%= home.description %></td>
-          <td><%= home.start_date %></td>
-          <td><%= home.end_date %></td>
-          <td><%= home.total_rooms %></td>
-          <td><%= home.available_rooms %></td>
-          <td><%= home.total_bathrooms %></td>
-          <td><%= home.private_bathrooms %></td>
-          <td><%= home.is_furnished %></td>
-          <td><%= link_to 'Show', home %></td>
-          <td><%= render(
-            partial: 'layouts/edit_destroy',
-            locals: { home: home }
-          ) %></td>
+      <% Following.where(user_id: @user.id).each do |following| %>
+      <% home = following.home %>
+      <tr id="home-<%=home.id%>">
+        <td><%= home.user.name %></td>
+        <td><%= home.address %></td>
+        <td><%= home.price %></td>
+        <td><%= home.description %></td>
+        <td><%= home.start_date %></td>
+        <td><%= home.end_date %></td>
+        <td><%= home.total_rooms %></td>
+        <td><%= home.available_rooms %></td>
+        <td><%= home.total_bathrooms %></td>
+        <td><%= home.private_bathrooms %></td>
+        <td><%= home.is_furnished %></td>
+        <td><%= link_to 'Show', home, remote: true %></td>
+        <td><%= link_to 'Unfollow',following_path(following), method: :delete, remote: true %>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= render "layouts/modal" %>
-<% else %>
-<h3>You have not posted any homes yet.</h3>
-<% end %>
+        <% end %>
+      </tbody>
+    </table>
+    <%= render "layouts/modal" %>
+
+    <% else %>
+    <h3>You are not following any homes yet.</h3>
+    <% end %>
