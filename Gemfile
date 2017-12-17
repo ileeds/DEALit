@@ -13,6 +13,7 @@ gem 'pusher'
 gem 'icheck-rails'
 gem 'render_sync', path: "./render_sync-0.5.0"
 
+
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
 end

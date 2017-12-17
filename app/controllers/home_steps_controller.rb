@@ -14,10 +14,16 @@ class HomeStepsController < ApplicationController
     @home.update_attributes(home_params)
     if params[:images]
       params[:images].each do |picture|
-        @home.photos.create(photo: picture)
+        @home.photos.create(image: picture)
       end
     end
+
+    if @step==:calendar
+      
+      redirect_to "/homes/"+@home.id.to_s+"/photos/new"
+    else
     render_wizard(@home, {}, { home_id: @home.id })
+  end
   end
 
   def add_photos
@@ -25,7 +31,7 @@ class HomeStepsController < ApplicationController
     respond_to do |format|
     if params[:images]
       params[:images].each do |picture|
-        @home.photos.create(photo: picture)
+        @home.photos.create(image: picture)
       end
     end
     format.js { render :file => "/homes/photo.js.erb" }
@@ -36,7 +42,7 @@ class HomeStepsController < ApplicationController
     @home = Home.create(home_params)
     if params[:images]
       params[:images].each do |picture|
-        @home.photos.create(photo: picture)
+        @home.photos.create(image: picture)
       end
     end
     redirect_to wizard_path(steps.first, :home_id => @home.id)

@@ -30,7 +30,7 @@ locations.each do |location|
   )
   3.times do
     Photo.create(
-      photo: File.new(@images.sample), home_id: home.id
+      image: File.new(@images.sample), home_id: home.id
     )
   end
 end

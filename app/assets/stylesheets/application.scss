@@ -17,9 +17,8 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- *= require 'icheck/square/_all'
+ *= require dropzone
  */
-
 
 @import "thredded";
 
@@ -69,21 +68,6 @@
 	100% { opacity: 1; }
 }
 
-.notification-li {
-  position: relative;
-  width: inherit;
-}
-
-.x-button {
-    position: absolute;
-    top: -1px;
-    right: 10px;
-    font-size: 16px;
-    margin: 0 !important;
-    padding: 0 !important;
-    color: inherit !important;
-}
-
 .notification-unread-true {
   background: lighten(#E3EBEF, 2%);
   display: inline-block;
@@ -91,7 +75,6 @@
 
 .notification-dropdown-item {
   white-space: initial !important;
-  width: 345px;
 }
 
 #bell-icon {
@@ -113,29 +96,4 @@
    line-height:18px;
    border-radius:50%;
    box-shadow:0 0 1px #333;
-}
-
-#unread-inbox {
-   position:absolute;
-   top:9px;
-   right:2px;
-   font-size:1em;
-   background:#4a90e2;
-   color:white;
-   width:16px;height:16px;
-   text-align:center;
-   line-height:16px;
-   border-radius:50%;
-   box-shadow:0 0 1px #333;
-}
-
-#no-notifications {
-  text-align: center;
-}
-
-#notifications-dropdown-menu {
-  //height: auto;
-  max-height: 350px;
-  width: 350px;
-  overflow-x: hidden;
 }

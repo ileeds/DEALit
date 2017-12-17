@@ -13,20 +13,16 @@ Rails.application.routes.draw do
 
   post '/followings', to: 'followings#create'
   resources :searches
-  resources :photos
   resources :options
   resources :users
   resources :homes do
     resources :reviews
+    resources :photos
   end
   resources :conversations do
     resources :messages
   end
-  resources :home_steps do
-    collection do
-      post 'add_photos'
-    end
-  end
+  resources :home_steps
 
   root 'homes#index'
   get  '/forum', to: 'comments#index'

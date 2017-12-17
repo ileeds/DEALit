@@ -164,11 +164,12 @@
     <div class="field">
       <%= form1.check_box :doorman, id: :option_doorman %>
     </div>
-
+    <% end %>
     <button type = "button" id = "photos_new">See and upload photos</button>
     <br>
     <br>
     <div hidden class="photos_show">
+
     <div class="field">
       <%= file_field_tag 'images[]', multiple: true, id: :pictureInput %>
 
@@ -186,7 +187,6 @@
      </div>
      </div>
 
-  <%end%>
 </body>
 
 <% end %>

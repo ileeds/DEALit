@@ -1,8 +1,11 @@
-class Photo < ApplicationRecord
+class Photo < ActiveRecord::Base
   belongs_to :home
-  has_attached_file :photo,
+  has_attached_file :image,
   :path => ":rails_root/public/images/:id/:filename",
     :url  => "/images/:id/:filename",
     :styles => { :medium => "160x120!" }
-  do_not_validate_attachment_file_type :photo
+    validates_attachment :image,
+  						 :presence => true,
+  						 :content_type => { :content_type => /\Aimage\/.*\Z/ },
+  						 :size => { :less_than => 1.megabyte }
 end

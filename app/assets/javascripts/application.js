@@ -24,3 +24,4 @@
 //= require cable
 //= require_tree .
 //= require sync
+//= require dropzone.min 

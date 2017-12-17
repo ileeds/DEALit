@@ -1,5 +1,4 @@
 $container = $('#index'),
-
 $modal = $('.modal'),
 $modalBody = $('.modal .modal-body'),
 $modalHeading = $('.modal .modal-heading');
@@ -7,5 +6,5 @@ $modalHeading = $('.modal .modal-heading');
 $container.css ('overflow-y', 'hidden');
 $modalHeading.html("<%=@home.address%>");
 $modalBody.html("<%= escape_javascript(render @home) %>");
-
+$(".dropdown-menu").hide();
 $modal.modal();
