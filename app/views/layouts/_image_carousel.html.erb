@@ -7,12 +7,9 @@
   <% if !home.photos.blank? %>
     <% home.photos.each do |photo| %>
       <div class="photo-container">
-
         <%= link_to home, remote: true, class: "home-link" do %>
-          <%= image_tag photo.photo.url(:medium), class: "home-photo", id: home.id %>
+          <%= image_tag photo.image.url(:square), class: "home-photo", id: home.id %>
         <% end %>
-
-
       </div>
     <% end %>
   <% else %>

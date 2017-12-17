@@ -4,7 +4,7 @@
       <% home.photos.each do |photo| %>
         <div class="home-photo-gallery">
           <div class="photo-container">
-            <%= image_tag photo.photo.url(:large), class: "home-photo", id: home.id %>
+            <%= image_tag photo.image.url(:large), class: "home-photo", id: home.id %>
           </div>
         </div>
       <% end %>

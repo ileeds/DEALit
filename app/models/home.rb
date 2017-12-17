@@ -6,6 +6,7 @@ class Home < ApplicationRecord
   has_many :reviews, :dependent => :destroy
   has_many :photos, :dependent => :destroy
   accepts_nested_attributes_for :option
+  accepts_nested_attributes_for :photos
 
   validates :address, presence: true, uniqueness: { case_sensitive: false }
   validates :latitude, presence: true

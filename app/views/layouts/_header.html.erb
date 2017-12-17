@@ -16,7 +16,7 @@
             <li class="thredded--user-navigation--item"> <%= link_to "Forum", main_app.forum_path %> </li>
             <li class="thredded--user-navigation--item"><%= link_to "Post a Home", main_app.new_home_path %></li>
             <% if logged_in? %>
-              <li class="dropdown-1 thredded--user-navigation--item" >
+              <li class="dropdown-1 thredded--user-navigation--item" data-behavior="notifications">
                 <a class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" >
                   <%= fa_icon "bell", id: "bell-icon" %>
                   <%= count(current_user) %>
@@ -51,14 +51,11 @@
                     });
                   </script>
                 </a>
-                <ul class="dropdown-menu" id="notifications-dropdown-menu">
-                  <%= no_notifications %>
-                  <%= sync_new partial: "listfetch", resource: Notification.new, refetch: true %>
-                  <%= sync partial: "list", collection: Notification.active(current_user.id) %>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" data-behavior="notification-items">
                 </ul>
-              <li class="thredded--user-navigation--item"><%= link_to "Inbox", '/forum/private-topics' %>
-                <%= unread_inbox(current_user) %>
-              </li>
+            </li>
+
+              <li class="thredded--user-navigation--item"><%= link_to "Inbox", '/forum/private-topics' %><span id="inbox-number"></span></li>
               <li class="dropdown thredded--user-navigation--item">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <%= current_user.name[0] + current_user.name.split(' ')[1][0] rescue current_user.name[0] %> <b class="caret"></b>

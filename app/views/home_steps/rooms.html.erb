@@ -16,15 +16,25 @@
     <%= form.number_field :private_bathrooms, id: :home_private_bathrooms %>
   </div>
 </body>
+<%= form.fields_for(:photo, html: { multipart: true, class: "dropzone"}) do |f|  %>
+<div class="fallback">
+  <%= f.file_field :image %><br>
+  <%= f.submit "Upload" %>
+</div>
+<% end %>
 
+<%= link_to 'Add photos', new_home_photo_path(@home), remote: true %>
+<div class="new_photo"> </div>
 <button type = "button" id = "photos_new">See and upload photos</button>
 
 <br>
 <br>
 <div hidden class="photos_show">
 <div class="field">
-  <%= file_field_tag 'images[]', multiple: true, id: :pictureInput %>
+  <%= file_field_tag 'images[]', multiple: true %>
+
 </div>
+
 <div id="target">
 </div>
 <div id = "photos">
