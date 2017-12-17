@@ -80,8 +80,24 @@
   display: none;
 }
 
+.thredded--pagination-top {
+  margin-bottom: 2%;
+}
+
+.thredded--button-wide {
+  margin-bottom: 2%;
+}
+
 #private_topic_user_names {
   color: blue;
+}
+
+.other-user-message {
+  margin-left: 50%;
+}
+
+.current-user-message {
+  margin-left: 5%;
 }
 
 @-webkit-keyframes flash {
@@ -220,10 +236,6 @@
     margin-left: 43%;
     margin-top: 1%;
     z-index: 10;
-}
-
-.form-control {
-  width: 320px !important;
 }
 
 .input-group {

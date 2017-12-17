@@ -1,5 +1,15 @@
 $(document).ready ->
   private_posts = $ '*[id^="private_post"]'
+  current_user_id = $('#current_user').attr('data-user-id')
+  set_messages_class = ->
+    $.each private_posts, (index, post) ->
+      if $(post).attr('data-user') == current_user_id
+        $(post).addClass("current-user-message")
+      else
+        $(post).addClass("other-user-message")
+      return
+  set_messages_class()
+
   if private_posts.length > 0
 
     App.global_chat = App.cable.subscriptions.create {
@@ -20,6 +30,8 @@ $(document).ready ->
           data: {
             "postable_id": parseInt $('*[id^="private_topic"]')[0].id.slice($('*[id^="private_topic"]')[0].id.lastIndexOf('_')+1)
           }
+        private_posts = $ '*[id^="private_post"]'
+        set_messages_class()
 
       send_private_post: (private_post, private_topic_id) ->
         @perform 'send_private_post', private_post: private_post, private_topic_id: private_topic_id
