@@ -27,7 +27,7 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
           <div>Price per month</div>
           <div class="graph-container">
-            <%= area_chart Home.price_graph, colors: ["grey", "#999"] %>
+            <%= area_chart Home.price_graph, colors: ["grey", "#999"], library: {tooltips: {enabled: false}} %>
           </div>
           <div id="price_slider" class="custom-slider">
             <%= f.fields_for :with_price_range, OpenStruct.new(@filterrific.with_price_range) do |with_price_fields| %>
