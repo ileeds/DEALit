@@ -18,7 +18,7 @@ generate_slider = (slider_name)->
       $('#max_' + slider_name).text ui.values[1]
     change: (event, ui) ->
       $('#filterrific-form').submit()
-      $(this).parent().prev().css 'background-color', '#5cb85c'
+      $(this).parent().prev().addClass("filtered")
   )
   $('#min_' + slider_name).val this_slider.slider('values')[0]
   $('#max_' + slider_name).val this_slider.slider('values')[1]
@@ -96,12 +96,14 @@ $(document).on 'click', '.marker_container1', ->
   return
 
 $(document).on 'mouseover', ('.box, .home-photo'), ->
-  $('#'+@id+'.marker_container1').css 'color', '#5bc0de'
+  $('#'+@id+'.marker_container1').css 'background-color', '#5bc0de'
+  $('#'+@id+'.marker_container1').css 'color', 'white'
   $('#'+@id+'.clicked').css 'color', '#5bc0de'
   return
 
 $(document).on 'mouseout', ('.box, .home-photo'), ->
-  $('.marker_container1').css 'color', 'black'
+  $('.marker_container1').css 'background-color', 'white'
+  $('#'+@id+'.marker_container1').css 'color', 'black'
   $('.clicked').css 'color', 'black'
   return
 

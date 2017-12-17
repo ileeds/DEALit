@@ -1,6 +1,6 @@
 <% if @home.photos %>
   <% @home.photos.each do |photo| %>
-    <%= image_tag photo.photo.url(:medium) %>
-    <%= link_to "Delete", photo, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+    <%= image_tag photo.image.url(:medium) %>
+    <%= link_to "Delete", home_photo_path(home_id: @home.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
   <% end %>
 <% end %>
