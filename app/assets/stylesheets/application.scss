@@ -21,9 +21,8 @@
  *= require bootstrap-social
  */
 
-//@import 'bootstrap/glyphicons';
 @import "thredded";
-//@import "font-awesome";
+@import "font-awesome";
 
 .thredded--main-container {
   // The padding and max-width are handled by the app's container.
@@ -74,6 +73,14 @@
 
 .thredded--topic-header--follow-info {
   display: none;
+}
+
+.thredded--post--dropdown--toggle {
+  display: none;
+}
+
+#private_topic_user_names {
+  color: blue;
 }
 
 @-webkit-keyframes flash {

@@ -1,0 +1,11 @@
+if ($("#mark-read-button").html() == "Mark Conversation as Read") {
+  $("#mark-read-button").html("Conversation Marked as Read");
+  $("#mark-read-button").css("background-color", "#32CD32");
+  $("#mark-read-button").css("color", "white");
+  var unread = parseInt($("#unread-inbox").html()) - 1;
+  if (unread == 0) {
+    $("#unread-inbox").css("display", "none");
+  } else {
+    $("#unread-inbox").html(unread);
+  }
+}

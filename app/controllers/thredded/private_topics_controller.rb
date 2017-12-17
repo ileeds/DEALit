@@ -17,8 +17,10 @@ module Thredded
           .page(params[:page])
       )
 
-      if params[:recipient_id] && params[:home_address]
+      if params[:recipient_id]
         @recipient = User.find(params[:recipient_id])
+      end
+      if params[:home_address]
         @home_address = params[:home_address]
       end
 
@@ -41,6 +43,8 @@ module Thredded
       @new_post = Thredded::PrivatePostForm.new(
         user: thredded_current_user, topic: private_topic, post_params: new_private_post_params
       )
+
+      @mark = Thredded::UserPrivateTopicReadState.where(user_id: current_user.id, postable_id: Thredded::PrivateTopic.where(slug: params[:id]).pluck(:id)[0]).where("read_at > ?", Thredded::PrivateTopic.where(slug: params[:id])[0].last_post_at).exists?
     end
 
     def new
@@ -51,6 +55,7 @@ module Thredded
     def create
       @private_topic = Thredded::PrivateTopicForm.new(new_private_topic_params)
       if @private_topic.save
+        Thredded::UserPrivateTopicReadState.create(user_id: current_user.id, postable_id: @private_topic.id, read_at: Time.now)
         redirect_to @private_topic.private_topic
       else
         render :new
@@ -71,6 +76,14 @@ module Thredded
       else
         render :edit
       end
+    end
+
+    def mark_read
+      read_state = Thredded::UserPrivateTopicReadState.where(user_id: current_user.id, postable_id: params[:postable_id]).first_or_initialize
+      read_state.update_attribute(:read_at, Time.now)
+      respond_to do |format|
+        format.js
+       end
     end
 
     private
