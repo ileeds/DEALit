@@ -1,34 +1,27 @@
 <%= render layout: 'form' do |form| %>
 <body class ="page3">
   <%=  form.fields_for :option do |form1| %>
-<h1>Amenities</h1>
-
+<h1>Options</h1>
+<div class="row">
+  <div class ="col-sm-6">
 <div class="container">
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-    <li><a data-toggle="tab" href="#utilities">Utilities</a></li>
-    <li><a data-toggle="tab" href="#options">Options</a></li>
-    <li><a data-toggle="tab" href="#accomodations">Accomodations</a></li>
+    <li class="active"><a data-toggle="tab" href="#amenities">Amenities</a></li>
+    <li><a data-toggle="tab" href="#facilities">Facilities</a></li>
+    <li><a data-toggle="tab" href="#fees">Fees</a></li>
   </ul>
 
   <div class="tab-content">
-      <div id="utilities" class="tab-pane fade">
-        <h2>Utilities</h2>
-
+      <div id="amenities" class="tab-pane active in">
+        <h2 id ="am">Amenities</h2>
+        <div class ="row">
+          <div class ="col-sm-2">
         <div class="field">
           <%= form1.check_box :free_parking, id: :option_free_parking, class: :roundedTwo%>
         </div>
 
         <div class="field">
           <%= form1.check_box :street_parking, id: :option_street_parking %>
-        </div>
-
-        <div class="field">
-          <%= form1.text_field :deposit, id: :option_deposit %>
-        </div>
-
-        <div class="field">
-          <%= form1.text_field :broker, id: :option_broker %>
         </div>
 
         <div class="field">
@@ -62,15 +55,8 @@
         <div class="field">
           <%= form1.check_box :kitchen, id: :option_kitchen %>
         </div>
-
       </div>
-      <div id="options" class="tab-pane fade">
-
-        <h2>Options</h2>
-        <div class="field">
-          <%= form1.check_box :garbage_disposal, id: :option_garbage_disposal %>
-        </div>
-
+      <div class = "col-sm-2">
         <div class="field">
           <%= form1.check_box :wireless, id: :option_wireless %>
         </div>
@@ -80,23 +66,7 @@
         </div>
 
         <div class="field">
-          <%= form1.check_box :elevator, id: :option_elevator %>
-        </div>
-
-        <div class="field">
-          <%= form1.check_box :pool, id: :option_pool %>
-        </div>
-
-        <div class="field">
-          <%= form1.check_box :gym, id: :option_gym %>
-        </div>
-
-        <div class="field">
           <%= form1.check_box :wheelchair, id: :option_wheelchair %>
-        </div>
-
-        <div class="field">
-          <%= form1.check_box :hot_tub, id: :option_hot_tub %>
         </div>
 
         <div class="field">
@@ -112,37 +82,23 @@
         </div>
 
         <div class="field">
-          <%= form1.check_box :utilities_included, id: :option_utilities_included %>
+          <%= form1.check_box :bike, id: :option_bike %>
         </div>
 
         <div class="field">
-          <%= form1.text_field :water_price, id: :option_water_price %>
-        </div>
-      </div>
-      <div id="accomodations" class="tab-pane fade">
-        <h3>Accomodations</h3>
-        <div class="field">
-          <%= form1.text_field :heat_price, id: :option_heat_price %>
+          <%= form1.check_box :soundproof, id: :option_soundproof %>
         </div>
 
         <div class="field">
-          <%= form1.check_box :closet, id: :option_closet %>
+          <%= form1.check_box :intercom, id: :option_intercom %>
         </div>
 
         <div class="field">
-          <%= form1.check_box :porch, id: :option_porch %>
+          <%= form1.check_box :gated, id: :option_gated %>
         </div>
 
         <div class="field">
-          <%= form1.check_box :lawn, id: :option_lawn %>
-        </div>
-
-        <div class="field">
-          <%= form1.check_box :patio, id: :option_patio %>
-        </div>
-
-        <div class="field">
-          <%= form1.check_box :storage, id: :option_storage %>
+          <%= form1.check_box :doorman, id: :option_doorman %>
         </div>
 
         <div class="field">
@@ -166,29 +122,88 @@
         </div>
 
         <div class="field">
-          <%= form1.check_box :bike, id: :option_bike %>
+          <%= form1.check_box :closet, id: :option_closet %>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div id="facilities" class="tab-pane fade">
+
+        <h2>Facilities</h2>
+
+
+        <div class="field">
+          <%= form1.check_box :garbage_disposal, id: :option_garbage_disposal %>
         </div>
 
         <div class="field">
-          <%= form1.check_box :soundproof, id: :option_soundproof %>
+          <%= form1.check_box :kitchen, id: :option_kitchen %>
         </div>
 
         <div class="field">
-          <%= form1.check_box :intercom, id: :option_intercom %>
+          <%= form1.check_box :elevator, id: :option_elevator %>
         </div>
 
         <div class="field">
-          <%= form1.check_box :gated, id: :option_gated %>
+          <%= form1.check_box :pool, id: :option_pool %>
         </div>
 
         <div class="field">
-          <%= form1.check_box :doorman, id: :option_doorman %>
+          <%= form1.check_box :gym, id: :option_gym %>
+        </div>
+
+        <div class="field">
+          <%= form1.check_box :hot_tub, id: :option_hot_tub %>
+        </div>
+
+        <div class="field">
+          <%= form1.check_box :porch, id: :option_porch %>
+        </div>
+
+        <div class="field">
+          <%= form1.check_box :lawn, id: :option_lawn %>
+        </div>
+
+        <div class="field">
+          <%= form1.check_box :patio, id: :option_patio %>
+        </div>
+
+        <div class="field">
+          <%= form1.check_box :storage, id: :option_storage %>
+        </div>
+
+      </div>
+      <div id="fees" class="tab-pane fade">
+        <h2>Fees</h2>
+
+        <div class="field">
+          <%= form1.text_field :deposit, id: :option_deposit %>
+        </div>
+
+        <div class="field">
+          <%= form1.text_field :broker, id: :option_broker %>
+        </div>
+
+        <div class="field">
+          <%= form1.text_field :heat_price, id: :option_heat_price %>
+        </div>
+
+        <div class="field">
+          <%= form1.text_field :water_price, id: :option_water_price %>
+        </div>
+
+        <div class="field">
+          <%= form1.check_box :utilities_included, id: :option_utilities_included %>
         </div>
 
       </div>
     </div>
   </div>
   <%end%>
-
+</div>
+<div class = "col-sm-4">
+<%=image_tag("amenities.jpg", width:900, height:600)%>
+</div>
+</div>
   </body>
   <%end%>

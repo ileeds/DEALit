@@ -1,5 +1,8 @@
 <%= render layout: 'form' do |form| %>
   <body class ="page4">
+    <h1> Calendar </h1>
+  <div class ="row">
+    <div class = "col-sm-7" id ="calendar_dates">
   <div class="field">
     <%= form.date_select :start_date, id: :home_start_date %>
   </div>
@@ -7,26 +10,10 @@
   <div class="field">
     <%= form.date_select :end_date, id: :home_end_date %>
   </div>
-
-<button type = "button" id = "photos_new">See and upload photos</button>
-<br>
-<br>
-  <div hidden class="photos_show">
-    
-  <div class="field">
-    <%= file_field_tag 'images[]', multiple: true, id: :pictureInput %>
-
-  </div>
-
-  <div id="target">
-  </div>
-  <div id = "photos">
-    Saved photos:
-    <%= render(
-      partial: 'homes/photos',
-      locals: { home: @home }
-    ) %>
-   </div>
-   </div>
- </body>
+</div>
+<div class = "col-sm-5">
+<%=image_tag("calendar.jpg", width:600, height:600, id:"calendar_image")%>
+</div>
+</div>
+</body>
 <% end %>
