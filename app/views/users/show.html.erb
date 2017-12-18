@@ -1,95 +1,70 @@
 <% provide(:title, "Show User") %>
 <p id="notice"><%= notice %></p>
 
-<% if @user.homes.count > 0 %>
-<h1>My Homes</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Total rooms</th>
-      <th>Available rooms</th>
-      <th>Total bathrooms</th>
-      <th>Private bathrooms</th>
-      <th>Is furnished</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.homes.each do |home| %>
-    <tr>
-      <td><%= home.address %></td>
-      <td><%= home.price %></td>
-      <td><%= home.description %></td>
-      <td><%= home.start_date %></td>
-      <td><%= home.end_date %></td>
-      <td><%= home.total_rooms %></td>
-      <td><%= home.available_rooms %></td>
-      <td><%= home.total_bathrooms %></td>
-      <td><%= home.private_bathrooms %></td>
-      <td><%= home.is_furnished %></td>
-      <td><%= link_to 'Show', home %></td>
-      <td><%= render(
-        partial: 'layouts/edit_destroy',
-        locals: { home: home }
-        ) %></td>
-      </tr>
+<ul class="accordion">
+  <li>
+    <a class="toggle">My Posted Homes</a>
+    <ul class="inner">
+      <div>
+        <% if @user.homes.count > 0 %>
+          <% @user.homes.each do |home| %>
+            <li><div class="home-wrapper-user">
+              <%= render(
+                partial: 'homes/home_all',
+                locals: { home: home }
+              ) %>
+              <div class="edit-destroy-wrapper"><strong><%= render(
+                partial: 'layouts/edit_destroy',
+                locals: { home: home }
+              ) %></strong></div>
+            </div></li>
+          <% end %>
+        </div>
+        <%= render "layouts/modal" %>
+      <% else %>
+        <h3>You have not posted any homes yet.</h3>
       <% end %>
-    </tbody>
-  </table>
-  <%= render "layouts/modal" %>
-  <% else %>
-  <h3>You have not posted any homes yet.</h3>
-  <% end %>
+    </ul>
+  </li>
 
-  <% if Following.where(user_id: @user.id).count > 0 %>
-  <h1>Homes I am following</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Address</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Start date</th>
-        <th>End date</th>
-        <th>Total rooms</th>
-        <th>Available rooms</th>
-        <th>Total bathrooms</th>
-        <th>Private bathrooms</th>
-        <th>Is furnished</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% Following.where(user_id: @user.id).each do |following| %>
-      <% home = following.home %>
-      <tr id="home-<%=home.id%>">
-        <td><%= home.user.name %></td>
-        <td><%= home.address %></td>
-        <td><%= home.price %></td>
-        <td><%= home.description %></td>
-        <td><%= home.start_date %></td>
-        <td><%= home.end_date %></td>
-        <td><%= home.total_rooms %></td>
-        <td><%= home.available_rooms %></td>
-        <td><%= home.total_bathrooms %></td>
-        <td><%= home.private_bathrooms %></td>
-        <td><%= home.is_furnished %></td>
-        <td><%= link_to 'Show', home, remote: true %></td>
-        <td><%= link_to 'Unfollow',following_path(following), method: :delete, remote: true %>
-        </tr>
+  <li>
+    <a class="toggle">My Followed Homes</a>
+    <ul class="inner">
+      <% if Following.where(user_id: @user.id).count > 0 %>
+        <% Following.where(user_id: @user.id).each do |following| %>
+          <div class="home-wrapper-user">
+            <%= render(
+              partial: 'homes/home_all',
+              locals: { home: following.home }
+            ) %>
+          </div>
         <% end %>
-      </tbody>
-    </table>
-    <%= render "layouts/modal" %>
+        <%= render "layouts/modal" %>
+      <% else %>
+        <h3>You are not following any homes yet.</h3>
+      <% end %>
+    </ul>
+  </li>
+</ul>
 
-    <% else %>
-    <h3>You are not following any homes yet.</h3>
-    <% end %>
+<script type="text/javascript">
+
+  $('.carousel').not('.slick-initialized').slick({
+    prevArrow:'<svg class="slick-prev" viewBox="0 0 18 18" role="img" aria-label="Previous" focusable="false" style="height: 24px; width: 24px; display: block; fill: rgb(0, 0, 0);"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fill-rule="evenodd"></path></svg>',
+    nextArrow:'<svg class="slick-next" viewBox="0 0 18 18" role="img" aria-label="Next" focusable="false" style="height: 24px;width: 24px;display: block;fill: rgb(0, 0, 0);"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd"></path></svg>'
+  });
+  $('.photo-notifications').css('margin-left', '20%');
+  $('.navbar.navbar-fixed-top').css('z-index', '11')
+
+  $('.toggle').click(function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    if ($this.next().hasClass('show')) {
+      $this.next().slideUp(350);
+      $('.carousel').slick('setPosition');
+    } else {
+      $this.next().slideToggle(350);
+      $('.carousel').slick('setPosition');
+    }
+  });
+</script>

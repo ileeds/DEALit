@@ -4,18 +4,10 @@
   </div>
   <% @homes.each do |home| %>
     <div class="home-wrapper">
-      <div class="home-photo-gallery">
-        <%= render(
-          partial: 'layouts/image_carousel',
-          locals: { home: home }
-        ) %>
-      </div>
-      <%= link_to home, remote: true, class: "home-link" do %>
-        <%= render(
-          partial: 'homes/home_container',
-          locals: { home: home }
-        ) %>
-      <% end %>
+      <%= render(
+        partial: 'homes/home_all',
+        locals: { home: home }
+      ) %>
       <div class="home-buttons">
         <div class="send-message">
           <%= link_to(raw("Send Message <i class='fa fa-paper-plane'></i>"), private_topic_path(recipient_id: home.user_id, home_address: home.address), class: "btn btn-primary home-button send") %>

@@ -1,0 +1,12 @@
+<div class="home-photo-gallery">
+  <%= render(
+    partial: 'layouts/image_carousel',
+    locals: { home: home }
+  ) %>
+</div>
+<%= link_to home, remote: true, class: "home-link" do %>
+  <%= render(
+    partial: 'homes/home_container',
+    locals: { home: home }
+  ) %>
+<% end %>
