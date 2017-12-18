@@ -4,7 +4,7 @@
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.css");
 
 .marker_container {
-  width: 250%;
+  width: 260%;
   height: 100px;
   background-color: white;
   color: black;
@@ -13,20 +13,22 @@
   padding: 5px;
   position: absolute;
   z-index: -1;
-  bottom: -10px;
+  bottom: 140px;
   left: 20%;
-  margin-left: -70px;
+  margin-left: -77px;
+  padding-top: 20%;
+  border-style: solid;
 }
 
 .marker_container::after {
-    content: " ";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
 
 .marker_container1 {
@@ -513,7 +515,8 @@ body.page3 .btn-default {
 }
 
 .infoBox > img {
-  margin: -10px 4px !important;
+  margin: 70px -130px !important;
+  bottom: 150px;
 }
 
 #chart-1 {
