@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if logged_in? && current_user.id!=home.user_id%>
   <div class="photo-notifications">
     <%= link_to_toggle_post_favorite(home) %>
   </div>

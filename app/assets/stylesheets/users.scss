@@ -1,3 +1,45 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-wrapper-user {
+  width: 24%;
+  display: inline-block;
+  float: left;
+  margin-left: 2%;
+  margin-right: 7%;
+}
+
+.edit-destroy-wrapper {
+  margin-top: -15%;
+  margin-bottom: 15%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  .inner {
+    padding-left: 1em;
+    overflow: hidden;
+    display: none;
+  }
+  li {
+    margin: .5em 0;
+    a.toggle {
+      width: 100%;
+      display: block;
+      background: rgba(0,0,0,0.78);
+      color: #fefefe;
+      padding: .75em;
+      border-radius: 0.15em;
+      transition: background .3s ease;
+      margin-bottom: 1%;
+      &:hover {
+        background: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+}
