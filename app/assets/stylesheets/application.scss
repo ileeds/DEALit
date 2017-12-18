@@ -265,7 +265,6 @@
   font-size: 16px;
   height: auto;
   padding: 7px 9px;
-  align: center;
 }
 
 #brandeis_sign_in {
@@ -283,6 +282,11 @@
     height: 350px;
     overflow-y: auto;
 }
+
 .modal {
   height: 500px;
+}
+
+.col-md-7 {
+  width: 100%;
 }
