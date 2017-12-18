@@ -15,7 +15,9 @@ gem 'render_sync', path: "./render_sync-0.5.0"
 gem 'bootstrap-glyphicons'
 gem 'bootstrap-social-rails'
 
-
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
