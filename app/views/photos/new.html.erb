@@ -1,7 +1,8 @@
-<h1> Upload photos here </h1>
+<h1 id ="upload_photos"> Upload photos here </h1>
 <%= form_for([:home, @photo], html: { multipart: true, class: "dropzone"}) do |f|  %>
 <div class="fallback">
   <%= f.file_field :image %><br>
   <%= f.submit "Upload" %>
 </div>
 <% end %>
+<%= button_to 'Save', homes_path, id: :save_photo, method: :get %>

@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+  <div class = "row">
+    <div class = "col-sm-7">
   <div class="field">
     <%= form.text_field :address, id: :home_address %>
   </div>
@@ -53,9 +54,14 @@
 <br>
 <br>
   <div class="actions">
-    <%= form.submit "Continue" %>
+    <%= form.submit "Continue", id: :submit_home %>
   </div>
 <% end %>
+</div>
+<div class ="col-sm-5">
+<%=image_tag("form.png", width:600, height:600, id:"form_image")%>
+</div>
+</div>
 
 <%= link_to 'Exit', homes_path %>
 

@@ -441,7 +441,8 @@ body.label_first .control-label {
 }
 
 body.page2 .btn-default {
-  margin-left:120px;
+  margin-left:-180px;
+  margin-top:-300px;
 }
 
 body.label_first {
@@ -479,11 +480,13 @@ body.page3 #photos_new {
 }
 
 body.page4 .btn-default {
-  margin-left:120px;
+  margin-left:-330px;
+  margin-top:-550px;
 }
 
 body.page3 .btn-default {
-  margin-left:120px;
+  margin-left:-550px;
+  margin-top:-200px;
 }
 
 .rails-bootstrap-forms-date-select {
@@ -567,4 +570,10 @@ body.page3 .btn-default {
   &:hover{
     background-color: #5e6561;
   }
+}
+#edit_title{
+  margin-left:0px;
+}
+#submit_home{
+  margin-left:530px;
 }
