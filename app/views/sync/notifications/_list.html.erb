@@ -2,7 +2,7 @@
   <li class='notification-li notification-unread-<%="#{notification.read_at == nil}"%>' id='dropdown-container-<%=notification.id%>'>
 
     <a class='notification-dropdown-item' id='dropdown-item-<%=notification.id%>'
-      href='/notifications/<%=notification.id%>/mark_as_read'>
+      href='/notifications/<%=notification.id%>/mark_as_read' data-remote="true">
       <%="#{notification.actor.name} #{notification.action}"%>
       <%= link_to fa_icon("close"), main_app.notification_path(notification.id), method: :delete, remote: true, class: 'x-button' %>
     </a>

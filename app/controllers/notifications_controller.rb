@@ -9,8 +9,11 @@ class NotificationsController < ApplicationController
   def mark_as_read
     @notification = Notification.find(params[:id])
     @notification.update(read_at: Time.zone.now)
-    redirect_to @notification.notifiable
-    #render json: {success: true}
+    @home = @notification.notifiable
+    respond_to do |format|
+      format.js {render "mark_as_read", :locals => {:id => @notification.id} }
+    end
+    push_count(Notification.actives(current_user.id).to_a.select{|notification| notification.read_at==nil}.length,current_user.id.to_s)
   end
 
   def destroy
