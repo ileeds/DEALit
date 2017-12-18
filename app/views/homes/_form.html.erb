@@ -6,39 +6,36 @@
     <%= form.text_field :address, id: :home_address %>
   </div>
 
-
   <div class="field">
-    <%= form.number_field :price, id: :home_price %>
+    <%= form.number_field :price, id: :home_price, label: "Price per month (per room)" %>
   </div>
 
   <div class="field">
-    <%= form.text_area :title, id: :home_title %>
+    <%= form.text_area :title, id: :home_title, label: "Give your home a catchy headline" %>
   </div>
 
   <div class="field">
-    <%= form.text_area :description, id: :home_description %>
+    <%= form.text_area :description, id: :home_description, label: "Give your home some more details" %>
   </div>
 
   <div class="field">
-    <%= form.form_group :is_furnished, label: { text: "Is furnished?" } do %>
-  <%= form.radio_button :is_furnished, true, label: "Yes", inline: true %>
-  <br>
-  <%= form.radio_button :is_furnished, false, label: " No", inline: true %>
-  <% end %>
-
-  </div>
-  <div class="field">
-    <%= form.number_field :capacity, id: :option_capacity %>
+    <%= form.form_group :is_furnished, label: { text: "Is your home furnished?" } do %>
+      <%= form.radio_button :is_furnished, true, label: "Yes", inline: true %>
+      <br>
+      <%= form.radio_button :is_furnished, false, label: " No", inline: true %>
+    <% end %>
   </div>
 
   <div class="field">
-    <%= form.form_group :entire_home, label: { text: "Entire home" } do %>
-  <%= form.radio_button :entire_home, true, label: "Yes", inline: true %>
-  <br>
-  <%= form.radio_button :entire_home, false, label: " No", inline: true %>
-<% end %>
+    <%= form.number_field :capacity, id: :option_capacity, label: "How many total people can your home fit?" %>
+  </div>
 
-
+  <div class="field">
+    <%= form.form_group :entire_home, label: { text: "Is your entire home available?" } do %>
+      <%= form.radio_button :entire_home, true, label: "Yes", inline: true %>
+      <br>
+      <%= form.radio_button :entire_home, false, label: " No", inline: true %>
+    <% end %>
   </div>
 
 <br>

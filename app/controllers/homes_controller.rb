@@ -145,9 +145,11 @@ class HomesController < ApplicationController
         end
         format.html { redirect_to home_steps_path(home_id: @home.id) }
         @home.users.each do |user|
-          @notification = Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ')} of #{@home.address}", notifiable: @home)
-          sync_new @notification
-          push_count(Notification.actives(user.id).to_a.select{|notification| notification.read_at==nil}.length,user.id.to_s)
+          if !@home.previous_changes.blank?
+            @notification = Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ').humanize} of #{@home.address}", notifiable: @home)
+            sync_new @notification
+            push_count(Notification.actives(user.id).to_a.select{|notification| notification.read_at==nil}.length,user.id.to_s)
+          end
         end
       else
         format.html { render :edit }

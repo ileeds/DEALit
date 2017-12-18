@@ -18,15 +18,28 @@ class HomeStepsController < ApplicationController
       end
     end
 
-    if @step==:calendar
+    if @step==:calendar && @home.valid?
       redirect_to "/homes/"+@home.id.to_s+"/photos/new"
+      @home.users.each do |user|
+        if !@home.previous_changes.blank?
+          @notification = Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ').humanize} of #{@home.address}", notifiable: @home)
+          sync_new @notification
+          push_count(Notification.actives(user.id).to_a.select{|notification| notification.read_at==nil}.length,user.id.to_s)
+        end
+      end
     else
+      @home.users.each do |user|
+        if !@home.previous_changes.blank?
+          @notification = Notification.create(recipient: user, actor: @home.user, action: "changed the #{@home.previous_changes.except(:updated_at).keys.join(', ').humanize} of #{@home.address}", notifiable: @home)
+          sync_new @notification
+          push_count(Notification.actives(user.id).to_a.select{|notification| notification.read_at==nil}.length,user.id.to_s)
+        end
+      end
       render_wizard(@home, {}, { home_id: @home.id })
     end
   end
 
   def add_photos
-    byebug
     respond_to do |format|
     if params[:images]
       params[:images].each do |picture|
@@ -52,5 +65,10 @@ class HomeStepsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
       params.require(:home).permit(:description, :title, :photos, :address, :price, :start_date, :end_date, :total_rooms, :available_rooms, :available_beds, :total_bathrooms, :private_bathrooms, :is_furnished, :entire_home, :capacity, :distance, :driving_duration, :bicycling_duration, :transit_duration, :walking_duration, :status, option_attributes:[:id, :free_parking, :street_parking, :deposit, :broker, :pets, :heated, :ac, :tv, :dryer, :dish_washer, :fireplace, :kitchen, :garbage_disposal, :wireless, :lock, :elevator, :pool, :gym, :wheelchair, :hot_tub, :smoking, :events, :subletting, :utilities_included, :water_price, :heat_price, :closet, :porch, :lawn, :patio, :storage, :floors, :refrigerator, :stove, :microwave, :laundry, :laundry_free, :bike, :soundproof, :intercom, :gated, :doorman, :house, :apartment])
+    end
+
+    def push_count(count,user)
+      Pusher.trigger('count-'+user,
+                    'notification_event', count: count)
     end
 end
