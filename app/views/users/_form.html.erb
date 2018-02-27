@@ -3,12 +3,12 @@
 <div class="row">
   <div class="col-md-12" style="float:right">
     <div class="col-md-7" style="float:left;">
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
-      <%= f.email_field :email, class: 'form-control', placeholder: 'Email Address' %>
+      <%= f.text_field :name, class: 'form-control sign-up', placeholder: 'Name' %>
+      <%= f.email_field :email, class: 'form-control sign-up', placeholder: 'Email Address' %>
 
-      <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+      <%= f.password_field :password, class: 'form-control sign-up', placeholder: 'Password' %>
 
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password' %>
+      <%= f.password_field :password_confirmation, class: 'form-control sign-up', placeholder: 'Confirm Password' %>
           </div>
       <%= f.submit 'Sign up', class: "btn btn-primary" %>
       <div class="input-group">

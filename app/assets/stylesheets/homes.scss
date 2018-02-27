@@ -4,7 +4,7 @@
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.css");
 
 .marker_container {
-  width: 250%;
+  width: 260%;
   height: 100px;
   background-color: white;
   color: black;
@@ -13,20 +13,22 @@
   padding: 5px;
   position: absolute;
   z-index: -1;
-  bottom: -10px;
+  bottom: 140px;
   left: 20%;
-  margin-left: -70px;
+  margin-left: -77px;
+  padding-top: 20%;
+  border-style: solid;
 }
 
 .marker_container::after {
-    content: " ";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: black transparent transparent transparent;
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
 }
 
 .marker_container1 {
@@ -55,6 +57,7 @@
   border-style: solid;
   z-index: 1000;
 }
+
 .form-group{
   margin-left: 500px;
   width: 900px;
@@ -110,6 +113,7 @@
   width:650px;
   border-style: solid;
   border-width: medium;
+  top: 15%;
 }
 .input{
   width: 150px;
@@ -439,8 +443,8 @@ body.label_first .control-label {
 }
 
 body.page2 .btn-default {
-  margin-left:-180px;
-  margin-top:-300px;
+  margin-left: -180px;
+  margin-top: -120px;
 }
 
 body.label_first {
@@ -479,7 +483,7 @@ body.page3 #photos_new {
 
 body.page4 .btn-default {
   margin-left:-330px;
-  margin-top:-550px;
+  margin-top:-350px;
 }
 
 body.page3 .btn-default {
@@ -516,7 +520,8 @@ body.page3 .btn-default {
 }
 
 .infoBox > img {
-  margin: -10px 4px !important;
+  margin: 70px -130px !important;
+  bottom: 150px;
 }
 
 #chart-1 {

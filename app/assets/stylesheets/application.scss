@@ -212,6 +212,7 @@
   > li {
     width: 100%;
   }
+  z-index: 5;
 }
 
 .followed {
@@ -232,10 +233,10 @@
 }
 
 .photo-notifications {
-    position: absolute;
-    margin-left: 43%;
-    margin-top: 1%;
-    z-index: 10;
+  position: absolute;
+  margin-left: 43%;
+  margin-top: 1%;
+  z-index: 10;
 }
 
 .input-group {
@@ -264,7 +265,6 @@
   font-size: 16px;
   height: auto;
   padding: 7px 9px;
-  align: center;
 }
 
 #brandeis_sign_in {
@@ -282,6 +282,11 @@
     height: 350px;
     overflow-y: auto;
 }
+
 .modal {
   height: 500px;
+}
+
+.col-md-7 {
+  width: 100%;
 }

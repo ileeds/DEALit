@@ -37746,8 +37746,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 }).call(this);
 (function() {
   $(document).ready(function() {
-    var private_posts;
+    var current_user_id, private_posts, set_messages_class;
     private_posts = $('*[id^="private_post"]');
+    current_user_id = $('#current_user').attr('data-user-id');
+    set_messages_class = function() {
+      return $.each(private_posts, function(index, post) {
+        if ($(post).attr('data-user') === current_user_id) {
+          $(post).addClass("current-user-message");
+        } else {
+          $(post).addClass("other-user-message");
+        }
+      });
+    };
+    set_messages_class();
     if (private_posts.length > 0) {
       App.global_chat = App.cable.subscriptions.create({
         channel: "PrivateTopicsChannel",
@@ -37757,13 +37768,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         disconnected: function() {},
         received: function(data) {
           $(data['private_post']).insertAfter($('*[id^="private_post"]')[$('*[id^="private_post"]').length - 1]);
-          return $.ajax({
+          $.ajax({
             type: 'PUT',
             url: '/mark_read',
             data: {
               "postable_id": parseInt($('*[id^="private_topic"]')[0].id.slice($('*[id^="private_topic"]')[0].id.lastIndexOf('_') + 1))
             }
           });
+          private_posts = $('*[id^="private_post"]');
+          return set_messages_class();
         },
         send_private_post: function(private_post, private_topic_id) {
           return this.perform('send_private_post', {
@@ -58877,14 +58890,16 @@ module.exports = function(Chart) {
   });
 
   $(document).on('mouseover', '.box, .home-photo', function() {
-    $('#' + this.id + '.marker_container1').css('background-color', '#5bc0de');
-    $('#' + this.id + '.marker_container1').css('color', 'white');
-    $('#' + this.id + '.clicked').css('color', '#5bc0de');
+    $('#' + this.id + '.marker_container1').css('background-color', '#5bc0de', 'important');
+    $('#' + this.id + '.marker_container1').css('color', 'white', 'important');
+    $('#' + this.id + '.clicked').css('background-color', '#5bc0de', 'important');
+    $('#' + this.id + '.clicked').css('color', 'white', 'important');
   });
 
   $(document).on('mouseout', '.box, .home-photo', function() {
     $('.marker_container1').css('background-color', 'white');
     $('#' + this.id + '.marker_container1').css('color', 'black');
+    $('.clicked').css('background-color', 'white');
     $('.clicked').css('color', 'black');
   });
 
@@ -58950,7 +58965,9 @@ $(document).ready(function(){
 		removedfile: function(file){
 			// grap the id of the uploaded file we set earlier
 			var id = $(file.previewTemplate).find('.dz-remove').attr('id');
-      var home = window.location.href.split("/")[2]
+			
+			var home = window.location.href.split("/")[2]
+			
 			// make a DELETE ajax request to delete the file
 			$('#'+id+'a').hide();
 			$.ajax({

@@ -4,11 +4,11 @@
   <div class ="row">
     <div class = "col-sm-7" id ="calendar_dates">
   <div class="field">
-    <%= form.date_select :start_date, id: :home_start_date %>
+    <%= form.date_select :start_date, id: :home_start_date, label: "When can tenants move in?" %>
   </div>
 
   <div class="field">
-    <%= form.date_select :end_date, id: :home_end_date %>
+    <%= form.date_select :end_date, id: :home_end_date, label: "When must tenants move out?" %>
   </div>
 </div>
 <div class = "col-sm-5">

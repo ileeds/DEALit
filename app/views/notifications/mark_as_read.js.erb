@@ -1,0 +1,17 @@
+$('#dropdown-container-<%=id%>').removeClass('notification-unread-true');
+if($("#notifications-dropdown-menu").children('li').length == 1) {
+  $("#no-notifications").show();
+}
+$container = $('#index'),
+$modal = $('.modal'),
+$modalBody = $('.modal .modal-body'),
+$modalHeading = $('.modal .modal-heading');
+
+$container.css ('overflow-y', 'hidden');
+$modalHeading.html("<%=@home.address%>");
+$modalBody.html("<%= escape_javascript(render @home) %>");
+$modal.modal();
+$('.carousel').not('.slick-initialized').slick({
+  prevArrow:'<svg class="slick-prev" viewBox="0 0 18 18" role="img" aria-label="Previous" focusable="false" style="height: 24px; width: 24px; display: block; fill: rgb(0, 0, 0);"><path d="m13.7 16.29a1 1 0 1 1 -1.42 1.41l-8-8a1 1 0 0 1 0-1.41l8-8a1 1 0 1 1 1.42 1.41l-7.29 7.29z" fill-rule="evenodd"></path></svg>',
+  nextArrow:'<svg class="slick-next" viewBox="0 0 18 18" role="img" aria-label="Next" focusable="false" style="height: 24px;width: 24px;display: block;fill: rgb(0, 0, 0);"><path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd"></path></svg>'
+});

@@ -4,19 +4,19 @@
    <div class ="row">
      <div class = "col-sm-7" id = "rooms7">
   <div class="field">
-    <%= form.number_field :available_rooms, id: :home_available_rooms %>
+    <%= form.number_field :available_rooms, id: :home_available_rooms, label: "How many rooms are available for new tenants?" %>
   </div>
 
   <div class="field">
-    <%= form.number_field :total_rooms, id: :home_total_rooms %>
+    <%= form.number_field :total_rooms, id: :home_total_rooms, label: "How many total rooms does your home have?" %>
   </div>
 
   <div class="field">
-    <%= form.number_field :total_bathrooms, id: :home_total_bathrooms %>
+    <%= form.number_field :total_bathrooms, id: :home_total_bathrooms, label: "How many total bathrooms does your home have?" %>
   </div>
 
   <div class="field">
-    <%= form.number_field :private_bathrooms, id: :home_private_bathrooms %>
+    <%= form.number_field :private_bathrooms, id: :home_private_bathrooms, label: "How many of those bathrooms are private?" %>
   </div>
 </div>
 <div class = "col-sm-5">

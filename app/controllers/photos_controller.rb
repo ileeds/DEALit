@@ -1,10 +1,8 @@
-
-
 class PhotosController < ApplicationController
+  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :correct_user,   only: [:destroy]
+  before_action :set_photo,      only: [:destroy]
 
-  before_action :set_photo, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy, :add_photos]
-  before_action :correct_user,   only: [:edit, :update, :destroy, :add_photos]
   def new
     @photo = Photo.new
   end
@@ -23,8 +21,6 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    @photo = Photo.find(params[:id])
-
     if @photo.destroy
       render json: { message: "File deleted from server" }
     else
@@ -33,11 +29,12 @@ class PhotosController < ApplicationController
   end
 
   private
-  def set_photo
-    @photo = Photo.find(params[:id])
-  end
 
-  def photo_params
-    params.require(:photo).permit(:image, :filename)
-  end
+    def set_photo
+      @photo = Photo.find(params[:id])
+    end
+
+    def photo_params
+      params.require(:photo).permit(:image, :filename)
+    end
 end

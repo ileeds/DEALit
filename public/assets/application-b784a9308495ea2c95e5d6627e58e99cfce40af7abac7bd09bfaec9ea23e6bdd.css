@@ -11245,10 +11245,71 @@ input {
 /*
 
 */
+/* line 8, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+input[type="checkbox"] {
+  left: 240px;
+}
+
+/* line 11, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+.nav-tabs {
+  margin-left: 340px;
+}
+
+/* line 14, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+h2 {
+  margin-left: 160px;
+}
+
+/* line 17, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+h1 {
+  margin-left: 350px;
+}
+
+/* line 20, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+#am {
+  margin-left: 290px;
+}
+
+/* line 23, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+.tab-content > .active {
+  display: block;
+  margin-left: -300px;
+}
+
+/* line 27, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+.edit_home {
+  margin-left: -300px;
+}
+
+/* line 30, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+.new_home {
+  margin-left: -300px;
+}
+
+/* line 33, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+#facilities {
+  margin-left: -220px;
+}
+
+/* line 36, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+#fees {
+  margin-left: -200px;
+}
+
+/* line 41, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+#rooms7 {
+  margin-top: 100px;
+}
+
+/* line 44, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/home_steps.scss */
+#calendar_dates {
+  margin-top: 160px;
+  margin-left: -80px;
+}
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.css");
 /* line 6, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .marker_container {
-  width: 250%;
+  width: 260%;
   height: 100px;
   background-color: white;
   color: black;
@@ -11257,12 +11318,14 @@ input {
   padding: 5px;
   position: absolute;
   z-index: -1;
-  bottom: -10px;
+  bottom: 140px;
   left: 20%;
-  margin-left: -70px;
+  margin-left: -77px;
+  padding-top: 20%;
+  border-style: solid;
 }
 
-/* line 21, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 23, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .marker_container::after {
   content: " ";
   position: absolute;
@@ -11274,7 +11337,7 @@ input {
   border-color: black transparent transparent transparent;
 }
 
-/* line 32, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 34, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .marker_container1 {
   background-color: white;
   color: black;
@@ -11288,7 +11351,7 @@ input {
   margin-left: -60px;
 }
 
-/* line 45, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 47, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .marker_container1:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
@@ -11302,13 +11365,13 @@ input {
   z-index: 1000;
 }
 
-/* line 58, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 61, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .form-group {
   margin-left: 500px;
   width: 900px;
 }
 
-/* line 62, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 66, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .clicked {
   background-color: white;
   color: black;
@@ -11325,7 +11388,7 @@ input {
   border-style: solid;
 }
 
-/* line 78, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 82, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #map {
   width: 380px;
   height: 400px;
@@ -11334,22 +11397,22 @@ input {
   z-index: -1;
 }
 
-/* line 86, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 90, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #map-box {
   position: fixed;
 }
 
-/* line 90, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 94, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .new {
   align: center;
 }
 
-/* line 94, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 98, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #filters {
   position: fixed;
 }
 
-/* line 98, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 102, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slider-input {
   width: 300%;
   display: inline-block;
@@ -11358,21 +11421,22 @@ input {
   background: transparent;
 }
 
-/* line 106, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 110, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .modal-main {
   background-color: white;
   position: fixed;
   width: 650px;
   border-style: solid;
   border-width: medium;
+  top: 15%;
 }
 
-/* line 113, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 118, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .input {
   width: 150px;
 }
 
-/* line 117, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 122, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .modal {
   height: 530px;
   width: 700px;
@@ -11381,12 +11445,12 @@ input {
   margin-top: 100px;
 }
 
-/* line 125, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 130, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .modal-footer a.btn:hover {
   background-color: black;
 }
 
-/* line 129, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 134, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .box {
   height: 18vh;
   text-align: center;
@@ -11398,7 +11462,7 @@ input {
   z-index: -1;
 }
 
-/* line 140, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 145, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #index {
   height: 73%;
   overflow-y: auto;
@@ -11406,7 +11470,7 @@ input {
   width: 45%;
 }
 
-/* line 146, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 151, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #index1 {
   height: 46%;
   overflow-y: auto;
@@ -11414,20 +11478,20 @@ input {
   width: 16.5%;
 }
 
-/* line 153, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 158, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #map {
   width: 100%;
   height: 73%;
 }
 
-/* line 158, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 163, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #daterange {
   resize: none;
   width: auto;
   color: white !important;
 }
 
-/* line 164, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 169, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #daterange::-webkit-input-placeholder {
   color: white;
 }
@@ -11441,34 +11505,34 @@ input {
   color: white;
 }
 
-/* line 168, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 173, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 textarea::-webkit-input-placeholder {
   color: black;
 }
 
-/* line 172, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 177, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 textarea:-moz-placeholder {
   /* Firefox 18- */
   color: black;
 }
 
-/* line 176, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 181, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 textarea::-moz-placeholder {
   /* Firefox 19+ */
   color: black;
 }
 
-/* line 180, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 185, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 textarea:-ms-input-placeholder {
   color: black;
 }
 
-/* line 184, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 189, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 hr {
   margin-top: 0px;
 }
 
-/* line 188, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 193, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .dropdown-menu {
   overflow-x: visible;
   width: 150%;
@@ -11477,7 +11541,7 @@ hr {
   text-align: center;
 }
 
-/* line 196, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 201, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .home-buttons {
   display: inline-block;
   float: left;
@@ -11486,56 +11550,56 @@ hr {
   margin-top: -15%;
 }
 
-/* line 204, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 209, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .home-button {
   text-align: center;
   width: 48%;
   float: left;
 }
 
-/* line 210, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 215, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .home-button.send {
   position: absolute;
 }
 
-/* line 214, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 219, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .home-buttons div a:visited {
   color: white;
 }
 
-/* line 218, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 223, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .ui-slider-handle.custom-handle {
   background: #2D5154;
   border-radius: 50%;
 }
 
-/* line 223, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 228, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .custom-slider {
   width: 80%;
   margin-left: 10%;
   margin-top: 2%;
 }
 
-/* line 229, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 234, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .ui-slider-range {
   background: #2D5154;
 }
 
-/* line 233, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 238, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-sm {
   margin-top: 15%;
 }
 
-/* line 237, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 242, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-secondary {
   border-color: black;
 }
-/* line 239, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 244, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-secondary:hover {
   background-color: #ccc;
 }
 
-/* line 244, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 249, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 ::-webkit-input-placeholder {
   color: black !important;
 }
@@ -11549,28 +11613,28 @@ hr {
   color: black !important;
 }
 
-/* line 248, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 253, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slider-label-below {
   margin-top: 10%;
 }
 
-/* line 252, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 257, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .select-filter {
   width: auto;
 }
 
-/* line 255, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 260, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-default {
   margin-left: 550px;
   width: 300px;
 }
 
-/* line 260, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 265, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .hover_me {
   text-decoration: underline;
 }
 
-/* line 264, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 269, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #home_is_furnished {
   margin-right: 0;
   text-align: center;
@@ -11579,43 +11643,43 @@ hr {
   font-weight: bold;
 }
 
-/* line 271, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 276, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .radio label, .checkbox label {
   font-weight: bold;
   padding-left: 20px;
   margin-left: 250px;
 }
 
-/* line 276, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 281, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .radio-inline {
   width: 100px;
   margin-left: -5px;
 }
 
-/* line 281, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 286, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .bottom {
   position: fixed !important;
   bottom: 2%;
 }
 
-/* line 285, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 290, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 input[type="file"] {
   display: block;
   margin-left: 480px;
   width: 300px;
 }
 
-/* line 291, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 296, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .bottom1 {
   position: fixed;
 }
 
-/* line 295, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 300, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #filterrific_results > div:first-child {
   display: none;
 }
 
-/* line 299, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 304, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .modal-backdrop {
   position: absolute;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))) !important;
@@ -11625,12 +11689,12 @@ input[type="file"] {
   z-index: -1;
 }
 
-/* line 310, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 315, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .modal-backdrop.in {
   opacity: 0;
 }
 
-/* line 314, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 319, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #option_entire_home {
   margin-right: 0;
   text-align: center;
@@ -11639,41 +11703,41 @@ input[type="file"] {
   font-weight: bold;
 }
 
-/* line 322, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 327, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .col-sm-1 {
   display: inline-table;
 }
 
-/* line 326, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 331, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .home-photo {
   margin: auto;
   width: 100%;
 }
 
-/* line 331, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 336, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slick-arrow {
   z-index: 1;
   position: absolute;
 }
 
-/* line 336, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 341, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slick-arrow:hover {
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 30px 0px white;
   box-shadow: 0px 0px 30px 0px white;
 }
 
-/* line 345, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 350, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slick-prev {
   left: 2%;
 }
 
-/* line 349, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 354, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slick-next {
   right: 2%;
 }
 
-/* line 353, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 358, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .home-wrapper {
   width: 48%;
   display: inline-block;
@@ -11682,7 +11746,7 @@ input[type="file"] {
   margin-bottom: 2%;
 }
 
-/* line 361, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 366, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slick-slide img {
   bottom: 0;
   left: 0;
@@ -11694,45 +11758,45 @@ input[type="file"] {
   top: 0;
 }
 
-/* line 372, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 377, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .photo-container {
   padding-top: 62%;
   position: relative;
   width: 100%;
 }
 
-/* line 378, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 383, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .slick-slider {
   margin-bottom: 0px;
 }
 
-/* line 382, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 387, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .form-container {
   width: 100%;
   text-align: center;
 }
 
-/* line 387, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 392, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .col-sm-12 {
   text-align: left;
 }
 
-/* line 391, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 396, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .pagination {
   width: 100%;
 }
 
-/* line 395, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 400, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-warning {
   color: white !important;
 }
 
-/* line 399, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 404, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-info {
   width: 100%;
 }
 
-/* line 403, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 408, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .daterange.caret {
   position: absolute;
   margin-left: 75%;
@@ -11740,151 +11804,155 @@ input[type="file"] {
   color: black;
 }
 
-/* line 410, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 415, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .daterange-container {
   display: inline-block;
   position: relative;
 }
 
-/* line 415, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 420, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #home_available_rooms {
   margin-left: -400px;
 }
 
-/* line 419, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 424, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #home_total_bathrooms {
   margin-left: -400px;
 }
 
-/* line 423, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 428, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #home_total_rooms {
   margin-left: -400px;
 }
 
-/* line 427, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 432, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #home_private_bathrooms {
   margin-left: -400px;
 }
 
-/* line 431, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 436, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .control-label {
   margin-left: -200px;
 }
 
-/* line 435, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 440, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.label_first .control-label {
   margin-left: 0px;
   width: 300px;
 }
 
-/* line 440, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 445, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.page2 .btn-default {
-  margin-left: 120px;
+  margin-left: -180px;
+  margin-top: -120px;
 }
 
-/* line 444, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 450, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.label_first {
   max-width: 3000px;
 }
 
-/* line 448, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 454, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .cancelBtn {
   margin-left: 0;
   width: 49%;
 }
 
-/* line 453, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 459, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .photos_show {
   margin-left: 120px;
 }
 
-/* line 457, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 463, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #photos_new {
   margin-left: 120px;
 }
 
-/* line 461, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 467, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .checkbox {
   width: 400px;
   margin-left: 400px;
 }
 
-/* line 466, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 472, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.page3 .form-control {
   margin-left: -400px;
 }
 
-/* line 470, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 476, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.page3 .control-label {
   margin-left: -207px;
 }
 
-/* line 474, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 480, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.page3 #photos_new {
   margin-left: 110px;
 }
 
-/* line 478, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 484, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.page4 .btn-default {
-  margin-left: 120px;
+  margin-left: -330px;
+  margin-top: -350px;
 }
 
-/* line 482, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 489, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 body.page3 .btn-default {
-  margin-left: 120px;
+  margin-left: -550px;
+  margin-top: -200px;
 }
 
-/* line 486, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 494, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .rails-bootstrap-forms-date-select {
   margin-right: 400px;
 }
 
-/* line 490, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 498, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #photos {
   display: block;
   margin: auto;
   text-align: center;
 }
 
-/* line 496, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 504, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .ranges {
   clear: both;
   width: 100% !important;
 }
 
-/* line 501, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 509, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .applyBtn {
   width: 49%;
 }
 
-/* line 505, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 513, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .box-text {
   font-family: georgia;
   font-size: 1vw;
 }
 
-/* line 510, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 518, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .dropdown {
   margin-bottom: 5%;
 }
 
-/* line 514, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 522, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .infoBox > img {
-  margin: -10px 4px !important;
+  margin: 70px -130px !important;
+  bottom: 150px;
 }
 
-/* line 518, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 527, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #chart-1 {
   position: relative;
   left: -30px;
 }
 
-/* line 523, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 532, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 #price_slider {
   top: -10px;
 }
 
-/* line 527, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 536, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .graph-container {
   overflow: hidden;
   height: 110px;
@@ -11892,51 +11960,75 @@ body.page3 .btn-default {
   position: relative;
 }
 
-/* line 534, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 543, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .chartjs-render-monitor {
   width: 92% !important;
 }
 
-/* line 538, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 547, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-reset {
   background-color: #366645;
   color: white !important;
 }
-/* line 541, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 550, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-reset:hover {
   background-color: #264630;
 }
 
-/* line 546, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 555, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-primary {
   background-color: #35787E;
 }
-/* line 548, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 557, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-primary:hover {
   background-color: #295e63;
 }
 
-/* line 553, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 562, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-success {
   background-color: #366645;
 }
-/* line 555, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 564, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .btn-success:hover {
   background-color: #264630;
 }
 
-/* line 560, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 569, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .filtered {
   color: white !important;
   background-color: #707773;
 }
-/* line 563, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+/* line 572, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
 .filtered:hover {
   background-color: #5e6561;
+}
+
+/* line 576, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+#edit_title {
+  margin-left: 0px;
+}
+
+/* line 579, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/homes.scss */
+#submit_home {
+  margin-left: 530px;
 }
 /*
 
 */
+/* line 8, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/photos.scss */
+#upload_photos {
+  margin-left: 0px;
+}
+
+/* line 12, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/photos.scss */
+.dropzone {
+  border: solid;
+}
+
+/* line 16, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/photos.scss */
+#save_photo {
+  margin-top: 25px;
+}
 /* line 1, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/scaffolds.scss */
 body {
   background-color: #fff;
@@ -12029,6 +12121,52 @@ div.field, div.actions {
 /* line 82, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/scaffolds.scss */
 label {
   display: block;
+}
+/* line 8, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/users.scss */
+.home-wrapper-user {
+  width: 24%;
+  display: inline-block;
+  float: left;
+  margin-left: 2%;
+  margin-right: 7%;
+}
+
+/* line 16, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/users.scss */
+.edit-destroy-wrapper {
+  margin-top: -15%;
+  margin-bottom: 15%;
+}
+
+/* line 21, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/users.scss */
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* line 24, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/users.scss */
+ul .inner {
+  padding-left: 1em;
+  overflow: hidden;
+  display: none;
+}
+/* line 29, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/users.scss */
+ul li {
+  margin: .5em 0;
+}
+/* line 31, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/users.scss */
+ul li a.toggle {
+  width: 100%;
+  display: block;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fefefe;
+  padding: .75em;
+  border-radius: 0.15em;
+  -webkit-transition: background .3s ease;
+  transition: background .3s ease;
+  margin-bottom: 1%;
+}
+/* line 40, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/users.scss */
+ul li a.toggle:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -18357,25 +18495,26 @@ aside.onebox.stackexchange .onebox-body .tags {
 .dropdown-menu.user {
   text-align: left;
   width: auto;
+  z-index: 5;
 }
 /* line 213, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .dropdown-menu.user > li {
   width: 100%;
 }
 
-/* line 218, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 219, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .followed {
   color: red;
 }
 
-/* line 222, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 223, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .notfollowed {
   color: transparent;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #666;
 }
 
-/* line 228, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 229, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .img-overlay:before {
   content: ' ';
   display: block;
@@ -18383,7 +18522,7 @@ aside.onebox.stackexchange .onebox-body .tags {
   height: 50%;
 }
 
-/* line 235, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 236, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .photo-notifications {
   position: absolute;
   margin-left: 43%;
@@ -18391,12 +18530,12 @@ aside.onebox.stackexchange .onebox-body .tags {
   z-index: 10;
 }
 
-/* line 242, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 243, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .input-group {
   margin-bottom: 25px !important;
 }
 
-/* line 245, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 246, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .border-form-div {
   max-width: 415px;
   padding: 19px 29px 29px;
@@ -18408,13 +18547,13 @@ aside.onebox.stackexchange .onebox-body .tags {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* line 258, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 259, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .border-form-div .form-signin-heading,
 .border-form-div .checkbox {
   margin-bottom: 10px;
 }
 
-/* line 262, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 263, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .border-form-div input[type="text"],
 .border-form-div input[type="email"],
 .border-form-div input[type="password"] {
@@ -18424,7 +18563,7 @@ aside.onebox.stackexchange .onebox-body .tags {
   align: center;
 }
 
-/* line 271, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 272, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 #brandeis_sign_in {
   color: white;
   margin-top: 10px;
@@ -18432,18 +18571,18 @@ aside.onebox.stackexchange .onebox-body .tags {
   text-align: center;
 }
 
-/* line 278, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 279, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .btn-brandeis {
   background-color: #002F6C;
 }
 
-/* line 282, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 283, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .modal-body {
   height: 350px;
   overflow-y: auto;
 }
 
-/* line 286, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
+/* line 287, /Users/ianleeds/Dropbox/cosi166b_ileeds/dealit/app/assets/stylesheets/application.scss */
 .modal {
   height: 500px;
 }

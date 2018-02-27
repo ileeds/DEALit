@@ -25,7 +25,7 @@
           <b class="caret"></b>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <div>Price per month</div>
+          <div>Price per month (per room)</div>
           <div class="graph-container">
             <%= area_chart Home.price_graph, colors: ["grey", "#999"], library: {tooltips: {enabled: false}} %>
           </div>
@@ -46,7 +46,7 @@
           <b class="caret"></b>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <div>Total Rooms</div>
+          <div>Total rooms</div>
           <div id="total_rooms_slider" class="custom-slider">
             <%= f.fields_for :with_total_rooms_range, OpenStruct.new(@filterrific.with_total_rooms_range) do |with_total_rooms_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_total_rooms_fields.text_field :min, id: "min_total_rooms", value: @total_rooms_min, class: "slider-input", readonly: true %> </div>
@@ -85,35 +85,35 @@
           <b class="caret"></b>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu3">
-          <div>Distance</div>
+          <div>Distance to Brandeis (miles)</div>
           <div id="distance_slider" class="custom-slider">
             <%= f.fields_for :with_distance_range, OpenStruct.new(@filterrific.with_distance_range) do |with_distance_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_distance_fields.text_field :min, id: "min_distance", value: @distance_min, class: "slider-input", readonly: true %> </div>
               <div class="ui-slider-handle custom-handle"> <%= with_distance_fields.text_field :max, id: "max_distance", value: @distance_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
-          <div class="slider-label-below">Driving duration</div>
+          <div class="slider-label-below">Driving duration to Brandeis (min)</div>
           <div id="driving_duration_slider" class="custom-slider">
             <%= f.fields_for :with_driving_duration_range, OpenStruct.new(@filterrific.with_driving_duration_range) do |with_driving_duration_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_driving_duration_fields.text_field :min, id: "min_driving_duration", value: @driving_duration_min, class: "slider-input", readonly: true %> </div>
               <div class="ui-slider-handle custom-handle"> <%= with_driving_duration_fields.text_field :max, id: "max_driving_duration", value: @driving_duration_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
-          <div class="slider-label-below">Bicycling duration</div>
+          <div class="slider-label-below">Bicycling duration to Brandeis (min)</div>
           <div id="bicycling_duration_slider" class="custom-slider">
             <%= f.fields_for :with_bicycling_duration_range, OpenStruct.new(@filterrific.with_bicycling_duration_range) do |with_bicycling_duration_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_bicycling_duration_fields.text_field :min, id: "min_bicycling_duration", value: @bicycling_duration_min, class: "slider-input", readonly: true %> </div>
               <div class="ui-slider-handle custom-handle"> <%= with_bicycling_duration_fields.text_field :max, id: "max_bicycling_duration", value: @bicycling_duration_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
-          <div class="slider-label-below">Transit duration</div>
+          <div class="slider-label-below">Transit duration to Brandeis (min)</div>
           <div id="transit_duration_slider" class="custom-slider">
             <%= f.fields_for :with_transit_duration_range, OpenStruct.new(@filterrific.with_transit_duration_range) do |with_transit_duration_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :min, id: "min_transit_duration", value: @transit_duration_min, class: "slider-input", readonly: true %> </div>
               <div class="ui-slider-handle custom-handle"> <%= with_transit_duration_fields.text_field :max, id: "max_transit_duration", value: @transit_duration_max, class: "slider-input", readonly: true %> </div>
             <% end %>
           </div>
-          <div class="slider-label-below">Walking duration</div>
+          <div class="slider-label-below">Walking duration to Brandeis (min)</div>
           <div id="walking_duration_slider" class="custom-slider">
             <%= f.fields_for :with_walking_duration_range, OpenStruct.new(@filterrific.with_walking_duration_range) do |with_walking_duration_fields| %>
               <div class="ui-slider-handle custom-handle"> <%= with_walking_duration_fields.text_field :min, id: "min_walking_duration", value: @walking_duration_min, class: "slider-input", readonly: true %> </div>
