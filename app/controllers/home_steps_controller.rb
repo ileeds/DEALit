@@ -26,7 +26,6 @@ class HomeStepsController < ApplicationController
   end
 
   def add_photos
-    byebug
     respond_to do |format|
     if params[:images]
       params[:images].each do |picture|

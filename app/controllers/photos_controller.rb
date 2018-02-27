@@ -3,6 +3,8 @@
 class PhotosController < ApplicationController
 
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy, :add_photos]
+  before_action :correct_user,   only: [:edit, :update, :destroy, :add_photos]
   def new
     @photo = Photo.new
   end
