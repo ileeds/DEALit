@@ -69,6 +69,7 @@ module RenderSync
       yaml = YAML.load(ERB.new(File.read(filename)).result)[environment.to_s]
       raise ArgumentError, "The #{environment} environment does not exist in #{filename}" if yaml.nil?
       yaml.each{|key, value| config[key.to_sym] = value }
+      byebug
       setup_logger
 
       if adapter
